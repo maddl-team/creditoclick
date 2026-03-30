@@ -7,7 +7,7 @@ export function BackgroundLines() {
                 {[...Array(5)].map((_, i) => (
                     <div
                         key={i}
-                        className="w-px h-full bg-slate-200/40"
+                        className="w-px h-full bg-slate-200/90"
                         style={{
                             maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
                         }}

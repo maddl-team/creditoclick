@@ -26,7 +26,7 @@ export function Section({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay, ease: [0.4, 0, 0.2, 1] }}
-                className={cn("container mx-auto px-6 max-w-7xl", containerClassName)}
+                className={cn("w-full mx-auto px-6 max-w-7xl", containerClassName)}
             >
                 {children}
             </motion.div>
