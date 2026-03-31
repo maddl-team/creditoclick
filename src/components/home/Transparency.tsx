@@ -14,7 +14,7 @@ export function Transparency() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-indigo/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-24">
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-2 p-6 md:p-8">
                     <Badge className="mb-6 bg-brand-indigo/20 text-brand-indigo border-brand-indigo/30">Trasparenza Istituzionale</Badge>
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 leading-tight">
                         Chi è CreditoClick: trasparenza e conformità normativa

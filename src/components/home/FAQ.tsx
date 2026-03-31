@@ -39,53 +39,57 @@ export function FAQ() {
 
     return (
         <Section id="faq" className="bg-slate-50/50">
-            <div className="max-w-3xl mb-16">
-                <Badge variant="subtle" className="mb-4">FAQ Homepage</Badge>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-6">
-                    Domande frequenti sui prestiti online
-                </h2>
-                <p className="text-lg text-text-secondary leading-relaxed">
-                    Tutto quello che devi sapere sulla cessione del quinto e sulle nostre soluzioni di finanziamento.
-                </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
+                {/* Left Column: Messaging */}
+                <div className="lg:col-span-2 p-6 md:p-8">
+                    <Badge variant="subtle" className="mb-4">FAQ Homepage</Badge>
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight">
+                        Domande frequenti sui prestiti online
+                    </h2>
+                    <p className="text-lg text-text-secondary leading-relaxed">
+                        Tutto quello che devi sapere sulla cessione del quinto e sulle nostre soluzioni di finanziamento. Non trovi quello che cerchi? Il nostro team è a disposizione per una consulenza gratuita e personalizzata.
+                    </p>
+                </div>
 
-            <div className="max-w-4xl space-y-4">
-                {FAQS.map((faq, i) => (
-                    <div
-                        key={i}
-                        className={cn(
-                            "group bg-white rounded-2xl border border-slate-200/60 overflow-hidden transition-all duration-300",
-                            openIndex === i && "border-brand-indigo/30 shadow-sm"
-                        )}
-                    >
-                        <button
-                            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                            className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:text-brand-indigo transition-colors"
-                        >
-                            <span className="text-lg font-bold text-text-primary leading-tight">
-                                {faq.q}
-                            </span>
-                            <ChevronDown className={cn(
-                                "w-5 h-5 flex-shrink-0 transition-transform duration-300 text-slate-400 group-hover:text-brand-indigo",
-                                openIndex === i && "rotate-180 text-brand-indigo"
-                            )} />
-                        </button>
-                        <AnimatePresence>
-                            {openIndex === i && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                                >
-                                    <div className="px-6 md:px-8 pb-8 text-text-secondary leading-relaxed border-t border-slate-50 pt-6">
-                                        {faq.a}
-                                    </div>
-                                </motion.div>
+                {/* Right Column: Accordions */}
+                <div className="lg:col-span-2 space-y-4">
+                    {FAQS.map((faq, i) => (
+                        <div
+                            key={i}
+                            className={cn(
+                                "group bg-white rounded-2xl border border-slate-200/60 overflow-hidden transition-all duration-300",
+                                openIndex === i && "border-brand-indigo/30 shadow-sm"
                             )}
-                        </AnimatePresence>
-                    </div>
-                ))}
+                        >
+                            <button
+                                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                                className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:text-brand-indigo transition-colors"
+                            >
+                                <span className="text-lg font-bold text-text-primary leading-tight">
+                                    {faq.q}
+                                </span>
+                                <ChevronDown className={cn(
+                                    "w-5 h-5 flex-shrink-0 transition-transform duration-300 text-slate-400 group-hover:text-brand-indigo",
+                                    openIndex === i && "rotate-180 text-brand-indigo"
+                                )} />
+                            </button>
+                            <AnimatePresence>
+                                {openIndex === i && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    >
+                                        <div className="px-6 md:px-8 pb-8 text-text-secondary leading-relaxed border-t border-slate-50 pt-6 text-sm">
+                                            {faq.a}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Section>
     );

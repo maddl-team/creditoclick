@@ -1,16 +1,27 @@
-import * as React from "react";
+"use client";
 
-export function BackgroundLines() {
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+interface BackgroundLinesProps {
+    variant?: "light" | "dark";
+    className?: string;
+}
+
+export function BackgroundLines({ variant = "light", className }: BackgroundLinesProps) {
     return (
-        <div className="absolute inset-x-0 inset-y-0 pointer-events-none -z-10 overflow-hidden h-full">
+        <div className={cn(
+            "absolute inset-x-0 inset-y-0 pointer-events-none z-0 overflow-hidden h-full",
+            className
+        )}>
             <div className="mx-auto h-full max-w-7xl flex justify-between px-6">
                 {[...Array(5)].map((_, i) => (
                     <div
                         key={i}
-                        className="w-px h-full bg-slate-200/90"
-                        style={{
-                            maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
-                        }}
+                        className={cn(
+                            "w-px h-full",
+                            variant === "light" ? "bg-slate-200/90" : "bg-white/10"
+                        )}
                     />
                 ))}
             </div>

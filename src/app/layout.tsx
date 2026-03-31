@@ -26,9 +26,8 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
         <div className="flex flex-col min-h-screen relative overflow-x-hidden">
-          <BackgroundLines />
           <Navbar />
-          <main className="flex-1 relative z-10">
+          <main className="flex-1">
             {children}
           </main>
           <Footer />

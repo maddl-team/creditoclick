@@ -33,7 +33,7 @@ export function TrustBar() {
     return (
         <Section id="perche-sceglierci" className="bg-slate-50/50">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
-                <div className="lg:col-span-2 pr-0 lg:pr-12">
+                <div className="lg:col-span-2 p-6 md:p-8">
                     <Badge variant="subtle" className="mb-4">Perché Sceglierci</Badge>
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight">
                         Perché scegliere CreditoClick?
@@ -48,14 +48,12 @@ export function TrustBar() {
                     </div>
                 </div>
 
-                <div className="lg:col-span-2 grid sm:grid-cols-2 gap-0 border-l border-slate-200/90 ml-[-1px]">
+                <div className="lg:col-span-2 grid sm:grid-cols-2 gap-0">
                     {TRUST_PILLS.map((pill, i) => (
                         <div
                             key={i}
                             className={cn(
-                                "group relative p-6 md:p-8 transition-all duration-300",
-                                i % 2 === 0 && "border-r border-slate-200/90",
-                                (i === 0 || i === 1) && "border-b border-slate-200/90"
+                                "group relative p-6 md:p-8 transition-all duration-300"
                             )}
                         >
                             <div className="w-10 h-10 rounded-xl bg-brand-indigo/10 flex items-center justify-center text-brand-indigo mb-6 transition-transform group-hover:scale-110">
