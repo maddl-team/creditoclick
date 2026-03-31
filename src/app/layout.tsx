@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CreditoClick | Finanza Intelligente",
-  description: "Semplifichiamo l'accesso al credito con tecnologie intelligenti e trasparenti.",
+  title: "CreditoClick | Prestiti Online Veloci e Sicuri",
+  description: "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
 };
 
 export default function RootLayout({

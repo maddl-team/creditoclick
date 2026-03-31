@@ -8,27 +8,21 @@ import { cn } from "@/lib/utils";
 
 const TESTIMONIALS = [
     {
-        quote: "Abbiamo ridotto i tempi di approvazione del 70%. La piattaforma è intuitiva e il team di supporto è eccezionale.",
-        author: "Marco Rossi",
-        role: "CEO, TechFlow",
+        quote: "Avevo una segnalazione CRIF e nessuna banca mi aiutava. CreditoClick ha trovato una soluzione in meno di 48 ore. Finalmente respiro.",
+        author: "Marco T.",
+        role: "Infermiere, Napoli",
         stars: 5,
     },
     {
-        quote: "La trasparenza sui tassi e la flessibilità dei rimborsi sono i motivi per cui abbiamo scelto CreditoClick per il nostro scale-up.",
-        author: "Giulia Bianchi",
-        role: "CFO, GreenSteps",
+        quote: "Insegno alle medie e non avevo tempo per andare in banca. Ho fatto tutto dal telefono, in pausa pranzo. Pratica approvata in 3 giorni.",
+        author: "Giovanna R.",
+        role: "Docente, Torino",
         stars: 5,
     },
     {
-        quote: "L'integrazione multi-valuta ci ha permesso di espanderci in 12 nuovi mercati in meno di un trimestre. Indispensabile.",
-        author: "Luca Verdi",
-        role: "Head of Growth, GlobalPay",
-        stars: 5,
-    },
-    {
-        quote: "Finalmente un partner finanziario che parla la nostra lingua. Semplice, veloce e tecnologicamente avanzato.",
-        author: "Elena Neri",
-        role: "Founder, CreativeMind",
+        quote: "Avevo 5 rate diverse ogni mese. Ora ne ho una sola, più bassa. Hanno gestito tutto loro, io ho solo firmato.",
+        author: "Roberto M.",
+        role: "Dipendente pubblico, Roma",
         stars: 5,
     },
 ];
