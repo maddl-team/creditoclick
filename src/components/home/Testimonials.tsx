@@ -35,7 +35,7 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
     return (
-        <Section id="testimonials" className="bg-slate-50/30">
+        <Section id="testimonials" className="bg-[#f6f9fc]">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-0">
                 {/* Header: Full Width */}
                 <div className="lg:col-span-4 p-6 md:p-8 mb-8">

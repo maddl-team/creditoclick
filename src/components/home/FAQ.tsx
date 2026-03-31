@@ -38,7 +38,7 @@ export function FAQ() {
     const [openIndex, setOpenIndex] = React.useState<number | null>(0);
 
     return (
-        <Section id="faq" className="bg-slate-50/50">
+        <Section id="faq" className="bg-[#f6f9fc]">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
                 {/* Left Column: Messaging */}
                 <div className="lg:col-span-2 p-6 md:p-8">
@@ -51,23 +51,33 @@ export function FAQ() {
                     </p>
                 </div>
 
-                {/* Right Column: Accordions */}
-                <div className="lg:col-span-2 space-y-4">
+                {/* Right Column: Clean Accordions */}
+                <div className="lg:col-span-2 space-y-4 pt-4 lg:pt-8">
                     {FAQS.map((faq, i) => (
                         <div
                             key={i}
                             className={cn(
-                                "group bg-white rounded-2xl border border-slate-200/60 overflow-hidden transition-all duration-300",
-                                openIndex === i && "border-brand-indigo/30 shadow-sm"
+                                "group relative transition-all duration-300 border-b border-slate-200/60 last:border-0",
+                                openIndex === i && "pb-4"
                             )}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                                className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:text-brand-indigo transition-colors"
+                                className="w-full flex items-center justify-between p-6 text-left hover:text-brand-indigo transition-all"
                             >
-                                <span className="text-lg font-bold text-text-primary leading-tight">
-                                    {faq.q}
-                                </span>
+                                <div className="relative pl-1">
+                                    {/* Accent Bar - only visible when open or hovered */}
+                                    <div className={cn(
+                                        "absolute -left-[24px] md:-left-[24px] top-1 bottom-1 w-[2px] bg-brand-indigo transition-all rounded-r-full",
+                                        openIndex === i ? "opacity-100 w-[3px]" : "opacity-0 group-hover:opacity-50"
+                                    )} />
+                                    <span className={cn(
+                                        "text-lg font-bold leading-tight transition-colors",
+                                        openIndex === i ? "text-brand-indigo" : "text-text-primary"
+                                    )}>
+                                        {faq.q}
+                                    </span>
+                                </div>
                                 <ChevronDown className={cn(
                                     "w-5 h-5 flex-shrink-0 transition-transform duration-300 text-slate-400 group-hover:text-brand-indigo",
                                     openIndex === i && "rotate-180 text-brand-indigo"
@@ -81,7 +91,7 @@ export function FAQ() {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                     >
-                                        <div className="px-6 md:px-8 pb-8 text-text-secondary leading-relaxed border-t border-slate-50 pt-6 text-sm">
+                                        <div className="px-6 pb-6 text-text-secondary leading-relaxed text-sm pl-10 md:pl-10">
                                             {faq.a}
                                         </div>
                                     </motion.div>

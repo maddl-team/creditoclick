@@ -31,7 +31,7 @@ const TRUST_PILLS = [
 
 export function TrustBar() {
     return (
-        <Section id="perche-sceglierci" className="bg-slate-50/50">
+        <Section id="perche-sceglierci" className="bg-[#f6f9fc]">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
                 <div className="lg:col-span-2 p-6 md:p-8">
                     <Badge variant="subtle" className="mb-4">Perché Sceglierci</Badge>

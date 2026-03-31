@@ -41,7 +41,7 @@ const TARGET_CATEGORIES = [
 
 export function Categories() {
     return (
-        <Section id="categorie" className="bg-slate-50/30">
+        <Section id="categorie" className="bg-[#f6f9fc]">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
                 {/* Left Column: Messaging */}
                 <div className="lg:col-span-2 p-6 md:p-8">

@@ -27,7 +27,7 @@ export function Section({
 
     return (
         <section
-            className={cn("relative py-20 md:py-32 outline-none overflow-hidden", className)}
+            className={cn("relative py-12 md:py-20 outline-none overflow-hidden", className)}
             {...props}
         >
             {showLines && <BackgroundLines variant={variant} />}

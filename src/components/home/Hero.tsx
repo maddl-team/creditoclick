@@ -9,7 +9,7 @@ import { CalcForm } from "./CalcForm";
 
 export function Hero() {
     return (
-        <Section className="relative overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20 min-h-[80vh] flex items-center">
+        <Section className="min-h-[70vh] flex items-center">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-0 items-center w-full">
                 {/* Left Column: Messaging */}
                 <div className="lg:col-span-2 p-6 md:p-8">
