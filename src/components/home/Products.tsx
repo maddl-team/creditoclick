@@ -52,10 +52,10 @@ export function Products() {
                     {/* Header */}
                     <div className="p-6 md:p-8 lg:mb-12">
                         <Badge variant="subtle" className="mb-4">I nostri prodotti core</Badge>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary mb-8 leading-tight">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight">
                             I nostri prodotti di finanziamento
                         </h2>
-                        <p className="text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl">
+                        <p className="text-lg text-text-secondary leading-relaxed max-w-3xl">
                             Siamo specializzati da anni in soluzioni di credito garantite dalla busta paga o dalla pensione. Questo ci permette di lavorare anche per chi ha avuto difficoltà in passato con il sistema bancario tradizionale.
                         </p>
                     </div>
@@ -63,30 +63,29 @@ export function Products() {
                     {/* Products List */}
                     <div className="flex flex-col">
                         {CORE_PRODUCTS.map((product) => (
-                            <div
+                            <motion.div
                                 key={product.id}
-                                className={cn(
-                                    "p-6 md:p-8 group relative lg:mb-8 transition-colors duration-500 rounded-3xl lg:mr-8 cursor-default",
-                                    activeProduct === product.id ? "bg-slate-50/50 shadow-sm" : "hover:bg-slate-50/20"
-                                )}
+                                className="p-6 md:p-8 group relative lg:mb-8 transition-all duration-500 rounded-3xl lg:mr-8 cursor-default"
                                 onMouseEnter={() => setActiveProduct(product.id)}
+                                onViewportEnter={() => setActiveProduct(product.id)}
+                                viewport={{ margin: "-45% 0px -45% 0px" }}
                             >
                                 {/* Plus Style Icon */}
                                 <div className={cn(
-                                    "w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300",
+                                    "w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-300",
                                     activeProduct === product.id ? "bg-brand-indigo text-white scale-110 shadow-lg shadow-brand-indigo/30" : "bg-brand-indigo/10 text-brand-indigo"
                                 )}>
-                                    <product.icon className="w-6 h-6" />
+                                    <product.icon className="w-5 h-5" />
                                 </div>
 
                                 {/* Title with Accent Bar */}
-                                <div className="relative pl-1 mb-6">
+                                <div className="relative pl-1 mb-4">
                                     <div className={cn(
                                         "absolute -left-[24px] md:-left-[32px] top-1 bottom-1 bg-brand-indigo transition-all duration-300 rounded-r-full",
                                         activeProduct === product.id ? "opacity-100 w-[4px]" : "opacity-30 w-[2px] group-hover:opacity-60 group-hover:w-[3px]"
                                     )} />
                                     <h3 className={cn(
-                                        "text-2xl md:text-3xl font-bold leading-tight transition-colors max-w-2xl",
+                                        "text-xl font-bold leading-tight transition-colors",
                                         activeProduct === product.id ? "text-brand-indigo" : "text-text-primary"
                                     )}>
                                         {product.title}
@@ -94,37 +93,37 @@ export function Products() {
                                 </div>
 
                                 {/* Content */}
-                                <div className="pl-1 space-y-6">
-                                    <p className="text-text-secondary text-lg leading-relaxed max-w-4xl">
+                                <div className="pl-1 space-y-4">
+                                    <p className="text-text-secondary text-base leading-relaxed max-w-4xl">
                                         {product.desc}
                                     </p>
 
                                     {product.ideal && (
-                                        <p className="text-sm lg:text-base font-medium text-text-primary">
+                                        <p className="text-sm font-medium text-text-primary">
                                             {product.ideal}
                                         </p>
                                     )}
 
                                     {product.market && (
-                                        <p className="text-sm text-slate-500 italic bg-white p-6 rounded-xl border-l-2 border-brand-indigo/30 shadow-sm max-w-3xl">
+                                        <p className="text-sm text-slate-500 italic bg-white p-4 rounded-xl border-l-2 border-brand-indigo/30 shadow-sm max-w-3xl">
                                             {product.market}
                                         </p>
                                     )}
 
                                     <div className="pt-2">
-                                        <Button variant="link" icon={ArrowRight} className="p-0 text-base font-bold">
+                                        <Button variant="link" icon={ArrowRight} className="p-0 text-sm font-bold">
                                             {product.cta}
                                         </Button>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
 
                 {/* Right Side: Sticky Image Reveal (Takes 1 column) */}
                 <div className="hidden lg:block lg:col-span-1 relative">
-                    <div className="sticky top-32 w-full p-6 pt-12 xl:p-8 xl:pt-16">
+                    <div className="sticky top-32 w-full pt-12 xl:pt-16">
                         <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
                             <AnimatePresence mode="wait">
                                 {CORE_PRODUCTS.map((product) => (
