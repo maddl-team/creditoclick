@@ -23,10 +23,10 @@ export function CTA() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4">
-                        <Button variant="secondary" className="w-full sm:w-auto px-8 bg-white text-brand-indigo hover:bg-indigo-50 border-white" icon={ArrowRight}>
+                        <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-indigo hover:bg-indigo-50 border-white" icon={ArrowRight}>
                             Richiedi consulenza gratuita
                         </Button>
-                        <Button className="w-full sm:w-auto px-8 bg-[#25D366] hover:bg-[#20ba59] border-none text-white shadow-lg shadow-emerald-500/20" icon={MessageCircle}>
+                        <Button className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] border-none text-white shadow-lg shadow-emerald-500/20" icon={MessageCircle}>
                             Scrivici su WhatsApp
                         </Button>
                         <Button variant="link" className="text-white hover:text-indigo-200 mt-4 sm:mt-0 sm:ml-4 font-bold border-b border-white/30 h-auto p-0 pb-1">

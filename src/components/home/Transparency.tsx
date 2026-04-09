@@ -29,7 +29,7 @@ export function Transparency() {
                     </div>
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-2 pr-6 md:pr-8">
                     <h3 className="text-xl font-bold mb-8 text-brand-cyan">Cosa significa per te:</h3>
                     <ul className="space-y-8">
                         {[
@@ -49,7 +49,7 @@ export function Transparency() {
                         ))}
                     </ul>
 
-                    <div className="mt-12 pt-8 border-t border-white/10 text-xs text-indigo-200/50 space-y-2">
+                    <div className="mt-12 pt-8 border-t border-white/10 lg:-ml-12 lg:pl-12 text-xs text-indigo-200/50 space-y-2">
                         <p>Iscrizione OAM: (inserire numero iscrizione ufficiale)</p>
                         <p>Sede legale: (inserire indirizzo)</p>
                         <p>P.IVA: (inserire)</p>

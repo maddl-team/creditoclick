@@ -42,7 +42,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className={cn(
-                    "inline-flex items-center justify-center rounded-full px-6 py-3 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-indigo/50 disabled:opacity-50 disabled:pointer-events-none",
+                    "inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-indigo/50 disabled:opacity-50 disabled:pointer-events-none",
                     variant === "primary" && "bg-brand-indigo text-white shadow-lg shadow-brand-indigo/20 hover:shadow-xl hover:shadow-brand-indigo/30",
                     variant === "secondary" && "bg-white text-text-primary border border-slate-200 hover:bg-slate-50",
                     className

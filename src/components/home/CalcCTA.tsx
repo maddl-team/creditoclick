@@ -26,7 +26,7 @@ export function CalcCTA() {
 
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <Button
-                                className="w-full sm:w-auto bg-brand-cyan hover:bg-brand-cyan/90 text-slate-900 border-none px-10 py-7 text-base font-bold shadow-xl shadow-brand-cyan/20 transition-all hover:scale-105 active:scale-95"
+                                className="w-full sm:w-auto bg-brand-cyan hover:bg-brand-cyan/90 text-slate-900 border-none shadow-xl shadow-brand-cyan/20 transition-all hover:scale-105 active:scale-95"
                                 icon={ArrowRight}
                             >
                                 Calcola la tua rata ora

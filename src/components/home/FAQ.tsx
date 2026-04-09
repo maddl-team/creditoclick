@@ -52,12 +52,12 @@ export function FAQ() {
                 </div>
 
                 {/* Right Column: Clean Accordions */}
-                <div className="lg:col-span-2 space-y-4 pt-4 lg:pt-8">
+                <div className="lg:col-span-2 space-y-4 pr-6 md:pr-8 pt-4 lg:pt-8">
                     {FAQS.map((faq, i) => (
                         <div
                             key={i}
                             className={cn(
-                                "group relative transition-all duration-300 border-b border-slate-200/60 last:border-0",
+                                "group relative transition-all duration-300 border-b border-slate-200/60 last:border-0 -mr-6 md:-mr-8",
                                 openIndex === i && "pb-4"
                             )}
                         >

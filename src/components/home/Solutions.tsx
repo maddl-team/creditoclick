@@ -25,7 +25,7 @@ export function Solutions() {
                     </div>
 
                     {/* Solutions Content (Now on the left) */}
-                    <div className="space-y-12 pt-4 border-t border-slate-100">
+                    <div className="space-y-12">
                         {/* Pain Points */}
                         <div className="group relative">
                             <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 mb-6 transition-transform group-hover:scale-110">
@@ -80,8 +80,8 @@ export function Solutions() {
                 </div>
 
                 {/* Right Column (Image) */}
-                <div className="lg:col-span-2 relative min-h-[400px] lg:min-h-full">
-                    <div className="absolute inset-0 p-6 md:p-8">
+                <div className="lg:col-span-2 relative min-h-[500px] lg:min-h-full">
+                    <div className="absolute inset-0">
                         <div className="relative w-full h-full rounded-[32px] overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/solutions.png"

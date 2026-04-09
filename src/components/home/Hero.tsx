@@ -23,16 +23,16 @@ export function Hero() {
                         Cessione del quinto, rinnovi, consolidamenti e soluzioni su misura per dipendenti, pensionati e Forze dell'Ordine. Tutto online, senza file in filiale, con un esperto reale che ti segue dal primo contatto all'accredito.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up [animation-delay:600ms]">
-                        <Button icon={ArrowRight} className="w-full sm:w-auto px-8">
+                    <div className="flex flex-col items-start gap-4 animate-fade-in-up [animation-delay:600ms]">
+                        <Button icon={ArrowRight} className="w-full sm:w-auto">
                             Richiedi una consulenza gratuita
                         </Button>
-                        <Button variant="secondary" className="w-full sm:w-auto px-8">
+                        <Button variant="secondary" className="w-full sm:w-auto">
                             Calcola la tua rata in 2 minuti
                         </Button>
                     </div>
 
-                    <div className="mt-16 lg:mt-20 pt-10 border-t border-slate-200/90 flex flex-wrap items-center gap-x-12 gap-y-6 animate-fade-in-up [animation-delay:800ms]">
+                    <div className="mt-10 lg:mt-12 flex flex-wrap items-center gap-x-12 gap-y-6 animate-fade-in-up [animation-delay:800ms]">
                         <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Convenzioni Nazionali</p>
                         <div className="flex flex-wrap items-center gap-8 opacity-40 grayscale contrast-125">
                             <span className="text-lg font-bold italic">Inps</span>
@@ -43,7 +43,7 @@ export function Hero() {
                 </div>
 
                 {/* Right Column: Calculator Form */}
-                <div className="lg:col-span-2 lg:pl-12 animate-fade-in-up [animation-delay:400ms]">
+                <div className="lg:col-span-2 animate-fade-in-up [animation-delay:400ms]">
                     <CalcForm />
                 </div>
             </div>
