@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 interface BackgroundLinesProps {
     variant?: "light" | "dark";
     className?: string;
+    showIndices?: number[];
 }
 
-export function BackgroundLines({ variant = "light", className }: BackgroundLinesProps) {
+export function BackgroundLines({ variant = "light", className, showIndices }: BackgroundLinesProps) {
     return (
         <div className={cn(
             "absolute inset-x-0 inset-y-0 pointer-events-none z-0 overflow-hidden h-full",
@@ -19,8 +20,9 @@ export function BackgroundLines({ variant = "light", className }: BackgroundLine
                     <div
                         key={i}
                         className={cn(
-                            "w-px h-full",
-                            variant === "light" ? "bg-slate-200/90" : "bg-white/10"
+                            "w-px h-full transition-opacity duration-300",
+                            variant === "light" ? "bg-slate-200/90" : "bg-white/10",
+                            showIndices && !showIndices.includes(i) && "opacity-0"
                         )}
                     />
                 ))}
