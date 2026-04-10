@@ -132,7 +132,7 @@ export function CessioneDelQuintoPageContent() {
               <FeatureItem key={i} icon={CATEGORY_ICONS[i]} title={item.title}>
                 <div className="space-y-4">
                   <p>{item.body}</p>
-                  {item.extra ? <p>{item.extra}</p> : null}
+                  {"extra" in item && item.extra ? <p>{item.extra}</p> : null}
                   <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
                     {item.cta}
                   </Button>

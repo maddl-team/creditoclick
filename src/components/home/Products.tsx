@@ -74,17 +74,17 @@ export function Products() {
                                         {product.desc}
                                     </p>
 
-                                    {product.ideal && (
+                                    {"ideal" in product && product.ideal ? (
                                         <p className="text-sm font-medium text-text-primary">
                                             {product.ideal}
                                         </p>
-                                    )}
+                                    ) : null}
 
-                                    {product.market && (
+                                    {"market" in product && product.market ? (
                                         <p className="text-sm text-slate-500 italic bg-white p-4 rounded-xl border-l-2 border-brand-indigo/30 shadow-sm max-w-3xl">
                                             {product.market}
                                         </p>
-                                    )}
+                                    ) : null}
 
                                     <div className="pt-2">
                                         <Button variant="link" icon={ArrowRight} className="p-0 text-sm font-bold">

@@ -12,7 +12,7 @@ export interface FaqItem {
 }
 
 interface FaqAccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-    items: FaqItem[];
+    items: readonly FaqItem[];
     defaultOpen?: number | null;
     buttonClassName?: string;
 }

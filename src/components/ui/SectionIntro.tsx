@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "./Badge";
 
-interface SectionIntroProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SectionIntroProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
     badge?: React.ReactNode;
     title: React.ReactNode;
     description?: React.ReactNode;
