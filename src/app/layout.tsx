@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
-        <div className="flex flex-col min-h-screen relative overflow-clip w-full">
+        <div className="flex flex-col min-h-screen relative w-full">
           <Navbar />
           <main className="flex-1 pt-[79px]">
             {children}

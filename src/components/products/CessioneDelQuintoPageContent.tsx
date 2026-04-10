@@ -36,6 +36,17 @@ import {
 
 const CATEGORY_ICONS = [Building2, Users, GraduationCap] as const;
 
+function splitFeatureTitleDescription(text: string) {
+  const dot = text.indexOf(".");
+  if (dot === -1) {
+    return { title: text.trim(), description: "" };
+  }
+  return {
+    title: text.slice(0, dot).trim(),
+    description: text.slice(dot + 1).trim(),
+  };
+}
+
 export function CessioneDelQuintoPageContent() {
   return (
     <>
@@ -107,9 +118,9 @@ export function CessioneDelQuintoPageContent() {
         </div>
       </Section>
 
-      <Section className="border-t border-slate-200/60">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
-          <div className="lg:col-span-2">
+      <Section className="border-t border-slate-200/60 overflow-visible">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0 items-start">
+          <div className="lg:col-span-2 lg:sticky lg:top-[calc(79px+1.5rem)] lg:self-start lg:z-[1]">
             <SectionIntro
               badge={CDQ_CATEGORIE.sectionTitle}
               title={CDQ_CATEGORIE.title}
@@ -213,9 +224,9 @@ export function CessioneDelQuintoPageContent() {
         </div>
       </Section>
 
-      <Section className="bg-surface-subtle border-t border-slate-200/60">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
-          <div className="lg:col-span-2">
+      <Section className="bg-surface-subtle border-t border-slate-200/60 overflow-visible">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0 items-start">
+          <div className="lg:col-span-2 lg:sticky lg:top-[calc(79px+1.5rem)] lg:self-start lg:z-[1]">
             <SectionIntro
               badge={CDQ_VANTAGGI_LIMITI.sectionTitle}
               title={CDQ_VANTAGGI_LIMITI.title}
@@ -225,15 +236,25 @@ export function CessioneDelQuintoPageContent() {
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-0">
             <div>
               <h3 className="text-xl font-bold text-green-600 mb-6 px-6 md:px-8">{CDQ_VANTAGGI_LIMITI.prosTitle}</h3>
-              {CDQ_VANTAGGI_LIMITI.pros.map((p, i) => (
-                <FeatureItem key={i} icon={CheckCircle2} title={p} theme="green" />
-              ))}
+              {CDQ_VANTAGGI_LIMITI.pros.map((p, i) => {
+                const { title, description } = splitFeatureTitleDescription(p);
+                return (
+                  <FeatureItem key={i} icon={CheckCircle2} title={title} theme="green">
+                    {description}
+                  </FeatureItem>
+                );
+              })}
             </div>
             <div className="bg-slate-100/50">
               <h3 className="text-xl font-bold text-amber-600 mb-6 px-6 md:px-8">{CDQ_VANTAGGI_LIMITI.consTitle}</h3>
-              {CDQ_VANTAGGI_LIMITI.cons.map((c, i) => (
-                <FeatureItem key={i} icon={Scale} title={c} theme="amber" />
-              ))}
+              {CDQ_VANTAGGI_LIMITI.cons.map((c, i) => {
+                const { title, description } = splitFeatureTitleDescription(c);
+                return (
+                  <FeatureItem key={i} icon={Scale} title={title} theme="amber">
+                    {description}
+                  </FeatureItem>
+                );
+              })}
             </div>
           </div>
         </div>
