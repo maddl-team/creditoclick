@@ -1,4 +1,5 @@
 export const CDQ_HERO = {
+  badge: "Tassi 2026 Aggiornati",
   title: "Cessione del Quinto: cos'è, come funziona e tassi aggiornati al 2026",
   subtitle:
     "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF. CreditoClick ti affianca dall'analisi del profilo all'accredito — tutto online.",
@@ -77,6 +78,7 @@ export const CDQ_CALCOLO = {
   formula:
     "Rata massima = Stipendio netto mensile × 20% Importo finanziabile = Rata massima × numero di mesi",
   exampleTitle: "Esempio pratico — dipendente con stipendio netto di 1.800 €:",
+  columnLabels: ["Durata", "Rata massima", "Importo indicativo erogabile*"] as const,
   table: [
     ["60 mesi (5 anni)", "360 €", "~ 17.000 – 19.000 €"],
     ["84 mesi (7 anni)", "360 €", "~ 22.000 – 26.000 €"],
@@ -112,6 +114,7 @@ export const CDQ_VANTAGGI_LIMITI = {
 export const CDQ_CONFRONTO = {
   sectionTitle: "Cessione del Quinto vs. Prestito Personale",
   title: "Cessione del Quinto o Prestito Personale: quale scegliere?",
+  columnLabels: ["Caratteristica", "Cessione del Quinto", "Prestito Personale"] as const,
   rows: [
     ["Accesso con segnalazione CRIF", "Sì, nella maggior parte dei casi", "Difficile"],
     ["Garanzie richieste", "Nessuna (solo busta paga)", "Spesso richiede garanzie"],
@@ -128,10 +131,26 @@ export const CDQ_PASSAGGI = {
   sectionTitle: "Come Richiedere la Cessione del Quinto con CreditoClick",
   title: "Come funziona la richiesta con CreditoClick: 4 passaggi",
   steps: [
-    "Passaggio 1 — Contatto iniziale via WhatsApp Scrivici su WhatsApp con le informazioni base: categoria professionale (pubblico/privato/pensionato), stipendio netto mensile, importo indicativo desiderato. Nessun documento in questa fase, nessun impatto sulla tua posizione CRIF.",
-    "Passaggio 2 — Analisi del profilo e selezione dell'offerta Un consulente specializzato valuta il tuo profilo e identifica le offerte più competitive tra i nostri istituti convenzionati. Ti presentiamo solo proposte concretamente accessibili — mai promesse non realizzabili.",
-    "Passaggio 3 — Preventivo personalizzato con TAEG e rata netta Ricevi un preventivo formale con tutti i dati economici esposti in modo chiaro: TAN, TAEG, rata mensile netta, importo totale dovuto, costo dell'assicurazione. Nessun costo nascosto.",
-    "Passaggio 4 — Firma digitale e accredito sul conto La documentazione contrattuale si gestisce in modalità elettronica. Dopo l'approvazione dell'istituto finanziatore e la comunicazione al datore di lavoro (o all'INPS), l'accredito avviene direttamente sul tuo conto corrente.",
+    {
+      title: "Passaggio 1 — Contatto iniziale via WhatsApp",
+      desc: "Scrivici su WhatsApp con le informazioni base: categoria professionale (pubblico/privato/pensionato), stipendio netto mensile, importo indicativo desiderato. Nessun documento in questa fase, nessun impatto sulla tua posizione CRIF.",
+      icon: "clipboardList",
+    },
+    {
+      title: "Passaggio 2 — Analisi del profilo e selezione dell'offerta",
+      desc: "Un consulente specializzato valuta il tuo profilo e identifica le offerte più competitive tra i nostri istituti convenzionati. Ti presentiamo solo proposte concretamente accessibili — mai promesse non realizzabili.",
+      icon: "userCheck",
+    },
+    {
+      title: "Passaggio 3 — Preventivo personalizzato con TAEG e rata netta",
+      desc: "Ricevi un preventivo formale con tutti i dati economici esposti in modo chiaro: TAN, TAEG, rata mensile netta, importo totale dovuto, costo dell'assicurazione. Nessun costo nascosto.",
+      icon: "fileText",
+    },
+    {
+      title: "Passaggio 4 — Firma digitale e accredito sul conto",
+      desc: "La documentazione contrattuale si gestisce in modalità elettronica. Dopo l'approvazione dell'istituto finanziatore e la comunicazione al datore di lavoro (o all'INPS), l'accredito avviene direttamente sul tuo conto corrente.",
+      icon: "send",
+    },
   ],
   cta: "Inizia ora — Scrivici su WhatsApp",
 } as const;
@@ -139,10 +158,19 @@ export const CDQ_PASSAGGI = {
 export const CDQ_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e trasparenza sul prodotto",
-  paragraphs: [
+  intro:
     "La cessione del quinto è un prodotto finanziario regolato dal D.P.R. 180/1950, dal D.Lgs. 141/2010 e dalle disposizioni di Banca d'Italia. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero), e non eroga direttamente finanziamenti. I contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
-    "Il TAEG comunicato nel preventivo è calcolato in conformità alle disposizioni della Direttiva 2008/48/CE sul credito al consumo. Prima della firma, il cliente riceve obbligatoriamente il modulo SECCI (Standard European Consumer Credit Information) contenente tutte le condizioni contrattuali.",
-    "Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula del contratto, senza necessità di fornire motivazioni (art. 125-ter TUB).",
+  features: [
+    {
+      title: "Il TAEG comunicato nel preventivo",
+      description:
+        "è calcolato in conformità alle disposizioni della Direttiva 2008/48/CE sul credito al consumo. Prima della firma, il cliente riceve obbligatoriamente il modulo SECCI (Standard European Consumer Credit Information) contenente tutte le condizioni contrattuali.",
+    },
+    {
+      title: "Il diritto di recesso",
+      description:
+        "può essere esercitato entro 14 giorni dalla stipula del contratto, senza necessità di fornire motivazioni (art. 125-ter TUB).",
+    },
   ],
 } as const;
 
