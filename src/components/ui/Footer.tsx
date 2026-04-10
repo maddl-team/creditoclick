@@ -38,7 +38,7 @@ export function Footer() {
                             Credito<span className="text-brand-indigo">Click</span>
                         </Link>
                         <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-                            Semplifichiamo l'accesso al credito con tecnologie intelligenti e trasparenti.
+                            Semplifichiamo l&apos;accesso al credito con tecnologie intelligenti e trasparenti.
                         </p>
                     </div>
                     {FOOTER_LINKS.map((section) => (

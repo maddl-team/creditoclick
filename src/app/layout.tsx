@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
-import { BackgroundLines } from "@/components/ui/BackgroundLines";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,13 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className="scroll-smooth">
+    <html lang="it" className="scroll-smooth" data-scroll-behavior="smooth">
       <body
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
         <div className="flex flex-col min-h-screen relative overflow-clip w-full">
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pt-[79px]">
             {children}
           </main>
           <Footer />

@@ -5,37 +5,11 @@ import { Star } from "lucide-react";
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { cn } from "@/lib/utils";
-
-const TESTIMONIALS = [
-    {
-        quote: "Avevo una segnalazione CRIF e nessuna banca mi aiutava. CreditoClick ha trovato una soluzione in meno di 48 ore. Finalmente respiro.",
-        author: "Marco T.",
-        role: "Infermiere, Napoli",
-        stars: 5,
-    },
-    {
-        quote: "Insegno alle medie e non avevo tempo per andare in banca. Ho fatto tutto dal telefono, in pausa pranzo. Pratica approvata in 3 giorni.",
-        author: "Giovanna R.",
-        role: "Docente, Torino",
-        stars: 5,
-    },
-    {
-        quote: "Avevo 5 rate diverse ogni mese. Ora ne ho una sola, più bassa. Hanno gestito tutto loro, io ho solo firmato.",
-        author: "Roberto M.",
-        role: "Dipendente pubblico, Roma",
-        stars: 5,
-    },
-    {
-        quote: "Grazie alla delega di pagamento ho ottenuto la liquidità che mi serviva per ristrutturare casa, nonostante avessi già un prestito attivo. Professionali e veloci.",
-        author: "Antonio P.",
-        role: "Vigile del Fuoco, Milano",
-        stars: 5,
-    },
-];
+import { HOME_TESTIMONIALS } from "@/content/home";
 
 export function Testimonials() {
     return (
-        <Section id="testimonials" className="bg-[#f6f9fc]">
+        <Section id="testimonials" className="bg-surface-subtle">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-0">
                 {/* Header: Full Width */}
                 <div className="lg:col-span-4 p-6 md:p-8 mb-8">
@@ -50,12 +24,12 @@ export function Testimonials() {
 
                 {/* Testimonials Row: 4 Columns */}
                 <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-slate-200/90">
-                    {TESTIMONIALS.map((t, i) => (
+                    {HOME_TESTIMONIALS.map((t, i) => (
                         <div
                             key={i}
                             className={cn(
                                 "flex flex-col h-full p-6 md:p-8 transition-all duration-300 group relative",
-                                i !== TESTIMONIALS.length - 1 && "lg:border-r border-slate-200/90",
+                                i !== HOME_TESTIMONIALS.length - 1 && "lg:border-r border-slate-200/90",
                                 i % 2 === 0 && "md:border-r lg:border-r-0",
                                 i < 2 && "border-b md:border-b-0"
                             )}
@@ -72,7 +46,7 @@ export function Testimonials() {
                             <div className="relative mb-8 flex-grow">
                                 <div className="absolute -left-[24px] md:-left-[32px] top-1 bottom-1 w-[2px] bg-brand-indigo opacity-80 group-hover:w-[3px] group-hover:opacity-100 transition-all rounded-r-full" />
                                 <p className="text-text-primary text-sm leading-relaxed italic pr-4">
-                                    "{t.quote}"
+                                    &ldquo;{t.quote}&rdquo;
                                 </p>
                             </div>
 

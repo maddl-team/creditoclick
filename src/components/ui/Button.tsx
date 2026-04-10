@@ -17,8 +17,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const isLink = variant === "link";
 
         if (isLink) {
-            // Cast props to any for the link button to avoid motion prop conflicts on a standard button
-            const { whileHover, whileTap, ...standardProps } = props as any;
+            const standardProps = props as unknown as React.ButtonHTMLAttributes<HTMLButtonElement>;
             return (
                 <button
                     ref={ref}

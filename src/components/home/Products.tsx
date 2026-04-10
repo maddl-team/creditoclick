@@ -3,45 +3,21 @@
 import * as React from "react";
 import { ArrowRight, Wallet, Users, RefreshCcw, ImageIcon } from "lucide-react";
 import { Section } from "../ui/Section";
-import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { SectionIntro } from "../ui/SectionIntro";
+import { AccentBlock } from "../ui/AccentBlock";
+import { HOME_CORE_PRODUCTS } from "@/content/home";
 
-const CORE_PRODUCTS = [
-    {
-        id: "cessione",
-        title: "Cessione del Quinto dello Stipendio o della Pensione",
-        badge: "Cessione del Quinto",
-        desc: "La formula di finanziamento più sicura per dipendenti e pensionati: la rata viene trattenuta direttamente in busta paga o sul cedolino della pensione, fino a un massimo del 20% del tuo netto mensile. Nessun rischio di dimenticare un pagamento, nessun addebito su conto corrente.",
-        ideal: "Ideale per: dipendenti pubblici e privati, statali, insegnanti, infermieri, militari, pensionati INPS fino a 85 anni.",
-        market: "Tassi cessione del quinto 2026: il mercato ha visto una progressiva stabilizzazione dei tassi dopo i rialzi del biennio precedente. I nostri consulenti aggiornano quotidianamente le offerte dei partner convenzionati per garantirti sempre la migliore condizione disponibile.",
-        cta: "Scopri la Cessione del Quinto | Calcola la rata",
-        icon: Wallet,
-        placeholderColor: "from-blue-500 to-indigo-600",
-    },
-    {
-        id: "delega",
-        title: "Delega di Pagamento (il \"Doppio Quinto\")",
-        badge: "Delega di Pagamento",
-        desc: "Se hai già una cessione del quinto in corso e hai bisogno di liquidità aggiuntiva, la delega di pagamento ti permette di accedere a un secondo finanziamento, portando la trattenuta in busta paga fino al 40% del tuo stipendio netto. Riservata ai dipendenti pubblici e ai privati alle dipendenze di aziende strutturate.",
-        cta: "Scopri la Delega di Pagamento",
-        icon: Users,
-        placeholderColor: "from-cyan-400 to-blue-500",
-    },
-    {
-        id: "rinnovo",
-        title: "Rinnovo della Cessione del Quinto",
-        badge: "Rinnovo Cessione del Quinto",
-        desc: "Hai già una cessione in corso presso un'altra banca o finanziaria? Se sono trascorsi almeno 2/5 del periodo contrattuale, potresti avere diritto a rinnovare — spesso ottenendo nuova liquidità e condizioni migliori. Gestiamo la portabilità in modo completamente telematico, senza che tu debba fare nulla con il vecchio istituto.",
-        cta: "Scopri come funziona il Rinnovo",
-        icon: RefreshCcw,
-        placeholderColor: "from-indigo-400 to-cyan-500",
-    }
-];
+const PRODUCT_ICON_MAP = {
+    wallet: Wallet,
+    users: Users,
+    refresh: RefreshCcw,
+} as const;
 
 export function Products() {
-    const [activeProduct, setActiveProduct] = React.useState<string>(CORE_PRODUCTS[0].id);
+    const [activeProduct, setActiveProduct] = React.useState<string>(HOME_CORE_PRODUCTS[0].id);
 
     return (
         <Section id="prodotti" className="bg-white !overflow-visible">
@@ -50,19 +26,17 @@ export function Products() {
                 {/* Left Side: Header + Products (Takes 3 columns) */}
                 <div className="lg:col-span-3 flex flex-col">
                     {/* Header */}
-                    <div className="p-6 md:p-8 lg:mb-12">
-                        <Badge variant="subtle" className="mb-4">I nostri prodotti core</Badge>
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight">
-                            I nostri prodotti di finanziamento
-                        </h2>
-                        <p className="text-lg text-text-secondary leading-relaxed max-w-3xl">
-                            Siamo specializzati da anni in soluzioni di credito garantite dalla busta paga o dalla pensione. Questo ci permette di lavorare anche per chi ha avuto difficoltà in passato con il sistema bancario tradizionale.
-                        </p>
-                    </div>
+                    <SectionIntro
+                        className="lg:mb-12"
+                        badge="I nostri prodotti core"
+                        title="I nostri prodotti di finanziamento"
+                        description="Siamo specializzati da anni in soluzioni di credito garantite dalla busta paga o dalla pensione. Questo ci permette di lavorare anche per chi ha avuto difficoltà in passato con il sistema bancario tradizionale."
+                        descriptionClassName="max-w-3xl"
+                    />
 
                     {/* Products List */}
                     <div className="flex flex-col">
-                        {CORE_PRODUCTS.map((product) => (
+                        {HOME_CORE_PRODUCTS.map((product) => (
                             <motion.div
                                 key={product.id}
                                 className="p-6 md:p-8 group relative lg:mb-8 transition-all duration-500 rounded-3xl lg:mr-8 cursor-default"
@@ -75,22 +49,24 @@ export function Products() {
                                     "w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-300",
                                     activeProduct === product.id ? "bg-brand-indigo text-white scale-110 shadow-lg shadow-brand-indigo/30" : "bg-brand-indigo/10 text-brand-indigo"
                                 )}>
-                                    <product.icon className="w-5 h-5" />
+                                    {React.createElement(PRODUCT_ICON_MAP[product.icon], { className: "w-5 h-5" })}
                                 </div>
 
                                 {/* Title with Accent Bar */}
-                                <div className="relative pl-1 mb-4">
-                                    <div className={cn(
-                                        "absolute -left-[24px] md:-left-[32px] top-1 bottom-1 bg-brand-indigo transition-all duration-300 rounded-r-full",
-                                        activeProduct === product.id ? "opacity-100 w-[4px]" : "opacity-30 w-[2px] group-hover:opacity-60 group-hover:w-[3px]"
-                                    )} />
+                                <AccentBlock
+                                    className="mb-4"
+                                    active={activeProduct === product.id}
+                                    inactiveLineClassName="opacity-30 w-[2px]"
+                                    hoverLineClassName="group-hover:opacity-60 group-hover:w-[3px]"
+                                    activeLineClassName="opacity-100 w-[4px]"
+                                >
                                     <h3 className={cn(
                                         "text-xl font-bold leading-tight transition-colors",
                                         activeProduct === product.id ? "text-brand-indigo" : "text-text-primary"
                                     )}>
                                         {product.title}
                                     </h3>
-                                </div>
+                                </AccentBlock>
 
                                 {/* Content */}
                                 <div className="pl-1 space-y-4">
@@ -126,7 +102,7 @@ export function Products() {
                     <div className="sticky top-32 w-full pt-12 xl:pt-16">
                         <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
                             <AnimatePresence mode="wait">
-                                {CORE_PRODUCTS.map((product) => (
+                                {HOME_CORE_PRODUCTS.map((product) => (
                                     activeProduct === product.id && (
                                         <motion.div
                                             key={product.id}

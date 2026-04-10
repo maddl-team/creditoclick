@@ -7,6 +7,11 @@
   --color-brand-indigo: #0092a9;
   --color-brand-cyan: #00b4cc;
   --color-brand-purple: #005f73;
+  --color-surface-subtle: #f6f9fc;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #20ba59;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
 
   --color-text-primary: #111827;
   --color-text-secondary: #425466;
@@ -55,4 +60,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
