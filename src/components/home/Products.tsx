@@ -100,7 +100,7 @@ export function Products() {
                 {/* Right Side: Sticky Image Reveal (Takes 1 column) */}
                 <div className="hidden lg:block lg:col-span-1 relative">
                     <div className="sticky top-32 w-full pt-12 xl:pt-16">
-                        <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
+                        <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
                             <AnimatePresence mode="wait">
                                 {HOME_CORE_PRODUCTS.map((product) => (
                                     activeProduct === product.id && (
@@ -123,8 +123,6 @@ export function Products() {
                                     )
                                 ))}
                             </AnimatePresence>
-                            {/* Accent Line on Image */}
-                            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-indigo/50 mix-blend-overlay z-10" />
                         </div>
                     </div>
                 </div>

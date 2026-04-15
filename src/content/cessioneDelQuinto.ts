@@ -77,6 +77,10 @@ export const CDQ_CALCOLO = {
   formulaTitle: "Formula base:",
   formula:
     "Rata massima = Stipendio netto mensile × 20% Importo finanziabile = Rata massima × numero di mesi",
+  sectionImage: {
+    src: "/images/calcolo-importo-massimo.jpg",
+    alt: "Pianificazione finanziaria e calcolo dell'importo massimo",
+  },
   exampleTitle: "Esempio pratico — dipendente con stipendio netto di 1.800 €:",
   columnLabels: ["Durata", "Rata massima", "Importo indicativo erogabile*"] as const,
   table: [

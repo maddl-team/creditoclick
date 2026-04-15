@@ -1,35 +1,71 @@
 "use client";
 
-interface ComparisonTableProps {
+/** Due colonne: prima etichetta (bold), valori centrati. */
+export type ComparisonTableTwoProps = {
+    columns: readonly [string, string];
+    rows: readonly (readonly [string, string])[];
+    className?: string;
+};
+
+/** Tre colonne: stesso schema della griglia (table-fixed), bordi verticali come le linee di background (`slate-200/90`). */
+export type ComparisonTableThreeProps = {
     columns: readonly [string, string, string];
     rows: readonly (readonly [string, string, string])[];
     className?: string;
-}
+};
 
-/** Tre colonne allineate alla griglia (table-fixed 33,33%), bordi verticali come le linee di background (`slate-200/90`). */
+export type ComparisonTableProps = ComparisonTableTwoProps | ComparisonTableThreeProps;
+
 export function ComparisonTable({ columns, rows, className }: ComparisonTableProps) {
-    const [c0, c1, c2] = columns;
+    const n = columns.length as 2 | 3;
+    const colWidth = n === 2 ? "w-[50%]" : "w-[33.333333%]";
+    const minTable = n === 2 ? "min-w-[400px]" : "min-w-[600px]";
+
     return (
         <div className={className ?? "min-w-0 w-full overflow-x-auto lg:max-w-none"}>
-            <table className="w-full min-w-[600px] lg:min-w-0 table-fixed border-collapse bg-white border border-slate-200/60 shadow-sm">
+            <table
+                className={`w-full ${minTable} lg:min-w-0 table-fixed border-collapse bg-white border border-slate-200/60 shadow-sm`}
+            >
                 <colgroup>
-                    <col className="w-[33.333333%]" />
-                    <col className="w-[33.333333%]" />
-                    <col className="w-[33.333333%]" />
+                    {Array.from({ length: n }, (_, i) => (
+                        <col key={i} className={colWidth} />
+                    ))}
                 </colgroup>
                 <thead>
                     <tr className="bg-slate-900 text-white">
-                        <th className="px-6 md:px-8 py-4 text-left border-r border-slate-200/90">{c0}</th>
-                        <th className="px-6 md:px-8 py-4 text-center border-r border-slate-200/90">{c1}</th>
-                        <th className="px-6 md:px-8 py-4 text-center">{c2}</th>
+                        {columns.map((c, i) => (
+                            <th
+                                key={i}
+                                className={
+                                    i === 0
+                                        ? "px-6 md:px-8 py-4 text-left border-r border-slate-200/90"
+                                        : i === n - 1
+                                          ? "px-6 md:px-8 py-4 text-center"
+                                          : "px-6 md:px-8 py-4 text-center border-r border-slate-200/90"
+                                }
+                            >
+                                {c}
+                            </th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-sm">
                     {rows.map((r) => (
                         <tr key={r[0]}>
-                            <td className="px-6 md:px-8 py-4 font-bold bg-surface-subtle border-r border-slate-200/90">{r[0]}</td>
-                            <td className="px-6 md:px-8 py-4 text-center border-r border-slate-200/90">{r[1]}</td>
-                            <td className="px-6 md:px-8 py-4 text-center">{r[2]}</td>
+                            {r.map((cell, i) => (
+                                <td
+                                    key={i}
+                                    className={
+                                        i === 0
+                                            ? "px-6 md:px-8 py-4 font-bold bg-surface-subtle border-r border-slate-200/90"
+                                            : i === n - 1
+                                              ? "px-6 md:px-8 py-4 text-center"
+                                              : "px-6 md:px-8 py-4 text-center border-r border-slate-200/90"
+                                    }
+                                >
+                                    {cell}
+                                </td>
+                            ))}
                         </tr>
                     ))}
                 </tbody>

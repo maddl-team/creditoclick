@@ -75,7 +75,7 @@ export function Solutions() {
                 {/* Right Column (Image) */}
                 <div className="lg:col-span-2 relative min-h-[500px] lg:min-h-full">
                     <div className="absolute inset-0">
-                        <div className="relative w-full h-full rounded-[32px] overflow-hidden shadow-2xl">
+                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/solutions.png"
                                 alt="Consulenza Finanziaria CreditoClick"
@@ -84,8 +84,6 @@ export function Solutions() {
                                 className="object-cover"
                                 priority
                             />
-                            {/* Accent line on image container */}
-                            <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-indigo z-10" />
                         </div>
                     </div>
                 </div>
