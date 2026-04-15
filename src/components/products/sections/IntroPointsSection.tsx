@@ -31,7 +31,7 @@ export function IntroPointsSection({
 }: IntroPointsSectionProps) {
   return (
     <Section className={sectionClassName}>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0 lg:items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
         <div className="lg:col-span-2">
           <SectionIntro
             badge={badge}
@@ -57,18 +57,18 @@ export function IntroPointsSection({
               );
             })}
           </div>
+          {bottomImage ? (
+            <div className="relative mt-8 min-h-[240px] lg:min-h-[320px] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={bottomImage.src}
+                alt={bottomImage.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          ) : null}
         </div>
-        {bottomImage ? (
-          <div className="relative lg:col-span-2 min-h-[240px] lg:min-h-[320px] w-full overflow-hidden rounded-2xl">
-            <Image
-              src={bottomImage.src}
-              alt={bottomImage.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        ) : null}
       </div>
     </Section>
   );
