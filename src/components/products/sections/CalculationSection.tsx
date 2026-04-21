@@ -24,6 +24,7 @@ interface CalculationSectionProps {
   note: string;
   ctaText: string;
   cta: string;
+  ctaHref?: string;
   sectionClassName?: string;
 }
 
@@ -40,6 +41,7 @@ export function CalculationSection({
   note,
   ctaText,
   cta,
+  ctaHref,
   sectionClassName = "border-t border-slate-200/60 overflow-visible",
 }: CalculationSectionProps) {
   return (
@@ -63,7 +65,7 @@ export function CalculationSection({
           <div className="px-6 md:px-8 space-y-4">
             <p className="text-xs text-slate-500 leading-relaxed">{note}</p>
             <p className="text-sm text-text-primary">{ctaText}</p>
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
               {cta}
             </Button>
           </div>

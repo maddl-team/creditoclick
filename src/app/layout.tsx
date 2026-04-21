@@ -9,9 +9,30 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "CreditoClick | Prestiti Online Veloci e Sicuri",
   description: "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    url: siteUrl,
+    siteName: "CreditoClick",
+    title: "CreditoClick | Prestiti Online Veloci e Sicuri",
+    description:
+      "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CreditoClick | Prestiti Online Veloci e Sicuri",
+    description:
+      "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+  },
 };
 
 export default function RootLayout({

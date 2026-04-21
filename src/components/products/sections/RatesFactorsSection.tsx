@@ -15,6 +15,7 @@ interface RatesFactorsSectionProps {
   factors: readonly string[];
   notes: readonly string[];
   cta: string;
+  ctaHref?: string;
   sectionClassName?: string;
 }
 
@@ -26,6 +27,7 @@ export function RatesFactorsSection({
   factors,
   notes,
   cta,
+  ctaHref,
   sectionClassName = "bg-surface-subtle border-t border-slate-200/60",
 }: RatesFactorsSectionProps) {
   return (
@@ -60,7 +62,7 @@ export function RatesFactorsSection({
             {notes.map((n) => (
               <p key={n}>{n}</p>
             ))}
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
               {cta}
             </Button>
           </div>

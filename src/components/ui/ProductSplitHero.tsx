@@ -15,6 +15,8 @@ interface ProductSplitHeroProps {
     secondaryCta: React.ReactNode;
     primaryIcon?: LucideIcon;
     secondaryIcon?: LucideIcon;
+    primaryHref?: string;
+    secondaryHref?: string;
     right: React.ReactNode;
     sectionClassName?: string;
 }
@@ -27,6 +29,8 @@ export function ProductSplitHero({
     secondaryCta,
     primaryIcon,
     secondaryIcon,
+    primaryHref,
+    secondaryHref,
     right,
     sectionClassName,
 }: ProductSplitHeroProps) {
@@ -42,8 +46,10 @@ export function ProductSplitHero({
                     </h1>
                     <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">{subtitle}</p>
                     <div className="flex flex-col sm:flex-row items-start gap-4">
-                        <Button icon={primaryIcon}>{primaryCta}</Button>
-                        <Button variant="secondary" icon={secondaryIcon}>
+                        <Button icon={primaryIcon} href={primaryHref}>
+                            {primaryCta}
+                        </Button>
+                        <Button variant="secondary" icon={secondaryIcon} href={secondaryHref}>
                             {secondaryCta}
                         </Button>
                     </div>

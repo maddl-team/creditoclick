@@ -16,7 +16,7 @@ export function CalcCTA() {
             contentClassName="lg:col-span-3"
             badge={<Badge className="bg-brand-cyan/20 text-brand-cyan border-brand-cyan/30">{HOME_CALC_CTA_CONTENT.badge}</Badge>}
             title={HOME_CALC_CTA_CONTENT.title}
-            titleClassName="text-3xl md:text-4xl lg:text-5xl text-white leading-tight"
+            titleClassName="text-3xl md:text-4xl text-white leading-tight"
             description={HOME_CALC_CTA_CONTENT.description}
             descriptionClassName="text-lg md:text-xl text-indigo-100/70 max-w-3xl"
             showGridOverlay={false}

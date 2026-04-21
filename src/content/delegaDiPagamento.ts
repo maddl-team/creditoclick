@@ -96,6 +96,7 @@ export const DDP_CATEGORIE = {
       extra:
         "Per i dipendenti della pubblica amministrazione — insegnanti, infermieri, forze dell'ordine, dipendenti ministeriali, personale degli enti locali — la delega di pagamento è uno strumento di uso consolidato. La PA, in quanto datore di lavoro, è abituata a gestire queste richieste in modo strutturato, e il consenso viene di norma rilasciato senza ostacoli burocratici particolari.",
       cta: "Scopri le soluzioni per la tua categoria professionale",
+      ctaHref: "/prodotti/cessione-del-quinto",
     },
     {
       title: "Dipendenti di Grandi Aziende Private",
@@ -103,6 +104,7 @@ export const DDP_CATEGORIE = {
       extra:
         "Le grandi realtà aziendali del settore privato — in particolare le aziende con uffici HR strutturati, come le società quotate, i gruppi industriali e le grandi catene della distribuzione — sono generalmente in grado di gestire la delega di pagamento senza difficoltà. In questi contesti, l'iter è spesso paragonabile a quello del settore pubblico.",
       cta: "Cessione del quinto e delega per dipendenti di grandi aziende",
+      ctaHref: "/prodotti/cessione-del-quinto",
     },
   ],
 } as const;

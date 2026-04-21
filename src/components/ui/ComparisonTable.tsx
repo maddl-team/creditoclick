@@ -14,12 +14,18 @@ export type ComparisonTableThreeProps = {
     className?: string;
 };
 
-export type ComparisonTableProps = ComparisonTableTwoProps | ComparisonTableThreeProps;
+export type ComparisonTableFourProps = {
+    columns: readonly [string, string, string, string];
+    rows: readonly (readonly [string, string, string, string])[];
+    className?: string;
+};
+
+export type ComparisonTableProps = ComparisonTableTwoProps | ComparisonTableThreeProps | ComparisonTableFourProps;
 
 export function ComparisonTable({ columns, rows, className }: ComparisonTableProps) {
-    const n = columns.length as 2 | 3;
-    const colWidth = n === 2 ? "w-[50%]" : "w-[33.333333%]";
-    const minTable = n === 2 ? "min-w-[400px]" : "min-w-[600px]";
+    const n = columns.length as 2 | 3 | 4;
+    const colWidth = n === 2 ? "w-[50%]" : n === 3 ? "w-[33.333333%]" : "w-[25%]";
+    const minTable = n === 2 ? "min-w-[400px]" : n === 3 ? "min-w-[600px]" : "min-w-[760px]";
 
     return (
         <div className={className ?? "min-w-0 w-full overflow-x-auto lg:max-w-none"}>

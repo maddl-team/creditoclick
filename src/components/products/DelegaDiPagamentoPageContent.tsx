@@ -27,6 +27,10 @@ import {
 
 const REQUIREMENT_ICONS = [ShieldCheck, Building2, BarChart3] as const;
 const CATEGORY_ICONS = [Users, GraduationCap] as const;
+const WHATSAPP_DELEGA_URL =
+  "https://wa.me/?text=Ciao%2C%20vorrei%20verificare%20la%20mia%20eligibilita%20per%20la%20delega%20di%20pagamento.";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
 
 export function DelegaDiPagamentoPageContent() {
   return (
@@ -39,6 +43,8 @@ export function DelegaDiPagamentoPageContent() {
         secondaryCta={DDP_HERO.secondaryCta}
         primaryIcon={ArrowRight}
         secondaryIcon={BarChart3}
+        primaryHref={WHATSAPP_DELEGA_URL}
+        secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
             src="/images/cessione-del-quinto-hero.jpg"
@@ -49,8 +55,8 @@ export function DelegaDiPagamentoPageContent() {
       />
 
       <IntroPointsSection
-        badge={DDP_DEFINIZIONE.sectionTitle}
-        title={DDP_DEFINIZIONE.title}
+        badge={DDP_DEFINIZIONE.title}
+        title={DDP_DEFINIZIONE.sectionTitle}
         paragraphs={DDP_DEFINIZIONE.paragraphs}
         points={DDP_DEFINIZIONE.points}
         icon={ShieldCheck}
@@ -61,16 +67,16 @@ export function DelegaDiPagamentoPageContent() {
       />
 
       <StickyItemsSection
-        badge={DDP_REQUISITI.sectionTitle}
-        title={DDP_REQUISITI.title}
+        badge={DDP_REQUISITI.title}
+        title={DDP_REQUISITI.sectionTitle}
         intro={DDP_REQUISITI.intro}
         items={DDP_REQUISITI.items}
         icons={REQUIREMENT_ICONS}
       />
 
       <ComparisonSection
-        badge={DDP_CALCOLO.sectionTitle}
-        title={DDP_CALCOLO.title}
+        badge={DDP_CALCOLO.title}
+        title={DDP_CALCOLO.sectionTitle}
         description={DDP_CALCOLO.intro}
         columns={DDP_CALCOLO.columnLabels}
         rows={DDP_CALCOLO.rows}
@@ -78,7 +84,7 @@ export function DelegaDiPagamentoPageContent() {
           <div className="px-6 md:px-8 space-y-4">
             <h3 className="font-bold text-text-primary text-lg">{DDP_CALCOLO.exampleTitle}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{DDP_CALCOLO.note}</p>
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={WHATSAPP_DELEGA_URL}>
               {DDP_CALCOLO.cta}
             </Button>
           </div>
@@ -86,8 +92,8 @@ export function DelegaDiPagamentoPageContent() {
       />
 
       <FeatureListSection
-        badge={DDP_VANTAGGI.sectionTitle}
-        title={DDP_VANTAGGI.title}
+        badge={DDP_VANTAGGI.title}
+        title={DDP_VANTAGGI.sectionTitle}
         intro={DDP_VANTAGGI.intro}
         items={DDP_VANTAGGI.items}
         icon={CheckCircle2}
@@ -97,8 +103,8 @@ export function DelegaDiPagamentoPageContent() {
       />
 
       <StickyItemsSection
-        badge={DDP_CATEGORIE.sectionTitle}
-        title={DDP_CATEGORIE.title}
+        badge={DDP_CATEGORIE.title}
+        title={DDP_CATEGORIE.sectionTitle}
         intro={DDP_CATEGORIE.intro}
         items={DDP_CATEGORIE.items}
         icons={CATEGORY_ICONS}
@@ -106,25 +112,25 @@ export function DelegaDiPagamentoPageContent() {
 
       <ProcessStepsSection
         sectionClassName="border-t border-slate-200/60"
-        badge={DDP_PASSAGGI.sectionTitle}
-        title={DDP_PASSAGGI.title}
+        badge={DDP_PASSAGGI.title}
+        title={DDP_PASSAGGI.sectionTitle}
         steps={DDP_PASSAGGI.steps}
         footer={
-          <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+          <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={WHATSAPP_DELEGA_URL}>
             {DDP_PASSAGGI.cta}
           </Button>
         }
       />
 
       <ComparisonSection
-        badge={DDP_CONFRONTO.sectionTitle}
-        title={DDP_CONFRONTO.title}
+        badge={DDP_CONFRONTO.title}
+        title={DDP_CONFRONTO.sectionTitle}
         columns={DDP_CONFRONTO.columnLabels}
         rows={DDP_CONFRONTO.rows}
         footer={
           <div className="px-6 md:px-8 space-y-4">
             <p className="text-sm text-text-secondary leading-relaxed">{DDP_CONFRONTO.note}</p>
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={RINNOVO_URL}>
               {DDP_CONFRONTO.cta}
             </Button>
           </div>
@@ -132,8 +138,8 @@ export function DelegaDiPagamentoPageContent() {
       />
 
       <LegalTextSection
-        badge={DDP_EEAT.sectionTitle}
-        title={DDP_EEAT.title}
+        badge={DDP_EEAT.title}
+        title={DDP_EEAT.sectionTitle}
         paragraphs={DDP_EEAT.paragraphs}
         image={{
           src: "/images/cessione-del-quinto-hero.jpg",
@@ -144,8 +150,8 @@ export function DelegaDiPagamentoPageContent() {
       <FaqSection
         sectionId="faq"
         sectionClassName="bg-surface-subtle border-t border-slate-200/60"
-        badge={DDP_FAQ.sectionTitle}
-        title={DDP_FAQ.title}
+        badge={DDP_FAQ.title}
+        title={DDP_FAQ.sectionTitle}
         items={DDP_FAQ.items}
       />
 
@@ -154,6 +160,8 @@ export function DelegaDiPagamentoPageContent() {
         subtitle={DDP_FINAL_CTA.subtitle}
         primaryCta={DDP_FINAL_CTA.primary}
         secondaryCta={DDP_FINAL_CTA.secondary}
+        primaryHref={WHATSAPP_DELEGA_URL}
+        secondaryHref={CALCOLO_RATA_URL}
       />
     </>
   );

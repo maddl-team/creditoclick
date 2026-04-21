@@ -38,6 +38,9 @@ import {
 
 const CATEGORY_ICONS = [Building2, Users, GraduationCap] as const;
 const EEAT_ICONS = [FileCheck, Scale] as const;
+const WHATSAPP_CESSIONE_URL =
+  "https://wa.me/?text=Ciao%2C%20vorrei%20richiedere%20un%20preventivo%20per%20la%20cessione%20del%20quinto.";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 
 export function CessioneDelQuintoPageContent() {
   return (
@@ -50,6 +53,8 @@ export function CessioneDelQuintoPageContent() {
         secondaryCta={CDQ_HERO.secondaryCta}
         primaryIcon={ArrowRight}
         secondaryIcon={BarChart3}
+        primaryHref={WHATSAPP_CESSIONE_URL}
+        secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
             src="/images/cessione-del-quinto-hero.jpg"
@@ -60,34 +65,35 @@ export function CessioneDelQuintoPageContent() {
       />
 
       <IntroPointsSection
-        badge={CDQ_DEFINIZIONE.sectionTitle}
-        title={CDQ_DEFINIZIONE.title}
+        badge={CDQ_DEFINIZIONE.title}
+        title={CDQ_DEFINIZIONE.sectionTitle}
         paragraphs={CDQ_DEFINIZIONE.paragraphs}
         points={CDQ_DEFINIZIONE.points}
         icon={ShieldCheck}
       />
 
       <StickyItemsSection
-        badge={CDQ_CATEGORIE.sectionTitle}
-        title={CDQ_CATEGORIE.title}
+        badge={CDQ_CATEGORIE.title}
+        title={CDQ_CATEGORIE.sectionTitle}
         intro={CDQ_CATEGORIE.intro}
         items={CDQ_CATEGORIE.items}
         icons={CATEGORY_ICONS}
       />
 
       <RatesFactorsSection
-        badge={CDQ_TASSI.sectionTitle}
-        title={CDQ_TASSI.title}
+        badge={CDQ_TASSI.title}
+        title={CDQ_TASSI.sectionTitle}
         paragraphs={CDQ_TASSI.paragraphs}
         factorsTitle={CDQ_TASSI.factorsTitle}
         factors={CDQ_TASSI.factors}
         notes={CDQ_TASSI.notes}
         cta={CDQ_TASSI.cta}
+        ctaHref={WHATSAPP_CESSIONE_URL}
       />
 
       <CalculationSection
-        badge={CDQ_CALCOLO.sectionTitle}
-        title={CDQ_CALCOLO.title}
+        badge={CDQ_CALCOLO.title}
+        title={CDQ_CALCOLO.sectionTitle}
         intro={CDQ_CALCOLO.intro}
         formulaTitle={CDQ_CALCOLO.formulaTitle}
         formula={CDQ_CALCOLO.formula}
@@ -98,11 +104,12 @@ export function CessioneDelQuintoPageContent() {
         note={CDQ_CALCOLO.note}
         ctaText={CDQ_CALCOLO.ctaText}
         cta={CDQ_CALCOLO.cta}
+        ctaHref={CALCOLO_RATA_URL}
       />
 
       <ProsConsSection
-        badge={CDQ_VANTAGGI_LIMITI.sectionTitle}
-        title={CDQ_VANTAGGI_LIMITI.title}
+        badge={CDQ_VANTAGGI_LIMITI.title}
+        title={CDQ_VANTAGGI_LIMITI.sectionTitle}
         intro={CDQ_VANTAGGI_LIMITI.intro}
         prosTitle={CDQ_VANTAGGI_LIMITI.prosTitle}
         pros={CDQ_VANTAGGI_LIMITI.pros}
@@ -111,8 +118,8 @@ export function CessioneDelQuintoPageContent() {
       />
 
       <ComparisonSection
-        badge={CDQ_CONFRONTO.sectionTitle}
-        title={CDQ_CONFRONTO.title}
+        badge={CDQ_CONFRONTO.title}
+        title={CDQ_CONFRONTO.sectionTitle}
         description={CDQ_CONFRONTO.note}
         columns={CDQ_CONFRONTO.columnLabels}
         rows={CDQ_CONFRONTO.rows}
@@ -120,19 +127,19 @@ export function CessioneDelQuintoPageContent() {
 
       <ProcessStepsSection
         sectionClassName="border-t border-slate-200/60"
-        badge={CDQ_PASSAGGI.sectionTitle}
-        title={CDQ_PASSAGGI.title}
+        badge={CDQ_PASSAGGI.title}
+        title={CDQ_PASSAGGI.sectionTitle}
         steps={CDQ_PASSAGGI.steps}
         footer={
-          <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight}>
+          <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={WHATSAPP_CESSIONE_URL}>
             {CDQ_PASSAGGI.cta}
           </Button>
         }
       />
 
       <LegalNotesSection
-        badge={CDQ_EEAT.sectionTitle}
-        title={CDQ_EEAT.title}
+        badge={CDQ_EEAT.title}
+        title={CDQ_EEAT.sectionTitle}
         intro={CDQ_EEAT.intro}
         features={CDQ_EEAT.features}
         featureIcons={EEAT_ICONS}
@@ -141,8 +148,8 @@ export function CessioneDelQuintoPageContent() {
       <FaqSection
         sectionId="faq"
         sectionClassName="bg-surface-subtle border-t border-slate-200/60"
-        badge={CDQ_FAQ.sectionTitle}
-        title={CDQ_FAQ.title}
+        badge={CDQ_FAQ.title}
+        title={CDQ_FAQ.sectionTitle}
         items={CDQ_FAQ.items}
       />
 
@@ -151,6 +158,8 @@ export function CessioneDelQuintoPageContent() {
         subtitle={CDQ_FINAL_CTA.subtitle}
         primaryCta={CDQ_FINAL_CTA.primary}
         secondaryCta={CDQ_FINAL_CTA.secondary}
+        primaryHref={WHATSAPP_CESSIONE_URL}
+        secondaryHref={CALCOLO_RATA_URL}
       />
     </>
   );

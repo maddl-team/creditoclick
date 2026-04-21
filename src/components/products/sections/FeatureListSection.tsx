@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
 import { FeatureItem, type FeatureTheme } from "@/components/ui/FeatureItem";
-import { splitByFirstPeriod } from "@/lib/splitFeatureText";
+import { splitByFirstColon, splitByFirstPeriod } from "@/lib/splitFeatureText";
 
 interface FeatureListSectionProps {
   badge: React.ReactNode;
@@ -16,6 +16,8 @@ interface FeatureListSectionProps {
   theme?: FeatureTheme;
   sectionClassName?: string;
   stickyIntro?: boolean;
+  footer?: React.ReactNode;
+  splitMode?: "period" | "colon";
 }
 
 export function FeatureListSection({
@@ -27,6 +29,8 @@ export function FeatureListSection({
   theme = "indigo",
   sectionClassName = "border-t border-slate-200/60 overflow-visible",
   stickyIntro = false,
+  footer,
+  splitMode = "period",
 }: FeatureListSectionProps) {
   const IntroWrapper = stickyIntro ? StickySectionColumn : "div";
 
@@ -39,7 +43,8 @@ export function FeatureListSection({
         <div className="lg:col-span-2 pt-4 lg:pt-8">
           <div className="grid gap-0">
             {items.map((item, i) => {
-              const { title: itemTitle, description } = splitByFirstPeriod(item);
+              const { title: itemTitle, description } =
+                splitMode === "colon" ? splitByFirstColon(item) : splitByFirstPeriod(item);
               return (
                 <FeatureItem key={`${itemTitle}-${i}`} icon={Icon} title={itemTitle} theme={theme}>
                   {description}
@@ -47,6 +52,7 @@ export function FeatureListSection({
               );
             })}
           </div>
+          {footer ? <div className="px-6 md:px-8 pt-6">{footer}</div> : null}
         </div>
       </div>
     </Section>
