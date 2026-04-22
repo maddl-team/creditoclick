@@ -57,7 +57,7 @@ export function CessioneDelQuintoPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_cessione-del-quinto.jpg"
             alt="Consulenza finanziaria per cessione del quinto"
             priority
           />
