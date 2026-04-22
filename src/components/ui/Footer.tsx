@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const FOOTER_LINKS = [
     {
@@ -34,8 +35,14 @@ export function Footer() {
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-2 md:col-span-1">
-                        <Link href="/" className="text-xl font-bold tracking-tight text-text-primary mb-6 block">
-                            Credito<span className="text-brand-indigo">Click</span>
+                        <Link href="/" className="inline-flex items-center mb-6" aria-label="CreditoClick homepage">
+                            <Image
+                                src="/images/creditoclick_logo.png"
+                                alt="CreditoClick"
+                                width={220}
+                                height={66}
+                                className="h-auto w-[190px] md:w-[220px]"
+                            />
                         </Link>
                         <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
                             Semplifichiamo l&apos;accesso al credito con tecnologie intelligenti e trasparenti.

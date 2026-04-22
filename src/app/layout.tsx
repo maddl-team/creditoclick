@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
+import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,6 +52,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingWhatsAppButton />
         </div>
       </body>
     </html>

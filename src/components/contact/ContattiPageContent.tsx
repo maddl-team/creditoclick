@@ -86,7 +86,7 @@ export function ContattiPageContent() {
         items={CONTATTI_PROCESSO.steps}
         icon={ArrowRight}
         splitMode="colon"
-        theme="gray"
+        theme="indigo"
         sectionClassName="bg-surface-subtle border-t border-slate-200/60 overflow-visible"
         stickyIntro
       />
