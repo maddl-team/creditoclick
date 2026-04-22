@@ -1,0 +1,643 @@
+{
+  "generatedAt": "2026-04-22T10:49:31.227Z",
+  "base": "http://127.0.0.1:3000",
+  "routes": 22,
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/",
+      "title": "CreditoClick | Prestiti Online Veloci e Sicuri",
+      "titleLen": 46,
+      "metaDesc": "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+      "metaDescLen": 141,
+      "canonical": "https://www.creditoclick.it",
+      "robotsMeta": "",
+      "ogTitle": "CreditoClick | Prestiti Online Veloci e Sicuri",
+      "ogDesc": "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+      "ogUrl": "https://www.creditoclick.it",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "CreditoClick: la tua agenzia di prestiti online, esperta, veloce e dalla tua parte."
+      ],
+      "h2Count": 10,
+      "imgCount": 3,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 0,
+      "schemaTypes": []
+    },
+    {
+      "route": "/chi-siamo",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/chi-siamo",
+      "title": "Chi Siamo | CreditoClick — Agenzia Finanziaria Online",
+      "titleLen": 53,
+      "metaDesc": "CreditoClick è un&#x27;agenzia finanziaria convenzionata, iscritta OAM. Consulenti specializzati in cessione del quinto, online e via WhatsApp. Scopri chi siamo.",
+      "metaDescLen": 161,
+      "canonical": "https://www.creditoclick.it/chi-siamo",
+      "robotsMeta": "",
+      "ogTitle": "Chi Siamo | CreditoClick — Agenzia Finanziaria Online",
+      "ogDesc": "CreditoClick è un&#x27;agenzia finanziaria convenzionata, iscritta OAM. Consulenti specializzati in cessione del quinto, online e via WhatsApp. Scopri chi siamo.",
+      "ogUrl": "https://www.creditoclick.it/chi-siamo",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Chi è CreditoClick: un&#x27;agenzia finanziaria convenzionata, dalla tua parte"
+      ],
+      "h2Count": 13,
+      "imgCount": 3,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "FinancialService",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/contatti",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/contatti",
+      "title": "Contatti | CreditoClick — Scrivici su WhatsApp",
+      "titleLen": 46,
+      "metaDesc": "Contatta CreditoClick per una consulenza gratuita sulla cessione del quinto. Rispondiamo via WhatsApp entro 24 ore lavorative. Nessun impegno, nessun costo.",
+      "metaDescLen": 156,
+      "canonical": "https://www.creditoclick.it/contatti",
+      "robotsMeta": "",
+      "ogTitle": "Contatti | CreditoClick — Scrivici su WhatsApp",
+      "ogDesc": "Contatta CreditoClick per una consulenza gratuita sulla cessione del quinto. Rispondiamo via WhatsApp entro 24 ore lavorative. Nessun impegno, nessun costo.",
+      "ogUrl": "https://www.creditoclick.it/contatti",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Contatta CreditoClick: siamo a un messaggio di distanza"
+      ],
+      "h2Count": 9,
+      "imgCount": 3,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 5,
+      "schemaTypes": [
+        "Organization",
+        "FinancialService",
+        "ContactPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/prodotti/cessione-del-quinto",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/prodotti/cessione-del-quinto",
+      "title": "Cessione del Quinto: cos&#x27;è, come funziona e tassi aggiornati al 2026",
+      "titleLen": 73,
+      "metaDesc": "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF.",
+      "metaDescLen": 190,
+      "canonical": "https://www.creditoclick.it/prodotti/cessione-del-quinto",
+      "robotsMeta": "",
+      "ogTitle": "Cessione del Quinto: cos&#x27;è, come funziona e tassi aggiornati al 2026",
+      "ogDesc": "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF.",
+      "ogUrl": "https://www.creditoclick.it/prodotti/cessione-del-quinto",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto: cos&#x27;è, come funziona e tassi aggiornati al 2026"
+      ],
+      "h2Count": 10,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/prodotti/delega-di-pagamento",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/prodotti/delega-di-pagamento",
+      "title": "Delega di Pagamento 2026 | Doppio Quinto Online",
+      "titleLen": 47,
+      "metaDesc": "Hai già una cessione del quinto? Con la delega di pagamento ottieni liquidità aggiuntiva fino al 40% dello stipendio. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 151,
+      "canonical": "https://www.creditoclick.it/prodotti/delega-di-pagamento",
+      "robotsMeta": "",
+      "ogTitle": "Delega di Pagamento 2026 | Doppio Quinto Online",
+      "ogDesc": "Hai già una cessione del quinto? Con la delega di pagamento ottieni liquidità aggiuntiva fino al 40% dello stipendio. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/prodotti/delega-di-pagamento",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Delega di Pagamento: cos&#x27;è il Doppio Quinto e come ottenere liquidità aggiuntiva"
+      ],
+      "h2Count": 10,
+      "imgCount": 5,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/prodotti/rinnovo-cessione-quinto",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/prodotti/rinnovo-cessione-quinto",
+      "title": "Rinnovo Cessione del Quinto 2026 | Nuova Liquidità",
+      "titleLen": 50,
+      "metaDesc": "Rinnova la tua cessione del quinto online: nuova liquidità, condizioni migliorative e portabilità gestita da CreditoClick. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 156,
+      "canonical": "https://www.creditoclick.it/prodotti/rinnovo-cessione-quinto",
+      "robotsMeta": "",
+      "ogTitle": "Rinnovo Cessione del Quinto 2026 | Nuova Liquidità",
+      "ogDesc": "Rinnova la tua cessione del quinto online: nuova liquidità, condizioni migliorative e portabilità gestita da CreditoClick. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/prodotti/rinnovo-cessione-quinto",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Rinnovo Cessione del Quinto: come funziona, quando conviene e come ottenerlo online"
+      ],
+      "h2Count": 10,
+      "imgCount": 6,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/dipendenti-piccole-imprese-pmi",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/dipendenti-piccole-imprese-pmi",
+      "title": "Cessione del Quinto PMI | Dipendenti Piccole Aziende",
+      "titleLen": 52,
+      "metaDesc": "Lavori in un&#x27;azienda sotto i 15 dipendenti? Con CreditoClick accedi alla cessione del quinto anche nelle PMI. Valutiamo il tuo TFR. Preventivo su WhatsApp.",
+      "metaDescLen": 160,
+      "canonical": "https://www.creditoclick.it/professioni/dipendenti-piccole-imprese-pmi",
+      "robotsMeta": "",
+      "ogTitle": "Cessione del Quinto PMI | Dipendenti Piccole Aziende",
+      "ogDesc": "Lavori in un&#x27;azienda sotto i 15 dipendenti? Con CreditoClick accedi alla cessione del quinto anche nelle PMI. Valutiamo il tuo TFR. Preventivo su WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/professioni/dipendenti-piccole-imprese-pmi",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto per Dipendenti di Piccole Imprese e PMI: come ottenerla anche sotto i 15 dipendenti"
+      ],
+      "h2Count": 11,
+      "imgCount": 5,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/dipendenti-privati-grandi-aziende",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/dipendenti-privati-grandi-aziende",
+      "title": "Cessione del Quinto Grandi Aziende | Preventivo Online",
+      "titleLen": 54,
+      "metaDesc": "Dipendente di una SPA o grande azienda privata? Accedi alla cessione del quinto con iter riservato e condizioni vantaggiose. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 158,
+      "canonical": "https://www.creditoclick.it/professioni/dipendenti-privati-grandi-aziende",
+      "robotsMeta": "",
+      "ogTitle": "Cessione del Quinto Grandi Aziende | Preventivo Online",
+      "ogDesc": "Dipendente di una SPA o grande azienda privata? Accedi alla cessione del quinto con iter riservato e condizioni vantaggiose. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/professioni/dipendenti-privati-grandi-aziende",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto per Dipendenti di Grandi Aziende Private: condizioni, iter e vantaggi"
+      ],
+      "h2Count": 9,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/forze-armate-ordine",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/forze-armate-ordine",
+      "title": "Cessione del Quinto Forze Armate 2026 | CreditoClick",
+      "titleLen": 52,
+      "metaDesc": "Esercito, GdF, Carabinieri, Polizia, VVF: cessione del quinto con convenzioni dedicate e iter riservato. Preventivo gratuito via WhatsApp entro 24 ore.",
+      "metaDescLen": 151,
+      "canonical": "https://www.creditoclick.it/professioni/forze-armate-ordine",
+      "robotsMeta": "",
+      "ogTitle": "Cessione del Quinto Forze Armate 2026 | CreditoClick",
+      "ogDesc": "Esercito, GdF, Carabinieri, Polizia, VVF: cessione del quinto con convenzioni dedicate e iter riservato. Preventivo gratuito via WhatsApp entro 24 ore.",
+      "ogUrl": "https://www.creditoclick.it/professioni/forze-armate-ordine",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto per Forze Armate e Forze dell&#x27;Ordine: convenzioni dedicate per ogni comparto"
+      ],
+      "h2Count": 10,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/insegnanti-scuola-noipa",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/insegnanti-scuola-noipa",
+      "title": "Prestiti Insegnanti NoiPA 2026 | CreditoClick",
+      "titleLen": 45,
+      "metaDesc": "Sei docente o personale ATA? Cessione del quinto con convenzione NoiPA, iter telematico e zero scartoffie in segreteria. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 154,
+      "canonical": "https://www.creditoclick.it/professioni/insegnanti-scuola-noipa",
+      "robotsMeta": "",
+      "ogTitle": "Prestiti Insegnanti NoiPA 2026 | CreditoClick",
+      "ogDesc": "Sei docente o personale ATA? Cessione del quinto con convenzione NoiPA, iter telematico e zero scartoffie in segreteria. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/professioni/insegnanti-scuola-noipa",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto per Insegnanti e Personale ATA: convenzione NoiPA, iter telematico, zero scartoffie"
+      ],
+      "h2Count": 11,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/pensionati-inps",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/pensionati-inps",
+      "title": "Cessione del Quinto Pensionati INPS 2026 | CreditoClick",
+      "titleLen": 55,
+      "metaDesc": "Sei pensionato INPS fino a 85 anni? Ottieni liquidità con la cessione del quinto della pensione: iter digitale, assicurazione inclusa. Preventivo su WhatsApp.",
+      "metaDescLen": 158,
+      "canonical": "https://www.creditoclick.it/professioni/pensionati-inps",
+      "robotsMeta": "",
+      "ogTitle": "Cessione del Quinto Pensionati INPS 2026 | CreditoClick",
+      "ogDesc": "Sei pensionato INPS fino a 85 anni? Ottieni liquidità con la cessione del quinto della pensione: iter digitale, assicurazione inclusa. Preventivo su WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/professioni/pensionati-inps",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Cessione del Quinto della Pensione: come funziona per i pensionati INPS fino a 85 anni"
+      ],
+      "h2Count": 11,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/professioni/sanita-infermieri-medici",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/professioni/sanita-infermieri-medici",
+      "title": "Prestiti Infermieri e Sanità 2026 | CreditoClick",
+      "titleLen": 48,
+      "metaDesc": "Sei infermiere, OSS o medico? Ottieni un prestito online senza file in filiale, gestito tutto via WhatsApp. Convenzioni ASL attive. Preventivo gratuito in 24h.",
+      "metaDescLen": 159,
+      "canonical": "https://www.creditoclick.it/professioni/sanita-infermieri-medici",
+      "robotsMeta": "",
+      "ogTitle": "Prestiti Infermieri e Sanità 2026 | CreditoClick",
+      "ogDesc": "Sei infermiere, OSS o medico? Ottieni un prestito online senza file in filiale, gestito tutto via WhatsApp. Convenzioni ASL attive. Preventivo gratuito in 24h.",
+      "ogUrl": "https://www.creditoclick.it/professioni/sanita-infermieri-medici",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestiti per Infermieri, OSS e Personale Sanitario: cessione del quinto senza perdere un giorno libero"
+      ],
+      "h2Count": 11,
+      "imgCount": 5,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/cattivi-pagatori-segnalati-crif",
+      "title": "Prestito Cattivi Pagatori e CRIF 2026 | CreditoClick",
+      "titleLen": 52,
+      "metaDesc": "Segnalato in CRIF o Centrale Rischi? Con la cessione del quinto la valutazione parte dalla busta paga. Preventivo gratuito e riservato via WhatsApp in 24h.",
+      "metaDescLen": 155,
+      "canonical": "https://www.creditoclick.it/soluzioni/cattivi-pagatori-segnalati-crif",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Cattivi Pagatori e CRIF 2026 | CreditoClick",
+      "ogDesc": "Segnalato in CRIF o Centrale Rischi? Con la cessione del quinto la valutazione parte dalla busta paga. Preventivo gratuito e riservato via WhatsApp in 24h.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/cattivi-pagatori-segnalati-crif",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Cattivi Pagatori e Segnalati CRIF: come ottenere liquidità quando la banca dice no"
+      ],
+      "h2Count": 11,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/cattivi-pagatori-segnalati-crif",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/cattivi-pagatori-segnalati-crif",
+      "title": "Prestito Cattivi Pagatori e CRIF 2026 | CreditoClick",
+      "titleLen": 52,
+      "metaDesc": "Segnalato in CRIF o Centrale Rischi? Con la cessione del quinto la valutazione parte dalla busta paga. Preventivo gratuito e riservato via WhatsApp in 24h.",
+      "metaDescLen": 155,
+      "canonical": "https://www.creditoclick.it/soluzioni/cattivi-pagatori-segnalati-crif",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Cattivi Pagatori e CRIF 2026 | CreditoClick",
+      "ogDesc": "Segnalato in CRIF o Centrale Rischi? Con la cessione del quinto la valutazione parte dalla busta paga. Preventivo gratuito e riservato via WhatsApp in 24h.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/cattivi-pagatori-segnalati-crif",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Cattivi Pagatori e Segnalati CRIF: come ottenere liquidità quando la banca dice no"
+      ],
+      "h2Count": 11,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/consolidamento-debiti",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/consolidamento-debiti",
+      "title": "Consolidamento Debiti 2026 | Una Rata Sola | CreditoClick",
+      "titleLen": 57,
+      "metaDesc": "Troppe rate ogni mese? Consolida i tuoi debiti in un&#x27;unica rata sostenibile trattenuta in busta paga. Valutazione gratuita e riservata via WhatsApp in 24h.",
+      "metaDescLen": 160,
+      "canonical": "https://www.creditoclick.it/soluzioni/consolidamento-debiti",
+      "robotsMeta": "",
+      "ogTitle": "Consolidamento Debiti 2026 | Una Rata Sola | CreditoClick",
+      "ogDesc": "Troppe rate ogni mese? Consolida i tuoi debiti in un&#x27;unica rata sostenibile trattenuta in busta paga. Valutazione gratuita e riservata via WhatsApp in 24h.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/consolidamento-debiti",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Consolidamento Debiti: come riunire tutte le rate in una sola, più bassa e automatica"
+      ],
+      "h2Count": 11,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/prestito-acquisto-auto-moto",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/prestito-acquisto-auto-moto",
+      "title": "Prestito Acquisto Auto e Moto 2026 | CreditoClick",
+      "titleLen": 49,
+      "metaDesc": "Vuoi comprare un&#x27;auto o una moto? Con la cessione del quinto ottieni liquidità diretta sul conto, senza giustificativi. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 158,
+      "canonical": "https://www.creditoclick.it/soluzioni/prestito-acquisto-auto-moto",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Acquisto Auto e Moto 2026 | CreditoClick",
+      "ogDesc": "Vuoi comprare un&#x27;auto o una moto? Con la cessione del quinto ottieni liquidità diretta sul conto, senza giustificativi. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/prestito-acquisto-auto-moto",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Acquisto Auto e Moto: liquidità diretta sul conto, senza vincoli sul veicolo"
+      ],
+      "h2Count": 10,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/prestito-anticipo-mutuo-casa",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/prestito-anticipo-mutuo-casa",
+      "title": "Prestito Anticipo Mutuo Casa 2026 | CreditoClick",
+      "titleLen": 48,
+      "metaDesc": "Hai bisogno dell&#x27;anticipo per il mutuo? Con la cessione del quinto ottieni la liquidità necessaria senza bloccare l&#x27;acquisto. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 169,
+      "canonical": "https://www.creditoclick.it/soluzioni/prestito-anticipo-mutuo-casa",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Anticipo Mutuo Casa 2026 | CreditoClick",
+      "ogDesc": "Hai bisogno dell&#x27;anticipo per il mutuo? Con la cessione del quinto ottieni la liquidità necessaria senza bloccare l&#x27;acquisto. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/prestito-anticipo-mutuo-casa",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per l&#x27;Anticipo del Mutuo Casa: come sbloccare l&#x27;acquisto quando mancano i fondi"
+      ],
+      "h2Count": 9,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/prestito-matrimonio-cerimonie",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/prestito-matrimonio-cerimonie",
+      "title": "Prestito Matrimonio e Cerimonie 2026 | CreditoClick",
+      "titleLen": 51,
+      "metaDesc": "Vuoi organizzare il tuo matrimonio senza svuotare i risparmi? Con la cessione del quinto ottieni liquidità diretta sul conto. Preventivo gratuito via WhatsApp.",
+      "metaDescLen": 159,
+      "canonical": "https://www.creditoclick.it/soluzioni/prestito-matrimonio-cerimonie",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Matrimonio e Cerimonie 2026 | CreditoClick",
+      "ogDesc": "Vuoi organizzare il tuo matrimonio senza svuotare i risparmi? Con la cessione del quinto ottieni liquidità diretta sul conto. Preventivo gratuito via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/prestito-matrimonio-cerimonie",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Matrimonio e Cerimonie: realizza il giorno più importante senza compromettere il futuro"
+      ],
+      "h2Count": 10,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/prestito-ristrutturazione-casa",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/prestito-ristrutturazione-casa",
+      "title": "Prestito Ristrutturazione Casa 2026 | CreditoClick",
+      "titleLen": 50,
+      "metaDesc": "Vuoi ristrutturare casa senza aspettare anni? Con la cessione del quinto ottieni liquidità diretta sul conto. Nessun giustificativo. Preventivo via WhatsApp.",
+      "metaDescLen": 157,
+      "canonical": "https://www.creditoclick.it/soluzioni/prestito-ristrutturazione-casa",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Ristrutturazione Casa 2026 | CreditoClick",
+      "ogDesc": "Vuoi ristrutturare casa senza aspettare anni? Con la cessione del quinto ottieni liquidità diretta sul conto. Nessun giustificativo. Preventivo via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/prestito-ristrutturazione-casa",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Ristrutturazione Casa: liquidità immediata senza ipoteche aggiuntive e senza aspettare"
+      ],
+      "h2Count": 10,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/soluzioni/prestito-spese-mediche-salute",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/soluzioni/prestito-spese-mediche-salute",
+      "title": "Prestito Spese Mediche e Salute 2026 | CreditoClick",
+      "titleLen": 51,
+      "metaDesc": "Hai spese mediche urgenti o programmate? Con la cessione del quinto ottieni liquidità immediata senza garanzie. Preventivo gratuito e riservato via WhatsApp.",
+      "metaDescLen": 157,
+      "canonical": "https://www.creditoclick.it/soluzioni/prestito-spese-mediche-salute",
+      "robotsMeta": "",
+      "ogTitle": "Prestito Spese Mediche e Salute 2026 | CreditoClick",
+      "ogDesc": "Hai spese mediche urgenti o programmate? Con la cessione del quinto ottieni liquidità immediata senza garanzie. Preventivo gratuito e riservato via WhatsApp.",
+      "ogUrl": "https://www.creditoclick.it/soluzioni/prestito-spese-mediche-salute",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Prestito per Spese Mediche e Salute: liquidità immediata quando la salute non può aspettare"
+      ],
+      "h2Count": 9,
+      "imgCount": 4,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "FinancialProduct",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/strumenti/calcolo-rata",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/strumenti/calcolo-rata-cessione-quinto",
+      "title": "Calcola Rata Cessione del Quinto 2026 | CreditoClick",
+      "titleLen": 52,
+      "metaDesc": "Calcola subito la tua rata di cessione del quinto: strumento gratuito, nessun dato personale richiesto, zero impatto sul CRIF. Preventivo via WhatsApp in 24h.",
+      "metaDescLen": 158,
+      "canonical": "https://www.creditoclick.it/strumenti/calcolo-rata-cessione-quinto",
+      "robotsMeta": "",
+      "ogTitle": "Calcola Rata Cessione del Quinto 2026 | CreditoClick",
+      "ogDesc": "Calcola subito la tua rata di cessione del quinto: strumento gratuito, nessun dato personale richiesto, zero impatto sul CRIF. Preventivo via WhatsApp in 24h.",
+      "ogUrl": "https://www.creditoclick.it/strumenti/calcolo-rata-cessione-quinto",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Calcola la Rata della Cessione del Quinto: strumento gratuito, immediato e senza registrazione"
+      ],
+      "h2Count": 8,
+      "imgCount": 3,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "WebApplication",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/strumenti/calcolo-rata-cessione-quinto",
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3000/strumenti/calcolo-rata-cessione-quinto",
+      "title": "Calcola Rata Cessione del Quinto 2026 | CreditoClick",
+      "titleLen": 52,
+      "metaDesc": "Calcola subito la tua rata di cessione del quinto: strumento gratuito, nessun dato personale richiesto, zero impatto sul CRIF. Preventivo via WhatsApp in 24h.",
+      "metaDescLen": 158,
+      "canonical": "https://www.creditoclick.it/strumenti/calcolo-rata-cessione-quinto",
+      "robotsMeta": "",
+      "ogTitle": "Calcola Rata Cessione del Quinto 2026 | CreditoClick",
+      "ogDesc": "Calcola subito la tua rata di cessione del quinto: strumento gratuito, nessun dato personale richiesto, zero impatto sul CRIF. Preventivo via WhatsApp in 24h.",
+      "ogUrl": "https://www.creditoclick.it/strumenti/calcolo-rata-cessione-quinto",
+      "twCard": "summary_large_image",
+      "h1Count": 1,
+      "h1": [
+        "Calcola la Rata della Cessione del Quinto: strumento gratuito, immediato e senza registrazione"
+      ],
+      "h2Count": 8,
+      "imgCount": 3,
+      "imgMissingAlt": 0,
+      "ldjsonCount": 4,
+      "schemaTypes": [
+        "Organization",
+        "BreadcrumbList",
+        "WebApplication",
+        "FAQPage"
+      ]
+    }
+  ],
+  "robots": "User-Agent: *\nAllow: /\n\nHost: https://www.creditoclick.it\nSitemap: https://www.creditoclick.it/sitemap.xml\n",
+  "sitemapSample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://www.creditoclick.it</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>weekly</changefreq>\n<priority>1</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/chi-siamo</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/contatti</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/forze-armate-ordine</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/dipendenti-privati-grandi-aziende</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/dipendenti-piccole-imprese-pmi</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/insegnanti-scuola-noipa</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/pensionati-inps</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/professioni/sanita-infermieri-medici</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/prodotti/cessione-del-quinto</loc>\n<lastmod>2026-04-22T10:49:31.225Z</lastmod>\n<changefreq>monthly</changefreq>\n<priority>0.8</priority>\n</url>\n<url>\n<loc>https://www.creditoclick.it/prodotti/delega-di-pagamento</loc>\n<lastmod>2026-04-22"
+}

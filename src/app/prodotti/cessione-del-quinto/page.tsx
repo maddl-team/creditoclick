@@ -3,25 +3,25 @@ import { CessioneDelQuintoPageContent } from "@/components/products/CessioneDelQ
 import { CDQ_FAQ } from "@/content/cessioneDelQuinto";
 
 export const metadata: Metadata = {
-  title: "Cessione del Quinto: cos'è, come funziona e tassi aggiornati al 2026",
+  title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
   description:
-    "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF.",
+    "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
   alternates: {
     canonical: "/prodotti/cessione-del-quinto",
   },
   openGraph: {
-    title: "Cessione del Quinto: cos'è, come funziona e tassi aggiornati al 2026",
+    title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
     description:
-      "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF.",
+      "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
     url: "/prodotti/cessione-del-quinto",
     type: "article",
     locale: "it_IT",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cessione del Quinto: cos'è, come funziona e tassi aggiornati al 2026",
+    title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
     description:
-      "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF.",
+      "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
   },
 };
 

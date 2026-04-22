@@ -1,7 +1,7 @@
 export const PAMC_META = {
   title: "Prestito Anticipo Mutuo Casa 2026 | CreditoClick",
   description:
-    "Hai bisogno dell'anticipo per il mutuo? Con la cessione del quinto ottieni la liquidità necessaria senza bloccare l'acquisto. Preventivo gratuito via WhatsApp.",
+    "Prestito per anticipo mutuo casa con cessione del quinto: liquidità rapida, rata fissa e consulenza dedicata. Valutazione gratuita via WhatsApp.",
 } as const;
 
 export const PAMC_HERO = {

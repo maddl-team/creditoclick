@@ -51,10 +51,10 @@ export function Transparency() {
                             <p key={item}>{item}</p>
                         ))}
                         <div className="pt-6 flex gap-6">
-                            <Button variant="link" className="text-white p-0 h-auto font-bold text-xs" icon={ArrowRight}>
+                            <Button variant="link" className="text-white p-0 h-auto font-bold text-xs" icon={ArrowRight} href="/chi-siamo">
                                 {HOME_TRANSPARENCY_CONTENT.legalCtas[0]}
                             </Button>
-                            <Button variant="link" className="text-white p-0 h-auto font-bold text-xs" icon={ArrowRight}>
+                            <Button variant="link" className="text-white p-0 h-auto font-bold text-xs" icon={ArrowRight} href="/contatti">
                                 {HOME_TRANSPARENCY_CONTENT.legalCtas[1]}
                             </Button>
                         </div>

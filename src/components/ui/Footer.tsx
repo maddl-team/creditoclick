@@ -6,7 +6,7 @@ const FOOTER_LINKS = [
     {
         title: "Prodotto",
         links: [
-            { label: "Servizi", href: "/servizi" },
+            { label: "Servizi", href: "/prodotti/cessione-del-quinto" },
             { label: "Prezzi", href: "#" },
             { label: "Documentazione", href: "#" },
         ],

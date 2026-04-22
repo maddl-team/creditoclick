@@ -1,7 +1,7 @@
 export const CHI_SIAMO_META = {
   title: "Chi Siamo | CreditoClick — Agenzia Finanziaria Online",
   description:
-    "CreditoClick è un'agenzia finanziaria convenzionata, iscritta OAM. Consulenti specializzati in cessione del quinto, online e via WhatsApp. Scopri chi siamo.",
+    "CreditoClick è un'agenzia finanziaria convenzionata e iscritta OAM. Consulenti specializzati in cessione del quinto, online e via WhatsApp. Chi siamo.",
 } as const;
 
 export const CHI_SIAMO_HERO = {

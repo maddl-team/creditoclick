@@ -16,6 +16,12 @@ const PRODUCT_ICON_MAP = {
     refresh: RefreshCcw,
 } as const;
 
+const PRODUCT_LINK_MAP: Record<string, string> = {
+    cessione: "/prodotti/cessione-del-quinto",
+    delega: "/prodotti/delega-di-pagamento",
+    rinnovo: "/prodotti/rinnovo-cessione-quinto",
+};
+
 export function Products() {
     const [activeProduct, setActiveProduct] = React.useState<string>(HOME_CORE_PRODUCTS[0].id);
 
@@ -87,7 +93,12 @@ export function Products() {
                                     ) : null}
 
                                     <div className="pt-2">
-                                        <Button variant="link" icon={ArrowRight} className="p-0 text-sm font-bold">
+                                        <Button
+                                            variant="link"
+                                            icon={ArrowRight}
+                                            className="p-0 text-sm font-bold"
+                                            href={PRODUCT_LINK_MAP[product.id] ?? "/prodotti/cessione-del-quinto"}
+                                        >
                                             {product.cta}
                                         </Button>
                                     </div>

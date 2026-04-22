@@ -20,13 +20,13 @@ export function CTA() {
                     {HOME_PRIMARY_CTA_CONTENT.description}
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-indigo hover:bg-indigo-50 border-white" icon={ArrowRight}>
+                    <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-indigo hover:bg-indigo-50 border-white" icon={ArrowRight} href="/contatti">
                         {HOME_PRIMARY_CTA_CONTENT.primaryButton}
                     </Button>
-                    <Button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover border-none text-white shadow-lg shadow-emerald-500/20" icon={MessageCircle}>
+                    <Button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover border-none text-white shadow-lg shadow-emerald-500/20" icon={MessageCircle} href="/contatti">
                         {HOME_PRIMARY_CTA_CONTENT.whatsappButton}
                     </Button>
-                    <Button variant="link" className="text-white hover:text-indigo-200 mt-4 sm:mt-0 sm:ml-4 font-bold border-b border-white/30 h-auto p-0 pb-1">
+                    <Button variant="link" className="text-white hover:text-indigo-200 mt-4 sm:mt-0 sm:ml-4 font-bold border-b border-white/30 h-auto p-0 pb-1" href="/strumenti/calcolo-rata-cessione-quinto">
                         {HOME_PRIMARY_CTA_CONTENT.linkButton}
                     </Button>
                 </div>

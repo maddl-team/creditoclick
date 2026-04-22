@@ -55,7 +55,7 @@ export function StickyItemsSection({
                     ))}
                   </ul>
                 ) : null}
-                {item.cta ? (
+                {item.cta && item.ctaHref ? (
                   <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={item.ctaHref}>
                     {item.cta}
                   </Button>

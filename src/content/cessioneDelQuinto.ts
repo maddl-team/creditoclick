@@ -32,17 +32,20 @@ export const CDQ_CATEGORIE = {
       body: "Rappresentano la categoria con le condizioni più favorevoli in termini di tasso applicato. La stabilità del datore di lavoro pubblico (Stato, enti locali, ministeri, ASL, scuola, forze dell'ordine) abbassa significativamente il rischio percepito dall'istituto finanziatore, con conseguente riduzione del TAEG offerto.",
       extra: "Sono compresi: dipendenti ministeriali, insegnanti e ATA, infermieri e personale sanitario, forze armate e forze dell'ordine, dipendenti di enti pubblici locali e nazionali.",
       cta: "Scopri le convenzioni per la tua categoria",
+      ctaHref: "/professioni/dipendenti-privati-grandi-aziende",
     },
     {
       title: "Dipendenti Privati Dipendenti di Aziende Private a Tempo Indeterminato",
       body: "I dipendenti del settore privato possono accedere alla cessione del quinto a patto di avere un contratto a tempo indeterminato e un'anzianità lavorativa minima. Le condizioni variano in base alla solidità aziendale del datore di lavoro: le grandi aziende strutturate (SPA, SRL con organico rilevante) ottengono generalmente condizioni paragonabili al pubblico.",
       extra: "Per i dipendenti di piccole e medie imprese (PMI), la valutazione tiene conto del TFR maturato come garanzia implicita, consentendo l'accesso al credito anche in aziende con organico inferiore ai 15 dipendenti.",
       cta: "Cessione del quinto per dipendenti di grandi aziende — Cessione del quinto per dipendenti PMI",
+      ctaHref: "/professioni/dipendenti-privati-grandi-aziende",
     },
     {
       title: "Pensionati INPS Pensionati INPS e INPDAP fino a 85 anni",
       body: "I pensionati possono richiedere la cessione del quinto della pensione fino al compimento dell'85° anno di età (al termine del piano di rimborso). L'INPS o l'ente pensionistico trattiene direttamente la rata dal cedolino. La polizza vita inclusa tutela gli eredi in caso di decesso prima dell'estinzione del contratto.",
       cta: "Cessione del quinto per pensionati",
+      ctaHref: "/professioni/pensionati-inps",
     },
   ],
 } as const;

@@ -25,10 +25,10 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col items-start gap-4 animate-fade-in-up [animation-delay:600ms]">
-                        <Button icon={ArrowRight} className="w-full sm:w-auto">
+                        <Button icon={ArrowRight} className="w-full sm:w-auto" href="/contatti">
                             {HOME_HERO_CONTENT.primaryCta}
                         </Button>
-                        <Button variant="secondary" className="w-full sm:w-auto">
+                        <Button variant="secondary" className="w-full sm:w-auto" href="/strumenti/calcolo-rata-cessione-quinto">
                             {HOME_HERO_CONTENT.secondaryCta}
                         </Button>
                     </div>

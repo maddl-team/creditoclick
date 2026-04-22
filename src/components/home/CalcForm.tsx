@@ -79,6 +79,7 @@ export function CalcForm() {
                     <Button
                         className="w-full py-7 rounded-2xl shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 transition-all text-base font-bold bg-white text-brand-indigo hover:bg-slate-50"
                         icon={ArrowRight}
+                        href="/strumenti/calcolo-rata-cessione-quinto"
                     >
                         CONTINUA
                     </Button>

@@ -62,9 +62,11 @@ export function RatesFactorsSection({
             {notes.map((n) => (
               <p key={n}>{n}</p>
             ))}
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
-              {cta}
-            </Button>
+            {ctaHref ? (
+              <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
+                {cta}
+              </Button>
+            ) : null}
           </div>
         </div>
       </div>

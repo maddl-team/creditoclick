@@ -65,9 +65,11 @@ export function CalculationSection({
           <div className="px-6 md:px-8 space-y-4">
             <p className="text-xs text-slate-500 leading-relaxed">{note}</p>
             <p className="text-sm text-text-primary">{ctaText}</p>
-            <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
-              {cta}
-            </Button>
+            {ctaHref ? (
+              <Button variant="link" className="p-0 text-sm font-bold" icon={ArrowRight} href={ctaHref}>
+                {cta}
+              </Button>
+            ) : null}
           </div>
         </div>
       </div>

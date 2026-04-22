@@ -25,6 +25,7 @@ export function CalcCTA() {
                     <Button
                         className="w-full sm:w-auto bg-brand-cyan hover:bg-brand-cyan/90 text-slate-900 border-none shadow-xl shadow-brand-cyan/20 transition-all hover:scale-105 active:scale-95"
                         icon={ArrowRight}
+                        href="/strumenti/calcolo-rata-cessione-quinto"
                     >
                         {HOME_CALC_CTA_CONTENT.primaryButton}
                     </Button>
