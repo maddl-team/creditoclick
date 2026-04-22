@@ -45,7 +45,7 @@ export function ProductSplitHero({
                         {title}
                     </h1>
                     <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">{subtitle}</p>
-                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                    <div className="flex flex-col items-start gap-4">
                         <Button icon={primaryIcon} href={primaryHref}>
                             {primaryCta}
                         </Button>

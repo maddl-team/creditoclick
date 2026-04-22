@@ -98,7 +98,7 @@ export function ProdottiPageContent() {
         description=""
         columns={PRODOTTI_TAVOLA.columns}
         rows={PRODOTTI_TAVOLA.rows}
-        twoColsTableAlign="left"
+        twoColsTableAlign="right"
         sectionClassName="bg-surface-subtle border-t border-slate-200/60 overflow-visible"
       />
 

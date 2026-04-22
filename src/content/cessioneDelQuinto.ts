@@ -32,7 +32,7 @@ export const CDQ_CATEGORIE = {
       body: "Rappresentano la categoria con le condizioni più favorevoli in termini di tasso applicato. La stabilità del datore di lavoro pubblico (Stato, enti locali, ministeri, ASL, scuola, forze dell'ordine) abbassa significativamente il rischio percepito dall'istituto finanziatore, con conseguente riduzione del TAEG offerto.",
       extra: "Sono compresi: dipendenti ministeriali, insegnanti e ATA, infermieri e personale sanitario, forze armate e forze dell'ordine, dipendenti di enti pubblici locali e nazionali.",
       cta: "Scopri le convenzioni per la tua categoria",
-      ctaHref: "/professioni/dipendenti-privati-grandi-aziende",
+      ctaHref: "/professioni",
     },
     {
       title: "Dipendenti Privati Dipendenti di Aziende Private a Tempo Indeterminato",

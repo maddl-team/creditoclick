@@ -42,7 +42,7 @@ export function ChiSiamoPageContent() {
         primaryIcon={MessageCircle}
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
-        secondaryHref="/prodotti/cessione-del-quinto"
+        secondaryHref="/prodotti"
         right={
           <ProductSplitHeroImage
             src="/images/cessione-del-quinto-hero.jpg"

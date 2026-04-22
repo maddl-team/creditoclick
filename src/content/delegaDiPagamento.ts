@@ -96,7 +96,7 @@ export const DDP_CATEGORIE = {
       extra:
         "Per i dipendenti della pubblica amministrazione — insegnanti, infermieri, forze dell'ordine, dipendenti ministeriali, personale degli enti locali — la delega di pagamento è uno strumento di uso consolidato. La PA, in quanto datore di lavoro, è abituata a gestire queste richieste in modo strutturato, e il consenso viene di norma rilasciato senza ostacoli burocratici particolari.",
       cta: "Scopri le soluzioni per la tua categoria professionale",
-      ctaHref: "/prodotti/cessione-del-quinto",
+      ctaHref: "/professioni",
     },
     {
       title: "Dipendenti di Grandi Aziende Private",

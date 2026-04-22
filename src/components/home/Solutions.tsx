@@ -64,7 +64,7 @@ export function Solutions() {
                                 ))}
                             </ul>
                             <div className="pl-1">
-                                <Button variant="link" icon={ArrowRight} className="p-0 text-sm font-bold" href="/soluzioni/cattivi-pagatori-segnalati-crif">
+                                <Button variant="link" icon={ArrowRight} className="p-0 text-sm font-bold" href="/soluzioni">
                                     {HOME_SOLUTIONS_CONTENT.projects.cta}
                                 </Button>
                             </div>
