@@ -32,6 +32,10 @@ const PRODUCT_IMAGE_MAP: Record<string, { src: string; alt: string }> = {
         src: "/images/creditoclick_delega-di-pagamento.jpg",
         alt: "Delega di pagamento CreditoClick",
     },
+    rinnovo: {
+        src: "/images/creditoclick_rinnovo-cessione-del-quinto.jpg",
+        alt: "Rinnovo cessione del quinto CreditoClick",
+    },
 };
 
 export function Products() {

@@ -49,7 +49,7 @@ export function RinnovoCessioneQuintoPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_rinnovo-cessione-del-quinto.jpg"
             alt="Consulenza sul rinnovo della cessione del quinto"
             priority
           />
