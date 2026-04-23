@@ -26,10 +26,10 @@ export function TrustBar() {
                         description={
                             <>
                                 <p>
-                                    Non siamo un comparatore automatico. Non siamo una banca. Siamo un&apos;agenzia finanziaria convenzionata, composta da consulenti specializzati che lavorano ogni giorno per trovare la soluzione di credito più adatta alla tua situazione reale — non a quella ideale.
+                                    Non siamo un comparatore automatico. Non siamo una banca. Siamo un’agenzia finanziaria convenzionata, composta da consulenti specializzati che lavorano ogni giorno per trovare la soluzione di credito più adatta alla tua situazione reale — non a quella ideale.
                                 </p>
                                 <p>
-                                    Lavoriamo con i principali istituti finanziatori italiani, siamo iscritti all&apos;OAM (Organismo Agenti e Mediatori) e operiamo nel pieno rispetto della normativa sulla trasparenza bancaria e del Codice del Consumo.
+                                    Lavoriamo con i principali istituti finanziatori italiani, siamo iscritti all’OAM (Organismo Agenti e Mediatori) e operiamo nel pieno rispetto della normativa sulla trasparenza bancaria e del Codice del Consumo.
                                 </p>
                             </>
                         }

@@ -47,7 +47,7 @@ export function DelegaDiPagamentoPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_delega-di-pagamento.jpg"
             alt="Consulenza per delega di pagamento e doppio quinto"
             priority
           />

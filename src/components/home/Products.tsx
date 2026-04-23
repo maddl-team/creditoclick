@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { ArrowRight, Wallet, Users, RefreshCcw, ImageIcon } from "lucide-react";
 import { Section } from "../ui/Section";
 import { Button } from "../ui/Button";
@@ -20,6 +21,17 @@ const PRODUCT_LINK_MAP: Record<string, string> = {
     cessione: "/prodotti/cessione-del-quinto",
     delega: "/prodotti/delega-di-pagamento",
     rinnovo: "/prodotti/rinnovo-cessione-quinto",
+};
+
+const PRODUCT_IMAGE_MAP: Record<string, { src: string; alt: string }> = {
+    cessione: {
+        src: "/images/creditoclick_cessione-del-quinto.jpg",
+        alt: "Cessione del quinto CreditoClick",
+    },
+    delega: {
+        src: "/images/creditoclick_delega-di-pagamento.jpg",
+        alt: "Delega di pagamento CreditoClick",
+    },
 };
 
 export function Products() {
@@ -126,10 +138,21 @@ export function Products() {
                                                 product.placeholderColor
                                             )}
                                         >
-                                            {/* Placeholder Image Content - can be replaced with next/image later */}
-                                            <ImageIcon className="w-16 h-16 mb-6 opacity-80" />
-                                            <h4 className="font-bold text-xl mb-2 leading-tight">Immagine Dedicata</h4>
-                                            <p className="text-sm opacity-80 font-medium">Placeholder per:<br />{product.badge}</p>
+                                            {PRODUCT_IMAGE_MAP[product.id] ? (
+                                                <Image
+                                                    src={PRODUCT_IMAGE_MAP[product.id].src}
+                                                    alt={PRODUCT_IMAGE_MAP[product.id].alt}
+                                                    fill
+                                                    sizes="(max-width: 1280px) 33vw, 25vw"
+                                                    className="object-cover"
+                                                />
+                                            ) : (
+                                                <>
+                                                    <ImageIcon className="w-16 h-16 mb-6 opacity-80" />
+                                                    <h4 className="font-bold text-xl mb-2 leading-tight">Immagine Dedicata</h4>
+                                                    <p className="text-sm opacity-80 font-medium">Placeholder per:<br />{product.badge}</p>
+                                                </>
+                                            )}
                                         </motion.div>
                                     )
                                 ))}

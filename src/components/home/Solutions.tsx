@@ -77,7 +77,7 @@ export function Solutions() {
                     <div className="absolute inset-0">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/solutions.png"
+                                src="/images/creditoclick-homepage_coppia.jpeg"
                                 alt="Consulenza Finanziaria CreditoClick"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"

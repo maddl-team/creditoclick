@@ -106,7 +106,7 @@ export function PrestitoAnticipoMutuoCasaPageContent() {
         description={
           <div className="space-y-6">
             <p>
-              L&apos;importo ottenibile attraverso la{" "}
+              L’importo ottenibile attraverso la{" "}
               <Link href={CESSIONE_URL} className="font-semibold text-brand-indigo underline underline-offset-2">
                 cessione del quinto
               </Link>{" "}

@@ -110,7 +110,7 @@ export function PrestitoAcquistoAutoMotoPageContent() {
         introColSpan={3}
         description={
           <div className="space-y-6">
-            <p>L&apos;importo ottenibile dipende dallo stipendio netto mensile (o dalla pensione) e dalla durata prescelta.</p>
+            <p>L’importo ottenibile dipende dallo stipendio netto mensile (o dalla pensione) e dalla durata prescelta.</p>
             <p className="font-semibold text-text-primary">{PAAM_IMPORTI.formula}</p>
             <p>{PAAM_IMPORTI.lead}</p>
           </div>

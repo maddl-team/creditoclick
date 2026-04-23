@@ -166,7 +166,7 @@ export const HOME_TESTIMONIALS = [
 export const HOME_HERO_CONTENT = {
     badge: "Agenti e Mediatori Certificati OAM",
     title: "CreditoClick: la tua agenzia di prestiti online, esperta, veloce e dalla tua parte.",
-    description: "Cessione del quinto, rinnovi, consolidamenti e soluzioni su misura per dipendenti, pensionati e Forze dell&apos;Ordine. Tutto online, senza file in filiale, con un esperto reale che ti segue dal primo contatto all&apos;accredito.",
+    description: "Cessione del quinto, rinnovi, consolidamenti e soluzioni su misura per dipendenti, pensionati e Forze dell'Ordine. Tutto online, senza file in filiale, con un esperto reale che ti segue dal primo contatto all'accredito.",
     primaryCta: "Richiedi una consulenza gratuita",
     secondaryCta: "Calcola la tua rata in 2 minuti",
     conventionsLabel: "Convenzioni Nazionali",
@@ -186,7 +186,7 @@ export const HOME_SOLUTIONS_CONTENT = {
             },
             {
                 heading: "Consolidamento Debiti",
-                text: "Troppe rate ogni mese? Possiamo riunirle in un&apos;unica rata mensile più bassa e sostenibile, liberandoti dallo stress finanziario.",
+                text: "Troppe rate ogni mese? Possiamo riunirle in un'unica rata mensile più bassa e sostenibile, liberandoti dallo stress finanziario.",
             },
         ],
     },
@@ -207,8 +207,8 @@ export const HOME_TRANSPARENCY_CONTENT = {
     badge: "Trasparenza Istituzionale",
     title: "Chi è CreditoClick: trasparenza e conformità normativa",
     paragraphs: [
-        "CreditoClick è un&apos;agenzia finanziaria convenzionata, iscritta all&apos;OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Operiamo in qualità di mediatori creditizi, collaborando con primari istituti finanziatori autorizzati da Banca d&apos;Italia.",
-        "La nostra attività è regolata dal Testo Unico Bancario (TUB), dal Codice del Consumo e dalle disposizioni di Banca d&apos;Italia in materia di trasparenza delle operazioni bancarie e dei servizi di pagamento.",
+        "CreditoClick è un'agenzia finanziaria convenzionata, iscritta all'OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Operiamo in qualità di mediatori creditizi, collaborando con primari istituti finanziatori autorizzati da Banca d'Italia.",
+        "La nostra attività è regolata dal Testo Unico Bancario (TUB), dal Codice del Consumo e dalle disposizioni di Banca d'Italia in materia di trasparenza delle operazioni bancarie e dei servizi di pagamento.",
     ],
     listTitle: "Cosa significa per te:",
     guarantees: [
@@ -228,7 +228,7 @@ export const HOME_TRANSPARENCY_CONTENT = {
 export const HOME_PRIMARY_CTA_CONTENT = {
     badge: "Contattaci Ora",
     title: "Pronto a trovare la soluzione giusta per te?",
-    description: "Non aspettare che il problema si aggravi o che l&apos;occasione passi. I nostri consulenti sono disponibili per una valutazione gratuita, riservata e senza impegno. Ti rispondiamo entro 24 ore lavorative.",
+    description: "Non aspettare che il problema si aggravi o che l'occasione passi. I nostri consulenti sono disponibili per una valutazione gratuita, riservata e senza impegno. Ti rispondiamo entro 24 ore lavorative.",
     primaryButton: "Richiedi consulenza gratuita",
     whatsappButton: "Scrivici su WhatsApp",
     linkButton: "Calcola la tua rata",
