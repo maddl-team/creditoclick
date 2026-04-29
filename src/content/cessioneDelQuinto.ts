@@ -166,7 +166,7 @@ export const CDQ_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e trasparenza sul prodotto",
   intro:
-    "La cessione del quinto è un prodotto finanziario regolato dal D.P.R. 180/1950, dal D.Lgs. 141/2010 e dalle disposizioni di Banca d'Italia. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero), e non eroga direttamente finanziamenti. I contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
+    "La cessione del quinto è un prodotto finanziario regolato dal D.P.R. 180/1950, dal D.Lgs. 141/2010 e dalle disposizioni di Banca d'Italia. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849, e non eroga direttamente finanziamenti. I contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
   features: [
     {
       title: "Il TAEG comunicato nel preventivo",

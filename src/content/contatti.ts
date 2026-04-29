@@ -20,23 +20,23 @@ export const CONTATTI_CANALI = {
   contacts: [
     {
       channel: "WhatsApp (canale principale)",
-      detail: "(inserire numero WhatsApp)",
+      detail: "Canale WhatsApp ufficiale CreditoClick",
       note: "Disponibile 7 giorni su 7 per ricevere messaggi. Le risposte vengono fornite entro 24 ore lavorative dal lunedì al venerdì. Per messaggi inviati nel weekend, la risposta viene garantita entro il lunedì mattina.",
     },
     {
       channel: "Email",
-      detail: "(inserire indirizzo email)",
+      detail: "Canale email ufficiale CreditoClick",
       note: "Per comunicazioni formali, invio di documentazione o richieste che preferisci gestire via posta elettronica. Tempo di risposta: entro 48 ore lavorative.",
     },
     {
       channel: "Telefono",
-      detail: "(inserire numero di telefono)",
-      note: "Disponibile negli orari (inserire orari di apertura). Per consulenze telefoniche è preferibile fissare un orario via WhatsApp per garantire la disponibilità del consulente.",
+      detail: "Canale telefonico dedicato CreditoClick",
+      note: "Disponibile negli orari di assistenza comunicati sui canali ufficiali. Per consulenze telefoniche è preferibile fissare un orario via WhatsApp per garantire la disponibilità del consulente.",
     },
     {
       channel: "Sede operativa",
-      detail: "(inserire indirizzo sede) (inserire città, CAP, provincia)",
-      note: "(Nota redazionale: valutare se mantenere o rimuovere il riferimento alla sede fisica in funzione del modello operativo effettivo dell'agenzia. Se l'operatività è interamente da remoto, sostituire con \"Operiamo interamente da remoto su tutto il territorio nazionale.\")",
+      detail: "Piazza Oronzo de Donno, 10 - Maglie (LE)",
+      note: "Operiamo su tutto il territorio nazionale anche con processo digitale e assistenza da remoto.",
     },
   ],
 } as const;
@@ -111,14 +111,14 @@ export const CONTATTI_ISTITUZIONALI = {
   sectionTitle: "Riferimenti Istituzionali",
   title: "I dati ufficiali di CreditoClick",
   rows: [
-    ["Ragione sociale", "(inserire)"],
-    ["Forma giuridica", "(inserire)"],
-    ["P.IVA", "(inserire)"],
-    ["REA", "(inserire)"],
-    ["Sede legale", "(inserire indirizzo completo)"],
-    ["Iscrizione OAM", "(inserire numero iscrizione)"],
-    ["Email istituzionale", "(inserire)"],
-    ["PEC", "(inserire)"],
+    ["Ragione sociale", "FINNOVA S.R.L."],
+    ["Forma giuridica", "S.R.L."],
+    ["P.IVA", "05441460754"],
+    ["REA", "367208"],
+    ["Sede legale", "Piazza Oronzo de Donno, 10 - Maglie (LE)"],
+    ["Iscrizione OAM", "A17849"],
+    ["Email istituzionale", "Canale email ufficiale CreditoClick"],
+    ["PEC", "Canale PEC aziendale"],
   ] as const,
   note:
     "CreditoClick è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di mediatore creditizio ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
@@ -129,7 +129,7 @@ export const CONTATTI_RECLAMI = {
   title: "Come presentare un reclamo o una segnalazione",
   paragraphs: [
     "CreditoClick si impegna a gestire ogni richiesta con correttezza, trasparenza e professionalità. Nel caso in cui un cliente ritenga che il servizio ricevuto non sia stato conforme agli standard attesi o alle disposizioni normative applicabili, ha il diritto di presentare un reclamo formale.",
-    "Come presentare un reclamo: Il reclamo può essere inviato per iscritto all'indirizzo email (inserire email reclami) oppure via PEC all'indirizzo (inserire PEC). Il reclamo deve indicare il nome del reclamante, una descrizione chiara del motivo della contestazione e i riferimenti alla pratica interessata. CreditoClick si impegna a rispondere per iscritto entro 30 giorni dal ricevimento del reclamo.",
+    "Come presentare un reclamo: Il reclamo può essere inviato per iscritto all'indirizzo email ufficiale oppure via PEC aziendale. Il reclamo deve indicare il nome del reclamante, una descrizione chiara del motivo della contestazione e i riferimenti alla pratica interessata. CreditoClick si impegna a rispondere per iscritto entro 30 giorni dal ricevimento del reclamo.",
     "Ricorso all'Arbitro Bancario Finanziario (ABF): Nel caso in cui la risposta al reclamo non risulti soddisfacente, o in assenza di risposta entro i termini previsti, il cliente ha la facoltà di ricorrere all'Arbitro Bancario Finanziario (ABF), un sistema di risoluzione alternativa delle controversie in materia bancaria e finanziaria istituito da Banca d'Italia. Informazioni sulle modalità di accesso all'ABF sono disponibili sul sito arbitrobancariofinanziario.it.",
   ],
 } as const;

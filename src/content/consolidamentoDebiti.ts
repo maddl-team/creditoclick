@@ -161,7 +161,7 @@ export const CD_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero) ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Il consolidamento debiti realizzato attraverso la cessione del quinto è disciplinato dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
+    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Il consolidamento debiti realizzato attraverso la cessione del quinto è disciplinato dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
     "Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto, inclusa la specifica dei debiti estinti contestualmente all'erogazione. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;

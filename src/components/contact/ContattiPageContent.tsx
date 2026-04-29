@@ -36,7 +36,6 @@ import {
   CONTATTI_FAQ,
   CONTATTI_HERO,
   CONTATTI_ISTITUZIONALI,
-  CONTATTI_NOTE_REDAZIONALI,
   CONTATTI_ORARI,
   CONTATTI_PRIMO_MESSAGGIO,
   CONTATTI_PROCESSO,
@@ -182,16 +181,6 @@ export function ContattiPageContent() {
           ))}
         </div>
       </CalloutSection>
-
-      <Section className="bg-white border-t border-slate-200/60">
-        <div className="space-y-8">
-          <SectionIntro badge="NOTE REDAZIONALI" title="Elementi da completare prima del go-live" />
-          <ComparisonTable
-            columns={["Elemento", "Azione richiesta"]}
-            rows={CONTATTI_NOTE_REDAZIONALI.map(([a, b]) => [a, b])}
-          />
-        </div>
-      </Section>
 
       <ProductFinalCtaSection
         title={CONTATTI_CTA.title}

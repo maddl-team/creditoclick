@@ -136,7 +136,7 @@ export const PIP_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "La cessione del quinto della pensione è disciplinata dal D.P.R. 180/1950 e successive modificazioni, nonché dalle circolari INPS in materia di trattenute sul cedolino pensionistico. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero) ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
+    "La cessione del quinto della pensione è disciplinata dal D.P.R. 180/1950 e successive modificazioni, nonché dalle circolari INPS in materia di trattenute sul cedolino pensionistico. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
     "Prima della firma, il cliente riceve obbligatoriamente il modulo SECCI (Standard European Consumer Credit Information) contenente tutte le condizioni economiche del contratto: TAN, TAEG, importo totale dovuto, costo della polizza vita, piano di ammortamento dettagliato. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula del contratto (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;

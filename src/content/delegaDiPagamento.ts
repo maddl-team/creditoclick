@@ -157,7 +157,7 @@ export const DDP_EEAT = {
   title: "Informazioni legali sulla delega di pagamento",
   paragraphs: [
     "La delega di pagamento è disciplinata dal D.P.R. 180/1950 e dalle successive modificazioni, nonché dalle disposizioni di Banca d'Italia in materia di credito al consumo. Come per la cessione del quinto, è obbligatoria la stipula di una polizza assicurativa a copertura del rischio vita e del rischio impiego.",
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero) e non eroga direttamente finanziamenti. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
+    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
   ],
 } as const;
 

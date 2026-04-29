@@ -142,7 +142,7 @@ export const RCQ_EEAT = {
   title: "Informazioni legali sul rinnovo e sulla portabilità",
   paragraphs: [
     "Il rinnovo della cessione del quinto è un'operazione disciplinata dal D.P.R. 180/1950 e dalle disposizioni di Banca d'Italia in materia di trasparenza e credito al consumo. La portabilità senza costi per il cliente è garantita dalla normativa vigente: l'istituto subentrante non può addebitare al cliente le spese legate al trasferimento del contratto.",
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM (inserire numero) e non eroga direttamente finanziamenti. Prima di qualsiasi firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
+    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima di qualsiasi firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
   ],
 } as const;
 

@@ -106,7 +106,7 @@ export function Footer() {
                     ))}
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-200/50 text-xs text-text-secondary gap-4">
-                    <p>© 2026 CreditoClick S.p.A. Tutti i diritti riservati. | Iscrizione OAM: (inserire numero)</p>
+                    <p>© 2026 FINNOVA S.R.L. Tutti i diritti riservati. | Iscrizione OAM: A17849</p>
                     <div className="flex items-center gap-6">
                         <Link href="/chi-siamo" className="hover:text-brand-indigo transition-colors">Chi siamo</Link>
                         <Link href="/contatti" className="hover:text-brand-indigo transition-colors">Contatti</Link>

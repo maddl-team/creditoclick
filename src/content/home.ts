@@ -218,9 +218,9 @@ export const HOME_TRANSPARENCY_CONTENT = {
         { icon: "lock", text: "I tuoi dati sono trattati in conformità al GDPR (Reg. UE 2016/679)" },
     ],
     legalNotes: [
-        "Iscrizione OAM: (inserire numero iscrizione ufficiale)",
-        "Sede legale: (inserire indirizzo)",
-        "P.IVA: (inserire)",
+        "Iscrizione OAM: A17849",
+        "Sede legale: Piazza Oronzo de Donno, 10 - Maglie (LE)",
+        "P.IVA: 05441460754",
     ],
     legalCtas: ["Leggi di più su Chi Siamo", "Vai ai Contatti"],
 } as const;
