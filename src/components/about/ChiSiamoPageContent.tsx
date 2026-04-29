@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Star } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
@@ -10,6 +10,7 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
+import { cn } from "@/lib/utils";
 import {
   CHI_SIAMO_COMPETENZE,
   CHI_SIAMO_CONFORMITA,
@@ -23,7 +24,6 @@ import {
   CHI_SIAMO_RECENSIONI,
   CHI_SIAMO_STORIA,
   CHI_SIAMO_TEAM,
-  CHI_SIAMO_TRASPARENZA,
   CHI_SIAMO_VALORI,
 } from "@/content/chiSiamo";
 
@@ -188,33 +188,59 @@ export function ChiSiamoPageContent() {
         </div>
       </CalloutSection>
 
-      <Section className="bg-white border-t border-slate-200/60">
-        <div className="space-y-8">
-          <SectionIntro badge={CHI_SIAMO_RECENSIONI.title} title={CHI_SIAMO_RECENSIONI.sectionTitle} description={<p>{CHI_SIAMO_RECENSIONI.intro}</p>} />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {CHI_SIAMO_RECENSIONI.cards.map((card) => (
-              <div key={card} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-text-secondary leading-relaxed">
-                {card}
-              </div>
-            ))}
+      <Section className="bg-surface-subtle border-t border-slate-200/60">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-0">
+          <div className="lg:col-span-4 p-6 md:p-8 mb-8">
+            <Badge variant="subtle" className="mb-4">{CHI_SIAMO_RECENSIONI.title}</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight max-w-3xl">
+              {CHI_SIAMO_RECENSIONI.sectionTitle}
+            </h2>
+            <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">{CHI_SIAMO_RECENSIONI.intro}</p>
           </div>
-          <p className="text-sm text-text-secondary">{CHI_SIAMO_RECENSIONI.note}</p>
+
+          <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-slate-200/90">
+            {CHI_SIAMO_RECENSIONI.cards.map((card, i) => {
+              const [quotePart, authorPart = ""] = card.split(" — ");
+              const [author = "", role = ""] = authorPart.split(", ");
+              return (
+                <div
+                  key={card}
+                  className={cn(
+                    "flex flex-col h-full p-6 md:p-8 transition-all duration-300 group relative",
+                    i !== CHI_SIAMO_RECENSIONI.cards.length - 1 && "lg:border-r border-slate-200/90",
+                    i % 2 === 0 && "md:border-r lg:border-r-0",
+                    i < 2 && "border-b md:border-b-0"
+                  )}
+                >
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, starIdx) => (
+                      <Star key={starIdx} className="w-3 h-3 fill-brand-indigo text-brand-indigo" />
+                    ))}
+                  </div>
+
+                  <div className="relative mb-8 flex-grow">
+                    <div className="absolute -left-[24px] md:-left-[32px] top-1 bottom-1 w-[2px] bg-brand-indigo opacity-80 group-hover:w-[3px] group-hover:opacity-100 transition-all rounded-r-full" />
+                    <p className="text-text-primary text-sm leading-relaxed italic pr-4">{quotePart}</p>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-brand-indigo/10 flex items-center justify-center text-brand-indigo font-bold text-[10px]">
+                      {author.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary leading-none mb-1">{author}</p>
+                      <p className="text-[10px] text-text-secondary uppercase tracking-wider font-medium">{role}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       </Section>
 
       <FaqSection sectionId="faq" sectionClassName="border-t border-slate-200/60" badge={CHI_SIAMO_FAQ.sectionTitle} title={CHI_SIAMO_FAQ.title} items={CHI_SIAMO_FAQ.items} />
-
-      <FeatureListSection
-        badge={CHI_SIAMO_TRASPARENZA.title}
-        title={CHI_SIAMO_TRASPARENZA.sectionTitle}
-        intro=""
-        items={CHI_SIAMO_TRASPARENZA.items}
-        icon={MessageCircle}
-        splitMode="colon"
-        theme="indigo"
-        sectionClassName="bg-white border-t border-slate-200/60 overflow-visible"
-        stickyIntro
-      />
 
       <ProductFinalCtaSection
         title={CHI_SIAMO_FINAL_CTA.title}

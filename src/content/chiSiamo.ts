@@ -135,6 +135,7 @@ export const CHI_SIAMO_RECENSIONI = {
     "\"Ho provato con tre banche diverse. Mi avevano detto no ogni volta. CreditoClick ha trovato una soluzione in meno di una settimana. Il consulente mi ha spiegato tutto con calma e non mi ha mai fatto sentire giudicato.\" — Salvatore M., dipendente pubblico, Palermo",
     "\"Insegno da 15 anni e non avevo mai saputo che potevo fare tutto senza passare per la segreteria della scuola. Ho firmato dal telefono mentre aspettavo l'autobus. In 10 giorni avevo i soldi sul conto.\" — Federica T., docente, Torino",
     "\"Pensavo che a 74 anni non avrei potuto ottenere nulla. Invece mi hanno spiegato tutto con pazienza, mi hanno trovato una soluzione con rata che posso permettermi, e mi hanno assicurato che i miei figli non avrebbero avuto problemi se qualcosa fosse successo a me. Finalmente qualcuno che non mi trattava come un numero.\" — Giovanni R., pensionato INPS, Bologna",
+    "\"Avevo già una cessione in corso e temevo di non avere alternative. Mi hanno fatto un'analisi chiara, senza promesse inutili, e ho capito subito cosa potevo davvero ottenere. Tutto gestito online con grande professionalità.\" — Laura C., impiegata amministrativa, Bari",
   ],
   note:
     "(Nota redazionale: sostituire con recensioni verificate Google Business o Trustpilot al momento del go-live. La presenza di recensioni verificate e con nome reale è una leva E-E-A-T fondamentale per un sito YMYL.)",
