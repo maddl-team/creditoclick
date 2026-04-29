@@ -1,6 +1,24 @@
 "use client";
 
-import { ArrowRight, MessageCircle } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeEuro,
+  Building2,
+  BriefcaseBusiness,
+  CircleAlert,
+  Clock3,
+  FileCheck2,
+  FileSignature,
+  FileText,
+  HandCoins,
+  Mail,
+  MessageCircle,
+  MessagesSquare,
+  Phone,
+  Route,
+  SearchCheck,
+  Timer,
+} from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
@@ -10,6 +28,8 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonTable } from "@/components/ui/ComparisonTable";
+import { FeatureItem } from "@/components/ui/FeatureItem";
+import { ContactFormSection } from "@/components/contact/ContactFormSection";
 import {
   CONTATTI_CANALI,
   CONTATTI_CTA,
@@ -24,8 +44,20 @@ import {
 } from "@/content/contatti";
 
 const WHATSAPP_URL = "https://wa.me/?text=Ciao%2C%20vorrei%20una%20consulenza%20gratuita%20sulla%20cessione%20del%20quinto.";
+const CONTATTI_PRIMO_MESSAGGIO_ICONS = [BriefcaseBusiness, BadgeEuro, HandCoins, CircleAlert] as const;
+const CONTATTI_PROCESSO_ICONS = [MessagesSquare, SearchCheck, FileCheck2, FileSignature, Route] as const;
+const CONTATTI_ORARI_ICONS = [MessageCircle, Mail, Timer] as const;
 
 export function ContattiPageContent() {
+  const getContactIcon = (channel: string) => {
+    const normalized = channel.toLowerCase();
+    if (normalized.includes("whatsapp")) return MessageCircle;
+    if (normalized.includes("email")) return Mail;
+    if (normalized.includes("telefono")) return Phone;
+    if (normalized.includes("sede")) return Building2;
+    return MessageCircle;
+  };
+
   return (
     <>
       <ProductSplitHero
@@ -50,24 +82,31 @@ export function ContattiPageContent() {
       <Section className="bg-white border-t border-slate-200/60">
         <div className="space-y-10">
           <SectionIntro badge={CONTATTI_CANALI.title} title={CONTATTI_CANALI.sectionTitle} description={CONTATTI_CANALI.intro} />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {CONTATTI_CANALI.contacts.map((item) => (
-              <div key={item.channel} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 space-y-3">
-                <p className="text-lg font-bold text-text-primary">{item.channel}</p>
-                <p className="text-text-primary font-medium">{item.detail}</p>
-                <p className="text-text-secondary leading-relaxed">{item.note}</p>
-              </div>
+              <FeatureItem
+                key={item.channel}
+                icon={getContactIcon(item.channel)}
+                title={item.channel}
+                subtitle={<p className="text-text-primary font-medium text-sm">{item.detail}</p>}
+                theme="indigo"
+              >
+                {item.note}
+              </FeatureItem>
             ))}
           </div>
         </div>
       </Section>
+
+      <ContactFormSection />
 
       <FeatureListSection
         badge={CONTATTI_PRIMO_MESSAGGIO.title}
         title={CONTATTI_PRIMO_MESSAGGIO.sectionTitle}
         intro={CONTATTI_PRIMO_MESSAGGIO.intro}
         items={CONTATTI_PRIMO_MESSAGGIO.items}
-        icon={MessageCircle}
+        icon={FileText}
+        icons={CONTATTI_PRIMO_MESSAGGIO_ICONS}
         splitMode="colon"
         theme="indigo"
         sectionClassName="bg-white border-t border-slate-200/60 overflow-visible"
@@ -84,7 +123,8 @@ export function ContattiPageContent() {
         title={CONTATTI_PROCESSO.sectionTitle}
         intro={CONTATTI_PROCESSO.intro}
         items={CONTATTI_PROCESSO.steps}
-        icon={ArrowRight}
+        icon={Route}
+        icons={CONTATTI_PROCESSO_ICONS}
         splitMode="colon"
         theme="indigo"
         sectionClassName="bg-surface-subtle border-t border-slate-200/60 overflow-visible"
@@ -104,7 +144,8 @@ export function ContattiPageContent() {
         title={CONTATTI_ORARI.sectionTitle}
         intro=""
         items={CONTATTI_ORARI.items}
-        icon={MessageCircle}
+        icon={Clock3}
+        icons={CONTATTI_ORARI_ICONS}
         splitMode="colon"
         theme="amber"
         sectionClassName="bg-white border-t border-slate-200/60 overflow-visible"

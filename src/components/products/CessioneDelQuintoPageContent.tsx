@@ -22,6 +22,7 @@ import { ProsConsSection } from "@/components/products/sections/ProsConsSection"
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalNotesSection } from "@/components/products/sections/LegalNotesSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
+import { CessionePreventivoSection } from "@/components/products/sections/CessionePreventivoSection";
 import {
   CDQ_CALCOLO,
   CDQ_CATEGORIE,
@@ -144,6 +145,8 @@ export function CessioneDelQuintoPageContent() {
         features={CDQ_EEAT.features}
         featureIcons={EEAT_ICONS}
       />
+
+      <CessionePreventivoSection />
 
       <FaqSection
         sectionId="faq"

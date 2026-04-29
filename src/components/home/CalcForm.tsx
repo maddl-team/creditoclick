@@ -46,6 +46,7 @@ export function CalcForm() {
     // Step 2 — I tuoi contatti
     const [nome, setNome] = React.useState<string>("");
     const [cognome, setCognome] = React.useState<string>("");
+    const [email, setEmail] = React.useState<string>("");
     const [whatsApp, setWhatsApp] = React.useState<string>("");
     const [privacyOk, setPrivacyOk] = React.useState<boolean>(false);
     const [marketingOk, setMarketingOk] = React.useState<boolean>(false);
@@ -103,6 +104,7 @@ export function CalcForm() {
 
         if (nome.trim().length < 2) next.nome = "Inserisci il nome (minimo 2 caratteri).";
         if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome (minimo 2 caratteri).";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci un indirizzo email valido.";
 
         const normalized = normalizeWhatsApp(whatsApp);
         if (!isValidWhatsApp(normalized)) next.whatsApp = "Inserisci un numero WhatsApp valido: +39 seguito da 10 cifre.";
@@ -124,6 +126,7 @@ export function CalcForm() {
             "",
             `Nome: ${nome.trim()}`,
             `Cognome: ${cognome.trim()}`,
+            `Email: ${email.trim()}`,
             `Categoria: ${professionLabel[categoria]}`,
             `Importo desiderato: ${formatEURCompact(importoDesiderato)}`,
             `Numero di rate: ${numRate} mesi`,
@@ -308,6 +311,19 @@ export function CalcForm() {
                                 className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/50"
                             />
                             {errors.cognome ? <p className="text-sm text-red-200">{errors.cognome}</p> : null}
+                        </label>
+
+                        <label className="block space-y-2">
+                            <span className="text-base text-text-primary font-medium">Email</span>
+                            <input
+                                type="email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="nome@esempio.it"
+                                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/50"
+                            />
+                            {errors.email ? <p className="text-sm text-red-200">{errors.email}</p> : null}
                         </label>
 
                         <label className="block space-y-2">

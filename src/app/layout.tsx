@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
+import { LegalPreFooter } from "@/components/ui/LegalPreFooter";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,6 +52,7 @@ export default function RootLayout({
           <main className="flex-1 pt-[79px]">
             {children}
           </main>
+          <LegalPreFooter />
           <Footer />
           <FloatingWhatsAppButton />
         </div>
