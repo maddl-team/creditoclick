@@ -60,8 +60,9 @@ export function DelegaDiPagamentoPageContent() {
         paragraphs={DDP_DEFINIZIONE.paragraphs}
         points={DDP_DEFINIZIONE.points}
         icon={ShieldCheck}
+        bottomImageNatural
         bottomImage={{
-          src: "/images/calcolo-importo-massimo.jpg",
+          src: "/images/creditoclick-cosa-e-delega-di-pagamento.jpeg",
           alt: "Analisi pratica della capienza con delega di pagamento",
         }}
       />

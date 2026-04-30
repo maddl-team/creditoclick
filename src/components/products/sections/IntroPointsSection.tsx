@@ -18,6 +18,8 @@ interface IntroPointsSectionProps {
     src: string;
     alt: string;
   };
+  bottomImageFit?: "cover" | "contain";
+  bottomImageNatural?: boolean;
 }
 
 export function IntroPointsSection({
@@ -28,6 +30,8 @@ export function IntroPointsSection({
   icon: Icon,
   sectionClassName = "bg-surface-subtle border-t border-slate-200/60",
   bottomImage,
+  bottomImageFit = "cover",
+  bottomImageNatural = false,
 }: IntroPointsSectionProps) {
   return (
     <Section className={sectionClassName}>
@@ -58,15 +62,28 @@ export function IntroPointsSection({
             })}
           </div>
           {bottomImage ? (
-            <div className="relative mt-8 min-h-[240px] lg:min-h-[320px] w-full overflow-hidden rounded-2xl">
-              <Image
-                src={bottomImage.src}
-                alt={bottomImage.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            bottomImageNatural ? (
+              <div className="mt-8 w-full overflow-hidden rounded-2xl">
+                <Image
+                  src={bottomImage.src}
+                  alt={bottomImage.alt}
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="w-full h-auto"
+                />
+              </div>
+            ) : (
+              <div className="relative mt-8 min-h-[240px] lg:min-h-[320px] w-full overflow-hidden rounded-2xl bg-slate-100">
+                <Image
+                  src={bottomImage.src}
+                  alt={bottomImage.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={bottomImageFit === "contain" ? "object-contain" : "object-cover"}
+                />
+              </div>
+            )
           ) : null}
         </div>
       </div>

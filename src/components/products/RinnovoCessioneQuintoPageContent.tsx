@@ -63,7 +63,7 @@ export function RinnovoCessioneQuintoPageContent() {
         points={[RCQ_DEFINIZIONE.paragraphs[2]]}
         icon={RefreshCcw}
         bottomImage={{
-          src: "/images/calcolo-importo-massimo.jpg",
+          src: "/images/creditoclick-cosa-e-rinnovo-cessione.jpeg",
           alt: "Analisi del rinnovo e della nuova liquidità disponibile",
         }}
       />
