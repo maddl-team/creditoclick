@@ -25,7 +25,7 @@ import {
 } from "@/content/prodotti";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20capire%20quale%20prodotto%20%C3%A8%20pi%C3%B9%20adatto%20alla%20mia%20situazione.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20capire%20quale%20prodotto%20%C3%A8%20pi%C3%B9%20adatto%20alla%20mia%20situazione.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function ProdottiPageContent() {
@@ -41,7 +41,7 @@ export function ProdottiPageContent() {
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
-        right={<ProductSplitHeroImage src="/images/cessione-del-quinto-hero.jpg" alt="Prodotti CreditoClick" priority />}
+        right={<ProductSplitHeroImage src="/images/creditoclick_prodotti.jpeg" alt="Prodotti CreditoClick" priority />}
       />
 
       <CalloutSection

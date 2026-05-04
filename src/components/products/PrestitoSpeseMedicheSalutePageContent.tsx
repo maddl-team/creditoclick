@@ -25,7 +25,7 @@ import {
 } from "@/content/prestitoSpeseMedicheSalute";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20spese%20mediche%20e%20salute%20con%20cessione%20del%20quinto.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20spese%20mediche%20e%20salute%20con%20cessione%20del%20quinto.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const PENSIONATI_URL = "/professioni/pensionati-inps";
 
@@ -44,7 +44,7 @@ export function PrestitoSpeseMedicheSalutePageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_spese-mediche.jpeg"
             alt="Prestito per spese mediche e salute con cessione del quinto"
             priority
           />

@@ -21,7 +21,7 @@ import {
 } from "@/content/professioni";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20una%20valutazione%20in%20base%20alla%20mia%20categoria%20professionale.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20in%20base%20alla%20mia%20categoria%20professionale.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 
 export function ProfessioniPageContent() {
@@ -37,7 +37,7 @@ export function ProfessioniPageContent() {
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
-        right={<ProductSplitHeroImage src="/images/cessione-del-quinto-hero.jpg" alt="Professioni CreditoClick" priority />}
+        right={<ProductSplitHeroImage src="/images/creditoclick_professioni.jpeg" alt="Professioni CreditoClick" priority />}
       />
 
       <CalloutSection

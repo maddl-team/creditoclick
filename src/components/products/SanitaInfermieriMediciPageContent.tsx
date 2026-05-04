@@ -29,7 +29,7 @@ import {
 } from "@/content/sanitaInfermieriMedici";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20la%20cessione%20del%20quinto%20nel%20comparto%20sanitario.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20la%20cessione%20del%20quinto%20nel%20comparto%20sanitario.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
@@ -50,7 +50,7 @@ export function SanitaInfermieriMediciPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_sanita.jpeg"
             alt="Prestiti per infermieri, OSS e personale sanitario"
             priority
           />

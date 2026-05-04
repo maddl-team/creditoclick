@@ -206,7 +206,7 @@ export function CessionePreventivoSection() {
       `Consenso marketing: ${payload.contatti.marketingOk ? "Si" : "No"}`,
     ].join("\n");
 
-    return `https://wa.me/?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
   }
 
   function onSubmitStep3(e: React.FormEvent) {

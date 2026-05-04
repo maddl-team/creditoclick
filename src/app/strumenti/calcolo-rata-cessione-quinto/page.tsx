@@ -76,6 +76,7 @@ export default function CalcoloRataCessioneQuintoPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
   };
 
   return (

@@ -29,7 +29,7 @@ import {
 } from "@/content/prestitoAnticipoMutuoCasa";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20un%20prestito%20anticipo%20mutuo%20casa.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20un%20prestito%20anticipo%20mutuo%20casa.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 
@@ -48,7 +48,7 @@ export function PrestitoAnticipoMutuoCasaPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_prestito-casa.jpeg"
             alt="Prestito anticipo mutuo casa con cessione del quinto"
             priority
           />

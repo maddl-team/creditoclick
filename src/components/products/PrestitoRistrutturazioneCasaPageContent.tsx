@@ -26,7 +26,7 @@ import {
 } from "@/content/prestitoRistrutturazioneCasa";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20ristrutturazione%20casa%20con%20cessione%20del%20quinto.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20ristrutturazione%20casa%20con%20cessione%20del%20quinto.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 
 export function PrestitoRistrutturazioneCasaPageContent() {
@@ -44,7 +44,7 @@ export function PrestitoRistrutturazioneCasaPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_ristrutturazione-casa.jpeg"
             alt="Prestito ristrutturazione casa con cessione del quinto"
             priority
           />

@@ -10,6 +10,7 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
+import { ChiSiamoTeamSection } from "@/components/about/ChiSiamoTeamSection";
 import { cn } from "@/lib/utils";
 import {
   CHI_SIAMO_COMPETENZE,
@@ -28,7 +29,7 @@ import {
 } from "@/content/chiSiamo";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20maggiori%20informazioni%20su%20CreditoClick%20e%20sulle%20vostre%20soluzioni.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20maggiori%20informazioni%20su%20CreditoClick%20e%20sulle%20vostre%20soluzioni.";
 
 export function ChiSiamoPageContent() {
   return (
@@ -45,7 +46,7 @@ export function ChiSiamoPageContent() {
         secondaryHref="/prodotti"
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_chi-siamo.jpeg"
             alt="Team CreditoClick agenzia finanziaria online"
             priority
           />
@@ -104,26 +105,17 @@ export function ChiSiamoPageContent() {
         stickyIntro
       />
 
-      <CalloutSection
-        sectionClassName="bg-white border-t border-slate-200/60"
-        containerClassName="bg-surface-subtle p-10 md:p-16 lg:p-20"
-        className="space-y-6"
-        badge={<Badge variant="subtle">{CHI_SIAMO_TEAM.title}</Badge>}
-        title={CHI_SIAMO_TEAM.sectionTitle}
-        titleClassName="text-3xl md:text-4xl text-text-primary leading-tight"
-        showGridOverlay={false}
-      >
-        <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
-          {CHI_SIAMO_TEAM.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </CalloutSection>
+      <ChiSiamoTeamSection
+        badge={CHI_SIAMO_TEAM.sectionTitle}
+        title={CHI_SIAMO_TEAM.title}
+        intro={CHI_SIAMO_TEAM.intro}
+        members={CHI_SIAMO_TEAM.members}
+      />
 
       <Section className="bg-white border-t border-slate-200/60">
         <div className="space-y-8">
-          <SectionIntro badge={CHI_SIAMO_NUMERI.title} title={CHI_SIAMO_NUMERI.sectionTitle} description={<p>{CHI_SIAMO_NUMERI.note}</p>} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <SectionIntro badge={CHI_SIAMO_NUMERI.title} title={CHI_SIAMO_NUMERI.sectionTitle} />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {CHI_SIAMO_NUMERI.grid.map((entry) => (
               <div key={entry.label} className="rounded-xl border border-slate-200 p-5 bg-slate-50">
                 <p className="text-xs uppercase tracking-wide text-text-secondary">{entry.label}</p>

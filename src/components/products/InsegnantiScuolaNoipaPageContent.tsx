@@ -28,7 +28,7 @@ import {
 } from "@/content/insegnantiScuolaNoipa";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20la%20cessione%20del%20quinto%20tramite%20NoiPA.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20la%20cessione%20del%20quinto%20tramite%20NoiPA.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
@@ -50,7 +50,7 @@ export function InsegnantiScuolaNoipaPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_scuola.jpeg"
             alt="Prestiti per insegnanti e personale ATA con convenzione NoiPA"
             priority
           />

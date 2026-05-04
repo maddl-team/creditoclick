@@ -9,8 +9,8 @@ import { Button } from "./Button";
 const FOOTER_LINKS = [
     {
         title: "Prodotti",
+        titleHref: "/prodotti",
         links: [
-            { label: "Hub Prodotti", href: "/prodotti" },
             { label: "Cessione del Quinto", href: "/prodotti/cessione-del-quinto" },
             { label: "Delega di Pagamento", href: "/prodotti/delega-di-pagamento" },
             { label: "Rinnovo Cessione Quinto", href: "/prodotti/rinnovo-cessione-quinto" },
@@ -18,8 +18,8 @@ const FOOTER_LINKS = [
     },
     {
         title: "Professioni",
+        titleHref: "/professioni",
         links: [
-            { label: "Hub Professioni", href: "/professioni" },
             { label: "Grandi Aziende", href: "/professioni/dipendenti-privati-grandi-aziende" },
             { label: "PMI", href: "/professioni/dipendenti-piccole-imprese-pmi" },
             { label: "Sanità", href: "/professioni/sanita-infermieri-medici" },
@@ -30,8 +30,8 @@ const FOOTER_LINKS = [
     },
     {
         title: "Soluzioni",
+        titleHref: "/soluzioni",
         links: [
-            { label: "Hub Soluzioni", href: "/soluzioni" },
             { label: "Cattivi Pagatori CRIF", href: "/soluzioni/cattivi-pagatori-segnalati-crif" },
             { label: "Consolidamento Debiti", href: "/soluzioni/consolidamento-debiti" },
             { label: "Anticipo Mutuo Casa", href: "/soluzioni/prestito-anticipo-mutuo-casa" },
@@ -55,7 +55,7 @@ const FOOTER_LINKS = [
 
 export function Footer() {
     const whatsappUrl =
-        "https://wa.me/?text=Ciao%2C%20vorrei%20ricevere%20una%20consulenza%20gratuita%20sulle%20soluzioni%20CreditoClick.";
+        "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20ricevere%20una%20consulenza%20gratuita%20sulle%20soluzioni%20CreditoClick.";
 
     return (
         <footer className="border-t border-slate-100 bg-slate-50/50 py-16 md:py-24">
@@ -89,7 +89,18 @@ export function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                     {FOOTER_LINKS.map((section) => (
                         <div key={section.title}>
-                            <h4 className="text-sm font-semibold text-text-primary mb-6">{section.title}</h4>
+                            <h4 className="text-sm font-semibold text-text-primary mb-6">
+                                {section.titleHref ? (
+                                    <Link
+                                        href={section.titleHref}
+                                        className="hover:text-brand-indigo transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-indigo/30 rounded-sm"
+                                    >
+                                        {section.title}
+                                    </Link>
+                                ) : (
+                                    section.title
+                                )}
+                            </h4>
                             <ul className="space-y-3">
                                 {section.links.map((link) => (
                                     <li key={link.label}>

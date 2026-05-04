@@ -73,7 +73,7 @@ export function ContactFormSection() {
       `Come ci hai trovato: ${fonte || "Non indicato"}`,
       `Consenso marketing: ${marketingOk ? "Sì" : "No"}`,
     ].join("\n");
-    return `https://wa.me/?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
   }
 
   function onSubmit(e: React.FormEvent) {

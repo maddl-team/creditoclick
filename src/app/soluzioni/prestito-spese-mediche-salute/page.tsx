@@ -72,6 +72,7 @@ export default function PrestitoSpeseMedicheSalutePage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
   };
 
   return (

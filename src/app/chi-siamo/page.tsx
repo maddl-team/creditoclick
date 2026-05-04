@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ChiSiamoPageContent } from "@/components/about/ChiSiamoPageContent";
 import { CHI_SIAMO_FAQ, CHI_SIAMO_META } from "@/content/chiSiamo";
+import { SCHEMA_ORARI_APERTURA_LD } from "@/content/contatti";
 
 export const metadata: Metadata = {
   title: CHI_SIAMO_META.title,
@@ -44,7 +45,10 @@ export default function ChiSiamoPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
+    telephone: "+390836311982",
     sameAs: [],
+    openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
   };
 
   const localBusinessSchema = {
@@ -56,6 +60,7 @@ export default function ChiSiamoPage() {
     description: CHI_SIAMO_META.description,
     areaServed: "IT",
     inLanguage: "it-IT",
+    openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
     provider: { "@id": organizationId },
   };
 

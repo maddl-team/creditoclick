@@ -31,7 +31,7 @@ import {
 } from "@/content/prestitoAcquistoAutoMoto";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20acquisto%20auto%20o%20moto%20con%20cessione%20del%20quinto.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20acquisto%20auto%20o%20moto%20con%20cessione%20del%20quinto.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 
@@ -50,7 +50,7 @@ export function PrestitoAcquistoAutoMotoPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_prestito-auto-moto.jpeg"
             alt="Prestito acquisto auto e moto con cessione del quinto"
             priority
           />

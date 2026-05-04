@@ -102,6 +102,7 @@ export default function ProfessioniPage() {
     "@id": `${siteUrl}#organization`,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
   };
 
   return (

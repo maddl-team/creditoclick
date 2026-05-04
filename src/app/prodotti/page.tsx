@@ -85,6 +85,7 @@ export default function ProdottiPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
   };
 
   return (

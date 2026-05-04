@@ -90,7 +90,7 @@ export function CalcForm() {
 
         // Se inserisce 10 cifre: assumiamo +39 in automatico.
         if (digits.length === 10) return `+39${digits}`;
-        // Se inserisce 12 cifre che iniziano con 39: trasformiamo in +39XXXXXXXXXX
+        // Se inserisce 12 cifre che iniziano con 39: normalizziamo a +39 e 10 cifre
         if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
         return raw;
     }
@@ -140,7 +140,7 @@ export function CalcForm() {
             `Consenso marketing: ${marketingOk ? "Sì" : "No"}`,
         ].join("\n");
 
-        return `https://wa.me/?text=${encodeURIComponent(text)}`;
+        return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
     }
 
     function onSubmit(e: React.FormEvent) {

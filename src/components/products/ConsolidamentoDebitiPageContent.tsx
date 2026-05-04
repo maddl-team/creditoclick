@@ -33,7 +33,7 @@ import {
 } from "@/content/consolidamentoDebiti";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20il%20consolidamento%20debiti.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20il%20consolidamento%20debiti.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
@@ -54,7 +54,7 @@ export function ConsolidamentoDebitiPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_consolidamento-debiti.jpeg"
             alt="Consolidamento debiti con unica rata trattenuta in busta paga"
             priority
           />

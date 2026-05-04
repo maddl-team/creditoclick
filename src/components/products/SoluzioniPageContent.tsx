@@ -23,7 +23,7 @@ import {
 } from "@/content/soluzioni";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20ti%20descrivo%20la%20mia%20situazione%20per%20capire%20la%20soluzione%20pi%C3%B9%20adatta.";
+  "https://wa.me/393276625456?text=Ciao%2C%20ti%20descrivo%20la%20mia%20situazione%20per%20capire%20la%20soluzione%20pi%C3%B9%20adatta.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 
 export function SoluzioniPageContent() {
@@ -39,7 +39,7 @@ export function SoluzioniPageContent() {
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
-        right={<ProductSplitHeroImage src="/images/cessione-del-quinto-hero.jpg" alt="Soluzioni CreditoClick" priority />}
+        right={<ProductSplitHeroImage src="/images/creditoclick_soluzioni.jpeg" alt="Soluzioni CreditoClick" priority />}
       />
 
       <CalloutSection

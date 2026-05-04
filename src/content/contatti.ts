@@ -4,6 +4,25 @@ export const CONTATTI_META = {
     "Contatta CreditoClick per una consulenza gratuita sulla cessione del quinto. Rispondiamo via WhatsApp entro 24 ore lavorative. Nessun impegno, nessun costo.",
 } as const;
 
+/** Orari di presidio telefonico / sede (lun–ven), formato display sito e tabelle. */
+export const CONTATTI_ORARI_APERTURA = "9-13 | 15.30 - 18" as const;
+
+/** JSON-LD `OpeningHoursSpecification` (lun–ven), coerente con `CONTATTI_ORARI_APERTURA`. */
+export const SCHEMA_ORARI_APERTURA_LD = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "13:00",
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "15:30",
+    closes: "18:00",
+  },
+] as const;
+
 export const CONTATTI_HERO = {
   badge: "Contatti",
   title: "Contatta CreditoClick: siamo a un messaggio di distanza",
@@ -20,18 +39,18 @@ export const CONTATTI_CANALI = {
   contacts: [
     {
       channel: "WhatsApp (canale principale)",
-      detail: "Canale WhatsApp ufficiale CreditoClick",
+      detail: "+39 327 662 5456",
       note: "Disponibile 7 giorni su 7 per ricevere messaggi. Le risposte vengono fornite entro 24 ore lavorative dal lunedì al venerdì. Per messaggi inviati nel weekend, la risposta viene garantita entro il lunedì mattina.",
     },
     {
       channel: "Email",
-      detail: "Canale email ufficiale CreditoClick",
+      detail: "finnova@blu.it",
       note: "Per comunicazioni formali, invio di documentazione o richieste che preferisci gestire via posta elettronica. Tempo di risposta: entro 48 ore lavorative.",
     },
     {
       channel: "Telefono",
-      detail: "Canale telefonico dedicato CreditoClick",
-      note: "Disponibile negli orari di assistenza comunicati sui canali ufficiali. Per consulenze telefoniche è preferibile fissare un orario via WhatsApp per garantire la disponibilità del consulente.",
+      detail: "0836 311982",
+      note: `Dal lunedì al venerdì, ${CONTATTI_ORARI_APERTURA}. Per consulenze telefoniche è preferibile fissare un orario via WhatsApp per garantire la disponibilità del consulente.`,
     },
     {
       channel: "Sede operativa",
@@ -101,6 +120,7 @@ export const CONTATTI_ORARI = {
   sectionTitle: "Orari e Tempi di Risposta",
   title: "Quando e quanto velocemente rispondiamo",
   items: [
+    `Centralino e assistenza telefonica: dal lunedì al venerdì, ${CONTATTI_ORARI_APERTURA}.`,
     "Messaggi WhatsApp: ricevuti in qualsiasi momento della giornata o della settimana. Le risposte vengono fornite entro 24 ore lavorative dal lunedì al venerdì. Nella maggior parte dei casi i tempi sono significativamente più brevi. Per messaggi inviati il sabato, la domenica o nei giorni festivi, la risposta viene garantita entro il mattino del primo giorno lavorativo successivo.",
     "Email: entro 48 ore lavorative dalla ricezione.",
     "Richieste urgenti: se hai una scadenza imminente — un rogito programmato, una data di lavori già concordata, una situazione che richiede liquidità in tempi stretti — segnalacelo esplicitamente nel primo messaggio. Cercheremo di darti priorità nella valutazione e nella gestione della pratica.",
@@ -117,7 +137,9 @@ export const CONTATTI_ISTITUZIONALI = {
     ["REA", "367208"],
     ["Sede legale", "Piazza Oronzo de Donno, 10 - Maglie (LE)"],
     ["Iscrizione OAM", "A17849"],
-    ["Email istituzionale", "Canale email ufficiale CreditoClick"],
+    ["Email istituzionale", "finnova@blu.it"],
+    ["Telefono", "0836 311982"],
+    ["Orari di apertura (lun–ven)", CONTATTI_ORARI_APERTURA],
     ["PEC", "Canale PEC aziendale"],
   ] as const,
   note:
@@ -143,10 +165,13 @@ export const CONTATTI_CTA = {
 } as const;
 
 export const CONTATTI_NOTE_REDAZIONALI = [
-  ["Numero WhatsApp", "Inserire il numero WhatsApp business attivo dell'agenzia"],
-  ["Indirizzo email", "Inserire l'indirizzo email operativo e quello specifico per i reclami"],
-  ["Numero di telefono", "Inserire se previsto; rimuovere la sezione se il canale telefonico non è attivo"],
-  ["Orari di apertura", "Inserire gli orari effettivi di presidio del canale WhatsApp e telefonico"],
+  ["Numero WhatsApp", "+39 327 662 5456 (verificare allineamento con profilo Google Business)"],
+  ["Indirizzo email", "finnova@blu.it (email operativa; verificare eventuale casella dedicata ai reclami)"],
+  ["Numero di telefono", "0836 311982 (centralino; orari lun–ven come riga Orari)"],
+  [
+    "Orari di apertura",
+    `Telefono/sede: lun–ven ${CONTATTI_ORARI_APERTURA}. WhatsApp: messaggi 24/7, risposta entro 24 ore lavorative (lun–ven)`,
+  ],
   ["Sede operativa", "Confermare se inserire l'indirizzo fisico o optare per la dicitura \"operatività interamente da remoto\""],
   ["Dati societari", "Completare la tabella con tutti i riferimenti ufficiali"],
   ["PEC reclami", "Inserire l'indirizzo PEC dedicato alla gestione dei reclami formali"],

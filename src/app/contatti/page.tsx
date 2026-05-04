@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { ContattiPageContent } from "@/components/contact/ContattiPageContent";
-import { CONTATTI_FAQ, CONTATTI_META } from "@/content/contatti";
+import { CONTATTI_FAQ, CONTATTI_META, SCHEMA_ORARI_APERTURA_LD } from "@/content/contatti";
 
 export const metadata: Metadata = {
   title: CONTATTI_META.title,
@@ -34,6 +34,9 @@ export default function ContattiPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
+    telephone: "+390836311982",
+    openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
   };
 
   const localBusinessSchema = {
@@ -45,10 +48,20 @@ export default function ContattiPage() {
     description: CONTATTI_META.description,
     areaServed: "IT",
     inLanguage: "it-IT",
+    openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "customer support",
+        telephone: "+390836311982",
+        email: "finnova@blu.it",
+        availableLanguage: ["it-IT"],
+        areaServed: "IT",
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        telephone: "+393276625456",
         availableLanguage: ["it-IT"],
         areaServed: "IT",
       },

@@ -72,6 +72,7 @@ export default function PrestitoAcquistoAutoMotoPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
+    email: "finnova@blu.it",
   };
 
   return (

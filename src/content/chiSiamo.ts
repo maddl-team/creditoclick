@@ -1,3 +1,5 @@
+import { CONTATTI_ORARI_APERTURA } from "./contatti";
+
 export const CHI_SIAMO_META = {
   title: "Chi Siamo | CreditoClick — Agenzia Finanziaria Online",
   description:
@@ -20,7 +22,6 @@ export const CHI_SIAMO_STORIA = {
     "CreditoClick nasce dall'osservazione di un problema concreto e ricorrente: milioni di lavoratori e pensionati italiani hanno diritto a soluzioni di credito solide e accessibili — cessione del quinto, deleghe di pagamento, rinnovi — ma non riescono ad accedervi perché il sistema bancario tradizionale è lento, burocratico, poco specializzato e spesso indifferente alle specificità di ciascun profilo.",
     "Un insegnante che non ha tempo di andare in banca durante l'orario scolastico. Un infermiere che lavora su turni notturni e non riesce mai a trovare uno sportello aperto. Un dipendente di una piccola impresa a cui è stato detto no senza che nessuno si prendesse la briga di valutare il suo TFR maturato. Un pensionato che non sa come muoversi tra le procedure INPS e le richieste documentali delle finanziarie.",
     "Abbiamo costruito CreditoClick per rispondere a queste situazioni con un approccio diverso: specializzazione verticale sugli strumenti di credito garantiti dalla busta paga, conoscenza approfondita di ogni categoria professionale e delle sue specificità contrattuali, e un processo interamente digitale che si adatta ai tempi e agli spazi del cliente — non quelli dell'istituto.",
-    "(Nota redazionale: personalizzare con l'anno di fondazione effettivo e con eventuali dettagli biografici fondatori che il cliente vorrà condividere)",
   ],
 } as const;
 
@@ -60,22 +61,47 @@ export const CHI_SIAMO_COMPETENZE = {
 export const CHI_SIAMO_TEAM = {
   sectionTitle: "Il Nostro Team",
   title: "Le persone dietro CreditoClick",
-  paragraphs: [
+  intro: [
     "CreditoClick è composta da consulenti finanziari specializzati nella mediazione creditizia, con esperienza pluriennale nel settore della cessione del quinto e dei finanziamenti garantiti dalla busta paga. Ogni consulente del nostro team è formato per gestire le specificità di ciascuna categoria professionale — dalla PA alla sanità, dalle Forze Armate alle PMI — e per applicare i criteri di valutazione degli istituti convenzionati con precisione e competenza.",
     "Non utilizziamo sistemi automatici per la valutazione dei profili. Ogni richiesta che ci arriva viene analizzata da una persona reale, che legge la situazione specifica, valuta le opzioni disponibili e risponde con una proposta concreta — non con un messaggio generato automaticamente.",
-    "(Nota redazionale: personalizzare con foto, nomi e brevi biografie dei consulenti del team che il cliente vorrà presentare pubblicamente. La presenza di profili reali con nome e foto è una delle leve E-E-A-T più efficaci per un sito YMYL in ambito finanziario.)",
+  ],
+  members: [
+    {
+      id: "luciano-de-nuzzo",
+      name: "Luciano De Nuzzo",
+      imageSrc: "/images/team/luciano-de-nuzzo.jpg",
+      imageAlt: "Ritratto di Luciano De Nuzzo",
+      bio: "Dottore in Economia e Commercio, agente in attività finanziaria. Esperienza ventennale nel settore della consulenza del credito. Cofondatore di Finnova S.r.l.",
+    },
+    {
+      id: "andrea-garofalo",
+      name: "Andrea Garofalo",
+      imageSrc: "/images/team/andrea-garofalo.jpg",
+      imageAlt: "Ritratto di Andrea Garofalo",
+      bio: "Agente in attività finanziaria con esperienza ventennale in primarie realtà bancarie nel settore del credito alle famiglie. Cofondatore di Finnova S.r.l.",
+    },
+    {
+      id: "mirea-jada-pellegrino",
+      name: "Mirea Jada Pellegrino",
+      imageSrc: "/images/team/mirea-jada-pellegrino.jpg",
+      imageAlt: "Ritratto di Mirea Jada Pellegrino",
+      bio: "Dottoressa in Economia e Commercio, responsabile operativa di Finnova S.r.l. con esperienza pluriennale nel settore del credito.",
+    },
+    {
+      id: "angela-andrioli",
+      name: "Angela Andrioli",
+      imageSrc: "/images/team/angela-andrioli.jpg",
+      imageAlt: "Ritratto di Angela Andrioli",
+      bio: "Agente in attività finanziaria con esperienza ventennale nel settore del credito alle famiglie per conto di primarie realtà del settore bancario.",
+    },
   ],
 } as const;
 
 export const CHI_SIAMO_NUMERI = {
   sectionTitle: "I Nostri Numeri",
   title: "CreditoClick in cifre",
-  note:
-    "(Nota redazionale: inserire i dati reali dell'agenzia al momento del go-live. I seguenti sono segnaposto strutturali.)",
   grid: [
-    { label: "Anno di fondazione", value: "(inserire)" },
-    { label: "Pratiche gestite", value: "(inserire numero aggiornato)" },
-    { label: "Istituti finanziatori convenzionati", value: "(inserire numero)" },
+    { label: "Pratiche gestite", value: "oltre 15.000" },
     { label: "Categorie professionali servite", value: "oltre 10 comparti" },
     { label: "Tempo medio di risposta", value: "entro 24 ore lavorative" },
     { label: "Valutazioni a 5 stelle", value: "(inserire numero da Google / Trustpilot)" },
@@ -96,6 +122,9 @@ export const CHI_SIAMO_CONFORMITA = {
     ["REA", "367208"],
     ["Sede legale", "Piazza Oronzo de Donno, 10 - Maglie (LE)"],
     ["Iscrizione OAM", "A17849"],
+    ["Email", "finnova@blu.it"],
+    ["Telefono", "0836 311982"],
+    ["Orari di apertura (lun–ven)", CONTATTI_ORARI_APERTURA],
     ["PEC", "Canale PEC aziendale"],
   ] as const,
   afterTitle: "Cosa garantisce l'iscrizione OAM ai clienti:",

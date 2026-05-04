@@ -29,7 +29,7 @@ import {
 } from "@/content/dipendentiPiccoleImpresePmi";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20la%20cessione%20del%20quinto%20come%20dipendente%20PMI.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20la%20cessione%20del%20quinto%20come%20dipendente%20PMI.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 
@@ -48,7 +48,7 @@ export function DipendentiPiccoleImpresePmiPageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_pmi.jpeg"
             alt="Consulenza cessione del quinto per dipendenti di piccole imprese e PMI"
             priority
           />

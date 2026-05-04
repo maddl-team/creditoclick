@@ -28,7 +28,7 @@ import {
 const REQUIREMENT_ICONS = [ShieldCheck, Building2, BarChart3] as const;
 const CATEGORY_ICONS = [Users, GraduationCap] as const;
 const WHATSAPP_DELEGA_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20verificare%20la%20mia%20eligibilita%20per%20la%20delega%20di%20pagamento.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20verificare%20la%20mia%20eligibilita%20per%20la%20delega%20di%20pagamento.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
 

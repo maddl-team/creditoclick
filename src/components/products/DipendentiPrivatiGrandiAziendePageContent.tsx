@@ -27,7 +27,7 @@ import {
 } from "@/content/dipendentiPrivatiGrandiAziende";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20cessione%20del%20quinto%20come%20dipendente%20di%20grande%20azienda.";
+  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20cessione%20del%20quinto%20come%20dipendente%20di%20grande%20azienda.";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
@@ -47,7 +47,7 @@ export function DipendentiPrivatiGrandiAziendePageContent() {
         secondaryHref={CALCOLO_RATA_URL}
         right={
           <ProductSplitHeroImage
-            src="/images/cessione-del-quinto-hero.jpg"
+            src="/images/creditoclick_grandiaziende.jpeg"
             alt="Consulenza cessione del quinto per dipendenti di grandi aziende private"
             priority
           />
