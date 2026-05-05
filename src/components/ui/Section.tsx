@@ -25,7 +25,7 @@ export function Section({
             className={cn("relative py-12 md:py-20 outline-none overflow-hidden", className)}
             {...props}
         >
-            {showLines && <BackgroundLines variant={variant} />}
+            {showLines && <BackgroundLines variant={variant} showIndicesMobile={[0, 4]} />}
 
             <div className={cn("relative z-10 w-full mx-auto px-6 max-w-7xl", containerClassName)}>
                 {children}
