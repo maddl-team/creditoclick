@@ -66,7 +66,7 @@ export const PRC_IMPORTI = {
     ["120 mesi (10 anni)", "360 €", "~ 28.000 – 34.000 €"],
   ] as const,
   note:
-    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   afterNote:
     "Per interventi di ristrutturazione parziale — un bagno, una cucina, gli infissi — sono generalmente sufficienti durate più brevi (48-60 mesi) con importi contenuti. Per ristrutturazioni complete o interventi strutturali, durate più lunghe consentono di accedere a importi significativi mantenendo la rata mensile sostenibile.",
   cta: "Calcola quanto puoi ottenere — Usa il nostro strumento gratuito",
@@ -101,8 +101,8 @@ export const PRC_PROCESSO = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi del profilo e selezione dell'offerta",
-      desc: "Il consulente analizza il tuo profilo contrattuale e identifica tra i partner convenzionati l'istituto con le condizioni più favorevoli per il tuo caso specifico. Ti risponde su WhatsApp con una prima valutazione concreta.",
+      title: "Passaggio 2 — Analisi del profilo e proposta diretta IBL Banca",
+      desc: "Il consulente analizza il tuo profilo contrattuale e prepara la proposta IBL Banca più adatta al tuo caso specifico. Ti risponde su WhatsApp con una prima valutazione concreta.",
       icon: "userCheck",
     },
     {
@@ -123,7 +123,7 @@ export const PRC_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 
@@ -153,7 +153,7 @@ export const PRC_FAQ = {
     },
     {
       q: "La cessione del quinto è conveniente rispetto al prestito finalizzato per la ristrutturazione?",
-      a: "Dipende dal profilo specifico e dalle condizioni offerte. I prestiti finalizzati alla ristrutturazione possono in alcuni casi beneficiare di convenzioni specifiche con le banche. Tuttavia, richiedono quasi sempre la presentazione di documentazione sull'intervento e hanno tempi di istruttoria più lunghi. La cessione del quinto offre maggiore velocità, semplicità procedurale e accessibilità anche per chi ha storia creditizia non perfetta. Il consulente CreditoClick può aiutarti a confrontare le due opzioni sulla base del tuo profilo specifico.",
+      a: "Dipende dal profilo specifico e dalle condizioni applicabili. I prestiti finalizzati alla ristrutturazione possono in alcuni casi beneficiare di convenzioni specifiche con le banche, ma richiedono spesso documentazione più ampia e tempi di istruttoria più lunghi. La cessione del quinto con canale diretto IBL Banca offre normalmente maggiore velocità, semplicità procedurale e accessibilità anche per chi ha storia creditizia non perfetta.",
     },
   ],
 } as const;

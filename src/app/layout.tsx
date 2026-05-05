@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "CreditoClick | Prestiti Online Veloci e Sicuri",
   description: "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon-32x32.png"],
+  },
   alternates: {
     canonical: "/",
   },

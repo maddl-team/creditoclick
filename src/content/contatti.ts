@@ -82,7 +82,7 @@ export const CONTATTI_PROCESSO = {
     "Vogliamo che tu sappia esattamente cosa aspettarti quando ci scrivi, senza sorprese e senza aspettative non allineate.",
   steps: [
     "Entro 24 ore lavorative — Prima risposta e valutazione preliminare: Il consulente legge il tuo messaggio, analizza le informazioni fornite e ti risponde con una prima valutazione: se la situazione appare concretamente finanziabile, quali prodotti potrebbero essere adatti al tuo profilo, e quali informazioni aggiuntive potrebbero essere necessarie per procedere. Questa fase è completamente gratuita e non impegna a nulla.",
-    "Fase successiva — Analisi approfondita e selezione dell'offerta: Se decidi di procedere, il consulente analizza il tuo profilo in modo più dettagliato — datore di lavoro, anzianità contrattuale, TFR maturato, eventuale storico creditizio — e identifica tra i nostri istituti convenzionati l'offerta più competitiva disponibile per la tua situazione specifica.",
+    "Fase successiva — Analisi approfondita e proposta dedicata IBL Banca: Se decidi di procedere, il consulente analizza il tuo profilo in modo più dettagliato — datore di lavoro, anzianità contrattuale, TFR maturato, eventuale storico creditizio — e prepara una proposta dedicata sui prodotti IBL Banca, con condizioni d'eccellenza e tempi rapidi per la tua situazione specifica.",
     "Preventivo personalizzato con TAEG e rata netta: Ricevi un preventivo formale con tutti i parametri economici esposti in modo chiaro e trasparente: TAN, TAEG, rata mensile netta, importo totale dovuto, costo della polizza assicurativa. Accompagnato dal modulo SECCI. Nessun costo nascosto, nessuna voce che emerge dopo la firma.",
     "Raccolta documenti e firma digitale: Se il preventivo ti soddisfa e decidi di procedere, il consulente ti guida nella raccolta dei documenti necessari — che puoi caricare via WhatsApp o via app. La firma del contratto avviene in modalità elettronica. CreditoClick gestisce la comunicazione con il datore di lavoro o con l'INPS.",
     "Accredito sul conto corrente: Dopo l'approvazione dell'istituto finanziatore, l'accredito avviene direttamente sul tuo conto corrente nei tempi previsti dal contratto — generalmente tra i 7 e i 15 giorni lavorativi dalla presentazione della pratica completa.",
@@ -143,7 +143,7 @@ export const CONTATTI_ISTITUZIONALI = {
     ["PEC", "Canale PEC aziendale"],
   ] as const,
   note:
-    "CreditoClick è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di mediatore creditizio ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
+    "CreditoClick è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
 } as const;
 
 export const CONTATTI_RECLAMI = {

@@ -88,7 +88,7 @@ export const CPC_VALUTA = {
     },
     {
       title: "Fase 2 — Identificazione degli istituti più adatti",
-      desc: "Non tutti gli istituti convenzionati applicano gli stessi criteri per i profili con segnalazioni. CreditoClick conosce le politiche di credito dei propri partner e identifica, per ogni profilo specifico, l'istituto con le maggiori probabilità di approvazione e le condizioni più competitive.",
+      desc: "Per i profili con segnalazioni serve una valutazione specialistica. CreditoClick conosce in profondità i criteri IBL Banca e imposta la pratica con un approccio mirato, aumentando le probabilità di approvazione e riducendo i tempi di risposta.",
     },
     {
       title: "Fase 3 — Valutazione di fattibilità prima della richiesta formale",
@@ -103,7 +103,7 @@ export const CPC_IMPORTI = {
   title: "Cosa aspettarsi in termini economici",
   paragraphs: [
     "Per i profili con segnalazioni in CRIF, le condizioni economiche della cessione del quinto possono differire rispetto a un profilo \"pulito\". In particolare:",
-    "Il tasso applicato potrebbe essere superiore. Gli istituti finanziatori compensano il rischio percepito più elevato con un TAEG leggermente più alto rispetto a quello applicato ai profili senza segnalazioni. Questo non significa che il finanziamento non convenga — significa che il preventivo va valutato con attenzione, confrontando il costo totale con le alternative disponibili.",
+    "Il tasso applicato potrebbe essere superiore. Il rischio percepito più elevato viene generalmente compensato con un TAEG leggermente più alto rispetto ai profili senza segnalazioni. Questo non significa che il finanziamento non convenga: significa che il preventivo va letto con attenzione sul costo totale e sulla sostenibilita della rata.",
     "L'importo erogabile potrebbe essere inferiore al massimo teorico. Alcuni istituti, in presenza di segnalazioni, applicano un tetto all'importo erogabile inferiore al massimo calcolabile in base alla busta paga. Il consulente CreditoClick verifica questa soglia nella fase di analisi preliminare.",
     "La durata massima potrebbe essere limitata. In alcuni casi, gli istituti preferiscono concedere piani di rimborso più brevi per i profili con segnalazioni. Anche questo aspetto viene verificato nella fase di analisi.",
     "CreditoClick ti presenta sempre il preventivo completo con TAEG, rata netta e costo totale del credito prima di qualsiasi firma — in modo che tu possa valutare la convenienza dell'operazione con piena consapevolezza.",
@@ -156,7 +156,7 @@ export const CPC_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita, riservata e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita, riservata e senza impegno.",
     "I dati personali forniti nel corso della valutazione preliminare sono trattati in conformità al Regolamento UE 2016/679 (GDPR) esclusivamente per le finalità connesse alla valutazione della richiesta di finanziamento.",
   ],
 } as const;

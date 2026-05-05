@@ -8,7 +8,7 @@ export const DPPMI_HERO = {
   badge: "Segmento PMI",
   title: "Cessione del Quinto per Dipendenti di Piccole Imprese e PMI: come ottenerla anche sotto i 15 dipendenti",
   subtitle:
-    "Lavori in una piccola o media impresa e la banca ti ha già detto no? Non sei solo. Migliaia di dipendenti di PMI vengono rifiutati ogni anno dagli istituti tradizionali per ragioni legate alla dimensione aziendale — non alla loro affidabilità personale. CreditoClick conosce gli istituti convenzionati che valutano il tuo TFR maturato come garanzia reale, indipendentemente dal numero di dipendenti dell'azienda.",
+    "Lavori in una piccola o media impresa e la banca ti ha già detto no? Non sei solo. Migliaia di dipendenti di PMI vengono rifiutati ogni anno dagli istituti tradizionali per ragioni legate alla dimensione aziendale — non alla loro affidabilità personale. CreditoClick, grazie al canale diretto con IBL Banca, valuta il tuo TFR maturato come garanzia reale, indipendentemente dal numero di dipendenti dell'azienda.",
   primaryCta: "Richiedi una valutazione gratuita su WhatsApp",
   secondaryCta: "Calcola la tua rata",
 } as const;
@@ -92,7 +92,7 @@ export const DPPMI_IMPORTI = {
     ["120 mesi (10 anni)", "300 €", "~ 22.000 – 27.000 €"],
   ] as const,
   note:
-    "Valori indicativi. Gli importi esatti dipendono dal TFR maturato, dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato. Per anzianità inferiori ai 3-4 anni, l'importo massimo erogabile potrebbe essere inferiore ai valori indicati.",
+    "Valori indicativi. Gli importi esatti dipendono dal TFR maturato, dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile. Per anzianità inferiori ai 3-4 anni, l'importo massimo erogabile potrebbe essere inferiore ai valori indicati.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -110,7 +110,7 @@ export const DPPMI_RIFIUTO = {
   title: "Il rifiuto bancario non è definitivo: ecco cosa puoi fare",
   paragraphs: [
     "Se hai già ricevuto uno o più rifiuti da banche o finanziarie generaliste, la prima cosa da fare è capire il motivo del rifiuto. I rifiuti legati alla dimensione aziendale del datore di lavoro — e non a problematiche personali come segnalazioni gravi in CRIF — sono spesso superabili rivolgendosi a istituti specializzati con criteri di valutazione diversi.",
-    "CreditoClick effettua una valutazione preliminare che tiene conto del motivo del rifiuto precedente e identifica, tra i partner convenzionati, quelli con i criteri più adatti al tuo profilo specifico. Non presentiamo mai pratiche destinate al rifiuto: preferiamo dirti con franchezza se e quando una richiesta è fattibile, piuttosto che avviare iter inutili che potrebbero influire negativamente sulla tua posizione creditizia.",
+    "CreditoClick effettua una valutazione preliminare che tiene conto del motivo del rifiuto precedente e imposta la pratica sui criteri IBL Banca più adatti al tuo profilo specifico. Non presentiamo mai pratiche destinate al rifiuto: preferiamo dirti con franchezza se e quando una richiesta è fattibile, piuttosto che avviare iter inutili che potrebbero influire negativamente sulla tua posizione creditizia.",
   ],
   cta: "Hai anche una segnalazione in CRIF? Scopri la soluzione per cattivi pagatori",
 } as const;
@@ -126,7 +126,7 @@ export const DPPMI_PASSAGGI = {
     },
     {
       title: "Passaggio 2 — Analisi del profilo e valutazione del TFR",
-      desc: "Il consulente analizza il tuo profilo individuale con attenzione specifica al TFR maturato e all'anzianità contrattuale. Identifica tra i partner convenzionati l'istituto con i criteri di valutazione più favorevoli per il tuo tipo di azienda.",
+      desc: "Il consulente analizza il tuo profilo individuale con attenzione specifica al TFR maturato e all'anzianità contrattuale. Imposta una proposta IBL Banca costruita sui criteri più adatti al tuo tipo di azienda.",
       icon: "userCheck",
     },
     {
@@ -147,7 +147,7 @@ export const DPPMI_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali",
   title: "Trasparenza e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 
@@ -157,7 +157,7 @@ export const DPPMI_FAQ = {
   items: [
     {
       q: "Posso ottenere la cessione del quinto se lavoro in un'azienda con soli 3 dipendenti?",
-      a: "In molti casi sì, a condizione di avere un contratto a tempo indeterminato, un'anzianità lavorativa sufficiente e un TFR maturato adeguato rispetto all'importo richiesto. Non esiste nella normativa sulla cessione del quinto un numero minimo di dipendenti aziendali per l'ammissibilità. La fattibilità dipende dai criteri dell'istituto finanziatore selezionato. Contattaci per una valutazione specifica.",
+      a: "In molti casi sì, a condizione di avere un contratto a tempo indeterminato, un'anzianità lavorativa sufficiente e un TFR maturato adeguato rispetto all'importo richiesto. Non esiste nella normativa sulla cessione del quinto un numero minimo di dipendenti aziendali per l'ammissibilità. La fattibilità dipende dai criteri IBL Banca applicabili al caso specifico. Contattaci per una valutazione specifica.",
     },
     {
       q: "Quanto TFR devo avere maturato per ottenere la cessione del quinto?",

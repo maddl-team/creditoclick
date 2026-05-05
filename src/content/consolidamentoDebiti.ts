@@ -74,7 +74,7 @@ export const CD_MECCANISMO = {
   items: [
     "Fase 1: Mappatura del debito esistente: Il primo passo è costruire un quadro completo della situazione debitoria: elenco di tutti i finanziamenti in corso, importo residuo di ciascuno, rata mensile, tasso applicato, istituto creditore. Questa mappatura è indispensabile per calcolare il nuovo importo necessario e per identificare quali debiti conviene consolidare e quali — eventualmente — lasciare in essere.",
     "Fase 2: Calcolo della capienza e dell'importo consolidabile: Il consulente verifica la capienza disponibile sulla busta paga: la rata della nuova cessione del quinto non può superare il 20% del reddito netto mensile (o il 40% se si attiva anche una delega di pagamento). In base a questo limite, si calcola l'importo massimo erogabile e si verifica se è sufficiente a coprire il debito da consolidare.",
-    "Fase 3: Selezione dell'istituto e struttura dell'operazione: CreditoClick identifica tra i partner convenzionati l'istituto che offre le condizioni più vantaggiose per un'operazione di consolidamento con il profilo specifico del richiedente. In alcuni casi, il nuovo finanziamento include sia il rimborso dei debiti pregressi sia una quota di liquidità aggiuntiva netta.",
+    "Fase 3: Struttura dell'operazione su canale diretto IBL Banca: CreditoClick struttura il consolidamento sul canale IBL Banca in base al profilo specifico del richiedente. In alcuni casi, il nuovo finanziamento include sia il rimborso dei debiti pregressi sia una quota di liquidità aggiuntiva netta.",
     "Fase 4: Estinzione dei debiti e firma digitale: Una volta approvato il finanziamento, l'istituto provvede all'estinzione diretta dei debiti da consolidare — contattando i vecchi istituti e provvedendo al pagamento dei capitali residui. Il cliente firma il nuovo contratto in modalità elettronica. La nuova rata unica inizia ad essere trattenuta in busta paga dal mese successivo.",
   ],
 } as const;
@@ -99,7 +99,7 @@ export const CD_RISPARMIO = {
   afterNote:
     "La rata mensile scende da 780 € a 360 €, con un risparmio mensile di 420 € e una liquidità netta aggiuntiva di circa 3.400 € accreditata sul conto. Il tutto con un'unica trattenuta automatica in busta paga.",
   note:
-    "I valori sono indicativi e calcolati su un profilo tipo. I dati esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "I valori sono indicativi e calcolati su un profilo tipo. I dati esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   cta: "Calcola il tuo risparmio mensile — Scrivici su WhatsApp",
 } as const;
 
@@ -161,7 +161,7 @@ export const CD_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Il consolidamento debiti realizzato attraverso la cessione del quinto è disciplinato dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Il consolidamento debiti realizzato attraverso la cessione del quinto è disciplinato dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
     "Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto, inclusa la specifica dei debiti estinti contestualmente all'erogazione. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
@@ -180,7 +180,7 @@ export const CD_FAQ = {
     },
     {
       q: "Il consolidamento aumenta il debito totale?",
-      a: "In termini di importo complessivo dovuto, il consolidamento può comportare un aumento del debito totale se si estende la durata del rimborso — poiché si pagano interessi per un periodo più lungo. Il vantaggio è la riduzione del carico mensile e la semplificazione della struttura. Il consulente CreditoClick ti illustra sempre il confronto tra costo totale del debito prima e dopo il consolidamento, in modo che tu possa valutare la convenienza complessiva.",
+      a: "In termini di importo complessivo dovuto, il consolidamento può comportare un aumento del debito totale se si estende la durata del rimborso — poiché si pagano interessi per un periodo più lungo. Il vantaggio è la riduzione del carico mensile e la semplificazione della struttura. Il consulente CreditoClick ti illustra sempre in modo trasparente costo totale, rata e durata dell'operazione, così puoi valutare la convenienza complessiva con dati chiari.",
     },
     {
       q: "Posso consolidare i debiti se sono segnalato in CRIF?",

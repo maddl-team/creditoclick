@@ -47,7 +47,7 @@ export function ChiSiamoPageContent() {
         right={
           <ProductSplitHeroImage
             src="/images/creditoclick_chi-siamo.jpeg"
-            alt="Team CreditoClick agenzia finanziaria online"
+            alt="Team CreditoClick agenzia in attività finanziaria online"
             priority
           />
         }

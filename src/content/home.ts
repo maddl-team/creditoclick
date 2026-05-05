@@ -1,7 +1,7 @@
 export const HOME_TRUST_PILLS = [
     {
         title: "Operatori OAM certificati",
-        desc: "Mediatori creditizi regolarmente iscritti al registro ufficiale.",
+        desc: "Agenti in Attività Finanziaria regolarmente iscritti al registro ufficiale.",
         icon: "shieldCheck",
     },
     {
@@ -28,7 +28,7 @@ export const HOME_CORE_PRODUCTS = [
         badge: "Cessione del Quinto",
         desc: "La formula di finanziamento più sicura per dipendenti e pensionati: la rata viene trattenuta direttamente in busta paga o sul cedolino della pensione, fino a un massimo del 20% del tuo netto mensile. Nessun rischio di dimenticare un pagamento, nessun addebito su conto corrente.",
         ideal: "Ideale per: dipendenti pubblici e privati, statali, insegnanti, infermieri, militari, pensionati INPS fino a 85 anni.",
-        market: "Tassi cessione del quinto 2026: il mercato ha visto una progressiva stabilizzazione dei tassi dopo i rialzi del biennio precedente. I nostri consulenti aggiornano quotidianamente le offerte dei partner convenzionati per garantirti sempre la migliore condizione disponibile.",
+        market: "Tassi cessione del quinto 2026: il mercato ha visto una progressiva stabilizzazione dei tassi dopo i rialzi del biennio precedente. Grazie al canale diretto con IBL Banca, ti offriamo condizioni d'eccellenza e una gestione rapida della pratica.",
         cta: "Scopri la Cessione del Quinto | Calcola la rata",
         icon: "wallet",
         placeholderColor: "from-blue-500 to-indigo-600",
@@ -65,8 +65,8 @@ export const HOME_PROCESS_STEPS = [
         icon: "userCheck",
     },
     {
-        title: "Step 3 — Preventivo personalizzato e confronto offerte.",
-        desc: "Ti presentiamo la migliore offerta del nostro istituto convenzionato con TAEG, TAN e rata netta chiaramente esposta. Nessun costo nascosto, nessuna sorpresa.",
+        title: "Step 3 — Preventivo personalizzato IBL Banca.",
+        desc: "Ricevi una proposta dedicata sui prodotti IBL Banca con TAEG, TAN e rata netta chiaramente esposta. Nessun costo nascosto, nessuna sorpresa.",
         icon: "fileText",
     },
     {
@@ -164,13 +164,13 @@ export const HOME_TESTIMONIALS = [
 ] as const;
 
 export const HOME_HERO_CONTENT = {
-    badge: "Agenti e Mediatori Certificati OAM",
+    badge: "Agente Monomandatario IBL Banca",
     title: "CreditoClick: la tua agenzia di prestiti online, esperta, veloce e dalla tua parte.",
     description: "Cessione del quinto, rinnovi, consolidamenti e soluzioni su misura per dipendenti, pensionati e Forze dell'Ordine. Tutto online, senza file in filiale, con un esperto reale che ti segue dal primo contatto all'accredito.",
     primaryCta: "Richiedi una consulenza gratuita",
     secondaryCta: "Calcola la tua rata in 2 minuti",
-    conventionsLabel: "Convenzioni Nazionali",
-    conventions: ["Inps", "NoiPa", "Mef"],
+    conventionsLabel: "Partner Bancario Unico",
+    conventions: ["IBL Banca"],
 } as const;
 
 export const HOME_SOLUTIONS_CONTENT = {
@@ -207,7 +207,7 @@ export const HOME_TRANSPARENCY_CONTENT = {
     badge: "Trasparenza Istituzionale",
     title: "Chi è CreditoClick: trasparenza e conformità normativa",
     paragraphs: [
-        "CreditoClick è un'agenzia finanziaria convenzionata, iscritta all'OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Operiamo in qualità di mediatori creditizi, collaborando con primari istituti finanziatori autorizzati da Banca d'Italia.",
+        "CreditoClick è un'agenzia in attività finanziaria convenzionata, iscritta all'OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Operiamo come Agente Monomandatario di IBL Istituto Bancario del Lavoro S.p.A., con accesso diretto ai prodotti leader di IBL Banca.",
         "La nostra attività è regolata dal Testo Unico Bancario (TUB), dal Codice del Consumo e dalle disposizioni di Banca d'Italia in materia di trasparenza delle operazioni bancarie e dei servizi di pagamento.",
     ],
     listTitle: "Cosa significa per te:",

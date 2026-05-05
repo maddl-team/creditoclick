@@ -59,7 +59,7 @@ export const PMC_IMPORTI = {
     ["120 mesi (10 anni)", "360 €", "~ 28.000 – 34.000 €"],
   ] as const,
   note:
-    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   afterNote:
     "Per un matrimonio con un budget medio — tra i 15.000 e i 25.000 euro — una cessione del quinto su 84 mesi con uno stipendio nella norma è generalmente sufficiente a coprire l'intero costo della cerimonia, incluso il viaggio di nozze.",
   cta: "Calcola quanto puoi ottenere — Usa il nostro strumento gratuito",
@@ -119,8 +119,8 @@ export const PMC_PROCESSO = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi del profilo e selezione dell'offerta",
-      desc: "Il consulente analizza il tuo profilo contrattuale (o quello della coppia) e identifica tra i partner convenzionati l'istituto con le condizioni più favorevoli. Ti risponde su WhatsApp con una prima valutazione concreta e i tempi previsti per l'accredito.",
+      title: "Passaggio 2 — Analisi del profilo e proposta diretta IBL Banca",
+      desc: "Il consulente analizza il tuo profilo contrattuale (o quello della coppia) e prepara una proposta IBL Banca con condizioni chiare e tempi previsti per l'accredito. Ti risponde su WhatsApp con una prima valutazione concreta.",
       icon: "userCheck",
     },
     {
@@ -141,7 +141,7 @@ export const PMC_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 

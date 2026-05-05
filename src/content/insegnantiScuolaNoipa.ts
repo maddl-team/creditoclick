@@ -65,7 +65,7 @@ export const ISN_TASSI = {
     ["120 mesi (10 anni)", "320 €", "~ 25.000 – 30.000 €"],
   ] as const,
   note:
-    "Valori indicativi basati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "Valori indicativi basati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -132,7 +132,7 @@ export const ISN_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto per il personale pagato tramite NoiPA è disciplinata dal D.P.R. 180/1950 e dalle circolari MEF in materia di gestione delle trattenute sul cedolino stipendiale. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto per il personale pagato tramite NoiPA è disciplinata dal D.P.R. 180/1950 e dalle circolari MEF in materia di gestione delle trattenute sul cedolino stipendiale. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 

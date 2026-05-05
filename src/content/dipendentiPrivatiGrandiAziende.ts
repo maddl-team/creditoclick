@@ -8,7 +8,7 @@ export const DPGA_HERO = {
   badge: "Segmento Corporate Privati",
   title: "Cessione del Quinto per Dipendenti di Grandi Aziende Private: condizioni, iter e vantaggi",
   subtitle:
-    "Lavori in una SPA, in una grande SRL o in un gruppo industriale strutturato? La tua posizione contrattuale ti garantisce accesso alle stesse condizioni di tasso riservate ai dipendenti pubblici — spesso con iter più rapidi e una gestione completamente riservata. CreditoClick lavora con i principali istituti convenzionati per offrirti il preventivo più competitivo disponibile sul mercato.",
+    "Lavori in una SPA, in una grande SRL o in un gruppo industriale strutturato? La tua posizione contrattuale ti garantisce accesso a condizioni di tasso molto competitive — spesso con iter più rapidi e una gestione completamente riservata. CreditoClick opera con canale diretto IBL Banca per offrirti una proposta solida e tempi certi.",
   primaryCta: "Richiedi un preventivo su WhatsApp",
   secondaryCta: "Calcola la tua rata",
 } as const;
@@ -19,7 +19,7 @@ export const DPGA_PERCHE = {
   paragraphs: [
     "Nel sistema della cessione del quinto, il rischio percepito dall'istituto finanziatore non dipende solo dal profilo individuale del richiedente, ma in misura significativa dalla solidità del datore di lavoro. Un dipendente di un'azienda quotata in borsa, di un grande gruppo industriale o di una multinazionale operante in Italia rappresenta, agli occhi dell'istituto, un profilo a rischio molto basso — paragonabile, in molti casi, a quello di un dipendente della pubblica amministrazione.",
     "Questa valutazione si traduce direttamente in condizioni di finanziamento più favorevoli: TAEG più competitivi, procedure di approvazione più rapide e, in alcuni casi, accesso a importi erogabili superiori rispetto a quanto ottenibile presso istituti non specializzati.",
-    "La chiave è la scelta dell'istituto finanziatore giusto — quello che conosce il tuo datore di lavoro, ha già in portafoglio contratti con dipendenti della tua azienda e applica condizioni dedicate. CreditoClick lavora quotidianamente con i principali istituti convenzionati per identificare, per ogni profilo aziendale, l'offerta effettivamente più vantaggiosa.",
+    "La chiave è lavorare con un canale specializzato che conosce bene il tuo datore di lavoro e le sue procedure amministrative. Grazie al rapporto esclusivo con IBL Banca, CreditoClick riduce i tempi d'attesa e offre una consulenza specialistica sui prodotti piu adatti ai profili di grandi aziende.",
   ],
 } as const;
 
@@ -69,7 +69,7 @@ export const DPGA_ITER = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi del profilo aziendale e selezione dell'istituto",
+      title: "Passaggio 2 — Analisi del profilo aziendale e proposta diretta IBL Banca",
       desc: "Il consulente verifica quale istituto convenzionato applica le condizioni più favorevoli per i dipendenti della tua specifica azienda. Non tutti gli istituti valutano allo stesso modo lo stesso datore di lavoro: la scelta dell'istituto giusto può fare una differenza significativa sul TAEG finale.",
       icon: "userCheck",
     },
@@ -100,7 +100,7 @@ export const DPGA_IMPORTI = {
     ["120 mesi (10 anni)", "440 €", "~ 35.000 – 42.000 €"],
   ] as const,
   note:
-    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico, dall'azienda datrice di lavoro e dall'istituto finanziatore selezionato.",
+    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico, dall'azienda datrice di lavoro e dal prodotto IBL Banca applicabile.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -136,7 +136,7 @@ export const DPGA_FAQ = {
     },
     {
       q: "I tempi di approvazione per i dipendenti di grandi aziende sono diversi?",
-      a: "Generalmente sì. Poiché gli istituti convenzionati hanno già familiarità con le procedure amministrative delle grandi aziende, i tempi di risposta tendono ad essere più rapidi rispetto ai profili meno conosciuti. In molti casi, dalla presentazione della pratica completa all'accredito passano tra i 7 e i 15 giorni lavorativi.",
+      a: "Generalmente sì. Grazie al canale dedicato con IBL Banca e alla familiarità con le procedure amministrative delle grandi aziende, i tempi di risposta tendono ad essere più rapidi. In molti casi, dalla presentazione della pratica completa all'accredito passano tra i 7 e i 15 giorni lavorativi.",
     },
     {
       q: "Ho uno stipendio variabile per via dei bonus aziendali: come viene calcolata la rata massima?",
@@ -149,7 +149,7 @@ export const DPGA_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali",
   title: "Trasparenza e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). Consulenza preliminare gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). Consulenza preliminare gratuita e senza impegno.",
   ],
 } as const;
 

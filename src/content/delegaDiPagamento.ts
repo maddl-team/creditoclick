@@ -120,7 +120,7 @@ export const DDP_PASSAGGI = {
     },
     {
       title: "Passaggio 2 — Analisi della capienza residua",
-      desc: "Il consulente calcola la quota di stipendio ancora disponibile per la delega, verifica il TFR residuo e seleziona tra i nostri istituti convenzionati quello con le condizioni più favorevoli per il tuo profilo specifico.",
+      desc: "Il consulente calcola la quota di stipendio ancora disponibile per la delega, verifica il TFR residuo e prepara una proposta dedicata IBL Banca per il tuo profilo specifico.",
       icon: "userCheck",
     },
     {
@@ -157,7 +157,7 @@ export const DDP_EEAT = {
   title: "Informazioni legali sulla delega di pagamento",
   paragraphs: [
     "La delega di pagamento è disciplinata dal D.P.R. 180/1950 e dalle successive modificazioni, nonché dalle disposizioni di Banca d'Italia in materia di credito al consumo. Come per la cessione del quinto, è obbligatoria la stipula di una polizza assicurativa a copertura del rischio vita e del rischio impiego.",
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
   ],
 } as const;
 
@@ -195,7 +195,7 @@ export const DDP_FAQ = {
 export const DDP_FINAL_CTA = {
   title: "Hai già una cessione del quinto? Scopri quanta liquidità aggiuntiva puoi ottenere.",
   subtitle:
-    "La verifica di fattibilità è gratuita, riservata e senza impegno. Il nostro consulente analizza la tua situazione contrattuale, calcola la capienza residua e ti presenta l'offerta più competitiva tra i nostri istituti convenzionati — tutto via WhatsApp, senza file in filiale.",
+    "La verifica di fattibilità è gratuita, riservata e senza impegno. Il nostro consulente analizza la tua situazione contrattuale, calcola la capienza residua e ti presenta la proposta IBL Banca più adatta — tutto via WhatsApp, senza file in filiale.",
   primary: "Verifica la tua eligibilità su WhatsApp",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

@@ -33,7 +33,7 @@ export const CRCQ_INDICATIVO = {
   title: "Perché il calcolatore fornisce stime e non offerte vincolanti",
   paragraphs: [
     "Il calcolatore di CreditoClick fornisce stime indicative — non offerte vincolanti. Questa distinzione è importante e vogliamo spiegarla con chiarezza, perché è il fondamento di una consulenza seria.",
-    "Il tasso reale dipende dal profilo specifico. Il calcolatore utilizza un tasso di riferimento medio per ciascuna categoria professionale. Il tasso effettivo applicato al tuo contratto dipende da variabili che solo un'analisi individuale può determinare: la specifica azienda datrice di lavoro, la tua anzianità contrattuale, il TFR maturato (per i privati), la tua età anagrafica (che incide sul costo della polizza vita), l'istituto finanziatore selezionato.",
+    "Il tasso reale dipende dal profilo specifico. Il calcolatore utilizza un tasso di riferimento medio per ciascuna categoria professionale. Il tasso effettivo applicato al tuo contratto dipende da variabili che solo un'analisi individuale può determinare: la specifica azienda datrice di lavoro, la tua anzianità contrattuale, il TFR maturato (per i privati), la tua età anagrafica (che incide sul costo della polizza vita), e il prodotto IBL Banca applicabile.",
     "L'importo reale dipende dal TFR disponibile. Per i dipendenti privati, il TFR maturato costituisce una garanzia implicita che può limitare l'importo effettivamente erogabile rispetto al massimo teorico calcolato sulla rata. Il calcolatore non tiene conto di questa variabile.",
     "Le segnalazioni CRIF possono influire. In presenza di segnalazioni in Centrale Rischi, alcuni istituti applicano condizioni diverse o limitano l'importo erogabile. Il calcolatore non considera la situazione creditizia del richiedente.",
     "La stima del calcolatore è utile per capire l'ordine di grandezza della soluzione e per valutare se proseguire con una consulenza. Il preventivo personalizzato — gratuito, riservato e senza impegno — è il solo documento che riflette le condizioni realmente applicabili al tuo profilo specifico.",
@@ -46,10 +46,10 @@ export const CRCQ_DAL = {
   intro:
     "Hai ottenuto la tua stima e vuoi saperne di più? Il passo successivo è richiedere un preventivo personalizzato gratuito via WhatsApp. Ecco cosa cambia rispetto alla simulazione del calcolatore:",
   items: [
-    "Il preventivo è basato sul tuo profilo reale: Il consulente analizza la tua situazione contrattuale specifica — datore di lavoro, anzianità, TFR, eventuale storico creditizio — e identifica tra i partner convenzionati l'istituto che offre le condizioni più competitive per il tuo caso.",
+    "Il preventivo è basato sul tuo profilo reale: Il consulente analizza la tua situazione contrattuale specifica — datore di lavoro, anzianità, TFR, eventuale storico creditizio — e prepara una proposta dedicata IBL Banca per il tuo caso.",
     "Il preventivo espone il TAEG reale: Non un tasso medio di categoria, ma il tasso annuo effettivo globale effettivamente applicabile al tuo contratto, calcolato in conformità alla normativa sul credito al consumo.",
     "Il preventivo è accompagnato dal modulo SECCI: Il documento Standard European Consumer Credit Information contiene tutte le condizioni contrattuali in modo standardizzato e confrontabile. Riceverlo è un tuo diritto prima di qualsiasi firma.",
-    "Il preventivo non impegna a nulla: Puoi ricevere il preventivo, valutarlo con calma, confrontarlo con altre offerte e decidere liberamente se procedere o meno. Non ci sono costi di consulenza, non ci sono penali per il recesso prima della firma.",
+    "Il preventivo non impegna a nulla: Puoi ricevere il preventivo, valutarlo con calma e decidere liberamente se procedere o meno. Non ci sono costi di consulenza, non ci sono penali per il recesso prima della firma.",
   ],
   cta: "Richiedi il tuo preventivo personalizzato su WhatsApp",
 } as const;
@@ -66,7 +66,7 @@ export const CRCQ_METODO = {
     "In termini pratici, per una rata di 300 € mensili su 84 mesi a un TAN del 7%:",
     "Importo lordo ≈ 300 × [(1 - (1 + 0,07/12)^(-84)) / (0,07/12)] ≈ 18.800 €",
     "L'importo netto erogato: L'importo netto che il richiedente riceve sul conto corrente è inferiore all'importo lordo, perché dal totale vengono dedotti i costi inclusi nel piano: spese di istruttoria, costo della polizza assicurativa obbligatoria (vita e rischio impiego), imposta sostitutiva. Questi costi sono tutti inclusi nel TAEG e comunicati nel preventivo prima della firma.",
-    "Il TAEG: Il Tasso Annuo Effettivo Globale include TAN più tutti i costi obbligatori — è il parametro corretto per confrontare offerte diverse. Due offerte con lo stesso TAN ma costi assicurativi diversi hanno TAEG diversi: è sempre il TAEG il dato da confrontare.",
+    "Il TAEG: Il Tasso Annuo Effettivo Globale include TAN più tutti i costi obbligatori — è il parametro più affidabile per valutare il costo reale del finanziamento. Anche con TAN simile, costi assicurativi diversi generano TAEG diversi: per questo il TAEG resta il dato centrale da considerare.",
   ],
 } as const;
 
@@ -125,7 +125,7 @@ export const CRCQ_EEAT = {
   title: "Informazioni sulla metodologia del calcolatore e conformità normativa",
   paragraphs: [
     "I valori forniti dal calcolatore sono stime indicative elaborate sulla base di tassi medi di mercato aggiornati per categoria professionale. Non costituiscono un'offerta contrattuale, un preventivo formale o una promessa di finanziamento. Le condizioni reali applicabili al singolo richiedente vengono determinate esclusivamente nel preventivo personalizzato, rilasciato dopo l'analisi individuale del profilo da parte del consulente CreditoClick.",
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo (D.Lgs. 141/2010, Direttiva 2008/48/CE).",
     "Prima di qualsiasi firma contrattuale, il cliente riceve obbligatoriamente il modulo SECCI (Standard European Consumer Credit Information) contenente tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
     "I tassi comunicati a titolo indicativo nel calcolatore sono conformi alle soglie d'usura pubblicate trimestralmente da Banca d'Italia. CreditoClick opera esclusivamente con offerte conformi a queste soglie.",
   ],

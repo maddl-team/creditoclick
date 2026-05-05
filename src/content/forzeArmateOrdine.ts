@@ -19,7 +19,7 @@ export const FAO_TRATTAMENTO = {
   paragraphs: [
     "La retribuzione del personale delle Forze Armate e delle Forze dell'Ordine è strutturalmente diversa da quella di un qualsiasi altro dipendente pubblico. Oltre alla paga base, comprende una serie di voci accessorie che variano per comparto, per grado, per sede di servizio e per tipo di impiego: indennità operative, indennità di rischio, assegni funzionali, compensi per servizi straordinari, indennità di missione, assegni per servizio in zone disagiate.",
     "Questa complessità crea un problema concreto quando ci si rivolge a istituti finanziatori generalisti: molti di essi calcolano la rata massima della cessione del quinto considerando solo la paga base, ignorando le voci accessorie ricorrenti che in molti casi costituiscono una parte rilevante del reddito netto mensile effettivo. Il risultato è che il militare o l'agente si vede proporre un importo erogabile inferiore a quello a cui avrebbe effettivamente diritto.",
-    "Gli istituti specializzati nel comparto sicurezza e difesa con cui CreditoClick collabora conoscono la struttura retributiva di ciascun comparto nei dettagli: sanno quali voci accessorie sono stabili e ricorrenti, quali dipendono dall'impiego specifico, e come calcolare correttamente la base imponibile per la cessione del quinto. Questo si traduce in importi erogabili più alti e condizioni più aderenti alla realtà economica del richiedente.",
+    "Il canale specializzato IBL Banca per il comparto sicurezza e difesa conosce la struttura retributiva di ciascun comparto nei dettagli: sa quali voci accessorie sono stabili e ricorrenti, quali dipendono dall'impiego specifico, e come calcolare correttamente la base imponibile per la cessione del quinto. Questo si traduce in importi erogabili più alti e condizioni più aderenti alla realtà economica del richiedente.",
   ],
 } as const;
 
@@ -30,7 +30,7 @@ export const FAO_COMPARTI = {
   items: [
     "Esercito Italiano Ufficiali, sottufficiali, graduati e truppa: L'Esercito Italiano è il comparto più numeroso delle Forze Armate. Il personale militare dell'Esercito — dagli ufficiali di grado elevato ai militari di truppa in ferma breve prolungata, purché a tempo indeterminato — accede alla cessione del quinto con condizioni che variano significativamente in base al grado, all'anzianità di servizio e alla composizione della retribuzione. CreditoClick identifica l'istituto che applica il calcolo più favorevole per il tuo specifico profilo.",
     "Nota sulla ferma breve: i militari in ferma prefissata breve (VFB) o in ferma prefissata quadriennale (VFQ) non hanno accesso alla cessione del quinto standard, in quanto il loro contratto ha una scadenza prefissata. La cessione del quinto è accessibile ai volontari in servizio permanente (VSP) e a tutto il personale a tempo indeterminato.",
-    "Marina Militare Personale imbarcato e a terra: le specificità delle indennità marittime: Il personale della Marina Militare presenta una struttura retributiva particolarmente articolata, con indennità specifiche per il servizio imbarcato, indennità di imbarco e compensi operativi che variano in base alla tipologia di unità navale e alla durata delle missioni. Gli istituti specializzati che CreditoClick seleziona per questo profilo sono in grado di valutare correttamente queste voci e di costruire un piano di rimborso sostenibile anche in presenza di redditi periodicamente variabili per via delle missioni.",
+    "Marina Militare Personale imbarcato e a terra: le specificità delle indennità marittime: Il personale della Marina Militare presenta una struttura retributiva particolarmente articolata, con indennità specifiche per il servizio imbarcato, indennità di imbarco e compensi operativi che variano in base alla tipologia di unità navale e alla durata delle missioni. Il canale IBL Banca gestito da CreditoClick è in grado di valutare correttamente queste voci e di costruire un piano di rimborso sostenibile anche in presenza di redditi periodicamente variabili per via delle missioni.",
     "Aeronautica Militare Piloti, specialisti e personale di supporto: Il personale dell'Aeronautica Militare — piloti militari, specialisti di volo, tecnici di terra, personale amministrativo e di supporto — beneficia di una struttura contrattuale particolarmente apprezzata dagli istituti finanziatori. Le indennità di volo e le indennità operative, quando ricorrenti e documentabili, vengono incluse nel calcolo della base imponibile dagli istituti specializzati, aumentando l'importo erogabile rispetto a quanto offrirebbe un istituto generalista.",
     "Arma dei Carabinieri Il comparto con la presenza territoriale più capillare: I Carabinieri rappresentano uno dei comparti più numerosi e territorialmente distribuiti tra le Forze dell'Ordine. Il personale dell'Arma — ufficiali, sottufficiali e appuntati/carabinieri — accede alla cessione del quinto con condizioni riservate al comparto sicurezza, con iter che CreditoClick gestisce in modo completamente digitale indipendentemente dalla sede di servizio, anche in territori periferici o in sedi operative distaccate.",
     "Guardia di Finanza Il comparto finanziario delle Forze dell'Ordine: Il personale della Guardia di Finanza — ufficiali, ispettori, sovrintendenti, appuntati e finanzieri — ha una struttura retributiva che include specifiche indennità operative legate ai servizi di polizia economico-finanziaria. CreditoClick lavora con istituti che conoscono il CCNL specifico del comparto e applicano criteri di valutazione adeguati alla reale composizione della retribuzione.",
@@ -74,7 +74,7 @@ export const FAO_IMPORTI = {
     ["120 mesi (10 anni)", "380 €", "~ 30.000 – 36.000 €"],
   ] as const,
   note:
-    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dalla composizione effettiva della retribuzione, dal grado, dal comparto e dall'istituto finanziatore selezionato.",
+    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dalla composizione effettiva della retribuzione, dal grado, dal comparto e dal prodotto IBL Banca applicabile.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -106,8 +106,8 @@ export const FAO_PROCESSO = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi della struttura retributiva e selezione dell'istituto",
-      desc: "Il consulente analizza la composizione della tua retribuzione, identifica le voci accessorie includibili nel calcolo e seleziona tra i partner convenzionati l'istituto che applica i criteri di valutazione più favorevoli per il tuo comparto e grado specifico.",
+      title: "Passaggio 2 — Analisi della struttura retributiva e proposta diretta IBL Banca",
+      desc: "Il consulente analizza la composizione della tua retribuzione, identifica le voci accessorie includibili nel calcolo e prepara una proposta IBL Banca con criteri di valutazione adatti al tuo comparto e grado specifico.",
       icon: "userCheck",
     },
     {
@@ -128,7 +128,7 @@ export const FAO_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto per il personale delle Forze Armate e delle Forze dell'Ordine è disciplinata dal D.P.R. 180/1950 e dalle disposizioni specifiche di ciascun comparto in materia di trattenute sulle competenze stipendiali. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto per il personale delle Forze Armate e delle Forze dell'Ordine è disciplinata dal D.P.R. 180/1950 e dalle disposizioni specifiche di ciascun comparto in materia di trattenute sulle competenze stipendiali. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 

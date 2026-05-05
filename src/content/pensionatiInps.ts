@@ -63,7 +63,7 @@ export const PIP_IMPORTO = {
     ["120 mesi (10 anni)", "280 €", "~ 24.000 – 28.000 €"],
   ] as const,
   note:
-    "Valori indicativi. Gli importi esatti dipendono dall'età del richiedente, dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato. La durata massima disponibile dipende dall'età anagrafica al momento della richiesta.",
+    "Valori indicativi. Gli importi esatti dipendono dall'età del richiedente, dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile. La durata massima disponibile dipende dall'età anagrafica al momento della richiesta.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -115,7 +115,7 @@ export const PIP_PROCESSO = {
     },
     {
       title: "Passaggio 2 — Analisi del profilo e verifica della fattibilità",
-      desc: "Il consulente verifica la durata massima disponibile in base alla tua età, calcola l'importo massimo erogabile e identifica tra i nostri istituti convenzionati quello con le condizioni più favorevoli per il tuo profilo specifico. Ti risponde direttamente su WhatsApp con una valutazione chiara e concreta.",
+      desc: "Il consulente verifica la durata massima disponibile in base alla tua età, calcola l'importo massimo erogabile e prepara la proposta IBL Banca piu adatta al tuo profilo specifico. Ti risponde direttamente su WhatsApp con una valutazione chiara e concreta.",
       icon: "userCheck",
     },
     {
@@ -136,7 +136,7 @@ export const PIP_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "La cessione del quinto della pensione è disciplinata dal D.P.R. 180/1950 e successive modificazioni, nonché dalle circolari INPS in materia di trattenute sul cedolino pensionistico. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
+    "La cessione del quinto della pensione è disciplinata dal D.P.R. 180/1950 e successive modificazioni, nonché dalle circolari INPS in materia di trattenute sul cedolino pensionistico. CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
     "Prima della firma, il cliente riceve obbligatoriamente il modulo SECCI (Standard European Consumer Credit Information) contenente tutte le condizioni economiche del contratto: TAN, TAEG, importo totale dovuto, costo della polizza vita, piano di ammortamento dettagliato. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula del contratto (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;

@@ -84,7 +84,7 @@ export const PROFESSIONI_DIFFERENZA = {
   title: "Perché la scelta dell'istituto conta quanto la scelta del prodotto",
   paragraphs: [
     "Un elemento che molti richiedenti sottovalutano è che lo stesso profilo professionale — stesso comparto, stesso stipendio, stessa anzianità — può ricevere offerte significativamente diverse da istituti diversi. Questo accade perché ogni istituto finanziatore ha le proprie politiche di credito per categoria: alcuni hanno convenzioni specifiche con determinati comparti pubblici, altri valutano meglio i profili privati corporate, altri ancora hanno sviluppato procedure dedicate per le PMI o per i pensionati.",
-    "CreditoClick conosce queste politiche in modo approfondito e aggiornato. Per ogni profilo che valutiamo, la selezione dell'istituto convenzionato più adatto non è casuale — è il risultato di una conoscenza costruita pratica dopo pratica, categoria per categoria.",
+    "CreditoClick conosce queste politiche in modo approfondito e aggiornato. Per ogni profilo che valutiamo, la proposta IBL Banca più adatta nasce da una conoscenza costruita pratica dopo pratica, categoria per categoria.",
     "Non presentiamo il tuo profilo all'istituto con cui lavoriamo di più. Lo presentiamo all'istituto che offre le condizioni migliori per la tua specifica situazione.",
   ],
 } as const;
@@ -113,7 +113,7 @@ export const PROFESSIONI_FAQ = {
     },
     {
       q: "Come faccio a sapere se la mia categoria ha convenzioni attive con CreditoClick?",
-      a: "Il modo più rapido è scriverci su WhatsApp indicando la tua categoria professionale e il tuo datore di lavoro. Il consulente verifica immediatamente quali istituti convenzionati hanno le condizioni più favorevoli per il tuo profilo specifico e ti fornisce una prima valutazione entro 24 ore lavorative.",
+      a: "Il modo più rapido è scriverci su WhatsApp indicando la tua categoria professionale e il tuo datore di lavoro. Il consulente verifica immediatamente la soluzione IBL Banca più adatta al tuo profilo specifico e ti fornisce una prima valutazione entro 24 ore lavorative.",
     },
     {
       q: "Le condizioni cambiano se sono a inizio carriera o se ho molti anni di anzianità?",

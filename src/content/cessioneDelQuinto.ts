@@ -144,8 +144,8 @@ export const CDQ_PASSAGGI = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi del profilo e selezione dell'offerta",
-      desc: "Un consulente specializzato valuta il tuo profilo e identifica le offerte più competitive tra i nostri istituti convenzionati. Ti presentiamo solo proposte concretamente accessibili — mai promesse non realizzabili.",
+      title: "Passaggio 2 — Analisi del profilo e proposta diretta IBL Banca",
+      desc: "Un consulente specializzato valuta il tuo profilo e costruisce una proposta dedicata sui prodotti IBL Banca. Ti presentiamo solo soluzioni concretamente accessibili — mai promesse non realizzabili.",
       icon: "userCheck",
     },
     {
@@ -166,7 +166,7 @@ export const CDQ_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e trasparenza sul prodotto",
   intro:
-    "La cessione del quinto è un prodotto finanziario regolato dal D.P.R. 180/1950, dal D.Lgs. 141/2010 e dalle disposizioni di Banca d'Italia. CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849, e non eroga direttamente finanziamenti. I contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
+    "La cessione del quinto è un prodotto finanziario regolato dal D.P.R. 180/1950, dal D.Lgs. 141/2010 e dalle disposizioni di Banca d'Italia. CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849, e non eroga direttamente finanziamenti. I contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia.",
   features: [
     {
       title: "Il TAEG comunicato nel preventivo",

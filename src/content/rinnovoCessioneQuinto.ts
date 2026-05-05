@@ -104,7 +104,7 @@ export const RCQ_PASSAGGI = {
     },
     {
       title: "Passaggio 3 — Selezione dell'offerta e preventivo personalizzato",
-      desc: "Sulla base del conteggio estintivo e del tuo profilo aggiornato, identifichiamo tra i nostri istituti convenzionati l'offerta più competitiva. Ricevi un preventivo con TAEG, TAN, nuova rata mensile, importo erogato, liquidità netta e costo totale del credito — tutto esposto in modo trasparente, prima di qualsiasi firma.",
+      desc: "Sulla base del conteggio estintivo e del tuo profilo aggiornato, prepariamo una proposta dedicata IBL Banca. Ricevi un preventivo con TAEG, TAN, nuova rata mensile, importo erogato, liquidità netta e costo totale del credito — tutto esposto in modo trasparente, prima di qualsiasi firma.",
       icon: "userCheck",
     },
     {
@@ -142,7 +142,7 @@ export const RCQ_EEAT = {
   title: "Informazioni legali sul rinnovo e sulla portabilità",
   paragraphs: [
     "Il rinnovo della cessione del quinto è un'operazione disciplinata dal D.P.R. 180/1950 e dalle disposizioni di Banca d'Italia in materia di trasparenza e credito al consumo. La portabilità senza costi per il cliente è garantita dalla normativa vigente: l'istituto subentrante non può addebitare al cliente le spese legate al trasferimento del contratto.",
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima di qualsiasi firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 e non eroga direttamente finanziamenti. Prima di qualsiasi firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del nuovo contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB).",
   ],
 } as const;
 
@@ -152,7 +152,7 @@ export const RCQ_FAQ = {
   items: [
     {
       q: "Posso rinnovare la cessione del quinto con qualsiasi istituto o solo con quello originario?",
-      a: "Puoi rinnovare con qualsiasi istituto convenzionato, non necessariamente con quello originario. Anzi, la portabilità verso un nuovo istituto è spesso l'occasione per ottenere condizioni migliorative rispetto al contratto in corso. CreditoClick confronta le offerte di più istituti per identificare quella più conveniente per il tuo profilo.",
+      a: "Il rinnovo viene strutturato sul canale IBL Banca, anche quando il contratto iniziale era con un altro intermediario. La portabilità viene gestita in modo da ottenere condizioni solide, tempi certi e una liquidità netta realmente utile per il tuo profilo.",
     },
     {
       q: "Il rinnovo comporta costi aggiuntivi rispetto al contratto originario?",

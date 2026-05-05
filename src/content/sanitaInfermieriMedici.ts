@@ -67,7 +67,7 @@ export const SIM_CESSIONE = {
     ["120 mesi (10 anni)", "340 €", "~ 27.000 – 32.000 €"],
   ] as const,
   note:
-    "Valori indicativi basati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "Valori indicativi basati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   cta: "Calcola la tua rata esatta — Usa il nostro strumento gratuito",
 } as const;
 
@@ -103,7 +103,7 @@ export const SIM_PASSAGGI = {
     },
     {
       title: "Passaggio 2 — Analisi del profilo entro 24 ore lavorative",
-      desc: "Un consulente specializzato analizza il tuo profilo e identifica l'offerta più competitiva tra i nostri istituti convenzionati per il comparto sanitario. Ti risponde direttamente su WhatsApp con una prima valutazione chiara e concreta.",
+      desc: "Un consulente specializzato analizza il tuo profilo e ti propone la soluzione IBL Banca piu adatta al comparto sanitario. Ti risponde direttamente su WhatsApp con una prima valutazione chiara e concreta.",
       icon: "userCheck",
     },
     {
@@ -137,7 +137,7 @@ export const SIM_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 

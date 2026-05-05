@@ -33,7 +33,7 @@ export const PAAM_PERCHE = {
     "Libertà totale sulla scelta del venditore: Puoi acquistare da qualsiasi soggetto — concessionaria, privato, piattaforma online, asta pubblica, importatore — senza vincoli di sorta. La liquidità è sul tuo conto: sei tu a decidere come usarla.",
     "Nessun vincolo sul veicolo: Il veicolo acquistato è immediatamente e interamente di tua proprietà, senza riserva di proprietà a favore della finanziaria. Puoi rivenderlo, modificarlo o cederlo in qualsiasi momento senza dover estinguere preventivamente il finanziamento.",
     "Tasso fisso e rata automatica: La rata della cessione del quinto non cambia mai per tutta la durata del contratto e viene trattenuta automaticamente in busta paga. Non ci sono rischi di variazioni di tasso, né rischi di addebito su conto scoperto.",
-    "Confrontabilità reale del costo: Il preventivo CreditoClick espone sempre TAEG, TAN e costo totale del credito in modo chiaro e confrontabile. Puoi paragonare il costo effettivo della cessione del quinto con quello del finanziamento in concessionaria e scegliere consapevolmente.",
+    "Trasparenza reale del costo: Il preventivo CreditoClick espone sempre TAEG, TAN e costo totale del credito in modo chiaro. Hai tutte le informazioni necessarie per decidere in modo consapevole.",
     "Accessibile anche con segnalazioni CRIF: Se hai avuto difficoltà creditizie in passato, il finanziamento auto tradizionale potrebbe essere difficile da ottenere. La cessione del quinto valuta principalmente la stabilità del tuo reddito attuale.",
   ],
 } as const;
@@ -50,7 +50,7 @@ export const PAAM_IMPORTI = {
     ["120 mesi (10 anni)", "340 €", "~ 27.000 – 32.000 €"],
   ] as const,
   note:
-    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dall'istituto finanziatore selezionato.",
+    "Valori indicativi calcolati su un profilo tipo. Gli importi esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
   afterNote:
     "Per la maggior parte degli acquisti di veicoli — auto nuove di fascia media, auto usate di qualità, moto di media e alta cilindrata — gli importi ottenibili con la cessione del quinto sono ampiamente sufficienti a coprire l'intero costo del veicolo.",
   cta: "Calcola quanto puoi ottenere — Usa il nostro strumento gratuito",
@@ -70,7 +70,7 @@ export const PAAM_CONFRONTO = {
     ["Rata automatica senza rischio di insoluto", "Sì — trattenuta in busta paga", "No — addebito su conto corrente"],
   ] as const,
   note:
-    "Il finanziamento in concessionaria può essere conveniente in situazioni specifiche — promozioni a tasso zero reali, permute integrate, pacchetti servizi inclusi. In tutti gli altri casi, la cessione del quinto offre maggiore flessibilità, maggiore trasparenza e spesso un costo effettivo più competitivo. Il consulente CreditoClick può aiutarti a confrontare le due opzioni sulla base del tuo profilo specifico.",
+    "Il finanziamento in concessionaria può essere conveniente in situazioni specifiche — promozioni a tasso zero reali, permute integrate, pacchetti servizi inclusi. In molti altri casi, la cessione del quinto con canale diretto IBL Banca offre maggiore flessibilità, maggiore trasparenza e tempi di gestione più rapidi. Il consulente CreditoClick ti aiuta a valutare in modo chiaro la soluzione più adatta al tuo profilo.",
 } as const;
 
 export const PAAM_USATO = {
@@ -109,13 +109,13 @@ export const PAAM_PROCESSO = {
       icon: "clipboardList",
     },
     {
-      title: "Passaggio 2 — Analisi del profilo e selezione dell'offerta",
-      desc: "Il consulente analizza il tuo profilo contrattuale e identifica tra i partner convenzionati l'istituto con le condizioni più favorevoli per il tuo caso specifico. Ti risponde su WhatsApp con una prima valutazione concreta.",
+      title: "Passaggio 2 — Analisi del profilo e proposta diretta IBL Banca",
+      desc: "Il consulente analizza il tuo profilo contrattuale e prepara la proposta IBL Banca più adatta al tuo caso specifico. Ti risponde su WhatsApp con una prima valutazione concreta.",
       icon: "userCheck",
     },
     {
       title: "Passaggio 3 — Preventivo personalizzato con TAEG e rata netta",
-      desc: "Ricevi il preventivo con tutti i parametri economici esposti in modo chiaro: TAN, TAEG, rata mensile netta, importo totale dovuto, costo dell'assicurazione. Puoi confrontarlo liberamente con il finanziamento proposto dalla concessionaria prima di decidere.",
+      desc: "Ricevi il preventivo con tutti i parametri economici esposti in modo chiaro: TAN, TAEG, rata mensile netta, importo totale dovuto, costo dell'assicurazione. Decidi con piena consapevolezza prima di procedere.",
       icon: "fileText",
     },
     {
@@ -131,7 +131,7 @@ export const PAAM_EEAT = {
   sectionTitle: "Sezione E-E-A-T / Note Legali e Trasparenza",
   title: "Informazioni legali e conformità normativa",
   paragraphs: [
-    "CreditoClick opera in qualità di mediatore creditizio iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
+    "CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM A17849 ai sensi del D.Lgs. 141/2010. Non eroga direttamente finanziamenti: i contratti vengono stipulati con istituti finanziatori autorizzati da Banca d'Italia. La cessione del quinto è disciplinata dal D.P.R. 180/1950 e dalla normativa sul credito al consumo. Prima della firma, il cliente riceve il modulo SECCI con tutte le condizioni economiche del contratto. Il diritto di recesso può essere esercitato entro 14 giorni dalla stipula (art. 125-ter TUB). La consulenza preliminare è gratuita e senza impegno.",
   ],
 } as const;
 
@@ -149,7 +149,7 @@ export const PAAM_FAQ = {
     },
     {
       q: "È conveniente usare la cessione del quinto se la concessionaria mi offre un tasso promozionale molto basso?",
-      a: "Dipende dal TAEG effettivo dell'offerta della concessionaria, incluse tutte le spese accessorie e le polizze obbligatorie richieste. In alcuni casi, le promozioni a tasso agevolato dei costruttori sono genuinamente competitive. In altri casi, il tasso nominale basso è compensato da costi accessori che fanno salire il costo reale. Il consulente CreditoClick può aiutarti a confrontare le due offerte sul costo totale effettivo prima di decidere.",
+      a: "Dipende dal TAEG effettivo dell'offerta della concessionaria, incluse tutte le spese accessorie e le polizze obbligatorie richieste. In alcuni casi, le promozioni a tasso agevolato dei costruttori sono realmente convenienti. In altri casi, il tasso nominale basso è compensato da costi accessori che fanno salire il costo reale. Con il canale diretto IBL Banca, CreditoClick ti fornisce un preventivo completo e trasparente per decidere con chiarezza.",
     },
     {
       q: "Posso richiedere la cessione del quinto per acquistare un veicolo commerciale leggero per uso privato?",
