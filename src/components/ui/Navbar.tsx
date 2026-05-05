@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { BackgroundLines } from "./BackgroundLines";
 import { cn } from "@/lib/utils";
@@ -61,6 +62,8 @@ const NAV_ITEMS: NavItem[] = [
 export function Navbar() {
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const [openMobileSections, setOpenMobileSections] = React.useState<Record<string, boolean>>({});
+    const pathname = usePathname();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -69,6 +72,14 @@ export function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    React.useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
+
+    const toggleMobileSection = (label: string) => {
+        setOpenMobileSections((prev) => ({ ...prev, [label]: !prev[label] }));
+    };
 
     return (
         <nav
@@ -82,7 +93,7 @@ export function Navbar() {
 
             <div className="w-full mx-auto px-6 max-w-7xl relative z-10">
                 <div className="flex items-center justify-between px-6 md:px-8">
-                    <Link href="/" className="inline-flex items-center" aria-label="CreditoClick homepage">
+                    <Link href="/" className="inline-flex items-center" aria-label="CreditoClick homepage" onClick={() => setIsMobileMenuOpen(false)}>
                         <Image
                             src="/images/creditoclick_logo.png"
                             alt="CreditoClick"
@@ -148,31 +159,51 @@ export function Navbar() {
                         <div className="max-h-[70vh] overflow-y-auto space-y-1">
                             {NAV_ITEMS.map((item) =>
                                 item.children ? (
-                                    <details key={item.label} className="rounded-xl border border-slate-200/70 px-3 py-2">
-                                        <summary className="cursor-pointer list-none text-sm font-semibold text-text-primary flex items-center justify-between">
-                                            {item.label}
-                                            <ChevronDown className="h-4 w-4 text-text-secondary" />
-                                        </summary>
-                                        <div className="mt-2 space-y-1">
-                                            <Link href={item.href} className="block rounded-lg px-2 py-2 text-sm text-brand-indigo">
-                                                Vai alla sezione
+                                    <div key={item.label} className="rounded-xl border border-slate-200/70 px-3 py-2">
+                                        <div className="flex items-center justify-between gap-2">
+                                            <Link
+                                                href={item.href}
+                                                className="min-w-0 flex-1 text-sm font-semibold text-text-primary py-1 hover:text-brand-indigo"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {item.label}
                                             </Link>
-                                            {item.children.map((child) => (
-                                                <Link
-                                                    key={child.href}
-                                                    href={child.href}
-                                                    className="block rounded-lg px-2 py-2 text-sm text-text-secondary hover:bg-slate-50"
-                                                >
-                                                    {child.label}
-                                                </Link>
-                                            ))}
+                                            <button
+                                                type="button"
+                                                className="inline-flex h-8 w-8 items-center justify-center rounded-md text-text-secondary hover:bg-slate-100"
+                                                onClick={() => toggleMobileSection(item.label)}
+                                                aria-expanded={openMobileSections[item.label] ?? false}
+                                                aria-label={`Apri sottomenu ${item.label}`}
+                                            >
+                                                <ChevronDown
+                                                    className={cn(
+                                                        "h-4 w-4 transition-transform",
+                                                        openMobileSections[item.label] ? "rotate-180" : "rotate-0"
+                                                    )}
+                                                />
+                                            </button>
                                         </div>
-                                    </details>
+                                        {openMobileSections[item.label] ? (
+                                            <div className="mt-2 space-y-1">
+                                                {item.children.map((child) => (
+                                                    <Link
+                                                        key={child.href}
+                                                        href={child.href}
+                                                        className="block rounded-lg px-2 py-2 text-sm text-text-secondary hover:bg-slate-50"
+                                                        onClick={() => setIsMobileMenuOpen(false)}
+                                                    >
+                                                        {child.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        ) : null}
+                                    </div>
                                 ) : (
                                     <Link
                                         key={item.href}
                                         href={item.href}
                                         className="block rounded-lg px-3 py-2 text-[13px] font-medium text-text-secondary hover:bg-slate-50"
+                                        onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {item.label}
                                     </Link>
