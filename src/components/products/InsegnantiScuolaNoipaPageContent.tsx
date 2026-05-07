@@ -11,6 +11,7 @@ import { IntroPointsSection } from "@/components/products/sections/IntroPointsSe
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
+import { InsegnantiNoipaContactSection } from "@/components/products/sections/InsegnantiNoipaContactSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import {
   ISN_CATEGORIE,
@@ -205,6 +206,8 @@ export function InsegnantiScuolaNoipaPageContent() {
           alt: "Informazioni legali e conformità normativa per cessione del quinto NoiPA",
         }}
       />
+
+      <InsegnantiNoipaContactSection />
 
       <FaqSection
         sectionId="faq"

@@ -13,6 +13,7 @@ import { ComparisonSection } from "@/components/products/sections/ComparisonSect
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import { CardGridListSection } from "@/components/products/sections/CardGridListSection";
+import { PmiContactSection } from "@/components/products/sections/PmiContactSection";
 import {
   DPPMI_ANZIANITA,
   DPPMI_CATEGORIE,
@@ -194,6 +195,8 @@ export function DipendentiPiccoleImpresePmiPageContent() {
           alt: "Trasparenza e conformità normativa per cessione del quinto PMI",
         }}
       />
+
+      <PmiContactSection />
 
       <FaqSection
         sectionId="faq"

@@ -1,0 +1,157 @@
+"use client";
+
+import * as React from "react";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
+import { SectionIntro } from "@/components/ui/SectionIntro";
+
+type Step = 1 | 2 | 3 | 4;
+type Corpo = "carabinieri" | "polizia" | "gdf" | "esercito" | "marina" | "aeronautica" | "penitenziaria";
+type Contatto = "mattina" | "pomeriggio" | "sera";
+
+const WHATSAPP_BASE = "393276625456";
+
+function normalizePhone(raw: string) {
+  const digits = raw.trim().replace(/[^\d]/g, "");
+  if (digits.length === 10) return `+39${digits}`;
+  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
+  return raw;
+}
+
+export function ForzeArmateContactSection() {
+  const [step, setStep] = React.useState<Step>(1);
+  const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [corpo, setCorpo] = React.useState<Corpo>("carabinieri");
+  const [grado, setGrado] = React.useState("");
+  const [anniServizio, setAnniServizio] = React.useState(10);
+  const [stipendioNetto, setStipendioNetto] = React.useState(2000);
+  const [orarioContatto, setOrarioContatto] = React.useState<Contatto>("pomeriggio");
+  const [nome, setNome] = React.useState("");
+  const [cognome, setCognome] = React.useState("");
+  const [cellulare, setCellulare] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [consensoPrivacy, setConsensoPrivacy] = React.useState(false);
+  const [consensoMarketing, setConsensoMarketing] = React.useState(false);
+
+  function validateStep() {
+    const next: Record<string, string> = {};
+    if (step === 2) {
+      if (!Number.isFinite(anniServizio) || anniServizio < 0 || anniServizio > 50) next.anniServizio = "Inserisci un valore tra 0 e 50.";
+      if (!Number.isFinite(stipendioNetto) || stipendioNetto < 600) next.stipendio = "Inserisci uno stipendio valido (minimo 600 €).";
+    }
+    if (step === 4) {
+      if (nome.trim().length < 2) next.nome = "Inserisci il nome.";
+      if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome.";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
+      if (!/^\+39\d{10}$/.test(normalizePhone(cellulare).trim())) next.cellulare = "Inserisci un cellulare valido: +39 seguito da 10 cifre.";
+      if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
+    }
+    return next;
+  }
+
+  function onNext() {
+    const next = validateStep();
+    setErrors(next);
+    if (Object.keys(next).length) return;
+    setStep((s) => Math.min(4, s + 1) as Step);
+  }
+
+  function onBack() {
+    setStep((s) => Math.max(1, s - 1) as Step);
+    setErrors({});
+  }
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const next = validateStep();
+    setErrors(next);
+    if (Object.keys(next).length) return;
+    const text = [
+      "Nuova richiesta - Forze Armate e dell'Ordine",
+      "",
+      "STEP 1: Appartenenza al Corpo",
+      `Corpo: ${corpo}`,
+      `Grado: ${grado || "Non indicato"}`,
+      "",
+      "STEP 2: Servizio",
+      `Anni di servizio: ${anniServizio}`,
+      `Stipendio netto: ${stipendioNetto} EUR`,
+      "",
+      "STEP 3: Preferenze",
+      `Orario preferito contatto: ${orarioContatto}`,
+      "",
+      "STEP 4: Contatto",
+      `Nome: ${nome}`,
+      `Cognome: ${cognome}`,
+      `Cellulare: ${normalizePhone(cellulare)}`,
+      `Email: ${email}`,
+      `Consenso marketing: ${consensoMarketing ? "Si" : "No"}`,
+    ].join("\n");
+    window.open(`https://wa.me/${WHATSAPP_BASE}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+  }
+
+  return (
+    <Section className="bg-white border-t border-slate-200/60">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0 items-stretch">
+        <div className="lg:col-span-2">
+          <SectionIntro
+            badge="Pre-valutazione comparto sicurezza"
+            title="Compila il form dedicato a Forze Armate e dell'Ordine"
+            descriptionClassName="space-y-6"
+            description={
+              <>
+                <p>Raccogliamo in anticipo le informazioni utili su corpo di appartenenza, anzianita e preferenze di contatto.</p>
+                <p>In questo modo il consulente puo darti un riscontro mirato, con tempi di gestione piu rapidi e una verifica subito concreta.</p>
+              </>
+            }
+          />
+        </div>
+        <div className="lg:col-span-2 -my-12 md:-my-20 border-x border-slate-200/60 bg-surface-subtle flex">
+          <div className="w-full flex-1 p-8 md:p-10 lg:p-12">
+            <div className="mb-6"><p className="text-sm font-semibold text-brand-indigo">Step {step}/4</p></div>
+            <form onSubmit={step === 4 ? onSubmit : (e) => e.preventDefault()} className="space-y-5">
+              {step === 1 && (
+                <>
+                  <h3 className="text-2xl font-bold text-text-primary">Step 1: Appartenenza al Corpo</h3>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Corpo</span><select value={corpo} onChange={(e) => setCorpo(e.target.value as Corpo)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3"><option value="carabinieri">Carabinieri</option><option value="polizia">Polizia</option><option value="gdf">GDF</option><option value="esercito">Esercito</option><option value="marina">Marina</option><option value="aeronautica">Aeronautica</option><option value="penitenziaria">Penitenziaria</option></select></label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Grado (opzionale)</span><input type="text" value={grado} onChange={(e) => setGrado(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" /></label>
+                </>
+              )}
+              {step === 2 && (
+                <>
+                  <h3 className="text-2xl font-bold text-text-primary">Step 2: Servizio</h3>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Anni di servizio</span><input type="number" min={0} max={50} value={anniServizio} onChange={(e) => setAnniServizio(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.anniServizio && <p className="text-xs text-red-600">{errors.anniServizio}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Stipendio netto (indennita incluse)</span><input type="number" min={600} value={stipendioNetto} onChange={(e) => setStipendioNetto(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.stipendio && <p className="text-xs text-red-600">{errors.stipendio}</p>}</label>
+                </>
+              )}
+              {step === 3 && (
+                <>
+                  <h3 className="text-2xl font-bold text-text-primary">Step 3: Preferenze</h3>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Orario per contatto</span><select value={orarioContatto} onChange={(e) => setOrarioContatto(e.target.value as Contatto)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3"><option value="mattina">Mattina</option><option value="pomeriggio">Pomeriggio</option><option value="sera">Sera</option></select></label>
+                </>
+              )}
+              {step === 4 && (
+                <>
+                  <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto</h3>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
+                  <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento al trattamento dati (Privacy Policy).</span></label>
+                  {errors.consensoPrivacy && <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p>}
+                  <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoMarketing} onChange={(e) => setConsensoMarketing(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento a comunicazioni marketing.</span></label>
+                </>
+              )}
+              <div className="flex flex-col gap-3 pt-2">
+                {step < 4 ? <Button type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={onNext}>Continua</Button> : <Button type="submit" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>Invia</Button>}
+                {step > 1 && <Button type="button" variant="link" className="!px-0" onClick={onBack}>Torna allo step precedente</Button>}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+

@@ -13,6 +13,7 @@ import { LegalTextSection } from "@/components/products/sections/LegalTextSectio
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import { DualProductCardsSection } from "@/components/products/sections/DualProductCardsSection";
 import { CardGridListSection } from "@/components/products/sections/CardGridListSection";
+import { GrandiAziendeContactSection } from "@/components/products/sections/GrandiAziendeContactSection";
 import {
   DPGA_CATEGORIA,
   DPGA_EEAT,
@@ -151,6 +152,8 @@ export function DipendentiPrivatiGrandiAziendePageContent() {
         stickyIntro
         sectionClassName="bg-surface-subtle border-t border-slate-200/60 overflow-visible"
       />
+
+      <GrandiAziendeContactSection />
 
       <FaqSection
         sectionId="faq"

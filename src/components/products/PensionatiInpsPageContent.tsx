@@ -15,6 +15,7 @@ import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
+import { PensionatiInpsContactSection } from "@/components/products/sections/PensionatiInpsContactSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import { splitByFirstColon } from "@/lib/splitFeatureText";
 import {
@@ -226,6 +227,8 @@ export function PensionatiInpsPageContent() {
           alt: "Informazioni legali cessione del quinto della pensione INPS",
         }}
       />
+
+      <PensionatiInpsContactSection />
 
       <FaqSection sectionId="faq" sectionClassName="border-t border-slate-200/60" badge={PIP_FAQ.title} title={PIP_FAQ.sectionTitle} items={PIP_FAQ.items} />
 

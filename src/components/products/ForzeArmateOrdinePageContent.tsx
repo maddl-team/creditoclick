@@ -12,6 +12,7 @@ import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
+import { ForzeArmateContactSection } from "@/components/products/sections/ForzeArmateContactSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import {
@@ -199,6 +200,8 @@ export function ForzeArmateOrdinePageContent() {
           alt: "Informazioni legali e conformità normativa cessione del quinto comparto sicurezza",
         }}
       />
+
+      <ForzeArmateContactSection />
 
       <FaqSection
         sectionId="faq"

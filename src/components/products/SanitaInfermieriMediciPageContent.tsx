@@ -12,6 +12,7 @@ import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/Product
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
+import { SanitaContactSection } from "@/components/products/sections/SanitaContactSection";
 import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import {
   SIM_CATEGORIE,
@@ -227,6 +228,8 @@ export function SanitaInfermieriMediciPageContent() {
           alt: "Informazioni legali e conformità normativa per prestiti personale sanitario",
         }}
       />
+
+      <SanitaContactSection />
 
       <FaqSection
         sectionId="faq"
