@@ -13,8 +13,6 @@ type Stato = "di_ruolo" | "supplente_annuale";
 type Cedolino = "si" | "no";
 type Cessioni = "si" | "no" | "non_ricordo";
 
-const WHATSAPP_BASE = "393276625456";
-
 function normalizePhone(raw: string) {
   const digits = raw.trim().replace(/[^\d]/g, "");
   if (digits.length === 10) return `+39${digits}`;
@@ -25,6 +23,10 @@ function normalizePhone(raw: string) {
 export function InsegnantiNoipaContactSection() {
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [step4SubmitAttempted, setStep4SubmitAttempted] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   const [ruolo, setRuolo] = React.useState<Ruolo>("docente");
   const [gradoScolastico, setGradoScolastico] = React.useState<Grado>("secondaria");
@@ -57,41 +59,60 @@ export function InsegnantiNoipaContactSection() {
     setErrors(next);
     if (Object.keys(next).length) return;
     setStep((s) => Math.min(4, s + 1) as Step);
+    if (step === 3) {
+      setErrors({});
+      setStep4SubmitAttempted(false);
+    }
   }
 
   function goBack() {
     setStep((s) => Math.max(1, s - 1) as Step);
     setErrors({});
+    if (step === 4) setStep4SubmitAttempted(false);
   }
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setStep4SubmitAttempted(true);
     const next = validateCurrentStep();
     setErrors(next);
     if (Object.keys(next).length) return;
-    const text = [
-      "Nuova richiesta - Insegnanti e Scuola (NoiPA)",
-      "",
-      "STEP 1: Posizione Lavorativa",
-      `Ruolo: ${ruolo}`,
-      `Grado scolastico: ${gradoScolastico}`,
-      `Stato giuridico: ${statoGiuridico}`,
-      "",
-      "STEP 2: Integrazione Digitale",
-      `Disponibilita cedolino PDF: ${cedolinoPdf}`,
-      `Stipendio mensile: ${stipendioMensile} EUR`,
-      "",
-      "STEP 3: Situazione Debitoria",
-      `Cessioni attive: ${cessioniAttive}`,
-      "",
-      "STEP 4: Contatto",
-      `Nome: ${nome}`,
-      `Cognome: ${cognome}`,
-      `Cellulare: ${normalizePhone(cellulare)}`,
-      `Email: ${email}`,
-      `Consenso marketing: ${consensoMarketing ? "Si" : "No"}`,
-    ].join("\n");
-    window.open(`https://wa.me/${WHATSAPP_BASE}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitted(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Insegnanti e Scuola (NoiPA)",
+          subject: "Nuova richiesta - Insegnanti e Scuola (NoiPA)",
+          fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
+          phone: normalizePhone(cellulare),
+          email: email.trim(),
+          data: {
+            ruolo,
+            gradoScolastico,
+            statoGiuridico,
+            cedolinoPdf,
+            stipendioMensile: `${stipendioMensile} EUR`,
+            cessioniAttive,
+            consensoPrivacy: consensoPrivacy ? "Si" : "No",
+            consensoMarketing: consensoMarketing ? "Si" : "No",
+          },
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Errore di rete. Controlla la connessione e riprova.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -138,19 +159,21 @@ export function InsegnantiNoipaContactSection() {
               {step === 4 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento al trattamento dati (Privacy Policy).</span></label>
-                  {errors.consensoPrivacy && <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p>}
+                  {step4SubmitAttempted && errors.consensoPrivacy && <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p>}
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoMarketing} onChange={(e) => setConsensoMarketing(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento a comunicazioni marketing.</span></label>
                 </>
               )}
               <div className="flex flex-col gap-3 pt-2">
-                {step < 4 ? <Button type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={goNext}>Continua</Button> : <Button type="submit" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>Invia</Button>}
+                {step < 4 ? <Button type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={goNext}>Continua</Button> : <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>{isSubmitting ? "Invio in corso..." : "Invia"}</Button>}
                 {step > 1 && <Button type="button" variant="link" className="!px-0" onClick={goBack}>Torna allo step precedente</Button>}
               </div>
+              {submitted && <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Richiesta inviata: il consulente ti contattera entro 24 ore lavorative.</p>}
+              {submitError && <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p>}
             </form>
           </div>
         </div>

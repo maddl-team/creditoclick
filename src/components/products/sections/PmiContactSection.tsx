@@ -12,8 +12,6 @@ type Dimensioni = "sotto_15" | "16_50" | "oltre_50";
 type DestinazioneTfr = "fondo_categoria" | "in_azienda" | "tesoreria_inps";
 type Motivazione = "liquidita" | "consolidamento" | "acquisto_beni";
 
-const WHATSAPP_BASE = "393276625456";
-
 function normalizePhone(raw: string) {
   const digits = raw.trim().replace(/[^\d]/g, "");
   if (digits.length === 10) return `+39${digits}`;
@@ -28,7 +26,10 @@ function formatEUR(value: number) {
 export function PmiContactSection() {
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [step4SubmitAttempted, setStep4SubmitAttempted] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   // Step 1
   const [ragioneSociale, setRagioneSociale] = React.useState("");
@@ -96,49 +97,62 @@ export function PmiContactSection() {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
     setStep((prev) => Math.min(4, prev + 1) as Step);
+    if (step === 3) {
+      setErrors({});
+      setStep4SubmitAttempted(false);
+    }
   }
 
   function goBack() {
     setStep((prev) => Math.max(1, prev - 1) as Step);
     setErrors({});
+    if (step === 4) setStep4SubmitAttempted(false);
   }
 
-  function buildWhatsAppUrl() {
-    const text = [
-      "Nuova richiesta - Dipendenti PMI",
-      "",
-      "STEP 1: Dati Azienda",
-      `Ragione sociale: ${ragioneSociale}`,
-      `Forma giuridica: ${formaGiuridica.toUpperCase()}`,
-      `Dimensioni: ${dimensioni}`,
-      "",
-      "STEP 2: Dati Finanziari",
-      `Stipendio netto mensile: ${formatEUR(stipendioNettoMensile)}`,
-      `TFR accantonato: ${tfrAccantonato === "" ? "Non indicato" : formatEUR(tfrAccantonato)}`,
-      `Destinazione TFR: ${destinazioneTfr}`,
-      "",
-      "STEP 3: Dettagli Richiesta",
-      `Motivazione: ${motivazione}`,
-      `Importo richiesto: ${formatEUR(importoRichiesto)}`,
-      "",
-      "STEP 4: Contatto",
-      `Nome: ${nome}`,
-      `Cognome: ${cognome}`,
-      `Cellulare: ${normalizePhone(cellulare)}`,
-      `Email: ${email}`,
-      `Consenso marketing: ${consensoMarketing ? "Si" : "No"}`,
-    ].join("\n");
-
-    return `https://wa.me/${WHATSAPP_BASE}?text=${encodeURIComponent(text)}`;
-  }
-
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setStep4SubmitAttempted(true);
     const nextErrors = validateCurrentStep();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
-    setSubmitted(true);
-    window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitted(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Dipendenti PMI",
+          subject: "Nuova richiesta - Dipendenti PMI",
+          fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
+          phone: normalizePhone(cellulare),
+          email: email.trim(),
+          data: {
+            ragioneSociale,
+            formaGiuridica: formaGiuridica.toUpperCase(),
+            dimensioni,
+            stipendioNettoMensile: formatEUR(stipendioNettoMensile),
+            tfrAccantonato: tfrAccantonato === "" ? "Non indicato" : formatEUR(tfrAccantonato),
+            destinazioneTfr,
+            motivazione,
+            importoRichiesto: formatEUR(importoRichiesto),
+            consensoPrivacy: consensoPrivacy ? "Si" : "No",
+            consensoMarketing: consensoMarketing ? "Si" : "No",
+          },
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Errore di rete. Controlla la connessione e riprova.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -325,7 +339,7 @@ export function PmiContactSection() {
                       onChange={(e) => setNome(e.target.value)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
-                    {errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
+                    {step4SubmitAttempted && errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
                   </label>
 
                   <label className="block space-y-2">
@@ -336,7 +350,7 @@ export function PmiContactSection() {
                       onChange={(e) => setCognome(e.target.value)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
-                    {errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
+                    {step4SubmitAttempted && errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
                   </label>
 
                   <label className="block space-y-2">
@@ -348,7 +362,7 @@ export function PmiContactSection() {
                       onChange={(e) => setCellulare(normalizePhone(e.target.value))}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
-                    {errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
+                    {step4SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
                   </label>
 
                   <label className="block space-y-2">
@@ -359,7 +373,7 @@ export function PmiContactSection() {
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
-                    {errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
+                    {step4SubmitAttempted && errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
                   </label>
 
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
@@ -371,7 +385,7 @@ export function PmiContactSection() {
                     />
                     <span className="text-sm text-text-secondary">Acconsento al trattamento dati (Privacy Policy).</span>
                   </label>
-                  {errors.consensoPrivacy ? <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p> : null}
+                  {step4SubmitAttempted && errors.consensoPrivacy ? <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p> : null}
 
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input
@@ -391,8 +405,8 @@ export function PmiContactSection() {
                     Continua
                   </Button>
                 ) : (
-                  <Button type="submit" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
-                    Invia
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
+                    {isSubmitting ? "Invio in corso..." : "Invia"}
                   </Button>
                 )}
                 {step > 1 ? (
@@ -408,6 +422,7 @@ export function PmiContactSection() {
                   entro 24 ore lavorative.
                 </p>
               ) : null}
+              {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p> : null}
             </form>
           </div>
         </div>

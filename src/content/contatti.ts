@@ -143,7 +143,7 @@ export const CONTATTI_ISTITUZIONALI = {
     ["PEC", "Canale PEC aziendale"],
   ] as const,
   note:
-    "CreditoClick è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
+    "CreditoClick è di proprietà di Finnova che è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
 } as const;
 
 export const CONTATTI_RECLAMI = {

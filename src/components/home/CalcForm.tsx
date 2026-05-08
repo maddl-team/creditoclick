@@ -53,6 +53,8 @@ export function CalcForm() {
 
     const [errors, setErrors] = React.useState<Record<string, string>>({});
     const [isSubmitted, setIsSubmitted] = React.useState<boolean>(false);
+    const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
+    const [submitError, setSubmitError] = React.useState<string | null>(null);
 
     const stima = stipendioNetto >= 600 ? computeStima(stipendioNetto, categoria, numRate) : null;
 
@@ -114,36 +116,7 @@ export function CalcForm() {
         return next;
     }
 
-    function buildWhatsAppUrl() {
-        if (!stima) return "";
-
-        const normalizedPhone = normalizeWhatsApp(whatsApp);
-        const maxAmount = Math.round(stima.netAmount);
-        const approxMonthlyRate = Math.round(stima.monthlyRate);
-
-        const text = [
-            "Ciao, vorrei ricevere un preventivo gratuito su WhatsApp.",
-            "",
-            `Nome: ${nome.trim()}`,
-            `Cognome: ${cognome.trim()}`,
-            `Email: ${email.trim()}`,
-            `Categoria: ${professionLabel[categoria]}`,
-            `Importo desiderato: ${formatEURCompact(importoDesiderato)}`,
-            `Numero di rate: ${numRate} mesi`,
-            `Stipendio/Pensione netto mensile: ${formatEURCompact(stipendioNetto)}`,
-            "",
-            `Con uno stipendio netto di ${formatEURCompact(stipendioNetto)} potresti ottenere fino a ${formatEURCompact(
-                maxAmount
-            )} con una rata di circa ${formatEURCompact(approxMonthlyRate)}/mese.`,
-            "",
-            `Recapito: ${normalizedPhone}`,
-            `Consenso marketing: ${marketingOk ? "Sì" : "No"}`,
-        ].join("\n");
-
-        return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
-    }
-
-    function onSubmit(e: React.FormEvent) {
+    async function onSubmit(e: React.FormEvent) {
         e.preventDefault();
         setErrors({});
 
@@ -164,11 +137,47 @@ export function CalcForm() {
             return;
         }
 
-        const url = buildWhatsAppUrl();
-        if (!url) return;
+        if (!stima) return;
 
-        setIsSubmitted(true);
-        window.open(url, "_blank", "noopener,noreferrer");
+        const normalizedPhone = normalizeWhatsApp(whatsApp);
+        const maxAmount = Math.round(stima.netAmount);
+        const approxMonthlyRate = Math.round(stima.monthlyRate);
+        setIsSubmitting(true);
+        setSubmitError(null);
+        setIsSubmitted(false);
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    formType: "Calcolo rata homepage",
+                    subject: "Nuova richiesta da calcolatore homepage",
+                    fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
+                    phone: normalizedPhone,
+                    email: email.trim(),
+                    data: {
+                        categoria: professionLabel[categoria],
+                        importoDesiderato: formatEURCompact(importoDesiderato),
+                        numeroRate: `${numRate} mesi`,
+                        stipendioNetto: formatEURCompact(stipendioNetto),
+                        importoStimato: formatEURCompact(maxAmount),
+                        rataStimata: `${formatEURCompact(approxMonthlyRate)}/mese`,
+                        consensoPrivacy: privacyOk ? "Si" : "No",
+                        consensoMarketing: marketingOk ? "Si" : "No",
+                    },
+                }),
+            });
+            const result = (await response.json()) as { ok?: boolean; error?: string };
+            if (!response.ok || !result.ok) {
+                setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
+                return;
+            }
+            setIsSubmitted(true);
+        } catch {
+            setSubmitError("Errore di rete. Controlla la connessione e riprova.");
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -367,16 +376,20 @@ export function CalcForm() {
 
                         <Button
                             type="submit"
+                            disabled={isSubmitting}
                             className="w-full py-7 rounded-2xl shadow-lg shadow-brand-indigo/30 hover:shadow-xl hover:shadow-brand-indigo/40 transition-all text-base font-bold bg-brand-indigo text-white hover:bg-brand-indigo/90"
                             icon={ArrowRight}
                         >
-                            Ricevi il preventivo su WhatsApp
+                            {isSubmitting ? "Invio in corso..." : "Ricevi il preventivo"}
                         </Button>
 
                         {isSubmitted ? (
                             <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-2xl p-4 leading-relaxed">
                                 Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Il tuo consulente ti contatterà su WhatsApp entro 24 ore lavorative con una valutazione personalizzata e gratuita.
                             </p>
+                        ) : null}
+                        {submitError ? (
+                            <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-2xl p-4 leading-relaxed">{submitError}</p>
                         ) : null}
 
                         <Button

@@ -15,12 +15,12 @@ export const PROFESSIONI_HERO = {
 
 export const PROFESSIONI_LOGICA = {
   sectionTitle: "Perché la Categoria Professionale Cambia Tutto",
-  title: "La logica che gli istituti usano per valutare il tuo profilo",
+  title: "La logica con cui IBL Banca valuta il tuo profilo",
   paragraphs: [
-    "Quando un istituto finanziatore valuta una richiesta di cessione del quinto, il parametro centrale non è il tuo punteggio creditizio — è la solidità e la prevedibilità del tuo reddito nel tempo. E la solidità del reddito dipende, in misura determinante, da chi è il tuo datore di lavoro.",
-    "Un dipendente statale con contratto regolato dal MIUR, un sottufficiale delle Forze Armate con vent'anni di anzianità, un infermiere a tempo indeterminato presso un'ASL pubblica e un dipendente di una piccola impresa con cinque addetti hanno tutti una busta paga — ma rappresentano profili di rischio molto diversi per l'istituto finanziatore. Questa differenza si traduce direttamente in tassi diversi, importi diversi e procedure diverse.",
-    "Gli istituti generalisti applicano spesso criteri standardizzati che penalizzano automaticamente alcune categorie — i dipendenti di PMI, il personale con retribuzioni complesse, chi lavora in strutture meno note — indipendentemente dalla reale solidità individuale del richiedente. Gli istituti specializzati con cui CreditoClick collabora, invece, conoscono le specificità di ciascun comparto e le valutano correttamente.",
-    "Il risultato concreto: lo stesso lavoratore, con lo stesso stipendio, può ottenere condizioni significativamente diverse a seconda dell'istituto a cui si rivolge e della conoscenza che quell'istituto ha del suo specifico contesto professionale. Il lavoro di CreditoClick è identificare, per ciascuna categoria e per ciascun profilo individuale, l'istituto convenzionato che offre le condizioni migliori.",
+    "Quando IBL Banca valuta una richiesta di cessione del quinto, il parametro centrale non è il punteggio creditizio: è la solidità e la prevedibilità del reddito nel tempo. E questa solidità dipende, in misura determinante, da datore di lavoro, contratto e anzianità.",
+    "Un dipendente statale con contratto MIUR, un sottufficiale delle Forze Armate con vent'anni di servizio, un infermiere a tempo indeterminato in ASL e un dipendente di PMI con cinque addetti hanno tutti una busta paga, ma profili di rischio diversi. Per questo cambiano tassi, importi ottenibili e tempi di lavorazione anche all'interno dello stesso prodotto.",
+    "Il valore del nostro approccio monomandatario è proprio qui: CreditoClick conosce nel dettaglio i criteri di IBL Banca per ogni comparto e imposta la pratica in modo coerente con le regole valutative reali, evitando impostazioni generiche che possono penalizzare il cliente.",
+    "Il risultato concreto è una consulenza specialistica per categoria professionale, con canale diretto verso IBL Banca e una proposta costruita sul tuo profilo effettivo, non su logiche standard uguali per tutti.",
   ],
 } as const;
 
@@ -64,7 +64,7 @@ export const PROFESSIONI_CATEGORIE = {
       title: "Forze Armate e Forze dell'Ordine",
       subtitle: "Esercito, Marina, GdF, Carabinieri, Polizia, VVF: convenzioni dedicate per ogni comparto",
       body:
-        "Ogni corpo ha la sua struttura retributiva, le sue indennità operative e le sue procedure amministrative. CreditoClick lavora con istituti che conoscono queste specificità nel dettaglio — per garantire una valutazione corretta e condizioni che riflettano il reale valore del tuo profilo contrattuale.",
+        "Ogni corpo ha la sua struttura retributiva, le sue indennità operative e le sue procedure amministrative. CreditoClick conosce queste specificità nel dettaglio e imposta la pratica in modo coerente con il tuo profilo contrattuale, per una valutazione corretta e condizioni allineate al suo reale valore.",
       cta: "Scopri la soluzione per Forze Armate e Forze dell'Ordine",
       href: "/professioni/forze-armate-ordine",
     },
@@ -85,7 +85,6 @@ export const PROFESSIONI_DIFFERENZA = {
   paragraphs: [
     "Un elemento che molti richiedenti sottovalutano è che lo stesso profilo professionale — stesso comparto, stesso stipendio, stessa anzianità — può ricevere offerte significativamente diverse da istituti diversi. Questo accade perché ogni istituto finanziatore ha le proprie politiche di credito per categoria: alcuni hanno convenzioni specifiche con determinati comparti pubblici, altri valutano meglio i profili privati corporate, altri ancora hanno sviluppato procedure dedicate per le PMI o per i pensionati.",
     "CreditoClick conosce queste politiche in modo approfondito e aggiornato. Per ogni profilo che valutiamo, la proposta IBL Banca più adatta nasce da una conoscenza costruita pratica dopo pratica, categoria per categoria.",
-    "Non presentiamo il tuo profilo all'istituto con cui lavoriamo di più. Lo presentiamo all'istituto che offre le condizioni migliori per la tua specifica situazione.",
   ],
 } as const;
 
@@ -105,7 +104,7 @@ export const PROFESSIONI_FAQ = {
   items: [
     {
       q: "Perché la categoria professionale influisce sul tasso della cessione del quinto?",
-      a: "Il tasso applicato alla cessione del quinto dipende in misura significativa dal rischio percepito dall'istituto finanziatore — e questo rischio è legato alla stabilità e alla prevedibilità del reddito nel tempo. Un datore di lavoro pubblico, con bilancio garantito dallo Stato e procedure amministrative consolidate, è percepito come più affidabile di una piccola impresa privata. Questa differenza di rischio si traduce direttamente in una differenza di tasso: a parità di stipendio, un dipendente pubblico ottiene generalmente condizioni migliori di un dipendente privato di una PMI. CreditoClick lavora per ridurre questo gap selezionando, per ogni profilo, l'istituto che applica i criteri di valutazione più favorevoli.",
+      a: "Il tasso applicato alla cessione del quinto dipende in misura significativa dal rischio percepito dall'istituto finanziatore — e questo rischio è legato alla stabilità e alla prevedibilità del reddito nel tempo. Un datore di lavoro pubblico, con bilancio garantito dallo Stato e procedure amministrative consolidate, è percepito come più affidabile di una piccola impresa privata. Questa differenza di rischio si traduce direttamente in una differenza di tasso: a parità di stipendio, un dipendente pubblico ottiene generalmente condizioni migliori di un dipendente privato di una PMI. CreditoClick lavora per ridurre questo gap impostando ogni pratica in modo coerente con il profilo professionale, così da valorizzare al meglio i criteri di valutazione applicabili.",
     },
     {
       q: "Posso richiedere la cessione del quinto se lavoro in un ente pubblico non ministeriale?",

@@ -144,7 +144,7 @@ export const SOLUZIONI_FAQ = {
     },
     {
       q: "Le soluzioni CreditoClick sono accessibili anche a chi ha già ricevuto rifiuti da altre banche?",
-      a: "Sì, in molti casi. I rifiuti delle banche tradizionali sono spesso legati a criteri standardizzati che non tengono conto delle specificità del profilo individuale. CreditoClick lavora con istituti specializzati che adottano criteri di valutazione più articolati — in particolare per i profili con segnalazioni CRIF, i dipendenti di PMI e le categorie con strutture retributive complesse. La valutazione preliminare gratuita chiarisce se e come è possibile procedere.",
+      a: "Sì, in molti casi. I rifiuti delle banche tradizionali sono spesso legati a criteri standardizzati che non tengono conto delle specificità del profilo individuale. CreditoClick gestisce la valutazione in modo più articolato — in particolare per i profili con segnalazioni CRIF, i dipendenti di PMI e le categorie con strutture retributive complesse. La valutazione preliminare gratuita chiarisce se e come è possibile procedere.",
     },
     {
       q: "Quanto tempo passa dalla richiesta alla disponibilità della liquidità?",

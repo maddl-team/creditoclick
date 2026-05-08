@@ -29,7 +29,7 @@ export const CHI_SIAMO_METODO = {
   sectionTitle: "Come Lavoriamo",
   title: "Il nostro metodo: specializzazione, trasparenza, nessun conflitto di interessi",
   items: [
-    "Siamo Agenti in Attività Finanziaria Monomandatari, Non Comparatori — La distinzione che cambia tutto: CreditoClick opera in qualità di Agente in Attività Finanziaria iscritto all'OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Questa qualifica non è un dettaglio burocratico: è la definizione esatta di quello che facciamo e di come lo facciamo. Il nostro partner unico è IBL Istituto Bancario del Lavoro S.p.A.: questo ci consente un canale privilegiato, processi snelli e piena specializzazione sui prodotti IBL Banca. Il nostro compenso — nella forma della commissione di mediazione — è regolato dalla normativa e non crea incentivi a proporre prodotti non adeguati.",
+    "Siamo Agenti in Attività Finanziaria Monomandatari, Non Comparatori — La distinzione che cambia tutto: CreditoClick è di proprietà di Finnova che opera in qualità di Agente in Attività Finanziaria iscritto all'OAM (Organismo Agenti e Mediatori) ai sensi del D.Lgs. 141/2010. Questa qualifica non è un dettaglio burocratico: è la definizione esatta di quello che facciamo e di come lo facciamo. Il nostro partner unico è IBL Istituto Bancario del Lavoro S.p.A.: questo ci consente un canale privilegiato, processi snelli e piena specializzazione sui prodotti IBL Banca.",
     "La Valutazione Preliminare Gratuita — Prima di qualsiasi pratica formale, capiamo se possiamo davvero aiutarti: Non presentiamo mai pratiche destinate al rifiuto. Prima di avviare qualsiasi iter formale — che potrebbe lasciare tracce in CRIF e influire negativamente sul profilo creditizio del cliente — il consulente effettua una valutazione preliminare gratuita e riservata. Se la soluzione è concretamente accessibile, procediamo con il preventivo personalizzato. Se non lo è — per ragioni legate alla situazione contrattuale, al profilo creditizio o a qualsiasi altro parametro — lo diciamo con chiarezza, spiegando perché e cosa potrebbe cambiare la situazione. La franchezza in questa fase è il fondamento della fiducia a lungo termine.",
     "Il Preventivo Trasparente — TAEG, TAN, rata netta: nessun costo nascosto, mai: Ogni preventivo che rilasciamo espone in modo chiaro e confrontabile: TAN (tasso annuo nominale), TAEG (tasso annuo effettivo globale, che include tutti i costi obbligatori), rata mensile netta, importo totale dovuto a scadenza, costo della polizza assicurativa obbligatoria. Il modulo SECCI — il documento europeo standardizzato per il credito al consumo — accompagna ogni preventivo formale. Non esistono costi nascosti. Non esistono voci che emergono dopo la firma. Tutto quello che pagherai è scritto nel preventivo che ricevi prima di decidere qualsiasi cosa.",
     "Il Processo Interamente Digitale — Dalla prima valutazione alla firma: tutto online o via WhatsApp: Abbiamo scelto di costruire un processo interamente digitale non per seguire una moda, ma perché è la risposta concreta alle esigenze reali dei nostri clienti. Chi lavora su turni, chi vive lontano da una filiale, chi non ha tempo per appuntamenti in orario d'ufficio, chi preferisce gestire le proprie pratiche finanziarie con la massima riservatezza: tutte queste persone meritano un servizio che si adatti a loro. La documentazione si carica via app o via WhatsApp. I contratti si firmano digitalmente. Le comunicazioni con i datori di lavoro, con gli uffici HR, con i sistemi NoiPA, con l'INPS — le gestiamo noi, senza che il cliente debba muoversi o fare telefonate.",
@@ -62,7 +62,7 @@ export const CHI_SIAMO_TEAM = {
   sectionTitle: "Il Nostro Team",
   title: "Le persone dietro CreditoClick",
   intro: [
-    "CreditoClick è composta da consulenti finanziari specializzati nella mediazione creditizia, con esperienza pluriennale nel settore della cessione del quinto e dei finanziamenti garantiti dalla busta paga. Ogni consulente del nostro team è formato per gestire le specificità di ciascuna categoria professionale — dalla PA alla sanità, dalle Forze Armate alle PMI — e per applicare con precisione i criteri di valutazione previsti da IBL Banca.",
+    "CreditoClick è composta da consulenti finanziari, con esperienza pluriennale nel settore della cessione del quinto e dei finanziamenti garantiti dalla busta paga. Ogni consulente del nostro team è formato per gestire le specificità di ciascuna categoria professionale — dalla PA alla sanità, dalle Forze Armate alle PMI — e per applicare con precisione i criteri di valutazione previsti da IBL Banca.",
     "Non utilizziamo sistemi automatici per la valutazione dei profili. Ogni richiesta che ci arriva viene analizzata da una persona reale, che legge la situazione specifica, valuta le opzioni disponibili e risponde con una proposta concreta — non con un messaggio generato automaticamente.",
   ],
   members: [
@@ -112,7 +112,7 @@ export const CHI_SIAMO_CONFORMITA = {
   sectionTitle: "Conformità Normativa e Iscrizione OAM",
   title: "La nostra identità giuridica e i riferimenti ufficiali",
   paragraphs: [
-    "CreditoClick è un'agenzia in attività finanziaria convenzionata che opera in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010, regolarmente iscritta al registro OAM (Organismo Agenti e Mediatori) tenuto ai sensi dell'art. 128-undecies del Testo Unico Bancario.",
+    "CreditoClick è di proprietà di Finnova, un'agenzia in attività finanziaria convenzionata che opera in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010, regolarmente iscritta al registro OAM (Organismo Agenti e Mediatori) tenuto ai sensi dell'art. 128-undecies del Testo Unico Bancario.",
     "La nostra attività è soggetta alla vigilanza dell'OAM e al rispetto delle disposizioni di Banca d'Italia in materia di mediazione creditizia, trasparenza delle operazioni bancarie e tutela del consumatore.",
   ],
   table: [
@@ -176,7 +176,7 @@ export const CHI_SIAMO_FAQ = {
   items: [
     {
       q: "CreditoClick è una banca?",
-      a: "No. CreditoClick è un Agente in Attività Finanziaria iscritto all'OAM, non una banca. Operiamo come Agente Monomandatario di IBL Banca: il finanziamento viene erogato da IBL Istituto Bancario del Lavoro S.p.A., mentre noi gestiamo la consulenza e l'intera pratica operativa.",
+      a: "No. CreditoClick è di proprità di Finnova, un Agente in Attività Finanziaria iscritto all'OAM, non una banca. Operiamo come Agente Monomandatario di IBL Banca: il finanziamento viene erogato da IBL Istituto Bancario del Lavoro S.p.A., mentre noi gestiamo la consulenza e l'intera pratica operativa.",
     },
     {
       q: "Il servizio di CreditoClick ha un costo per il cliente?",

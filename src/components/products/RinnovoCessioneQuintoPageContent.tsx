@@ -149,7 +149,7 @@ export function RinnovoCessioneQuintoPageContent() {
           </div>
           <div className="relative lg:col-span-2 min-h-[260px] lg:min-h-full w-full overflow-hidden rounded-2xl">
             <Image
-              src="/images/cessione-del-quinto-hero.jpg"
+              src="/images/creditoclick_portabilita.jpg"
               alt="Gestione portabilità della cessione del quinto"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -41,6 +41,8 @@ export function ContactFormSection() {
   const [marketingOk, setMarketingOk] = React.useState(false);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   function validate() {
     const next: Record<string, string> = {};
@@ -59,30 +61,45 @@ export function ContactFormSection() {
     return next;
   }
 
-  function buildWhatsAppUrl() {
-    const text = [
-      "Nuovo messaggio dalla pagina Contatti",
-      "",
-      `Nome: ${nome.trim()}`,
-      `Cognome: ${cognome.trim()}`,
-      `WhatsApp: ${normalizeWhatsApp(whatsapp)}`,
-      `Email: ${email.trim() || "Non indicata"}`,
-      `Categoria professionale: ${categoria || "Non indicata"}`,
-      `Come possiamo aiutarti: ${richiesta || "Non indicata"}`,
-      `Situazione: ${situazione.trim()}`,
-      `Come ci hai trovato: ${fonte || "Non indicato"}`,
-      `Consenso marketing: ${marketingOk ? "Sì" : "No"}`,
-    ].join("\n");
-    return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
-  }
-
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
-    setIsSubmitted(true);
-    window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setIsSubmitted(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Contatti",
+          subject: "Nuovo messaggio dalla pagina Contatti",
+          fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
+          phone: normalizeWhatsApp(whatsapp),
+          email: email.trim(),
+          message: situazione.trim(),
+          data: {
+            categoria: categoria || "Non indicata",
+            richiesta: richiesta || "Non indicata",
+            fonte: fonte || "Non indicato",
+            consensoPrivacy: privacyOk ? "Si" : "No",
+            consensoMarketing: marketingOk ? "Si" : "No",
+          },
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
+        return;
+      }
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("Errore di rete. Controlla la connessione e riprova.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -238,8 +255,8 @@ export function ContactFormSection() {
                 </span>
               </label>
 
-              <Button type="submit" className="w-full md:col-span-4 bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
-                Invia il messaggio
+              <Button type="submit" disabled={isSubmitting} className="w-full md:col-span-4 bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
+                {isSubmitting ? "Invio in corso..." : "Invia il messaggio"}
               </Button>
 
               {isSubmitted ? (
@@ -249,6 +266,7 @@ export function ContactFormSection() {
                   hai indicato.
                 </p>
               ) : null}
+              {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4 md:col-span-4">{submitError}</p> : null}
           </form>
         </div>
       </div>

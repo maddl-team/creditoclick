@@ -59,6 +59,8 @@ export function CessionePreventivoSection() {
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   // Step 1
   const [categoria, setCategoria] = React.useState<Categoria>("pubblico");
@@ -172,50 +174,40 @@ export function CessionePreventivoSection() {
     };
   }
 
-  function buildWhatsAppUrl() {
-    const payload = buildPayload();
-    const text = [
-      "Nuova richiesta preventivo - Cessione del Quinto",
-      "",
-      "STEP 1 - Profilo",
-      `Categoria: ${payload.profilo.categoriaLabel}`,
-      `Datore/Ente: ${payload.profilo.datoreEnte ?? "Non indicato"}`,
-      `Netto mensile: ${formatEURCompact(payload.profilo.nettoMensile)}`,
-      `Anzianita: ${payload.profilo.anzianitaLabel}`,
-      `CRIF/Centrale Rischi: ${payload.profilo.crif}`,
-      `Tag consulente: ${payload.profilo.crifTag}`,
-      "",
-      "STEP 2 - Richiesta",
-      `Importo desiderato: ${formatEURCompact(payload.richiesta.importo)}`,
-      `Durata: ${payload.richiesta.durata} mesi`,
-      `Cessione in corso: ${payload.richiesta.cessioneInCorso}`,
-      `Rata attuale: ${
-        payload.richiesta.rataAttuale !== null ? formatEURCompact(payload.richiesta.rataAttuale) : "Non indicata"
-      }`,
-      `Note: ${payload.richiesta.note ?? "Nessuna"}`,
-      `Rata massima indicativa: ${payload.richiesta.stima ? formatEURCompact(payload.richiesta.stima.rataMassima) : "N/D"}/mese`,
-      `Importo indicativo ottenibile: ${
-        payload.richiesta.stima ? formatEURCompact(payload.richiesta.stima.importoStimato) : "N/D"
-      }`,
-      "",
-      "STEP 3 - Contatti",
-      `Nome: ${payload.contatti.nome}`,
-      `Cognome: ${payload.contatti.cognome}`,
-      `Email: ${payload.contatti.email}`,
-      `WhatsApp: ${payload.contatti.whatsapp}`,
-      `Consenso marketing: ${payload.contatti.marketingOk ? "Si" : "No"}`,
-    ].join("\n");
-
-    return `https://wa.me/393276625456?text=${encodeURIComponent(text)}`;
-  }
-
-  function onSubmitStep3(e: React.FormEvent) {
+  async function onSubmitStep3(e: React.FormEvent) {
     e.preventDefault();
     const next = validateStep3();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
-    setIsSubmitted(true);
-    window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
+    const payload = buildPayload();
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setIsSubmitted(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Preventivo Cessione del Quinto",
+          subject: "Nuova richiesta preventivo - Cessione del Quinto",
+          fullName: `${payload.contatti.nome} ${payload.contatti.cognome}`.trim(),
+          phone: payload.contatti.whatsapp,
+          email: payload.contatti.email,
+          message: payload.richiesta.note ?? undefined,
+          data: payload,
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
+        return;
+      }
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("Errore di rete. Controlla la connessione e riprova.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -562,8 +554,8 @@ export function CessionePreventivoSection() {
                 </label>
 
                 <div className="flex flex-col gap-3">
-                  <Button type="submit" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
-                    Ricevi il preventivo su WhatsApp
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
+                    {isSubmitting ? "Invio in corso..." : "Ricevi il preventivo"}
                   </Button>
                   <Button type="button" variant="link" className="!px-0" onClick={() => setStep(2)}>
                     Torna allo step precedente
@@ -576,6 +568,7 @@ export function CessionePreventivoSection() {
                     contatterà su WhatsApp entro 24 ore lavorative con un preventivo personalizzato e gratuito.
                   </p>
                 ) : null}
+                {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p> : null}
               </form>
             ) : null}
           </div>

@@ -16,8 +16,8 @@ export function LegalPreFooter() {
                 www.creditoclick.it
               </Link>{" "}
               è gestito da FINNOVA S.R.L, società operante quale Agente in Attività Finanziaria, regolarmente iscritta
-              nell&apos;elenco tenuto dall&apos;OAM (Organismo degli Agenti e dei Mediatori) al n. A17849, nonché iscritta, ove
-              applicabile, al Registro degli Intermediari Assicurativi Numero Iscrizione E000811507. La società ha sede
+              nell&apos;elenco tenuto dall&apos;OAM (Organismo degli Agenti e dei Mediatori) al n. A17849, nonché iscritta al
+              Registro degli Intermediari Assicurativi Numero Iscrizione E000811507. La società ha sede
               legale e operativa in Piazza Oronzo de Donno, 10 - Maglie, è iscritta presso il Registro delle Imprese di
               LECCE, REA n. 367208, Codice Fiscale 05441460754 e Partita IVA 05441460754. Il capitale sociale deliberato e
               interamente versato è pari a € 2000,00.
