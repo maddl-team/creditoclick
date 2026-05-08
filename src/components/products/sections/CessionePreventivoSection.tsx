@@ -58,6 +58,7 @@ function isValidWhatsApp(value: string) {
 export function CessionePreventivoSection() {
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [step3SubmitAttempted, setStep3SubmitAttempted] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitError, setSubmitError] = React.useState<string | null>(null);
@@ -139,6 +140,10 @@ export function CessionePreventivoSection() {
     const next = step === 1 ? validateStep1() : validateStep2();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
+    if (step === 2) {
+      setErrors({});
+      setStep3SubmitAttempted(false);
+    }
     setStep(step === 1 ? 2 : 3);
   }
 
@@ -176,6 +181,7 @@ export function CessionePreventivoSection() {
 
   async function onSubmitStep3(e: React.FormEvent) {
     e.preventDefault();
+    setStep3SubmitAttempted(true);
     const next = validateStep3();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -480,52 +486,46 @@ export function CessionePreventivoSection() {
                   <span className="text-sm font-semibold text-text-primary">Nome</span>
                   <input
                     type="text"
-                    minLength={2}
-                    required
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                   />
-                  {errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
+                  {step3SubmitAttempted && errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
                 </label>
 
                 <label className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Cognome</span>
                   <input
                     type="text"
-                    minLength={2}
-                    required
                     value={cognome}
                     onChange={(e) => setCognome(e.target.value)}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                   />
-                  {errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
+                  {step3SubmitAttempted && errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
                 </label>
 
                 <label className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Email</span>
                   <input
                     type="email"
-                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="nome@esempio.it"
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                   />
-                  {errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
+                  {step3SubmitAttempted && errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
                 </label>
 
                 <label className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Numero WhatsApp</span>
                   <input
                     type="tel"
-                    required
                     placeholder="+39XXXXXXXXXX"
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(normalizeWhatsApp(e.target.value))}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                   />
-                  {errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
+                  {step3SubmitAttempted && errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
                 </label>
 
                 <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
@@ -539,7 +539,7 @@ export function CessionePreventivoSection() {
                     Ho letto e accetto la Privacy Policy ai sensi del Reg. UE 2016/679
                   </span>
                 </label>
-                {errors.privacyOk ? <p className="text-xs text-red-600 -mt-2">{errors.privacyOk}</p> : null}
+                {step3SubmitAttempted && errors.privacyOk ? <p className="text-xs text-red-600 -mt-2">{errors.privacyOk}</p> : null}
 
                 <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                   <input
@@ -557,7 +557,16 @@ export function CessionePreventivoSection() {
                   <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
                     {isSubmitting ? "Invio in corso..." : "Ricevi il preventivo"}
                   </Button>
-                  <Button type="button" variant="link" className="!px-0" onClick={() => setStep(2)}>
+                  <Button
+                    type="button"
+                    variant="link"
+                    className="!px-0"
+                    onClick={() => {
+                      setStep(2);
+                      setStep3SubmitAttempted(false);
+                      setErrors({});
+                    }}
+                  >
                     Torna allo step precedente
                   </Button>
                 </div>

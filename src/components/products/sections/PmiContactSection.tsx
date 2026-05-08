@@ -401,11 +401,11 @@ export function PmiContactSection() {
 
               <div className="flex flex-col gap-3 pt-2">
                 {step < 4 ? (
-                  <Button type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={goNext}>
+                  <Button key="continue-button" type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={goNext}>
                     Continua
                   </Button>
                 ) : (
-                  <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
+                  <Button key="submit-button" type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>
                     {isSubmitting ? "Invio in corso..." : "Invia"}
                   </Button>
                 )}

@@ -165,7 +165,7 @@ export function ForzeArmateContactSection() {
                 </>
               )}
               <div className="flex flex-col gap-3 pt-2">
-                {step < 4 ? <Button type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={onNext}>Continua</Button> : <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>{isSubmitting ? "Invio in corso..." : "Invia"}</Button>}
+                {step < 4 ? <Button key="continue-button" type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={onNext}>Continua</Button> : <Button key="submit-button" type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>{isSubmitting ? "Invio in corso..." : "Invia"}</Button>}
                 {step > 1 && <Button type="button" variant="link" className="!px-0" onClick={onBack}>Torna allo step precedente</Button>}
               </div>
               {submitted && <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Richiesta inviata: il consulente ti contattera entro 24 ore lavorative.</p>}

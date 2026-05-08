@@ -14,10 +14,9 @@ import { FeatureItem } from "@/components/ui/FeatureItem";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
-import { CessioneQuintoCalculator } from "@/components/tools/CessioneQuintoCalculator";
+import { CalcoloRataLeadFormSection } from "@/components/products/sections/CalcoloRataLeadFormSection";
 import {
   CRCQ_CATEGORIE,
-  CRCQ_COME,
   CRCQ_DAL,
   CRCQ_EEAT,
   CRCQ_FAQ,
@@ -54,30 +53,7 @@ export function CalcoloRataCessioneQuintoPageContent() {
         }
       />
 
-      <Section id="calcolatore" className="bg-white border-t border-slate-200/60">
-        <div className="grid grid-cols-1 gap-8">
-          <SectionIntro
-            badge={CRCQ_COME.title}
-            title={CRCQ_COME.sectionTitle}
-            description={
-              <div className="space-y-4">
-                <p>{CRCQ_COME.intro}</p>
-                <p className="font-semibold text-text-primary">{CRCQ_COME.lead}</p>
-              </div>
-            }
-            titleClassName="max-w-4xl"
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {CRCQ_COME.points.map((point) => (
-              <div key={point} className="rounded-xl border border-slate-200 p-4 text-sm text-text-secondary leading-relaxed">
-                {point}
-              </div>
-            ))}
-          </div>
-          <CessioneQuintoCalculator />
-          <p className="text-xs text-text-secondary">{CRCQ_COME.devNote}</p>
-        </div>
-      </Section>
+      <CalcoloRataLeadFormSection />
 
       <CalloutSection
         sectionClassName="bg-white border-t border-slate-200/60"
