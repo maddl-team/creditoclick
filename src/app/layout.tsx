@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
+const defaultOgImage = "/images/creditoclick-homepage_coppia.jpeg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,12 +38,21 @@ export const metadata: Metadata = {
     title: "CreditoClick | Prestiti Online Veloci e Sicuri",
     description:
       "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "CreditoClick - Prestiti online veloci e sicuri",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CreditoClick | Prestiti Online Veloci e Sicuri",
     description:
       "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+    images: [defaultOgImage],
   },
 };
 
