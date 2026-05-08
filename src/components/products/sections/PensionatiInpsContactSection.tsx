@@ -145,7 +145,7 @@ export function PensionatiInpsContactSection() {
               {step === 1 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Verifica Eta</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Data di nascita</span><input type="date" value={dataNascita} onChange={(e) => setDataNascita(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.dataNascita && <p className="text-xs text-red-600">{errors.dataNascita}</p>}</label>
+                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Data di nascita</span><input type="date" value={dataNascita} onChange={(e) => setDataNascita(e.target.value)} className="block w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{errors.dataNascita && <p className="text-xs text-red-600">{errors.dataNascita}</p>}</label>
                 </>
               )}
               {step === 2 && (

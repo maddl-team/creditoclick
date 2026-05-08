@@ -315,7 +315,7 @@ export function CalcoloRataLeadFormSection() {
                       type="date"
                       value={dataNascita}
                       onChange={(e) => setDataNascita(e.target.value)}
-                      className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
+                      className="block w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
                     {errors.dataNascita ? <p className="text-xs text-red-600">{errors.dataNascita}</p> : null}
                   </label>
