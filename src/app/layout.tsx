@@ -5,6 +5,7 @@ import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 import { LegalPreFooter } from "@/components/ui/LegalPreFooter";
+import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
+        <GoogleTagManager />
         <div className="flex flex-col min-h-screen relative w-full">
           <Navbar />
           <main className="flex-1 pt-[79px]">
