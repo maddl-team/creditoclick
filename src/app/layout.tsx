@@ -14,7 +14,7 @@ const inter = Inter({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
 const defaultOgImage = "/images/creditoclick-homepage_coppia.jpeg";
-const defaultOgImageAlt = "CreditoClick - Prestiti online veloci e sicuri";
+const defaultOgImageAlt = "CreditoClick: prestiti online veloci e sicuri";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
