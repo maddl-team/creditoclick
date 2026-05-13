@@ -8,12 +8,9 @@ import {
   FOOTER_COOKIE_POLICY_HREF,
   FOOTER_PRIVACY_POLICY_HREF,
 } from "@/config/iubenda";
-import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
 import { Button } from "./Button";
 
-type FooterLinkItem =
-  | { label: string; href: string }
-  | { label: string; href: string; iubendaPolicy: "privacy" | "cookie" };
+type FooterLinkItem = { label: string; href: string; external?: boolean };
 
 type FooterColumn = {
   title: string;
@@ -61,8 +58,8 @@ const FOOTER_LINKS: FooterColumn[] = [
         links: [
             { label: "Chi siamo", href: "/chi-siamo" },
             { label: "Contatti", href: "/contatti" },
-            { label: "Privacy Policy", href: FOOTER_PRIVACY_POLICY_HREF, iubendaPolicy: "privacy" },
-            { label: "Cookie Policy", href: FOOTER_COOKIE_POLICY_HREF, iubendaPolicy: "cookie" },
+            { label: "Privacy Policy", href: FOOTER_PRIVACY_POLICY_HREF, external: true },
+            { label: "Cookie Policy", href: FOOTER_COOKIE_POLICY_HREF, external: true },
             { label: "Termini e Condizioni", href: "/contatti" },
         ],
     },
@@ -119,14 +116,15 @@ export function Footer() {
                             <ul className="space-y-3">
                                 {section.links.map((link) => (
                                     <li key={link.label}>
-                                        {"iubendaPolicy" in link ? (
-                                            <IubendaEmbedLink
-                                                policy={link.iubendaPolicy}
-                                                embedSkin="white"
+                                        {link.external ? (
+                                            <a
+                                                href={link.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-sm text-text-secondary hover:text-brand-indigo transition-colors"
                                             >
                                                 {link.label}
-                                            </IubendaEmbedLink>
+                                            </a>
                                         ) : (
                                             <Link
                                                 href={link.href}

@@ -4,7 +4,7 @@
 export const IUBENDA_SITE_ID = 4530703;
 export const IUBENDA_COOKIE_POLICY_ID = 64432714;
 
-/** Link diretti policy (embed Iubenda + `iubenda.js` in layout). */
+/** URL policy Iubenda (link diretti in footer/moduli; nessun `iubenda.js` per embed). */
 export const IUBENDA_PRIVACY_POLICY_URL = "https://www.iubenda.com/privacy-policy/64432714";
 export const IUBENDA_COOKIE_POLICY_URL = "https://www.iubenda.com/privacy-policy/64432714/cookie-policy";
 

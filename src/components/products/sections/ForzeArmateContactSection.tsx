@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
-import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
+import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -173,9 +173,14 @@ export function ForzeArmateContactSection() {
                     <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
                     <span className="text-sm text-text-secondary">
                       Acconsento al trattamento dati (
-                      <IubendaEmbedLink policy="privacy" embedSkin="black" className="text-brand-indigo hover:underline">
+                      <a
+                        href={IUBENDA_PRIVACY_POLICY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand-indigo hover:underline"
+                      >
                         Privacy Policy
-                      </IubendaEmbedLink>
+                      </a>
                       ).
                     </span>
                   </label>

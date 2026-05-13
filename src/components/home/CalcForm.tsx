@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
-import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
+import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "../ui/Button";
 
 export function CalcForm() {
@@ -401,9 +401,14 @@ export function CalcForm() {
                             />
                             <span className="text-sm text-text-secondary leading-relaxed">
                                 Ho letto e accetto la{" "}
-                                <IubendaEmbedLink policy="privacy" embedSkin="black" className="text-brand-indigo hover:underline">
+                                <a
+                                    href={IUBENDA_PRIVACY_POLICY_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-brand-indigo hover:underline"
+                                >
                                     Privacy Policy
-                                </IubendaEmbedLink>{" "}
+                                </a>{" "}
                                 ai sensi del Reg. UE 2016/679
                             </span>
                         </label>
