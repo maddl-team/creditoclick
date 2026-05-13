@@ -10,6 +10,7 @@ import { ConsentModeBootstrap } from "@/components/analytics/ConsentModeBootstra
 import { IubendaCookieSolution } from "@/components/analytics/IubendaCookieSolution";
 import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 import { GtmRouteTracker } from "@/components/analytics/GtmRouteTracker";
+import { IubendaLegalScript } from "@/components/legal/IubendaLegalScript";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -76,6 +77,7 @@ export default function RootLayout({
       >
         <ConsentModeBootstrap />
         <IubendaCookieSolution />
+        <IubendaLegalScript />
         {!marketingScriptsDisabled ? (
           <>
             <GoogleTagManager />

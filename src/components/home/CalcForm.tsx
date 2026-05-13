@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
+import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
 import { Button } from "../ui/Button";
 
 export function CalcForm() {
@@ -371,7 +372,11 @@ export function CalcForm() {
                                 className="mt-1 accent-brand-indigo"
                             />
                             <span className="text-sm text-text-secondary leading-relaxed">
-                                Ho letto e accetto la Privacy Policy ai sensi del Reg. UE 2016/679
+                                Ho letto e accetto la{" "}
+                                <IubendaEmbedLink policy="privacy" embedSkin="black" className="text-brand-indigo hover:underline">
+                                    Privacy Policy
+                                </IubendaEmbedLink>{" "}
+                                ai sensi del Reg. UE 2016/679
                             </span>
                         </label>
                         {errors.privacyOk ? <p className="text-sm text-red-200 -mt-3">{errors.privacyOk}</p> : null}

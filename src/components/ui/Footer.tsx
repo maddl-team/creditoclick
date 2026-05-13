@@ -4,13 +4,24 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { FOOTER_COOKIE_POLICY_HREF, FOOTER_PRIVACY_POLICY_HREF } from "@/config/iubenda";
+import {
+  FOOTER_COOKIE_POLICY_HREF,
+  FOOTER_PRIVACY_POLICY_HREF,
+} from "@/config/iubenda";
+import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
 import { Button } from "./Button";
 
-const privacyPolicyHref = FOOTER_PRIVACY_POLICY_HREF;
-const cookiePolicyHref = FOOTER_COOKIE_POLICY_HREF;
+type FooterLinkItem =
+  | { label: string; href: string }
+  | { label: string; href: string; iubendaPolicy: "privacy" | "cookie" };
 
-const FOOTER_LINKS = [
+type FooterColumn = {
+  title: string;
+  titleHref?: string;
+  links: FooterLinkItem[];
+};
+
+const FOOTER_LINKS: FooterColumn[] = [
     {
         title: "Prodotti",
         titleHref: "/prodotti",
@@ -50,8 +61,8 @@ const FOOTER_LINKS = [
         links: [
             { label: "Chi siamo", href: "/chi-siamo" },
             { label: "Contatti", href: "/contatti" },
-            { label: "Privacy Policy", href: privacyPolicyHref },
-            { label: "Cookie Policy", href: cookiePolicyHref },
+            { label: "Privacy Policy", href: FOOTER_PRIVACY_POLICY_HREF, iubendaPolicy: "privacy" },
+            { label: "Cookie Policy", href: FOOTER_COOKIE_POLICY_HREF, iubendaPolicy: "cookie" },
             { label: "Termini e Condizioni", href: "/contatti" },
         ],
     },
@@ -108,12 +119,22 @@ export function Footer() {
                             <ul className="space-y-3">
                                 {section.links.map((link) => (
                                     <li key={link.label}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-sm text-text-secondary hover:text-brand-indigo transition-colors"
-                                        >
-                                            {link.label}
-                                        </Link>
+                                        {"iubendaPolicy" in link ? (
+                                            <IubendaEmbedLink
+                                                policy={link.iubendaPolicy}
+                                                embedSkin="white"
+                                                className="text-sm text-text-secondary hover:text-brand-indigo transition-colors"
+                                            >
+                                                {link.label}
+                                            </IubendaEmbedLink>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className="text-sm text-text-secondary hover:text-brand-indigo transition-colors"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

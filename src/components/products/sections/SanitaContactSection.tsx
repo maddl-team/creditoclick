@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
+import { IubendaEmbedLink } from "@/components/legal/IubendaEmbedLink";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -211,7 +212,16 @@ export function SanitaContactSection() {
                   <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
                   <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
                   <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
-                  <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento al trattamento dati (Privacy Policy).</span></label>
+                  <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
+                    <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
+                    <span className="text-sm text-text-secondary">
+                      Acconsento al trattamento dati (
+                      <IubendaEmbedLink policy="privacy" embedSkin="black" className="text-brand-indigo hover:underline">
+                        Privacy Policy
+                      </IubendaEmbedLink>
+                      ).
+                    </span>
+                  </label>
                   {step4SubmitAttempted && errors.consensoPrivacy && <p className="text-xs text-red-600 -mt-2">{errors.consensoPrivacy}</p>}
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4"><input type="checkbox" checked={consensoMarketing} onChange={(e) => setConsensoMarketing(e.target.checked)} className="mt-1 accent-brand-indigo" /><span className="text-sm text-text-secondary">Acconsento a comunicazioni marketing.</span></label>
                 </>

@@ -1,10 +1,12 @@
 /**
  * CreditoClick — configurazione legale / CMP Iubenda (valori pubblici dal pannello).
- * Link footer: aggiorna qui quando integrerai gli script iubenda per privacy/cookie.
  */
 export const IUBENDA_SITE_ID = 4530703;
 export const IUBENDA_COOKIE_POLICY_ID = 64432714;
 
-/** Placeholder fino agli script iubenda per link diretti policy */
-export const FOOTER_PRIVACY_POLICY_HREF = "/contatti";
-export const FOOTER_COOKIE_POLICY_HREF = "/contatti";
+/** Link diretti policy (embed Iubenda + `iubenda.js` in layout). */
+export const IUBENDA_PRIVACY_POLICY_URL = "https://www.iubenda.com/privacy-policy/64432714";
+export const IUBENDA_COOKIE_POLICY_URL = "https://www.iubenda.com/privacy-policy/64432714/cookie-policy";
+
+export const FOOTER_PRIVACY_POLICY_HREF = IUBENDA_PRIVACY_POLICY_URL;
+export const FOOTER_COOKIE_POLICY_HREF = IUBENDA_COOKIE_POLICY_URL;
