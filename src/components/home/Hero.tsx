@@ -20,7 +20,7 @@ export function Hero() {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary mb-8 leading-[1.1] animate-fade-in-up [animation-delay:200ms]">
                         {HOME_HERO_CONTENT.title}
                     </h1>
-                    <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl animate-fade-in-up [animation-delay:400ms]">
+                    <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl animate-hero-narrative-reveal [animation-delay:400ms]">
                         {HOME_HERO_CONTENT.description}
                     </p>
 

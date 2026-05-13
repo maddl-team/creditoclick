@@ -62,6 +62,8 @@ export function LegalPreFooter() {
               <img
                 src="https://www.organismo-am.it/b/0/c1833ae86503807319f27b710394cfc6_sl_4GT0tTt8NzLj84_eq_.png"
                 alt="Bollino OAM FINNOVA S.R.L."
+                width={147}
+                height={149}
                 className="h-auto w-[96px]"
               />
             </a>

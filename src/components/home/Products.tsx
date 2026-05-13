@@ -5,7 +5,6 @@ import Image from "next/image";
 import { ArrowRight, Wallet, Users, RefreshCcw, ImageIcon } from "lucide-react";
 import { Section } from "../ui/Section";
 import { Button } from "../ui/Button";
-import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionIntro } from "../ui/SectionIntro";
 import { AccentBlock } from "../ui/AccentBlock";
@@ -38,16 +37,106 @@ const PRODUCT_IMAGE_MAP: Record<string, { src: string; alt: string }> = {
     },
 };
 
+const VIEWPORT_ROOT_MARGIN = "-45% 0px -45% 0px";
+
+function ProductRow({
+    product,
+    activeProduct,
+    setActiveProduct,
+}: {
+    product: (typeof HOME_CORE_PRODUCTS)[number];
+    activeProduct: string;
+    setActiveProduct: (id: string) => void;
+}) {
+    const ref = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+        const el = ref.current;
+        if (!el || typeof IntersectionObserver === "undefined") return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (entry?.isIntersecting) {
+                    setActiveProduct(product.id);
+                }
+            },
+            { root: null, rootMargin: VIEWPORT_ROOT_MARGIN, threshold: 0 },
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [product.id, setActiveProduct]);
+
+    return (
+        <div
+            ref={ref}
+            className="p-6 md:p-8 group relative lg:mb-8 transition-all duration-500 rounded-3xl lg:mr-8 cursor-default"
+            onMouseEnter={() => setActiveProduct(product.id)}
+        >
+            <div
+                className={cn(
+                    "w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-300",
+                    activeProduct === product.id
+                        ? "bg-brand-indigo text-white scale-110 shadow-lg shadow-brand-indigo/30"
+                        : "bg-brand-indigo/10 text-brand-indigo",
+                )}
+            >
+                {React.createElement(PRODUCT_ICON_MAP[product.icon], { className: "w-5 h-5" })}
+            </div>
+
+            <AccentBlock
+                className="mb-4"
+                active={activeProduct === product.id}
+                inactiveLineClassName="opacity-30 w-[2px]"
+                hoverLineClassName="group-hover:opacity-60 group-hover:w-[3px]"
+                activeLineClassName="opacity-100 w-[4px]"
+            >
+                <h3
+                    className={cn(
+                        "text-xl font-bold leading-tight transition-colors",
+                        activeProduct === product.id ? "text-brand-indigo" : "text-text-primary",
+                    )}
+                >
+                    {product.title}
+                </h3>
+            </AccentBlock>
+
+            <div className="pl-1 space-y-4">
+                <p className="text-text-secondary text-base leading-relaxed max-w-4xl">{product.desc}</p>
+
+                {"ideal" in product && product.ideal ? (
+                    <p className="text-sm font-medium text-text-primary">{product.ideal}</p>
+                ) : null}
+
+                {"market" in product && product.market ? (
+                    <p className="text-sm text-slate-500 italic bg-white p-4 rounded-xl border-l-2 border-brand-indigo/30 shadow-sm max-w-3xl">
+                        {product.market}
+                    </p>
+                ) : null}
+
+                <div className="pt-2">
+                    <Button
+                        variant="link"
+                        icon={ArrowRight}
+                        className="p-0 text-sm font-bold"
+                        href={PRODUCT_LINK_MAP[product.id] ?? "/prodotti/cessione-del-quinto"}
+                    >
+                        {product.cta}
+                    </Button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export function Products() {
     const [activeProduct, setActiveProduct] = React.useState<string>(HOME_CORE_PRODUCTS[0].id);
 
     return (
         <Section id="prodotti" className="bg-white !overflow-visible">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0 relative">
-
-                {/* Left Side: Header + Products (Takes 3 columns) */}
                 <div className="lg:col-span-3 flex flex-col">
-                    {/* Header */}
                     <SectionIntro
                         className="lg:mb-12"
                         badge="I nostri prodotti core"
@@ -56,115 +145,61 @@ export function Products() {
                         descriptionClassName="max-w-3xl"
                     />
 
-                    {/* Products List */}
                     <div className="flex flex-col">
                         {HOME_CORE_PRODUCTS.map((product) => (
-                            <motion.div
+                            <ProductRow
                                 key={product.id}
-                                className="p-6 md:p-8 group relative lg:mb-8 transition-all duration-500 rounded-3xl lg:mr-8 cursor-default"
-                                onMouseEnter={() => setActiveProduct(product.id)}
-                                onViewportEnter={() => setActiveProduct(product.id)}
-                                viewport={{ margin: "-45% 0px -45% 0px" }}
-                            >
-                                {/* Plus Style Icon */}
-                                <div className={cn(
-                                    "w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-300",
-                                    activeProduct === product.id ? "bg-brand-indigo text-white scale-110 shadow-lg shadow-brand-indigo/30" : "bg-brand-indigo/10 text-brand-indigo"
-                                )}>
-                                    {React.createElement(PRODUCT_ICON_MAP[product.icon], { className: "w-5 h-5" })}
-                                </div>
-
-                                {/* Title with Accent Bar */}
-                                <AccentBlock
-                                    className="mb-4"
-                                    active={activeProduct === product.id}
-                                    inactiveLineClassName="opacity-30 w-[2px]"
-                                    hoverLineClassName="group-hover:opacity-60 group-hover:w-[3px]"
-                                    activeLineClassName="opacity-100 w-[4px]"
-                                >
-                                    <h3 className={cn(
-                                        "text-xl font-bold leading-tight transition-colors",
-                                        activeProduct === product.id ? "text-brand-indigo" : "text-text-primary"
-                                    )}>
-                                        {product.title}
-                                    </h3>
-                                </AccentBlock>
-
-                                {/* Content */}
-                                <div className="pl-1 space-y-4">
-                                    <p className="text-text-secondary text-base leading-relaxed max-w-4xl">
-                                        {product.desc}
-                                    </p>
-
-                                    {"ideal" in product && product.ideal ? (
-                                        <p className="text-sm font-medium text-text-primary">
-                                            {product.ideal}
-                                        </p>
-                                    ) : null}
-
-                                    {"market" in product && product.market ? (
-                                        <p className="text-sm text-slate-500 italic bg-white p-4 rounded-xl border-l-2 border-brand-indigo/30 shadow-sm max-w-3xl">
-                                            {product.market}
-                                        </p>
-                                    ) : null}
-
-                                    <div className="pt-2">
-                                        <Button
-                                            variant="link"
-                                            icon={ArrowRight}
-                                            className="p-0 text-sm font-bold"
-                                            href={PRODUCT_LINK_MAP[product.id] ?? "/prodotti/cessione-del-quinto"}
-                                        >
-                                            {product.cta}
-                                        </Button>
-                                    </div>
-                                </div>
-                            </motion.div>
+                                product={product}
+                                activeProduct={activeProduct}
+                                setActiveProduct={setActiveProduct}
+                            />
                         ))}
                     </div>
                 </div>
 
-                {/* Right Side: Sticky Image Reveal (Takes 1 column) */}
                 <div className="hidden lg:block lg:col-span-1 relative">
                     <div className="sticky top-32 w-full pt-12 xl:pt-16">
                         <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
-                            <AnimatePresence mode="wait">
-                                {HOME_CORE_PRODUCTS.map((product) => (
-                                    activeProduct === product.id && (
-                                        <motion.div
-                                            key={product.id}
-                                            initial={{ opacity: 0, scale: 1.05 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                                            className={cn(
-                                                "absolute inset-0 bg-gradient-to-br flex flex-col items-center justify-center p-8 text-center text-white",
-                                                product.placeholderColor
-                                            )}
-                                        >
-                                            {PRODUCT_IMAGE_MAP[product.id] ? (
-                                                <Image
-                                                    src={PRODUCT_IMAGE_MAP[product.id].src}
-                                                    alt={PRODUCT_IMAGE_MAP[product.id].alt}
-                                                    fill
-                                                    sizes="(max-width: 1280px) 33vw, 25vw"
-                                                    className="object-cover"
-                                                />
-                                            ) : (
-                                                <>
-                                                    <ImageIcon className="w-16 h-16 mb-6 opacity-80" />
-                                                    <h4 className="font-bold text-xl mb-2 leading-tight">Immagine Dedicata</h4>
-                                                    <p className="text-sm opacity-80 font-medium">Placeholder per:<br />{product.badge}</p>
-                                                </>
-                                            )}
-                                        </motion.div>
-                                    )
-                                ))}
-                            </AnimatePresence>
+                            {HOME_CORE_PRODUCTS.map((product) => {
+                                const isActive = activeProduct === product.id;
+                                return (
+                                    <div
+                                        key={product.id}
+                                        className={cn(
+                                            "absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white transition-all duration-400 ease-in-out bg-gradient-to-br",
+                                            product.placeholderColor,
+                                            isActive
+                                                ? "z-10 opacity-100 scale-100"
+                                                : "z-0 opacity-0 scale-105 pointer-events-none",
+                                        )}
+                                        aria-hidden={!isActive}
+                                    >
+                                        {PRODUCT_IMAGE_MAP[product.id] ? (
+                                            <Image
+                                                src={PRODUCT_IMAGE_MAP[product.id].src}
+                                                alt={PRODUCT_IMAGE_MAP[product.id].alt}
+                                                fill
+                                                sizes="(max-width: 1280px) 33vw, 25vw"
+                                                className="object-cover"
+                                                loading={isActive ? "eager" : "lazy"}
+                                            />
+                                        ) : (
+                                            <>
+                                                <ImageIcon className="w-16 h-16 mb-6 opacity-80" />
+                                                <h4 className="font-bold text-xl mb-2 leading-tight">Immagine Dedicata</h4>
+                                                <p className="text-sm opacity-80 font-medium">
+                                                    Placeholder per:
+                                                    <br />
+                                                    {product.badge}
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
-
             </div>
         </Section>
     );

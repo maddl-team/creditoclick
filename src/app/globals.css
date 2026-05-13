@@ -21,10 +21,24 @@
   --radius-2xl: 24px;
 
   --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Stesso timing della hero; opacità sempre 1 così il testo è dipingibile subito (LCP) mantenendo il movimento verticale. */
+  --animate-hero-narrative-reveal: hero-narrative-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 
   @keyframes fade-in-up {
     from {
       opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-narrative-reveal {
+    from {
+      opacity: 1;
       transform: translateY(20px);
     }
 

@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { ShieldCheck, Clock, Smartphone, Info } from "lucide-react";
 import { Section } from "../ui/Section";

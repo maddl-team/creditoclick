@@ -71,6 +71,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className="scroll-smooth" data-scroll-behavior="smooth">
+      <head>
+        <link rel="preconnect" href="https://idb.iubenda.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.iubenda.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://cs.iubenda.com" />
+      </head>
       <body
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
