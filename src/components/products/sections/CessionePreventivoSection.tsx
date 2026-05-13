@@ -271,9 +271,10 @@ export function CessionePreventivoSection() {
               >
                 <h3 className="text-2xl font-bold text-text-primary">Richiedi il tuo preventivo personalizzato</h3>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-categoria" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Categoria professionale</span>
                   <select
+                    id="cprev-categoria"
                     value={categoria}
                     onChange={(e) => setCategoria(e.target.value as Categoria)}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -286,9 +287,10 @@ export function CessionePreventivoSection() {
                   {errors.categoria ? <p className="text-xs text-red-600">{errors.categoria}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-datore-ente" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Datore di lavoro o Ente di appartenenza</span>
                   <input
+                    id="cprev-datore-ente"
                     type="text"
                     value={datoreEnte}
                     onChange={(e) => setDatoreEnte(e.target.value)}
@@ -298,9 +300,10 @@ export function CessionePreventivoSection() {
                   {errors.datoreEnte ? <p className="text-xs text-red-600">{errors.datoreEnte}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-netto-mensile" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Stipendio o Pensione netto mensile</span>
                   <input
+                    id="cprev-netto-mensile"
                     type="number"
                     min={600}
                     step={1}
@@ -312,9 +315,10 @@ export function CessionePreventivoSection() {
                   {errors.nettoMensile ? <p className="text-xs text-red-600">{errors.nettoMensile}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-anzianita" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Anzianità lavorativa</span>
                   <select
+                    id="cprev-anzianita"
                     value={anzianita}
                     onChange={(e) => setAnzianita(e.target.value as Anzianita)}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -375,16 +379,25 @@ export function CessionePreventivoSection() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-end">
-                    <span className="text-sm font-semibold text-text-primary">Importo desiderato</span>
-                    <span className="text-2xl font-bold text-text-primary">{formatEURCompact(importo)}</span>
+                    <label htmlFor="cprev-importo-range" className="text-sm font-semibold text-text-primary cursor-pointer">
+                      Importo desiderato
+                    </label>
+                    <span className="text-2xl font-bold text-text-primary" aria-hidden="true">
+                      {formatEURCompact(importo)}
+                    </span>
                   </div>
                   <input
+                    id="cprev-importo-range"
                     type="range"
                     min={3000}
                     max={75000}
                     step={1000}
                     value={importo}
                     onChange={(e) => setImporto(Number(e.target.value))}
+                    aria-valuemin={3000}
+                    aria-valuemax={75000}
+                    aria-valuenow={importo}
+                    aria-valuetext={formatEURCompact(importo)}
                     className="w-full h-1.5 bg-brand-indigo/20 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-brand-indigo [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-brand-indigo [&::-moz-range-thumb]:border-none"
                   />
                   <div className="flex justify-between text-xs text-slate-500">
@@ -396,16 +409,25 @@ export function CessionePreventivoSection() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-end">
-                    <span className="text-sm font-semibold text-text-primary">Durata preferita</span>
-                    <span className="text-2xl font-bold text-text-primary">{durata} mesi</span>
+                    <label htmlFor="cprev-durata-range" className="text-sm font-semibold text-text-primary cursor-pointer">
+                      Durata preferita
+                    </label>
+                    <span className="text-2xl font-bold text-text-primary" aria-hidden="true">
+                      {durata} mesi
+                    </span>
                   </div>
                   <input
+                    id="cprev-durata-range"
                     type="range"
                     min={24}
                     max={120}
                     step={12}
                     value={durata}
                     onChange={(e) => setDurata(Number(e.target.value) as Durata)}
+                    aria-valuemin={24}
+                    aria-valuemax={120}
+                    aria-valuenow={durata}
+                    aria-valuetext={`${durata} mesi`}
                     className="w-full h-1.5 bg-brand-indigo/20 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-brand-indigo [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-brand-indigo [&::-moz-range-thumb]:border-none"
                   />
                   <div className="flex justify-between text-xs text-slate-500">
@@ -439,11 +461,12 @@ export function CessionePreventivoSection() {
                 </fieldset>
 
                 {cessioneInCorso === "si" ? (
-                  <label className="block space-y-2">
+                  <label htmlFor="cprev-rata-attuale" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">
                       Rata mensile attuale della cessione in corso (consigliato)
                     </span>
                     <input
+                      id="cprev-rata-attuale"
                       type="number"
                       min={50}
                       step={1}
@@ -455,9 +478,10 @@ export function CessionePreventivoSection() {
                   </label>
                 ) : null}
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-note" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Note aggiuntive</span>
                   <textarea
+                    id="cprev-note"
                     maxLength={300}
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
@@ -492,9 +516,10 @@ export function CessionePreventivoSection() {
               <form onSubmit={onSubmitStep3} className="space-y-5">
                 <h3 className="text-2xl font-bold text-text-primary">A chi mandiamo il preventivo?</h3>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-nome" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Nome</span>
                   <input
+                    id="cprev-nome"
                     type="text"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
@@ -503,9 +528,10 @@ export function CessionePreventivoSection() {
                   {step3SubmitAttempted && errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-cognome" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Cognome</span>
                   <input
+                    id="cprev-cognome"
                     type="text"
                     value={cognome}
                     onChange={(e) => setCognome(e.target.value)}
@@ -514,9 +540,10 @@ export function CessionePreventivoSection() {
                   {step3SubmitAttempted && errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-email" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Email</span>
                   <input
+                    id="cprev-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -526,9 +553,10 @@ export function CessionePreventivoSection() {
                   {step3SubmitAttempted && errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
                 </label>
 
-                <label className="block space-y-2">
+                <label htmlFor="cprev-whatsapp" className="block space-y-2">
                   <span className="text-sm font-semibold text-text-primary">Numero WhatsApp</span>
                   <input
+                    id="cprev-whatsapp"
                     type="tel"
                     placeholder="+39XXXXXXXXXX"
                     value={whatsapp}

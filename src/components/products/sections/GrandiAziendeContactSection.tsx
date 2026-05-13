@@ -228,9 +228,10 @@ export function GrandiAziendeContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Profilo Aziendale</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-nome-azienda" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Nome dell'azienda</span>
                     <input
+                      id="ga-nome-azienda"
                       type="text"
                       value={nomeAzienda}
                       onChange={(e) => setNomeAzienda(e.target.value)}
@@ -246,9 +247,10 @@ export function GrandiAziendeContactSection() {
                     {errors.nomeAzienda ? <p className="text-xs text-red-600">{errors.nomeAzienda}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-settore" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Settore merceologico</span>
                     <select
+                      id="ga-settore"
                       value={settore}
                       onChange={(e) => setSettore(e.target.value as Settore)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -314,9 +316,10 @@ export function GrandiAziendeContactSection() {
                     {errors.tipoContratto ? <p className="text-xs text-red-600">{errors.tipoContratto}</p> : null}
                   </fieldset>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-anzianita-anni" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Anzianita lavorativa (anni)</span>
                     <input
+                      id="ga-anzianita-anni"
                       type="number"
                       min={0}
                       max={50}
@@ -328,9 +331,10 @@ export function GrandiAziendeContactSection() {
                     {errors.anzianitaAnni ? <p className="text-xs text-red-600">{errors.anzianitaAnni}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-stipendio-netto" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Stipendio netto mensile</span>
                     <input
+                      id="ga-stipendio-netto"
                       type="number"
                       min={600}
                       step={50}
@@ -347,9 +351,10 @@ export function GrandiAziendeContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 3: Esigenza Finanziaria</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-importo-desiderato" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Importo desiderato</span>
                     <input
+                      id="ga-importo-desiderato"
                       type="number"
                       min={3000}
                       step={500}
@@ -389,9 +394,10 @@ export function GrandiAziendeContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto Finale</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-nome" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Nome</span>
                     <input
+                      id="ga-nome"
                       type="text"
                       value={nome}
                       onChange={(e) => setNome(e.target.value)}
@@ -400,9 +406,10 @@ export function GrandiAziendeContactSection() {
                     {step4SubmitAttempted && errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-cognome" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Cognome</span>
                     <input
+                      id="ga-cognome"
                       type="text"
                       value={cognome}
                       onChange={(e) => setCognome(e.target.value)}
@@ -411,9 +418,10 @@ export function GrandiAziendeContactSection() {
                     {step4SubmitAttempted && errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-cellulare" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Cellulare</span>
                     <input
+                      id="ga-cellulare"
                       type="tel"
                       placeholder="+39XXXXXXXXXX"
                       value={cellulare}
@@ -423,9 +431,10 @@ export function GrandiAziendeContactSection() {
                     {step4SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="ga-email" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Email</span>
                     <input
+                      id="ga-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

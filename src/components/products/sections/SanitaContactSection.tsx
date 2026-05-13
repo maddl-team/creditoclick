@@ -167,13 +167,13 @@ export function SanitaContactSection() {
               {step === 1 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Inquadramento</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Ruolo professionale</span>
-                    <select value={ruolo} onChange={(e) => setRuolo(e.target.value as Ruolo)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
+                  <label htmlFor="sanita-ruolo" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Ruolo professionale</span>
+                    <select id="sanita-ruolo" value={ruolo} onChange={(e) => setRuolo(e.target.value as Ruolo)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
                       <option value="medico">Medico</option><option value="infermiere">Infermiere</option><option value="oss">OSS</option><option value="amministrativo">Amministrativo</option>
                     </select>{errors.ruolo && <p className="text-xs text-red-600">{errors.ruolo}</p>}
                   </label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Ente di appartenenza</span>
-                    <select value={ente} onChange={(e) => setEnte(e.target.value as Ente)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
+                  <label htmlFor="sanita-ente" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Ente di appartenenza</span>
+                    <select id="sanita-ente" value={ente} onChange={(e) => setEnte(e.target.value as Ente)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
                       <option value="asl_ospedale_pubblico">ASL/Ospedale Pubblico</option><option value="clinica_convenzionata">Clinica Convenzionata</option><option value="struttura_privata">Struttura Privata</option>
                     </select>{errors.ente && <p className="text-xs text-red-600">{errors.ente}</p>}
                   </label>
@@ -183,12 +183,12 @@ export function SanitaContactSection() {
               {step === 2 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 2: Dati Economici</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Anzianita di servizio (anni)</span>
-                    <input type="number" min={0} max={50} value={anzianitaServizio} onChange={(e) => setAnzianitaServizio(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                  <label htmlFor="sanita-anzianita" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Anzianita di servizio (anni)</span>
+                    <input id="sanita-anzianita" type="number" min={0} max={50} value={anzianitaServizio} onChange={(e) => setAnzianitaServizio(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />
                     {errors.anzianita && <p className="text-xs text-red-600">{errors.anzianita}</p>}
                   </label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Stipendio netto</span>
-                    <input type="number" min={600} step={50} value={stipendioNetto} onChange={(e) => setStipendioNetto(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                  <label htmlFor="sanita-stipendio" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Stipendio netto</span>
+                    <input id="sanita-stipendio" type="number" min={600} step={50} value={stipendioNetto} onChange={(e) => setStipendioNetto(Math.trunc(Number(e.target.value) || 0))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />
                     {errors.stipendio && <p className="text-xs text-red-600">{errors.stipendio}</p>}
                   </label>
                 </>
@@ -197,8 +197,8 @@ export function SanitaContactSection() {
               {step === 3 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 3: Urgenza</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Tempistiche</span>
-                    <select value={tempistiche} onChange={(e) => setTempistiche(e.target.value as Tempistiche)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
+                  <label htmlFor="sanita-tempistiche" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Tempistiche</span>
+                    <select id="sanita-tempistiche" value={tempistiche} onChange={(e) => setTempistiche(e.target.value as Tempistiche)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3">
                       <option value="immediata_15gg">Immediata (15 gg)</option><option value="breve_1mese">Breve termine (1 mese)</option><option value="informativa">Informativa</option>
                     </select>{errors.tempistiche && <p className="text-xs text-red-600">{errors.tempistiche}</p>}
                   </label>
@@ -208,10 +208,10 @@ export function SanitaContactSection() {
               {step === 4 && (
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto</h3>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
-                  <label className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
+                  <label htmlFor="sanita-nome" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input id="sanita-nome" type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
+                  <label htmlFor="sanita-cognome" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input id="sanita-cognome" type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
+                  <label htmlFor="sanita-cellulare" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input id="sanita-cellulare" type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
+                  <label htmlFor="sanita-email" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input id="sanita-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
                     <span className="text-sm text-text-secondary">

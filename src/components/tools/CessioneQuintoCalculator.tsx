@@ -42,9 +42,10 @@ export function CessioneQuintoCalculator() {
         <div className="lg:col-span-2 space-y-6">
           <h3 className="text-2xl font-bold text-text-primary">Componente interattivo — Calcolatore</h3>
 
-          <label className="block space-y-2">
+          <label htmlFor="cqcalc-reddito" className="block space-y-2">
             <span className="text-sm font-semibold text-text-primary">Reddito netto mensile</span>
             <input
+              id="cqcalc-reddito"
               type="number"
               min={600}
               step={50}
@@ -54,9 +55,10 @@ export function CessioneQuintoCalculator() {
             />
           </label>
 
-          <label className="block space-y-2">
+          <label htmlFor="cqcalc-categoria" className="block space-y-2">
             <span className="text-sm font-semibold text-text-primary">Categoria professionale</span>
             <select
+              id="cqcalc-categoria"
               value={category}
               onChange={(e) => setCategory(e.target.value as CategoryKey)}
               className="w-full rounded-xl border border-slate-300 px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/30"
@@ -69,9 +71,10 @@ export function CessioneQuintoCalculator() {
             </select>
           </label>
 
-          <label className="block space-y-2">
+          <label htmlFor="cqcalc-durata" className="block space-y-2">
             <span className="text-sm font-semibold text-text-primary">Durata desiderata</span>
             <select
+              id="cqcalc-durata"
               value={duration}
               onChange={(e) => setDuration(Number(e.target.value))}
               className="w-full rounded-xl border border-slate-300 px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/30"

@@ -209,9 +209,10 @@ export function PmiContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Dati Azienda</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-ragione-sociale" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Ragione sociale</span>
                     <input
+                      id="pmi-ragione-sociale"
                       type="text"
                       value={ragioneSociale}
                       onChange={(e) => setRagioneSociale(e.target.value)}
@@ -220,9 +221,10 @@ export function PmiContactSection() {
                     {errors.ragioneSociale ? <p className="text-xs text-red-600">{errors.ragioneSociale}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-forma-giuridica" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Forma giuridica</span>
                     <select
+                      id="pmi-forma-giuridica"
                       value={formaGiuridica}
                       onChange={(e) => setFormaGiuridica(e.target.value as FormaGiuridica)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -264,9 +266,10 @@ export function PmiContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 2: Dati Finanziari</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-stipendio-netto" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Stipendio netto mensile</span>
                     <input
+                      id="pmi-stipendio-netto"
                       type="number"
                       min={600}
                       step={50}
@@ -277,9 +280,10 @@ export function PmiContactSection() {
                     {errors.stipendioNettoMensile ? <p className="text-xs text-red-600">{errors.stipendioNettoMensile}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-tfr" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">TFR accantonato (stima opzionale)</span>
                     <input
+                      id="pmi-tfr"
                       type="number"
                       min={0}
                       step={500}
@@ -290,9 +294,10 @@ export function PmiContactSection() {
                     {errors.tfrAccantonato ? <p className="text-xs text-red-600">{errors.tfrAccantonato}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-dest-tfr" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Destinazione TFR</span>
                     <select
+                      id="pmi-dest-tfr"
                       value={destinazioneTfr}
                       onChange={(e) => setDestinazioneTfr(e.target.value as DestinazioneTfr)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -309,9 +314,10 @@ export function PmiContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 3: Dettagli Richiesta</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-motivazione" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Motivazione</span>
                     <select
+                      id="pmi-motivazione"
                       value={motivazione}
                       onChange={(e) => setMotivazione(e.target.value as Motivazione)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -322,9 +328,10 @@ export function PmiContactSection() {
                     </select>
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-importo-richiesto" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Importo richiesto</span>
                     <input
+                      id="pmi-importo-richiesto"
                       type="number"
                       min={3000}
                       step={500}
@@ -341,9 +348,10 @@ export function PmiContactSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-nome" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Nome</span>
                     <input
+                      id="pmi-nome"
                       type="text"
                       value={nome}
                       onChange={(e) => setNome(e.target.value)}
@@ -352,9 +360,10 @@ export function PmiContactSection() {
                     {step4SubmitAttempted && errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-cognome" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Cognome</span>
                     <input
+                      id="pmi-cognome"
                       type="text"
                       value={cognome}
                       onChange={(e) => setCognome(e.target.value)}
@@ -363,9 +372,10 @@ export function PmiContactSection() {
                     {step4SubmitAttempted && errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-cellulare" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Cellulare</span>
                     <input
+                      id="pmi-cellulare"
                       type="tel"
                       placeholder="+39XXXXXXXXXX"
                       value={cellulare}
@@ -375,9 +385,10 @@ export function PmiContactSection() {
                     {step4SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="pmi-email" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Email</span>
                     <input
+                      id="pmi-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

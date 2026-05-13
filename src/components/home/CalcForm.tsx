@@ -220,16 +220,25 @@ export function CalcForm() {
                     <form onSubmit={onSubmit} className="space-y-8">
                         <div className="space-y-4">
                             <div className="flex justify-between items-end gap-4">
-                                <p className="text-base text-text-primary font-medium">Importo desiderato</p>
-                                <span className="text-3xl font-bold text-text-primary tracking-tight">{formatEURCompact(importoDesiderato)}</span>
+                                <label htmlFor="home-calc-importo-range" className="text-base text-text-primary font-medium cursor-pointer">
+                                    Importo desiderato
+                                </label>
+                                <span className="text-3xl font-bold text-text-primary tracking-tight" aria-hidden="true">
+                                    {formatEURCompact(importoDesiderato)}
+                                </span>
                             </div>
                             <input
+                                id="home-calc-importo-range"
                                 type="range"
                                 min={3000}
                                 max={75000}
                                 step={1000}
                                 value={importoDesiderato}
                                 onChange={(e) => setImportoDesiderato(Number(e.target.value))}
+                                aria-valuemin={3000}
+                                aria-valuemax={75000}
+                                aria-valuenow={importoDesiderato}
+                                aria-valuetext={formatEURCompact(importoDesiderato)}
                                 className="w-full h-1.5 bg-brand-cyan rounded-lg appearance-none cursor-pointer transition-all [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-none"
                             />
                             <div className="flex justify-between text-xs uppercase tracking-widest text-slate-500 font-bold">
@@ -241,16 +250,25 @@ export function CalcForm() {
 
                         <div className="space-y-4">
                             <div className="flex justify-between items-end gap-4">
-                                <p className="text-base text-text-primary font-medium">Numero di rate</p>
-                                <span className="text-3xl font-bold text-text-primary tracking-tight">{numRate} mesi</span>
+                                <label htmlFor="home-calc-num-rate-range" className="text-base text-text-primary font-medium cursor-pointer">
+                                    Numero di rate
+                                </label>
+                                <span className="text-3xl font-bold text-text-primary tracking-tight" aria-hidden="true">
+                                    {numRate} mesi
+                                </span>
                             </div>
                             <input
+                                id="home-calc-num-rate-range"
                                 type="range"
                                 min={24}
                                 max={120}
                                 step={12}
                                 value={numRate}
                                 onChange={(e) => setNumRate(Number(e.target.value) as DurationMonths)}
+                                aria-valuemin={24}
+                                aria-valuemax={120}
+                                aria-valuenow={numRate}
+                                aria-valuetext={`${numRate} mesi`}
                                 className="w-full h-1.5 bg-brand-cyan rounded-lg appearance-none cursor-pointer transition-all [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-none"
                             />
                             <div className="flex justify-between text-xs uppercase tracking-widest text-slate-500 font-bold">
@@ -261,8 +279,11 @@ export function CalcForm() {
                         </div>
 
                         <div className="space-y-4">
-                            <p className="text-base text-text-primary font-medium">Categoria professionale</p>
+                            <label htmlFor="home-calc-categoria" className="block text-base text-text-primary font-medium cursor-pointer">
+                                Categoria professionale
+                            </label>
                             <select
+                                id="home-calc-categoria"
                                 value={categoria}
                                 onChange={(e) => setCategoria(e.target.value as ProfessionCategory)}
                                 className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/50"
@@ -275,8 +296,11 @@ export function CalcForm() {
                         </div>
 
                         <div className="space-y-4">
-                            <label className="block text-base text-text-primary font-medium">Stipendio o Pensione netto mensile</label>
+                            <label htmlFor="home-calc-stipendio-netto" className="block text-base text-text-primary font-medium cursor-pointer">
+                                Stipendio o Pensione netto mensile
+                            </label>
                             <input
+                                id="home-calc-stipendio-netto"
                                 type="number"
                                 min={600}
                                 step={1}
@@ -311,9 +335,10 @@ export function CalcForm() {
                     </form>
                 ) : (
                     <form onSubmit={onSubmit} className="space-y-6">
-                        <label className="block space-y-2">
+                        <label htmlFor="home-calc-nome" className="block space-y-2">
                             <span className="text-base text-text-primary font-medium">Nome</span>
                             <input
+                                id="home-calc-nome"
                                 type="text"
                                 minLength={2}
                                 required
@@ -324,9 +349,10 @@ export function CalcForm() {
                             {errors.nome ? <p className="text-sm text-red-200">{errors.nome}</p> : null}
                         </label>
 
-                        <label className="block space-y-2">
+                        <label htmlFor="home-calc-cognome" className="block space-y-2">
                             <span className="text-base text-text-primary font-medium">Cognome</span>
                             <input
+                                id="home-calc-cognome"
                                 type="text"
                                 minLength={2}
                                 required
@@ -337,9 +363,10 @@ export function CalcForm() {
                             {errors.cognome ? <p className="text-sm text-red-200">{errors.cognome}</p> : null}
                         </label>
 
-                        <label className="block space-y-2">
+                        <label htmlFor="home-calc-email" className="block space-y-2">
                             <span className="text-base text-text-primary font-medium">Email</span>
                             <input
+                                id="home-calc-email"
                                 type="email"
                                 required
                                 value={email}
@@ -350,9 +377,10 @@ export function CalcForm() {
                             {errors.email ? <p className="text-sm text-red-200">{errors.email}</p> : null}
                         </label>
 
-                        <label className="block space-y-2">
+                        <label htmlFor="home-calc-whatsapp" className="block space-y-2">
                             <span className="text-base text-text-primary font-medium">Numero WhatsApp</span>
                             <input
+                                id="home-calc-whatsapp"
                                 type="tel"
                                 required
                                 placeholder="+39XXXXXXXXXX"

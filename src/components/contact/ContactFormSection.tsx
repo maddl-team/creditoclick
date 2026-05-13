@@ -128,9 +128,10 @@ export function ContactFormSection() {
 
         <div className="border-x border-slate-200/60 p-8 md:p-10 lg:p-12 bg-surface-subtle">
           <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-nome" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Nome</span>
                 <input
+                  id="contact-nome"
                   type="text"
                   minLength={2}
                   required
@@ -141,9 +142,10 @@ export function ContactFormSection() {
                 {errors.nome ? <p className="text-xs text-red-600">{errors.nome}</p> : null}
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-cognome" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Cognome</span>
                 <input
+                  id="contact-cognome"
                   type="text"
                   minLength={2}
                   required
@@ -154,9 +156,10 @@ export function ContactFormSection() {
                 {errors.cognome ? <p className="text-xs text-red-600">{errors.cognome}</p> : null}
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-whatsapp" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Numero WhatsApp</span>
                 <input
+                  id="contact-whatsapp"
                   type="tel"
                   required
                   placeholder="+39XXXXXXXXXX"
@@ -167,9 +170,10 @@ export function ContactFormSection() {
                 {errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-email" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Email (facoltativa)</span>
                 <input
+                  id="contact-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -178,9 +182,10 @@ export function ContactFormSection() {
                 {errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-categoria" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Categoria professionale (facoltativa)</span>
                 <select
+                  id="contact-categoria"
                   value={categoria}
                   onChange={(e) => setCategoria(e.target.value as Categoria)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -193,9 +198,10 @@ export function ContactFormSection() {
                 </select>
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-richiesta" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Come possiamo aiutarti? (facoltativa)</span>
                 <select
+                  id="contact-richiesta"
                   value={richiesta}
                   onChange={(e) => setRichiesta(e.target.value as Richiesta)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -210,9 +216,10 @@ export function ContactFormSection() {
                 </select>
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-situazione" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Descrivi la tua situazione</span>
                 <textarea
+                  id="contact-situazione"
                   required
                   minLength={10}
                   maxLength={1000}
@@ -225,9 +232,10 @@ export function ContactFormSection() {
                 {errors.situazione ? <p className="text-xs text-red-600">{errors.situazione}</p> : null}
               </label>
 
-              <label className="block space-y-2 md:col-span-2">
+              <label htmlFor="contact-fonte" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Come ci hai trovato? (facoltativa)</span>
                 <select
+                  id="contact-fonte"
                   value={fonte}
                   onChange={(e) => setFonte(e.target.value as Fonte)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"

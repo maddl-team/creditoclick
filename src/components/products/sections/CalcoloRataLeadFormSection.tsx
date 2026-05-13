@@ -250,9 +250,10 @@ export function CalcoloRataLeadFormSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Profilo Finanziario</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-reddito-netto" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Reddito netto mensile</span>
                     <input
+                      id="crlq-reddito-netto"
                       type="number"
                       min={500}
                       step={50}
@@ -287,9 +288,10 @@ export function CalcoloRataLeadFormSection() {
                     {errors.mensilita ? <p className="text-xs text-red-600">{errors.mensilita}</p> : null}
                   </fieldset>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-categoria-prof" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Categoria professionale</span>
                     <select
+                      id="crlq-categoria-prof"
                       value={categoriaProfessionale}
                       onChange={(e) => setCategoriaProfessionale(e.target.value as CategoriaProfessionale)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -303,9 +305,10 @@ export function CalcoloRataLeadFormSection() {
                     {errors.categoriaProfessionale ? <p className="text-xs text-red-600">{errors.categoriaProfessionale}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-durata" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Durata desiderata</span>
                     <select
+                      id="crlq-durata"
                       value={durataDesiderata}
                       onChange={(e) => setDurataDesiderata(e.target.value as DurataMesi)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -319,9 +322,10 @@ export function CalcoloRataLeadFormSection() {
                     {errors.durataDesiderata ? <p className="text-xs text-red-600">{errors.durataDesiderata}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-data-nascita" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Data di nascita</span>
                     <input
+                      id="crlq-data-nascita"
                       type="date"
                       value={dataNascita}
                       onChange={(e) => setDataNascita(e.target.value)}
@@ -336,9 +340,10 @@ export function CalcoloRataLeadFormSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 2: Dati di Qualificazione</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-nome-azienda-ente" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Nome azienda o ente pensionistico</span>
                     <input
+                      id="crlq-nome-azienda-ente"
                       type="text"
                       value={nomeAziendaEnte}
                       onChange={(e) => setNomeAziendaEnte(e.target.value)}
@@ -348,9 +353,10 @@ export function CalcoloRataLeadFormSection() {
                     {errors.nomeAziendaEnte ? <p className="text-xs text-red-600">{errors.nomeAziendaEnte}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-anzianita" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Anzianita lavorativa (se dipendente)</span>
                     <select
+                      id="crlq-anzianita"
                       value={anzianitaLavorativa}
                       onChange={(e) => setAnzianitaLavorativa(e.target.value as AnzianitaLavorativa)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
@@ -391,9 +397,10 @@ export function CalcoloRataLeadFormSection() {
                 <>
                   <h3 className="text-2xl font-bold text-text-primary">Step 3: Dati di Contatto</h3>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-nome-cognome" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Nome e cognome</span>
                     <input
+                      id="crlq-nome-cognome"
                       type="text"
                       value={nomeCognome}
                       onChange={(e) => setNomeCognome(e.target.value)}
@@ -402,9 +409,10 @@ export function CalcoloRataLeadFormSection() {
                     {step3SubmitAttempted && errors.nomeCognome ? <p className="text-xs text-red-600">{errors.nomeCognome}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-cellulare" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Numero di cellulare</span>
                     <input
+                      id="crlq-cellulare"
                       type="tel"
                       placeholder="+39XXXXXXXXXX"
                       value={cellulare}
@@ -414,9 +422,10 @@ export function CalcoloRataLeadFormSection() {
                     {step3SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-email" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Email</span>
                     <input
+                      id="crlq-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -425,9 +434,10 @@ export function CalcoloRataLeadFormSection() {
                     {step3SubmitAttempted && errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
                   </label>
 
-                  <label className="block space-y-2">
+                  <label htmlFor="crlq-orario-contatto" className="block space-y-2">
                     <span className="text-sm font-semibold text-text-primary">Orario preferito per il contatto (opzionale)</span>
                     <select
+                      id="crlq-orario-contatto"
                       value={orarioContatto}
                       onChange={(e) => setOrarioContatto(e.target.value as OrarioContatto)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
