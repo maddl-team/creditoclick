@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -166,6 +167,14 @@ export function GrandiAziendeContactSection() {
         return;
       }
 
+      pushContactLeadEvent(
+        {
+          formSource: "Dipendenti Grandi Aziende",
+          email: email.trim(),
+          phone: normalizePhone(cellulare),
+        },
+        { includeUserDataForAds: getLastAdUserDataConsent() },
+      );
       setSubmitted(true);
     } catch {
       setSubmitError("Errore di rete. Controlla la connessione e riprova.");

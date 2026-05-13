@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -104,6 +105,14 @@ export function ForzeArmateContactSection() {
         setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
         return;
       }
+      pushContactLeadEvent(
+        {
+          formSource: "Forze Armate e dell'Ordine",
+          email: email.trim(),
+          phone: normalizePhone(cellulare),
+        },
+        { includeUserDataForAds: getLastAdUserDataConsent() },
+      );
       setSubmitted(true);
     } catch {
       setSubmitError("Errore di rete. Controlla la connessione e riprova.");

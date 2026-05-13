@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 import { LegalPreFooter } from "@/components/ui/LegalPreFooter";
+import { ConsentModeBootstrap } from "@/components/analytics/ConsentModeBootstrap";
+import { IubendaCookieSolution } from "@/components/analytics/IubendaCookieSolution";
 import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
+import { GtmRouteTracker } from "@/components/analytics/GtmRouteTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,6 +62,8 @@ export const metadata: Metadata = {
   },
 };
 
+const marketingScriptsDisabled = process.env.NEXT_PUBLIC_ENABLE_MARKETING_SCRIPTS === "0";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,7 +74,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
       >
-        <GoogleTagManager />
+        <ConsentModeBootstrap />
+        <IubendaCookieSolution />
+        {!marketingScriptsDisabled ? (
+          <>
+            <GoogleTagManager />
+            <Suspense fallback={null}>
+              <GtmRouteTracker />
+            </Suspense>
+          </>
+        ) : null}
         <div className="flex flex-col min-h-screen relative w-full">
           <Navbar />
           <main className="flex-1 pt-[79px]">

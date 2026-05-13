@@ -4,7 +4,11 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { FOOTER_COOKIE_POLICY_HREF, FOOTER_PRIVACY_POLICY_HREF } from "@/config/iubenda";
 import { Button } from "./Button";
+
+const privacyPolicyHref = FOOTER_PRIVACY_POLICY_HREF;
+const cookiePolicyHref = FOOTER_COOKIE_POLICY_HREF;
 
 const FOOTER_LINKS = [
     {
@@ -46,8 +50,8 @@ const FOOTER_LINKS = [
         links: [
             { label: "Chi siamo", href: "/chi-siamo" },
             { label: "Contatti", href: "/contatti" },
-            { label: "Privacy Policy", href: "/contatti" },
-            { label: "Cookie Policy", href: "/contatti" },
+            { label: "Privacy Policy", href: privacyPolicyHref },
+            { label: "Cookie Policy", href: cookiePolicyHref },
             { label: "Termini e Condizioni", href: "/contatti" },
         ],
     },

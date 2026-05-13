@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -94,6 +95,14 @@ export function ContactFormSection() {
         setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
         return;
       }
+      pushContactLeadEvent(
+        {
+          formSource: "Contatti",
+          email: email.trim() || undefined,
+          phone: normalizeWhatsApp(whatsapp),
+        },
+        { includeUserDataForAds: getLastAdUserDataConsent() },
+      );
       setIsSubmitted(true);
     } catch {
       setSubmitError("Errore di rete. Controlla la connessione e riprova.");

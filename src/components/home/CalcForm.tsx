@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { Button } from "../ui/Button";
 
 export function CalcForm() {
@@ -18,7 +19,12 @@ export function CalcForm() {
 
     const DURATIONS: readonly DurationMonths[] = [24, 36, 48, 60, 72, 84, 96, 108, 120];
 
-    const formatNumber = (val: number) => new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(val);
+    /** Formattazione deterministica (SSR Node e browser devono coincidere). */
+    const formatNumber = (val: number) => {
+        const s = String(Math.round(Math.abs(val)));
+        const grouped = s.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return val < 0 ? `-${grouped}` : grouped;
+    };
     const formatEURCompact = (val: number) => `${formatNumber(val)}€`;
 
     function pvOfAnnuity(payment: number, annualTanPct: number, months: number) {
@@ -172,6 +178,14 @@ export function CalcForm() {
                 setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
                 return;
             }
+            pushContactLeadEvent(
+                {
+                    formSource: "Calcolo rata homepage",
+                    email: email.trim(),
+                    phone: normalizedPhone,
+                },
+                { includeUserDataForAds: getLastAdUserDataConsent() },
+            );
             setIsSubmitted(true);
         } catch {
             setSubmitError("Errore di rete. Controlla la connessione e riprova.");

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -147,6 +148,14 @@ export function PmiContactSection() {
         setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
         return;
       }
+      pushContactLeadEvent(
+        {
+          formSource: "Dipendenti PMI",
+          email: email.trim(),
+          phone: normalizePhone(cellulare),
+        },
+        { includeUserDataForAds: getLastAdUserDataConsent() },
+      );
       setSubmitted(true);
     } catch {
       setSubmitError("Errore di rete. Controlla la connessione e riprova.");
