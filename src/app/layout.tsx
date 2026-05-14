@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
-import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 import { LegalPreFooter } from "@/components/ui/LegalPreFooter";
 import { ConsentModeBootstrap } from "@/components/analytics/ConsentModeBootstrap";
 import { IubendaCookieSolution } from "@/components/analytics/IubendaCookieSolution";
@@ -97,7 +96,6 @@ export default function RootLayout({
           </main>
           <LegalPreFooter />
           <Footer />
-          <FloatingWhatsAppButton />
         </div>
       </body>
     </html>
