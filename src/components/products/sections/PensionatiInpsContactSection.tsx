@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
@@ -31,6 +32,7 @@ function isUnder85(dateOfBirth: string) {
 }
 
 export function PensionatiInpsContactSection() {
+  const pathname = usePathname();
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [step4SubmitAttempted, setStep4SubmitAttempted] = React.useState(false);
@@ -96,6 +98,7 @@ export function PensionatiInpsContactSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "Pensionati INPS",
+          sourcePage: pathname,
           subject: "Nuova richiesta - Pensionati INPS",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
           phone: normalizePhone(cellulare),

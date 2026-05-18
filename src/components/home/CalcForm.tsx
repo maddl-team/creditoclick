@@ -1,12 +1,14 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "../ui/Button";
 
 export function CalcForm() {
+    const pathname = usePathname();
     type Step = 1 | 2;
     type ProfessionCategory = "pubblico" | "privato" | "pensionato";
     type DurationMonths = 24 | 36 | 48 | 60 | 72 | 84 | 96 | 108 | 120;
@@ -158,6 +160,7 @@ export function CalcForm() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     formType: "Calcolo rata homepage",
+                    sourcePage: pathname,
                     subject: "Nuova richiesta da calcolatore homepage",
                     fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
                     phone: normalizedPhone,

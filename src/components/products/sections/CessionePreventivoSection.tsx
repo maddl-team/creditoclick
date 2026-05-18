@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
@@ -58,6 +59,7 @@ function isValidWhatsApp(value: string) {
 }
 
 export function CessionePreventivoSection() {
+  const pathname = usePathname();
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [step3SubmitAttempted, setStep3SubmitAttempted] = React.useState(false);
@@ -197,6 +199,7 @@ export function CessionePreventivoSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "Preventivo Cessione del Quinto",
+          sourcePage: pathname,
           subject: "Nuova richiesta preventivo - Cessione del Quinto",
           fullName: `${payload.contatti.nome} ${payload.contatti.cognome}`.trim(),
           phone: payload.contatti.whatsapp,

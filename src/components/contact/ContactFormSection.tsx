@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
@@ -31,6 +32,7 @@ function isValidWhatsApp(value: string) {
 }
 
 export function ContactFormSection() {
+  const pathname = usePathname();
   const [nome, setNome] = React.useState("");
   const [cognome, setCognome] = React.useState("");
   const [whatsapp, setWhatsapp] = React.useState("");
@@ -77,6 +79,7 @@ export function ContactFormSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "Contatti",
+          sourcePage: pathname,
           subject: "Nuovo messaggio dalla pagina Contatti",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
           phone: normalizeWhatsApp(whatsapp),

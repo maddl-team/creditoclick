@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
@@ -23,6 +24,7 @@ function normalizePhone(raw: string) {
 }
 
 export function InsegnantiNoipaContactSection() {
+  const pathname = usePathname();
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [step4SubmitAttempted, setStep4SubmitAttempted] = React.useState(false);
@@ -88,6 +90,7 @@ export function InsegnantiNoipaContactSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "Insegnanti e Scuola (NoiPA)",
+          sourcePage: pathname,
           subject: "Nuova richiesta - Insegnanti e Scuola (NoiPA)",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
           phone: normalizePhone(cellulare),

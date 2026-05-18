@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
@@ -38,6 +39,7 @@ function formatEUR(value: number) {
 }
 
 export function GrandiAziendeContactSection() {
+  const pathname = usePathname();
   const [step, setStep] = React.useState<Step>(1);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [step4SubmitAttempted, setStep4SubmitAttempted] = React.useState(false);
@@ -142,6 +144,7 @@ export function GrandiAziendeContactSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "Dipendenti Grandi Aziende",
+          sourcePage: pathname,
           subject: "Nuova richiesta - Dipendenti Grandi Aziende",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
           phone: normalizePhone(cellulare),

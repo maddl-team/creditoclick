@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { notifyMakeContactWebhook, resolveSourcePage } from "@/lib/contact/makeWebhook";
 
 type ContactPayload = {
   formType?: string;
@@ -8,6 +9,7 @@ type ContactPayload = {
   phone?: string;
   email?: string;
   message?: string;
+  sourcePage?: string;
   data?: Record<string, unknown>;
 };
 
@@ -108,6 +110,25 @@ export async function POST(request: Request) {
           ${extraHtml}
         </div>
       `,
+    });
+
+    const { sourcePage, sourceUrl } = resolveSourcePage(request, payload.sourcePage);
+    const siteHost =
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, "").replace(/\/$/, "") ??
+      "creditoclick.it";
+
+    await notifyMakeContactWebhook({
+      formType,
+      subject,
+      fullName,
+      phone,
+      email,
+      message,
+      data: payload.data ?? {},
+      submittedAt: new Date().toISOString(),
+      sourcePage,
+      sourceUrl,
+      site: siteHost,
     });
 
     return NextResponse.json({ ok: true, id: sendResult.data?.id ?? null }, { status: 200 });
