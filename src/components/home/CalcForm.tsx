@@ -5,7 +5,14 @@ import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 import { Button } from "../ui/Button";
+import { ContactFormSuccessPanel } from "../ui/ContactFormSuccessPanel";
 
 export function CalcForm() {
     const pathname = usePathname();
@@ -95,21 +102,6 @@ export function CalcForm() {
         return next;
     }
 
-    function normalizeWhatsApp(raw: string) {
-        const trimmed = raw.trim();
-        const digits = trimmed.replace(/[^\d]/g, "");
-
-        // Se inserisce 10 cifre: assumiamo +39 in automatico.
-        if (digits.length === 10) return `+39${digits}`;
-        // Se inserisce 12 cifre che iniziano con 39: normalizziamo a +39 e 10 cifre
-        if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-        return raw;
-    }
-
-    function isValidWhatsApp(value: string) {
-        return /^\+39\d{10}$/.test(value.trim());
-    }
-
     function validateStep2() {
         const next: Record<string, string> = {};
 
@@ -117,8 +109,7 @@ export function CalcForm() {
         if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome (minimo 2 caratteri).";
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci un indirizzo email valido.";
 
-        const normalized = normalizeWhatsApp(whatsApp);
-        if (!isValidWhatsApp(normalized)) next.whatsApp = "Inserisci un numero WhatsApp valido: +39 seguito da 10 cifre.";
+        if (!isValidPhone(whatsApp)) next.whatsApp = PHONE_VALIDATION_MESSAGE;
 
         if (!privacyOk) next.privacyOk = "Per procedere devi accettare la Privacy Policy.";
 
@@ -148,7 +139,7 @@ export function CalcForm() {
 
         if (!stima) return;
 
-        const normalizedPhone = normalizeWhatsApp(whatsApp);
+        const normalizedPhone = formatPhoneForSubmit(whatsApp);
         const maxAmount = Math.round(stima.netAmount);
         const approxMonthlyRate = Math.round(stima.monthlyRate);
         setIsSubmitting(true);
@@ -201,6 +192,10 @@ export function CalcForm() {
     return (
         <div className="relative h-full">
             <div className="h-full border-x border-slate-200/60 p-8 md:p-10 lg:p-12 relative overflow-hidden flex flex-col justify-center bg-surface-subtle">
+                {isSubmitted ? (
+                    <ContactFormSuccessPanel firstName={nome} />
+                ) : (
+                <>
                 {/* Step indicator */}
                 <div className="flex justify-center items-center gap-2 mb-8">
                     <div
@@ -386,9 +381,9 @@ export function CalcForm() {
                                 id="home-calc-whatsapp"
                                 type="tel"
                                 required
-                                placeholder="+39XXXXXXXXXX"
+                                placeholder="Es. +39 327 1234567"
                                 value={whatsApp}
-                                onChange={(e) => setWhatsApp(normalizeWhatsApp(e.target.value))}
+                                onChange={(e) => setWhatsApp(sanitizePhoneInput(e.target.value))}
                                 className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/50"
                             />
                             {errors.whatsApp ? <p className="text-sm text-red-200">{errors.whatsApp}</p> : null}
@@ -438,11 +433,6 @@ export function CalcForm() {
                             {isSubmitting ? "Invio in corso..." : "Ricevi il preventivo"}
                         </Button>
 
-                        {isSubmitted ? (
-                            <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-2xl p-4 leading-relaxed">
-                                Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Il tuo consulente ti contatterà su WhatsApp entro 24 ore lavorative con una valutazione personalizzata e gratuita.
-                            </p>
-                        ) : null}
                         {submitError ? (
                             <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-2xl p-4 leading-relaxed">{submitError}</p>
                         ) : null}
@@ -465,6 +455,8 @@ export function CalcForm() {
                     Esempi di calcolo basati su tassi competitivi. <br />
                     Soggetto ad approvazione creditizia.
                 </p>
+                </>
+                )}
             </div>
         </div>
     );

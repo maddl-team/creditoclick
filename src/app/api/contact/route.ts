@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { notifyMakeContactWebhook, resolveSourcePage } from "@/lib/contact/makeWebhook";
+import { isValidPhone, PHONE_VALIDATION_MESSAGE } from "@/lib/contact/phone";
 
 type ContactPayload = {
   formType?: string;
@@ -73,6 +74,10 @@ export async function POST(request: Request) {
       { ok: false, error: "I campi fullName e phone sono obbligatori." },
       { status: 400 },
     );
+  }
+
+  if (!isValidPhone(phone)) {
+    return NextResponse.json({ ok: false, error: PHONE_VALIDATION_MESSAGE }, { status: 400 });
   }
 
   if (email && !isEmail(email)) {

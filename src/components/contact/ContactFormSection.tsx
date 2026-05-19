@@ -6,8 +6,15 @@ import { ArrowRight } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
+import { ContactFormSuccessPanel } from "@/components/ui/ContactFormSuccessPanel";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 
 type Categoria = "pubblico" | "privato" | "pensionato" | "altro" | "";
 type Richiesta =
@@ -19,17 +26,6 @@ type Richiesta =
   | "altro"
   | "";
 type Fonte = "google" | "passaparola" | "social" | "altro" | "";
-
-function normalizeWhatsApp(raw: string) {
-  const digits = raw.trim().replace(/[^\d]/g, "");
-  if (digits.length === 10) return `+39${digits}`;
-  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-  return raw;
-}
-
-function isValidWhatsApp(value: string) {
-  return /^\+39\d{10}$/.test(value.trim());
-}
 
 export function ContactFormSection() {
   const pathname = usePathname();
@@ -52,8 +48,8 @@ export function ContactFormSection() {
     const next: Record<string, string> = {};
     if (nome.trim().length < 2) next.nome = "Inserisci il nome (minimo 2 caratteri).";
     if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome (minimo 2 caratteri).";
-    if (!isValidWhatsApp(normalizeWhatsApp(whatsapp))) {
-      next.whatsapp = "Inserisci un numero WhatsApp valido: +39 seguito da 10 cifre.";
+    if (!isValidPhone(whatsapp)) {
+      next.whatsapp = PHONE_VALIDATION_MESSAGE;
     }
     if (email.trim().length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       next.email = "Inserisci un indirizzo email valido.";
@@ -82,7 +78,7 @@ export function ContactFormSection() {
           sourcePage: pathname,
           subject: "Nuovo messaggio dalla pagina Contatti",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
-          phone: normalizeWhatsApp(whatsapp),
+          phone: formatPhoneForSubmit(whatsapp),
           email: email.trim(),
           message: situazione.trim(),
           data: {
@@ -103,7 +99,7 @@ export function ContactFormSection() {
         {
           formSource: "Contatti",
           email: email.trim() || undefined,
-          phone: normalizeWhatsApp(whatsapp),
+          phone: formatPhoneForSubmit(whatsapp),
         },
         { includeUserDataForAds: getLastAdUserDataConsent() },
       );
@@ -130,6 +126,9 @@ export function ContactFormSection() {
         />
 
         <div className="border-x border-slate-200/60 p-8 md:p-10 lg:p-12 bg-surface-subtle">
+          {isSubmitted ? (
+            <ContactFormSuccessPanel firstName={nome} />
+          ) : (
           <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <label htmlFor="contact-nome" className="block space-y-2 md:col-span-2">
                 <span className="text-sm font-semibold text-text-primary">Nome</span>
@@ -165,9 +164,9 @@ export function ContactFormSection() {
                   id="contact-whatsapp"
                   type="tel"
                   required
-                  placeholder="+39XXXXXXXXXX"
+                  placeholder="Es. +39 327 1234567"
                   value={whatsapp}
-                  onChange={(e) => setWhatsapp(normalizeWhatsApp(e.target.value))}
+                  onChange={(e) => setWhatsapp(sanitizePhoneInput(e.target.value))}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                 />
                 {errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
@@ -289,15 +288,9 @@ export function ContactFormSection() {
                 {isSubmitting ? "Invio in corso..." : "Invia il messaggio"}
               </Button>
 
-              {isSubmitted ? (
-                <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4 md:col-span-4">
-                  Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>, abbiamo ricevuto il tuo
-                  messaggio. Un consulente lo leggerà e ti contatterà entro 24 ore lavorative al numero WhatsApp che
-                  hai indicato.
-                </p>
-              ) : null}
               {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4 md:col-span-4">{submitError}</p> : null}
           </form>
+          )}
         </div>
       </div>
     </Section>

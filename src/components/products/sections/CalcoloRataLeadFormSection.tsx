@@ -8,6 +8,13 @@ import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { ContactFormSuccessPanel } from "@/components/ui/ContactFormSuccessPanel";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 
 type Step = 1 | 2 | 3;
 type Mensilita = "13" | "14";
@@ -21,13 +28,6 @@ type DurataMesi = "24" | "36" | "48" | "60" | "72" | "84" | "96" | "108" | "120"
 type AnzianitaLavorativa = "meno_2" | "2_5" | "oltre_5";
 type Trattenute = "si" | "no";
 type OrarioContatto = "mattina" | "pomeriggio" | "sera" | "";
-
-function normalizePhone(raw: string) {
-  const digits = raw.trim().replace(/[^\d]/g, "");
-  if (digits.length === 10) return `+39${digits}`;
-  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-  return raw;
-}
 
 function categoriaLabel(value: CategoriaProfessionale) {
   switch (value) {
@@ -123,8 +123,8 @@ export function CalcoloRataLeadFormSection() {
     if (step === 3) {
       if (nomeCognome.trim().length < 3) next.nomeCognome = "Inserisci nome e cognome.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
-      if (!/^\+39\d{10}$/.test(normalizePhone(cellulare).trim())) {
-        next.cellulare = "Inserisci un cellulare valido (+39 seguito da 10 cifre).";
+      if (!isValidPhone(cellulare)) {
+        next.cellulare = PHONE_VALIDATION_MESSAGE;
       }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
@@ -169,7 +169,7 @@ export function CalcoloRataLeadFormSection() {
           sourcePage: pathname,
           subject: "Nuova richiesta - Calcolo rata cessione quinto",
           fullName: nomeCognome.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
           email: email.trim(),
           data: {
             redditoNettoMensile: `${new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(redditoNettoMensile)} €`,
@@ -197,7 +197,7 @@ export function CalcoloRataLeadFormSection() {
         {
           formSource: "Calcolo rata cessione quinto",
           email: email.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
         },
         { includeUserDataForAds: getLastAdUserDataConsent() },
       );
@@ -234,6 +234,11 @@ export function CalcoloRataLeadFormSection() {
 
         <div className="lg:col-span-2 -my-12 md:-my-20 border-x border-slate-200/60 bg-surface-subtle flex">
           <div className="w-full flex-1 p-8 md:p-10 lg:p-12">
+            {submitted ? (
+              <ContactFormSuccessPanel firstName={nomeCognome} />
+            ) : (
+            <>
+
             <div className="mb-6">
               <p className="text-sm font-semibold text-brand-indigo">Step {step}/3</p>
               <div className="mt-2 flex items-center gap-2">
@@ -417,9 +422,9 @@ export function CalcoloRataLeadFormSection() {
                     <input
                       id="crlq-cellulare"
                       type="tel"
-                      placeholder="+39XXXXXXXXXX"
+                      placeholder="Es. +39 327 1234567"
                       value={cellulare}
-                      onChange={(e) => setCellulare(normalizePhone(e.target.value))}
+                      onChange={(e) => setCellulare(sanitizePhoneInput(e.target.value))}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
                     {step3SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
@@ -509,14 +514,10 @@ export function CalcoloRataLeadFormSection() {
                 ) : null}
               </div>
 
-              {submitted ? (
-                <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">
-                  Grazie <span className="font-bold text-text-primary">{nomeCognome.trim()}</span>. Richiesta inviata: il consulente ti
-                  contattera entro 24 ore lavorative.
-                </p>
-              ) : null}
               {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p> : null}
             </form>
+            </>
+            )}
           </div>
         </div>
       </div>

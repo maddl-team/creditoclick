@@ -8,6 +8,13 @@ import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { ContactFormSuccessPanel } from "@/components/ui/ContactFormSuccessPanel";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 
 type Step = 1 | 2 | 3;
 type Categoria = "pubblico" | "privato_grande" | "pmi" | "pensionato_inps";
@@ -45,17 +52,6 @@ function formatNumber(value: number) {
 
 function formatEURCompact(value: number) {
   return `${formatNumber(value)}€`;
-}
-
-function normalizeWhatsApp(raw: string) {
-  const digits = raw.trim().replace(/[^\d]/g, "");
-  if (digits.length === 10) return `+39${digits}`;
-  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-  return raw;
-}
-
-function isValidWhatsApp(value: string) {
-  return /^\+39\d{10}$/.test(value.trim());
 }
 
 export function CessionePreventivoSection() {
@@ -134,8 +130,7 @@ export function CessionePreventivoSection() {
     if (nome.trim().length < 2) next.nome = "Inserisci il nome (minimo 2 caratteri).";
     if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome (minimo 2 caratteri).";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci un indirizzo email valido.";
-    const normalizedPhone = normalizeWhatsApp(whatsapp);
-    if (!isValidWhatsApp(normalizedPhone)) next.whatsapp = "Inserisci un numero valido: +39 seguito da 10 cifre.";
+    if (!isValidPhone(whatsapp)) next.whatsapp = PHONE_VALIDATION_MESSAGE;
     if (!privacyOk) next.privacyOk = "Per procedere devi accettare la Privacy Policy.";
     return next;
   }
@@ -176,7 +171,7 @@ export function CessionePreventivoSection() {
         nome: nome.trim(),
         cognome: cognome.trim(),
         email: email.trim(),
-        whatsapp: normalizeWhatsApp(whatsapp),
+        whatsapp: formatPhoneForSubmit(whatsapp),
         privacyOk,
         marketingOk,
       },
@@ -252,6 +247,11 @@ export function CessionePreventivoSection() {
 
         <div className="lg:col-span-2">
           <div className="h-full -my-12 md:-my-20 border-x border-slate-200/60 p-8 md:p-10 lg:p-12 bg-surface-subtle">
+            {isSubmitted ? (
+              <ContactFormSuccessPanel firstName={nome} />
+            ) : (
+            <>
+
             <div className="flex justify-center items-center gap-2 mb-8">
               {[1, 2, 3].map((idx) => (
                 <div
@@ -561,9 +561,9 @@ export function CessionePreventivoSection() {
                   <input
                     id="cprev-whatsapp"
                     type="tel"
-                    placeholder="+39XXXXXXXXXX"
+                    placeholder="Es. +39 327 1234567"
                     value={whatsapp}
-                    onChange={(e) => setWhatsapp(normalizeWhatsApp(e.target.value))}
+                    onChange={(e) => setWhatsapp(sanitizePhoneInput(e.target.value))}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                   />
                   {step3SubmitAttempted && errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
@@ -621,15 +621,11 @@ export function CessionePreventivoSection() {
                   </Button>
                 </div>
 
-                {isSubmitted ? (
-                  <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">
-                    Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Il tuo consulente analizzerà il tuo profilo e ti
-                    contatterà su WhatsApp entro 24 ore lavorative con un preventivo personalizzato e gratuito.
-                  </p>
-                ) : null}
                 {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p> : null}
               </form>
             ) : null}
+            </>
+            )}
           </div>
         </div>
       </div>

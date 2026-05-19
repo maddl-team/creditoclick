@@ -8,6 +8,13 @@ import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { ContactFormSuccessPanel } from "@/components/ui/ContactFormSuccessPanel";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 
 type Step = 1 | 2 | 3 | 4;
 type Settore = "industria" | "terziario" | "servizi" | "altro";
@@ -26,13 +33,6 @@ const AZIENDE_SUGGERITE = [
   "Intesa Sanpaolo",
   "UniCredit",
 ] as const;
-
-function normalizePhone(raw: string) {
-  const digits = raw.trim().replace(/[^\d]/g, "");
-  if (digits.length === 10) return `+39${digits}`;
-  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-  return raw;
-}
 
 function formatEUR(value: number) {
   return `${new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(value)} €`;
@@ -101,8 +101,8 @@ export function GrandiAziendeContactSection() {
       if (nome.trim().length < 2) next.nome = "Inserisci il nome.";
       if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
-      if (!/^\+39\d{10}$/.test(normalizePhone(cellulare).trim())) {
-        next.cellulare = "Inserisci un cellulare valido: +39 seguito da 10 cifre.";
+      if (!isValidPhone(cellulare)) {
+        next.cellulare = PHONE_VALIDATION_MESSAGE;
       }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
@@ -147,7 +147,7 @@ export function GrandiAziendeContactSection() {
           sourcePage: pathname,
           subject: "Nuova richiesta - Dipendenti Grandi Aziende",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
           email: email.trim(),
           data: {
             nomeAzienda,
@@ -175,7 +175,7 @@ export function GrandiAziendeContactSection() {
         {
           formSource: "Dipendenti Grandi Aziende",
           email: email.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
         },
         { includeUserDataForAds: getLastAdUserDataConsent() },
       );
@@ -212,6 +212,11 @@ export function GrandiAziendeContactSection() {
 
         <div className="lg:col-span-2 -my-12 md:-my-20 border-x border-slate-200/60 bg-surface-subtle flex">
           <div className="w-full flex-1 p-8 md:p-10 lg:p-12">
+            {submitted ? (
+              <ContactFormSuccessPanel firstName={nome} />
+            ) : (
+            <>
+
             <div className="mb-6">
               <p className="text-sm font-semibold text-brand-indigo">Step {stepLabel}</p>
               <div className="mt-2 flex items-center gap-2">
@@ -426,9 +431,9 @@ export function GrandiAziendeContactSection() {
                     <input
                       id="ga-cellulare"
                       type="tel"
-                      placeholder="+39XXXXXXXXXX"
+                      placeholder="Es. +39 327 1234567"
                       value={cellulare}
-                      onChange={(e) => setCellulare(normalizePhone(e.target.value))}
+                      onChange={(e) => setCellulare(sanitizePhoneInput(e.target.value))}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"
                     />
                     {step4SubmitAttempted && errors.cellulare ? <p className="text-xs text-red-600">{errors.cellulare}</p> : null}
@@ -503,14 +508,10 @@ export function GrandiAziendeContactSection() {
                 ) : null}
               </div>
 
-              {submitted ? (
-                <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">
-                  Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Richiesta inviata: il consulente ti contattera
-                  entro 24 ore lavorative.
-                </p>
-              ) : null}
               {submitError ? <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p> : null}
             </form>
+            </>
+            )}
           </div>
         </div>
       </div>

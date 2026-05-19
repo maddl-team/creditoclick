@@ -8,6 +8,13 @@ import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { ContactFormSuccessPanel } from "@/components/ui/ContactFormSuccessPanel";
+import {
+  formatPhoneForSubmit,
+  isValidPhone,
+  PHONE_VALIDATION_MESSAGE,
+  sanitizePhoneInput,
+} from "@/lib/contact/phone";
 
 type Step = 1 | 2 | 3 | 4;
 type Ruolo = "docente" | "personale_ata";
@@ -15,13 +22,6 @@ type Grado = "infanzia_primaria" | "secondaria" | "universita";
 type Stato = "di_ruolo" | "supplente_annuale";
 type Cedolino = "si" | "no";
 type Cessioni = "si" | "no" | "non_ricordo";
-
-function normalizePhone(raw: string) {
-  const digits = raw.trim().replace(/[^\d]/g, "");
-  if (digits.length === 10) return `+39${digits}`;
-  if (digits.length === 12 && digits.startsWith("39")) return `+${digits}`;
-  return raw;
-}
 
 export function InsegnantiNoipaContactSection() {
   const pathname = usePathname();
@@ -52,7 +52,7 @@ export function InsegnantiNoipaContactSection() {
       if (nome.trim().length < 2) next.nome = "Inserisci il nome.";
       if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
-      if (!/^\+39\d{10}$/.test(normalizePhone(cellulare).trim())) next.cellulare = "Inserisci un cellulare valido: +39 seguito da 10 cifre.";
+      if (!isValidPhone(cellulare)) next.cellulare = PHONE_VALIDATION_MESSAGE;
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
     return next;
@@ -93,7 +93,7 @@ export function InsegnantiNoipaContactSection() {
           sourcePage: pathname,
           subject: "Nuova richiesta - Insegnanti e Scuola (NoiPA)",
           fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
           email: email.trim(),
           data: {
             ruolo,
@@ -116,7 +116,7 @@ export function InsegnantiNoipaContactSection() {
         {
           formSource: "Insegnanti e Scuola (NoiPA)",
           email: email.trim(),
-          phone: normalizePhone(cellulare),
+          phone: formatPhoneForSubmit(cellulare),
         },
         { includeUserDataForAds: getLastAdUserDataConsent() },
       );
@@ -146,6 +146,10 @@ export function InsegnantiNoipaContactSection() {
         </div>
         <div className="lg:col-span-2 -my-12 md:-my-20 border-x border-slate-200/60 bg-surface-subtle flex">
           <div className="w-full flex-1 p-8 md:p-10 lg:p-12">
+            {submitted ? (
+              <ContactFormSuccessPanel firstName={nome} />
+            ) : (
+            <>
             <div className="mb-6"><p className="text-sm font-semibold text-brand-indigo">Step {step}/4</p></div>
             <form onSubmit={step === 4 ? onSubmit : (e) => e.preventDefault()} className="space-y-5">
               {step === 1 && (
@@ -174,7 +178,7 @@ export function InsegnantiNoipaContactSection() {
                   <h3 className="text-2xl font-bold text-text-primary">Step 4: Contatto</h3>
                   <label htmlFor="noipa-nome" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Nome</span><input id="noipa-nome" type="text" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.nome && <p className="text-xs text-red-600">{errors.nome}</p>}</label>
                   <label htmlFor="noipa-cognome" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input id="noipa-cognome" type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
-                  <label htmlFor="noipa-cellulare" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input id="noipa-cellulare" type="tel" placeholder="+39XXXXXXXXXX" value={cellulare} onChange={(e) => setCellulare(normalizePhone(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
+                  <label htmlFor="noipa-cellulare" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input id="noipa-cellulare" type="tel" placeholder="Es. +39 327 1234567" value={cellulare} onChange={(e) => setCellulare(sanitizePhoneInput(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
                   <label htmlFor="noipa-email" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input id="noipa-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
@@ -199,9 +203,10 @@ export function InsegnantiNoipaContactSection() {
                 {step < 4 ? <Button key="continue-button" type="button" className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight} onClick={goNext}>Continua</Button> : <Button key="submit-button" type="submit" disabled={isSubmitting} className="w-full bg-brand-indigo text-white hover:bg-brand-indigo/90" icon={ArrowRight}>{isSubmitting ? "Invio in corso..." : "Invia"}</Button>}
                 {step > 1 && <Button type="button" variant="link" className="!px-0" onClick={goBack}>Torna allo step precedente</Button>}
               </div>
-              {submitted && <p className="text-sm text-text-secondary bg-white border border-slate-200 rounded-xl p-4">Grazie <span className="font-bold text-text-primary">{nome.trim()}</span>. Richiesta inviata: il consulente ti contattera entro 24 ore lavorative.</p>}
               {submitError && <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">{submitError}</p>}
             </form>
+            </>
+            )}
           </div>
         </div>
       </div>
