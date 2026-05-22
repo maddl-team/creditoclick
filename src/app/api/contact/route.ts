@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { formatContactDataAsHtml, formatContactDataAsText } from "@/lib/contact/formatContactData";
 import { notifyMakeContactWebhook, resolveSourcePage } from "@/lib/contact/makeWebhook";
 import { isValidPhone, PHONE_VALIDATION_MESSAGE } from "@/lib/contact/phone";
 
@@ -16,31 +17,6 @@ type ContactPayload = {
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-}
-
-function formatDataAsText(data: Record<string, unknown> | undefined) {
-  if (!data || Object.keys(data).length === 0) {
-    return "Nessun dato aggiuntivo.";
-  }
-
-  return Object.entries(data)
-    .map(([key, value]) => `- ${key}: ${String(value)}`)
-    .join("\n");
-}
-
-function formatDataAsHtml(data: Record<string, unknown> | undefined) {
-  if (!data || Object.keys(data).length === 0) {
-    return "<p>Nessun dato aggiuntivo.</p>";
-  }
-
-  const rows = Object.entries(data)
-    .map(
-      ([key, value]) =>
-        `<tr><td style="padding:6px 10px;border:1px solid #e2e8f0;"><strong>${key}</strong></td><td style="padding:6px 10px;border:1px solid #e2e8f0;">${String(value)}</td></tr>`,
-    )
-    .join("");
-
-  return `<table style="border-collapse:collapse;width:100%;">${rows}</table>`;
 }
 
 export async function POST(request: Request) {
@@ -85,8 +61,8 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const extraText = formatDataAsText(payload.data);
-  const extraHtml = formatDataAsHtml(payload.data);
+  const extraText = formatContactDataAsText(payload.data);
+  const extraHtml = formatContactDataAsHtml(payload.data);
 
   try {
     const sendResult = await resend.emails.send({
