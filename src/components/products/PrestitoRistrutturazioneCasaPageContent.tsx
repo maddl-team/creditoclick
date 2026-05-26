@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_SOLUZIONI_RISTRUTTURAZIONE } from "@/lib/seo/siteOgImages";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
@@ -43,11 +44,7 @@ export function PrestitoRistrutturazioneCasaPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_ristrutturazione-casa.jpeg"
-            alt="Prestito ristrutturazione casa con cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_SOLUZIONI_RISTRUTTURAZIONE.src} alt={OG_SOLUZIONI_RISTRUTTURAZIONE.alt} priority />
         }
       />
 

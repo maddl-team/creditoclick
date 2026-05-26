@@ -1,29 +1,15 @@
-import { Metadata } from "next";
 import { CessioneDelQuintoPageContent } from "@/components/products/CessioneDelQuintoPageContent";
 import { CDQ_FAQ } from "@/content/cessioneDelQuinto";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PRODOTTI_CESSIONE_DEL_QUINTO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
-  description:
-    "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
-  alternates: {
-    canonical: "/prodotti/cessione-del-quinto",
-  },
-  openGraph: {
-    title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
-    description:
-      "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
-    url: "/prodotti/cessione-del-quinto",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cessione del Quinto 2026 | Guida, Tassi e Simulazione",
-    description:
-      "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
-  },
-};
+  description: "Cessione del quinto per dipendenti e pensionati: rata automatica in busta paga, tassi aggiornati 2026 e simulazione gratuita. Consulenza via WhatsApp.",
+  pathname: "/prodotti/cessione-del-quinto",
+  ogImage: OG_PRODOTTI_CESSIONE_DEL_QUINTO,
+});
 
 export default function CessioneDelQuintoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

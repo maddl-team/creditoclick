@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PrestitoRistrutturazioneCasaPageContent } from "@/components/products/PrestitoRistrutturazioneCasaPageContent";
 import { PRC_FAQ, PRC_META } from "@/content/prestitoRistrutturazioneCasa";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_RISTRUTTURAZIONE } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PRC_META.title,
   description: PRC_META.description,
-  alternates: {
-    canonical: "/soluzioni/prestito-ristrutturazione-casa",
-  },
-  openGraph: {
-    title: PRC_META.title,
-    description: PRC_META.description,
-    url: "/soluzioni/prestito-ristrutturazione-casa",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PRC_META.title,
-    description: PRC_META.description,
-  },
-};
+  pathname: "/soluzioni/prestito-ristrutturazione-casa",
+  ogImage: OG_SOLUZIONI_RISTRUTTURAZIONE,
+});
 
 export default function PrestitoRistrutturazioneCasaPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

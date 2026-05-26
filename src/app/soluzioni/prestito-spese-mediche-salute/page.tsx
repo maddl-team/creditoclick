@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PrestitoSpeseMedicheSalutePageContent } from "@/components/products/PrestitoSpeseMedicheSalutePageContent";
 import { PSMS_FAQ, PSMS_META } from "@/content/prestitoSpeseMedicheSalute";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_SPESE_MEDICHE } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PSMS_META.title,
   description: PSMS_META.description,
-  alternates: {
-    canonical: "/soluzioni/prestito-spese-mediche-salute",
-  },
-  openGraph: {
-    title: PSMS_META.title,
-    description: PSMS_META.description,
-    url: "/soluzioni/prestito-spese-mediche-salute",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PSMS_META.title,
-    description: PSMS_META.description,
-  },
-};
+  pathname: "/soluzioni/prestito-spese-mediche-salute",
+  ogImage: OG_SOLUZIONI_SPESE_MEDICHE,
+});
 
 export default function PrestitoSpeseMedicheSalutePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

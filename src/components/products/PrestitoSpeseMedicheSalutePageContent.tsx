@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_SOLUZIONI_SPESE_MEDICHE } from "@/lib/seo/siteOgImages";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
@@ -43,11 +44,7 @@ export function PrestitoSpeseMedicheSalutePageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_spese-mediche.jpeg"
-            alt="Prestito per spese mediche e salute con cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_SOLUZIONI_SPESE_MEDICHE.src} alt={OG_SOLUZIONI_SPESE_MEDICHE.alt} priority />
         }
       />
 

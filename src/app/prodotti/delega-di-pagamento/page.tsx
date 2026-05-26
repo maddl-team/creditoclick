@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { DelegaDiPagamentoPageContent } from "@/components/products/DelegaDiPagamentoPageContent";
 import { DDP_FAQ, DDP_META } from "@/content/delegaDiPagamento";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PRODOTTI_DELEGA } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: DDP_META.title,
   description: DDP_META.description,
-  alternates: {
-    canonical: "/prodotti/delega-di-pagamento",
-  },
-  openGraph: {
-    title: DDP_META.title,
-    description: DDP_META.description,
-    url: "/prodotti/delega-di-pagamento",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: DDP_META.title,
-    description: DDP_META.description,
-  },
-};
+  pathname: "/prodotti/delega-di-pagamento",
+  ogImage: OG_PRODOTTI_DELEGA,
+});
 
 export default function DelegaDiPagamentoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

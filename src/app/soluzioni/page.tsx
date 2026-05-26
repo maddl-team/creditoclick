@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { SoluzioniPageContent } from "@/components/products/SoluzioniPageContent";
 import { SOLUZIONI_FAQ, SOLUZIONI_META } from "@/content/soluzioni";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_HUB } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: SOLUZIONI_META.title,
   description: SOLUZIONI_META.description,
-  alternates: {
-    canonical: "/soluzioni",
-  },
-  openGraph: {
-    title: SOLUZIONI_META.title,
-    description: SOLUZIONI_META.description,
-    url: "/soluzioni",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SOLUZIONI_META.title,
-    description: SOLUZIONI_META.description,
-  },
-};
+  pathname: "/soluzioni",
+  ogImage: OG_SOLUZIONI_HUB,
+});
 
 export default function SoluzioniPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

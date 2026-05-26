@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PensionatiInpsPageContent } from "@/components/products/PensionatiInpsPageContent";
 import { PIP_FAQ, PIP_META } from "@/content/pensionatiInps";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_PENSIONATI } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PIP_META.title,
   description: PIP_META.description,
-  alternates: {
-    canonical: "/professioni/pensionati-inps",
-  },
-  openGraph: {
-    title: PIP_META.title,
-    description: PIP_META.description,
-    url: "/professioni/pensionati-inps",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PIP_META.title,
-    description: PIP_META.description,
-  },
-};
+  pathname: "/professioni/pensionati-inps",
+  ogImage: OG_PROFESSIONI_PENSIONATI,
+});
 
 export default function PensionatiInpsPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

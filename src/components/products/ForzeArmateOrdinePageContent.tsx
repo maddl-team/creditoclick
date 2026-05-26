@@ -10,6 +10,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_FORZE_ARMATE } from "@/lib/seo/siteOgImages";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { ForzeArmateContactSection } from "@/components/products/sections/ForzeArmateContactSection";
@@ -49,11 +50,7 @@ export function ForzeArmateOrdinePageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_forze-armate.jpeg"
-            alt="Cessione del quinto per forze armate e forze dell'ordine"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_FORZE_ARMATE.src} alt={OG_PROFESSIONI_FORZE_ARMATE.alt} priority />
         }
       />
 

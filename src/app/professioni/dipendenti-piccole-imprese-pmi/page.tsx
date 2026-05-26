@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { DipendentiPiccoleImpresePmiPageContent } from "@/components/products/DipendentiPiccoleImpresePmiPageContent";
 import { DPPMI_FAQ, DPPMI_META } from "@/content/dipendentiPiccoleImpresePmi";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_PMI } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: DPPMI_META.title,
   description: DPPMI_META.description,
-  alternates: {
-    canonical: "/professioni/dipendenti-piccole-imprese-pmi",
-  },
-  openGraph: {
-    title: DPPMI_META.title,
-    description: DPPMI_META.description,
-    url: "/professioni/dipendenti-piccole-imprese-pmi",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: DPPMI_META.title,
-    description: DPPMI_META.description,
-  },
-};
+  pathname: "/professioni/dipendenti-piccole-imprese-pmi",
+  ogImage: OG_PROFESSIONI_PMI,
+});
 
 export default function DipendentiPiccoleImpresePmiPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

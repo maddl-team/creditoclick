@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { RinnovoCessioneQuintoPageContent } from "@/components/products/RinnovoCessioneQuintoPageContent";
 import { RCQ_FAQ, RCQ_META } from "@/content/rinnovoCessioneQuinto";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PRODOTTI_RINNOVO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: RCQ_META.title,
   description: RCQ_META.description,
-  alternates: {
-    canonical: "/prodotti/rinnovo-cessione-quinto",
-  },
-  openGraph: {
-    title: RCQ_META.title,
-    description: RCQ_META.description,
-    url: "/prodotti/rinnovo-cessione-quinto",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: RCQ_META.title,
-    description: RCQ_META.description,
-  },
-};
+  pathname: "/prodotti/rinnovo-cessione-quinto",
+  ogImage: OG_PRODOTTI_RINNOVO,
+});
 
 export default function RinnovoCessioneQuintoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

@@ -23,6 +23,7 @@ import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_CONTATTI } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
@@ -70,11 +71,7 @@ export function ContattiPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref="/"
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_contatti.jpeg"
-            alt="Contatta CreditoClick su WhatsApp"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_CONTATTI.src} alt={OG_CONTATTI.alt} priority />
         }
       />
 

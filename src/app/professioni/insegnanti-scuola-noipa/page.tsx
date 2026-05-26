@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { InsegnantiScuolaNoipaPageContent } from "@/components/products/InsegnantiScuolaNoipaPageContent";
 import { ISN_FAQ, ISN_META } from "@/content/insegnantiScuolaNoipa";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_NOIPA } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: ISN_META.title,
   description: ISN_META.description,
-  alternates: {
-    canonical: "/professioni/insegnanti-scuola-noipa",
-  },
-  openGraph: {
-    title: ISN_META.title,
-    description: ISN_META.description,
-    url: "/professioni/insegnanti-scuola-noipa",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: ISN_META.title,
-    description: ISN_META.description,
-  },
-};
+  pathname: "/professioni/insegnanti-scuola-noipa",
+  ogImage: OG_PROFESSIONI_NOIPA,
+});
 
 export default function InsegnantiScuolaNoipaPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

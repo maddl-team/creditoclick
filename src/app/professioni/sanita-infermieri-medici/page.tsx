@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { SanitaInfermieriMediciPageContent } from "@/components/products/SanitaInfermieriMediciPageContent";
 import { SIM_FAQ, SIM_META } from "@/content/sanitaInfermieriMedici";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_SANITA } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: SIM_META.title,
   description: SIM_META.description,
-  alternates: {
-    canonical: "/professioni/sanita-infermieri-medici",
-  },
-  openGraph: {
-    title: SIM_META.title,
-    description: SIM_META.description,
-    url: "/professioni/sanita-infermieri-medici",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: SIM_META.title,
-    description: SIM_META.description,
-  },
-};
+  pathname: "/professioni/sanita-infermieri-medici",
+  ogImage: OG_PROFESSIONI_SANITA,
+});
 
 export default function SanitaInfermieriMediciPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

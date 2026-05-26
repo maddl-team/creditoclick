@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PrestitoMatrimonioCerimoniePageContent } from "@/components/products/PrestitoMatrimonioCerimoniePageContent";
 import { PMC_FAQ, PMC_META } from "@/content/prestitoMatrimonioCerimonie";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_MATRIMONIO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PMC_META.title,
   description: PMC_META.description,
-  alternates: {
-    canonical: "/soluzioni/prestito-matrimonio-cerimonie",
-  },
-  openGraph: {
-    title: PMC_META.title,
-    description: PMC_META.description,
-    url: "/soluzioni/prestito-matrimonio-cerimonie",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PMC_META.title,
-    description: PMC_META.description,
-  },
-};
+  pathname: "/soluzioni/prestito-matrimonio-cerimonie",
+  ogImage: OG_SOLUZIONI_MATRIMONIO,
+});
 
 export default function PrestitoMatrimonioCerimoniePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

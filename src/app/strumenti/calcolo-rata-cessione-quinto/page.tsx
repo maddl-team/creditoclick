@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { CalcoloRataCessioneQuintoPageContent } from "@/components/products/CalcoloRataCessioneQuintoPageContent";
 import { CRCQ_FAQ, CRCQ_META } from "@/content/calcoloRataCessioneQuinto";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_STRUMENTI_CALCOLO_RATA } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: CRCQ_META.title,
   description: CRCQ_META.description,
-  alternates: {
-    canonical: "/strumenti/calcolo-rata-cessione-quinto",
-  },
-  openGraph: {
-    title: CRCQ_META.title,
-    description: CRCQ_META.description,
-    url: "/strumenti/calcolo-rata-cessione-quinto",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: CRCQ_META.title,
-    description: CRCQ_META.description,
-  },
-};
+  pathname: "/strumenti/calcolo-rata-cessione-quinto",
+  ogImage: OG_STRUMENTI_CALCOLO_RATA,
+});
 
 export default function CalcoloRataCessioneQuintoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

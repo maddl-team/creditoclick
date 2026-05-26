@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_CHI_SIAMO } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
@@ -45,11 +46,7 @@ export function ChiSiamoPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref="/prodotti"
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_chi-siamo.jpeg"
-            alt="Team CreditoClick agenzia in attività finanziaria online"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_CHI_SIAMO.src} alt={OG_CHI_SIAMO.alt} priority />
         }
       />
 

@@ -8,6 +8,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PRODOTTI_HUB } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
@@ -41,7 +42,7 @@ export function ProdottiPageContent() {
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
-        right={<ProductSplitHeroImage src="/images/creditoclick_prodotti.jpeg" alt="Prodotti CreditoClick" priority />}
+        right={<ProductSplitHeroImage src={OG_PRODOTTI_HUB.src} alt={OG_PRODOTTI_HUB.alt} priority />}
       />
 
       <CalloutSection

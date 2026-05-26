@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PRODOTTI_DELEGA } from "@/lib/seo/siteOgImages";
 import { IntroPointsSection } from "@/components/products/sections/IntroPointsSection";
 import { StickyItemsSection } from "@/components/products/sections/StickyItemsSection";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
@@ -46,11 +47,7 @@ export function DelegaDiPagamentoPageContent() {
         primaryHref={WHATSAPP_DELEGA_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_delega-di-pagamento.jpg"
-            alt="Consulenza per delega di pagamento e doppio quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PRODOTTI_DELEGA.src} alt={OG_PRODOTTI_DELEGA.alt} priority />
         }
       />
 

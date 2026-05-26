@@ -9,6 +9,7 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_SANITA } from "@/lib/seo/siteOgImages";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
@@ -50,11 +51,7 @@ export function SanitaInfermieriMediciPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_sanita.jpeg"
-            alt="Prestiti per infermieri, OSS e personale sanitario"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_SANITA.src} alt={OG_PROFESSIONI_SANITA.alt} priority />
         }
       />
 

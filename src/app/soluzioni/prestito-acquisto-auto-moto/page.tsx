@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PrestitoAcquistoAutoMotoPageContent } from "@/components/products/PrestitoAcquistoAutoMotoPageContent";
 import { PAAM_FAQ, PAAM_META } from "@/content/prestitoAcquistoAutoMoto";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_AUTO_MOTO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PAAM_META.title,
   description: PAAM_META.description,
-  alternates: {
-    canonical: "/soluzioni/prestito-acquisto-auto-moto",
-  },
-  openGraph: {
-    title: PAAM_META.title,
-    description: PAAM_META.description,
-    url: "/soluzioni/prestito-acquisto-auto-moto",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PAAM_META.title,
-    description: PAAM_META.description,
-  },
-};
+  pathname: "/soluzioni/prestito-acquisto-auto-moto",
+  ogImage: OG_SOLUZIONI_AUTO_MOTO,
+});
 
 export default function PrestitoAcquistoAutoMotoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

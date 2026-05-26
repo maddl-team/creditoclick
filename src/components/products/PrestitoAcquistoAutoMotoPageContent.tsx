@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/ui/FaqSection";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_SOLUZIONI_AUTO_MOTO } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
@@ -49,11 +50,7 @@ export function PrestitoAcquistoAutoMotoPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_prestito-auto-moto.jpeg"
-            alt="Prestito acquisto auto e moto con cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_SOLUZIONI_AUTO_MOTO.src} alt={OG_SOLUZIONI_AUTO_MOTO.alt} priority />
         }
       />
 

@@ -4,8 +4,8 @@
 - [ ] `title` unico (50-60 caratteri circa)
 - [ ] `description` unica (140-160 caratteri circa)
 - [ ] `canonical` corretto
-- [ ] `openGraph` valorizzato (`title`, `description`, `url`, `type`)
-- [ ] `twitter` valorizzato (`card`, `title`, `description`)
+- [ ] `openGraph` valorizzato (`title`, `description`, `url`, `type`, `images` = hero pagina)
+- [ ] `twitter` valorizzato (`card`, `title`, `description`, `images`)
 
 ## Structured Data
 - [ ] `BreadcrumbList` presente e coerente con la URL

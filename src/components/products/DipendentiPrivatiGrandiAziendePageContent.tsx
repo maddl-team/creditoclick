@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_GRANDI_AZIENDE } from "@/lib/seo/siteOgImages";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
 import { LegalTextSection } from "@/components/products/sections/LegalTextSection";
@@ -47,11 +48,7 @@ export function DipendentiPrivatiGrandiAziendePageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_grandiaziende.jpeg"
-            alt="Consulenza cessione del quinto per dipendenti di grandi aziende private"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_GRANDI_AZIENDE.src} alt={OG_PROFESSIONI_GRANDI_AZIENDE.alt} priority />
         }
       />
 

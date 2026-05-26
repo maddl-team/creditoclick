@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { ProfessioniPageContent } from "@/components/products/ProfessioniPageContent";
 import { PROFESSIONI_FAQ, PROFESSIONI_META } from "@/content/professioni";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_HUB } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PROFESSIONI_META.title,
   description: PROFESSIONI_META.description,
-  alternates: {
-    canonical: "/professioni",
-  },
-  openGraph: {
-    title: PROFESSIONI_META.title,
-    description: PROFESSIONI_META.description,
-    url: "/professioni",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PROFESSIONI_META.title,
-    description: PROFESSIONI_META.description,
-  },
-};
+  pathname: "/professioni",
+  ogImage: OG_PROFESSIONI_HUB,
+});
 
 export default function ProfessioniPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

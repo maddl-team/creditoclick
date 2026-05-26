@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_PMI } from "@/lib/seo/siteOgImages";
 import { IntroPointsSection } from "@/components/products/sections/IntroPointsSection";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
@@ -48,11 +49,7 @@ export function DipendentiPiccoleImpresePmiPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_pmi.jpeg"
-            alt="Consulenza cessione del quinto per dipendenti di piccole imprese e PMI"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_PMI.src} alt={OG_PROFESSIONI_PMI.alt} priority />
         }
       />
 

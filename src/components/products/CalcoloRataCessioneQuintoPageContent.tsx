@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_STRUMENTI_CALCOLO_RATA } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
@@ -45,11 +46,7 @@ export function CalcoloRataCessioneQuintoPageContent() {
         primaryHref="#calcolatore"
         secondaryHref={WHATSAPP_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_calcolo-rata.jpeg"
-            alt="Calcolo rata cessione del quinto gratuito"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_STRUMENTI_CALCOLO_RATA.src} alt={OG_STRUMENTI_CALCOLO_RATA.alt} priority />
         }
       />
 

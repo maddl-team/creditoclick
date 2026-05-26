@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/Button";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PRODOTTI_CESSIONE_DEL_QUINTO } from "@/lib/seo/siteOgImages";
 import { IntroPointsSection } from "@/components/products/sections/IntroPointsSection";
 import { StickyItemsSection } from "@/components/products/sections/StickyItemsSection";
 import { RatesFactorsSection } from "@/components/products/sections/RatesFactorsSection";
@@ -57,11 +58,7 @@ export function CessioneDelQuintoPageContent() {
         primaryHref={WHATSAPP_CESSIONE_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_cessione-del-quinto.jpg"
-            alt="Consulenza finanziaria per cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PRODOTTI_CESSIONE_DEL_QUINTO.src} alt={OG_PRODOTTI_CESSIONE_DEL_QUINTO.alt} priority />
         }
       />
 

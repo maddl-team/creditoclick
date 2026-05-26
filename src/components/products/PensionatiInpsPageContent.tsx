@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/ui/FaqSection";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_PENSIONATI } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
@@ -54,11 +55,7 @@ export function PensionatiInpsPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_pensionati.jpeg"
-            alt="Cessione del quinto della pensione per pensionati INPS"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_PENSIONATI.src} alt={OG_PROFESSIONI_PENSIONATI.alt} priority />
         }
       />
 

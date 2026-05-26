@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_SOLUZIONI_MATRIMONIO } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
@@ -47,11 +48,7 @@ export function PrestitoMatrimonioCerimoniePageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_prestito-matrimonio.jpeg"
-            alt="Prestito matrimonio e cerimonie con cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_SOLUZIONI_MATRIMONIO.src} alt={OG_SOLUZIONI_MATRIMONIO.alt} priority />
         }
       />
 

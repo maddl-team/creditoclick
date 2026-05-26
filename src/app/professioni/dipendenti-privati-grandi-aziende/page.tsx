@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { DipendentiPrivatiGrandiAziendePageContent } from "@/components/products/DipendentiPrivatiGrandiAziendePageContent";
 import { DPGA_FAQ, DPGA_META } from "@/content/dipendentiPrivatiGrandiAziende";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_GRANDI_AZIENDE } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: DPGA_META.title,
   description: DPGA_META.description,
-  alternates: {
-    canonical: "/professioni/dipendenti-privati-grandi-aziende",
-  },
-  openGraph: {
-    title: DPGA_META.title,
-    description: DPGA_META.description,
-    url: "/professioni/dipendenti-privati-grandi-aziende",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: DPGA_META.title,
-    description: DPGA_META.description,
-  },
-};
+  pathname: "/professioni/dipendenti-privati-grandi-aziende",
+  ogImage: OG_PROFESSIONI_GRANDI_AZIENDE,
+});
 
 export default function DipendentiPrivatiGrandiAziendePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

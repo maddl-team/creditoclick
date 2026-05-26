@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { ProdottiPageContent } from "@/components/products/ProdottiPageContent";
 import { PRODOTTI_FAQ, PRODOTTI_META } from "@/content/prodotti";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PRODOTTI_HUB } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PRODOTTI_META.title,
   description: PRODOTTI_META.description,
-  alternates: {
-    canonical: "/prodotti",
-  },
-  openGraph: {
-    title: PRODOTTI_META.title,
-    description: PRODOTTI_META.description,
-    url: "/prodotti",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PRODOTTI_META.title,
-    description: PRODOTTI_META.description,
-  },
-};
+  pathname: "/prodotti",
+  ogImage: OG_PRODOTTI_HUB,
+});
 
 export default function ProdottiPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

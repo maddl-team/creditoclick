@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { ForzeArmateOrdinePageContent } from "@/components/products/ForzeArmateOrdinePageContent";
 import { FAO_FAQ, FAO_META } from "@/content/forzeArmateOrdine";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_PROFESSIONI_FORZE_ARMATE } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: FAO_META.title,
   description: FAO_META.description,
-  alternates: {
-    canonical: "/professioni/forze-armate-ordine",
-  },
-  openGraph: {
-    title: FAO_META.title,
-    description: FAO_META.description,
-    url: "/professioni/forze-armate-ordine",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: FAO_META.title,
-    description: FAO_META.description,
-  },
-};
+  pathname: "/professioni/forze-armate-ordine",
+  ogImage: OG_PROFESSIONI_FORZE_ARMATE,
+});
 
 export default function ForzeArmateOrdinePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

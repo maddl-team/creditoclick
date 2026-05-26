@@ -7,6 +7,7 @@ import { CalloutSection } from "@/components/ui/CalloutSection";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PROFESSIONI_NOIPA } from "@/lib/seo/siteOgImages";
 import { IntroPointsSection } from "@/components/products/sections/IntroPointsSection";
 import { FeatureListSection } from "@/components/products/sections/FeatureListSection";
 import { ComparisonSection } from "@/components/products/sections/ComparisonSection";
@@ -50,11 +51,7 @@ export function InsegnantiScuolaNoipaPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_scuola.jpeg"
-            alt="Prestiti per insegnanti e personale ATA con convenzione NoiPA"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PROFESSIONI_NOIPA.src} alt={OG_PROFESSIONI_NOIPA.alt} priority />
         }
       />
 

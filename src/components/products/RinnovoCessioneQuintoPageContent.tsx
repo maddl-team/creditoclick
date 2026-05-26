@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_PRODOTTI_RINNOVO } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { IntroPointsSection } from "@/components/products/sections/IntroPointsSection";
@@ -48,11 +49,7 @@ export function RinnovoCessioneQuintoPageContent() {
         primaryHref={WHATSAPP_RENEWAL_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_rinnovo-cessione-del-quinto.jpg"
-            alt="Consulenza sul rinnovo della cessione del quinto"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_PRODOTTI_RINNOVO.src} alt={OG_PRODOTTI_RINNOVO.alt} priority />
         }
       />
 

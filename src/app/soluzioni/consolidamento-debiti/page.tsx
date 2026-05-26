@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { ConsolidamentoDebitiPageContent } from "@/components/products/ConsolidamentoDebitiPageContent";
 import { CD_FAQ, CD_META } from "@/content/consolidamentoDebiti";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_CONSOLIDAMENTO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: CD_META.title,
   description: CD_META.description,
-  alternates: {
-    canonical: "/soluzioni/consolidamento-debiti",
-  },
-  openGraph: {
-    title: CD_META.title,
-    description: CD_META.description,
-    url: "/soluzioni/consolidamento-debiti",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: CD_META.title,
-    description: CD_META.description,
-  },
-};
+  pathname: "/soluzioni/consolidamento-debiti",
+  ogImage: OG_SOLUZIONI_CONSOLIDAMENTO,
+});
 
 export default function ConsolidamentoDebitiPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

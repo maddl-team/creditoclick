@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { PrestitoAnticipoMutuoCasaPageContent } from "@/components/products/PrestitoAnticipoMutuoCasaPageContent";
 import { PAMC_FAQ, PAMC_META } from "@/content/prestitoAnticipoMutuoCasa";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_ANTICIPO_MUTUO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: PAMC_META.title,
   description: PAMC_META.description,
-  alternates: {
-    canonical: "/soluzioni/prestito-anticipo-mutuo-casa",
-  },
-  openGraph: {
-    title: PAMC_META.title,
-    description: PAMC_META.description,
-    url: "/soluzioni/prestito-anticipo-mutuo-casa",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PAMC_META.title,
-    description: PAMC_META.description,
-  },
-};
+  pathname: "/soluzioni/prestito-anticipo-mutuo-casa",
+  ogImage: OG_SOLUZIONI_ANTICIPO_MUTUO,
+});
 
 export default function PrestitoAnticipoMutuoCasaPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

@@ -1,26 +1,16 @@
-import { Metadata } from "next";
 import { ContattiPageContent } from "@/components/contact/ContattiPageContent";
 import { CONTATTI_FAQ, CONTATTI_META, SCHEMA_ORARI_APERTURA_LD } from "@/content/contatti";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_CONTATTI } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: CONTATTI_META.title,
   description: CONTATTI_META.description,
-  alternates: {
-    canonical: "/contatti",
-  },
-  openGraph: {
-    title: CONTATTI_META.title,
-    description: CONTATTI_META.description,
-    url: "/contatti",
-    type: "website",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: CONTATTI_META.title,
-    description: CONTATTI_META.description,
-  },
-};
+  pathname: "/contatti",
+  ogImage: OG_CONTATTI,
+  openGraphType: "website",
+});
 
 export default function ContattiPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

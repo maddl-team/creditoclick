@@ -1,26 +1,15 @@
-import { Metadata } from "next";
 import { CattiviPagatoriCrifPageContent } from "@/components/products/CattiviPagatoriCrifPageContent";
 import { CPC_FAQ, CPC_META } from "@/content/cattiviPagatoriCrif";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_SOLUZIONI_CRIF } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: CPC_META.title,
   description: CPC_META.description,
-  alternates: {
-    canonical: "/soluzioni/cattivi-pagatori-segnalati-crif",
-  },
-  openGraph: {
-    title: CPC_META.title,
-    description: CPC_META.description,
-    url: "/soluzioni/cattivi-pagatori-segnalati-crif",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: CPC_META.title,
-    description: CPC_META.description,
-  },
-};
+  pathname: "/soluzioni/cattivi-pagatori-segnalati-crif",
+  ogImage: OG_SOLUZIONI_CRIF,
+});
 
 export default function CattiviPagatoriCrifPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";

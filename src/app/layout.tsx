@@ -9,6 +9,7 @@ import { ConsentModeBootstrap } from "@/components/analytics/ConsentModeBootstra
 import { IubendaCookieSolution } from "@/components/analytics/IubendaCookieSolution";
 import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 import { GtmRouteTracker } from "@/components/analytics/GtmRouteTracker";
+import { DEFAULT_SITE_OG_IMAGE } from "@/lib/seo/siteOgImages";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,8 +17,6 @@ const inter = Inter({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
-const defaultOgImage = "/images/creditoclick-homepage_coppia.jpeg";
-const defaultOgImageAlt = "CreditoClick: prestiti online veloci e sicuri";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,10 +44,10 @@ export const metadata: Metadata = {
       "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
     images: [
       {
-        url: defaultOgImage,
-        width: 1200,
-        height: 630,
-        alt: defaultOgImageAlt,
+        url: DEFAULT_SITE_OG_IMAGE.src,
+        width: DEFAULT_SITE_OG_IMAGE.width ?? 1200,
+        height: DEFAULT_SITE_OG_IMAGE.height ?? 630,
+        alt: DEFAULT_SITE_OG_IMAGE.alt,
       },
     ],
   },
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
     title: "CreditoClick | Prestiti Online Veloci e Sicuri",
     description:
       "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
-    images: [defaultOgImage],
+    images: [DEFAULT_SITE_OG_IMAGE.src],
   },
 };
 

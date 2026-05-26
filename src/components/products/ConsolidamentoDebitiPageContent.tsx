@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/ui/FaqSection";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { ProcessStepsSection } from "@/components/ui/ProcessStepsSection";
 import { ProductSplitHero, ProductSplitHeroImage } from "@/components/ui/ProductSplitHero";
+import { OG_SOLUZIONI_CONSOLIDAMENTO } from "@/lib/seo/siteOgImages";
 import { Section } from "@/components/ui/Section";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { StickySectionColumn } from "@/components/ui/StickySectionColumn";
@@ -53,11 +54,7 @@ export function ConsolidamentoDebitiPageContent() {
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}
         right={
-          <ProductSplitHeroImage
-            src="/images/creditoclick_consolidamento-debiti.jpeg"
-            alt="Consolidamento debiti con unica rata trattenuta in busta paga"
-            priority
-          />
+          <ProductSplitHeroImage src={OG_SOLUZIONI_CONSOLIDAMENTO.src} alt={OG_SOLUZIONI_CONSOLIDAMENTO.alt} priority />
         }
       />
 

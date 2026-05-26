@@ -1,27 +1,16 @@
-import { Metadata } from "next";
 import { ChiSiamoPageContent } from "@/components/about/ChiSiamoPageContent";
 import { CHI_SIAMO_FAQ, CHI_SIAMO_META } from "@/content/chiSiamo";
 import { SCHEMA_ORARI_APERTURA_LD } from "@/content/contatti";
 
-export const metadata: Metadata = {
+import { buildPageMetadata } from "@/lib/seo/pageMetadata";
+import { OG_CHI_SIAMO } from "@/lib/seo/siteOgImages";
+
+export const metadata = buildPageMetadata({
   title: CHI_SIAMO_META.title,
   description: CHI_SIAMO_META.description,
-  alternates: {
-    canonical: "/chi-siamo",
-  },
-  openGraph: {
-    title: CHI_SIAMO_META.title,
-    description: CHI_SIAMO_META.description,
-    url: "/chi-siamo",
-    type: "article",
-    locale: "it_IT",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: CHI_SIAMO_META.title,
-    description: CHI_SIAMO_META.description,
-  },
-};
+  pathname: "/chi-siamo",
+  ogImage: OG_CHI_SIAMO,
+});
 
 export default function ChiSiamoPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
