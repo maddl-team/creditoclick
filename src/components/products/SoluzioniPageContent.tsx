@@ -25,7 +25,7 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20ti%20descrivo%20la%20mia%20situazione%20per%20capire%20la%20soluzione%20pi%C3%B9%20adatta.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function SoluzioniPageContent() {
   return (

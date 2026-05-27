@@ -1,9 +1,9 @@
 import { CONTATTI_ORARI_APERTURA } from "./contatti";
 
 export const CHI_SIAMO_META = {
-  title: "Chi Siamo | CreditoClick — Agenzia in Attività Finanziaria Online",
+  title: "Chi Siamo | CreditoClick Agenzia Finanziaria",
   description:
-    "CreditoClick è un'agenzia in attività finanziaria convenzionata e iscritta OAM. Consulenti specializzati in cessione del quinto, online e via WhatsApp. Chi siamo.",
+    "CreditoClick è agenzia in attività finanziaria convenzionata e iscritta OAM. Cessione del quinto con consulenti specializzati, online e via WhatsApp.",
 } as const;
 
 export const CHI_SIAMO_HERO = {

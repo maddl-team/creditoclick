@@ -30,7 +30,7 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20cessione%20del%20quinto%20come%20dipendente%20di%20grande%20azienda.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 

@@ -32,7 +32,7 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20la%20cessione%20del%20quinto%20come%20dipendente%20PMI.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 
 export function DipendentiPiccoleImpresePmiPageContent() {

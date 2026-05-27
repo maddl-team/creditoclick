@@ -145,7 +145,7 @@ export function PensionatiInpsContactSection() {
             descriptionClassName="space-y-6"
             description={
               <>
-                <p>La scheda ci permette di verificare subito i requisiti principali, inclusa l'eta anagrafica e la documentazione disponibile.</p>
+                <p>La scheda ci permette di verificare subito i requisiti principali, inclusa l&apos;eta anagrafica e la documentazione disponibile.</p>
                 <p>Riceverai un riscontro mirato su fattibilita e prossimi passaggi, con un contatto rapido ai recapiti che preferisci.</p>
               </>
             }

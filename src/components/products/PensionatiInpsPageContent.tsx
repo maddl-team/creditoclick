@@ -36,7 +36,7 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20la%20cessione%20del%20quinto%20della%20pensione%20INPS.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 const SOLUZIONI_URL = "/soluzioni";

@@ -1,8 +1,27 @@
 import type { MetadataRoute } from "next";
+import { statSync } from "node:fs";
+import { join } from "node:path";
+
+const FALLBACK_LAST_MODIFIED = new Date("2026-01-01T00:00:00.000Z");
+
+function getRoutePagePath(route: string): string {
+  if (route === "") {
+    return join(process.cwd(), "src", "app", "page.tsx");
+  }
+
+  return join(process.cwd(), "src", "app", route.slice(1), "page.tsx");
+}
+
+function getRouteLastModified(route: string): Date {
+  try {
+    return statSync(getRoutePagePath(route)).mtime;
+  } catch {
+    return FALLBACK_LAST_MODIFIED;
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
-  const now = new Date();
 
   const routes = [
     "",
@@ -32,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
-    lastModified: now,
+    lastModified: getRouteLastModified(route),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.8,
   }));

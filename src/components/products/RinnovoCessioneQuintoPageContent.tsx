@@ -30,7 +30,7 @@ import {
 
 const WHATSAPP_RENEWAL_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20verificare%20se%20posso%20rinnovare%20la%20mia%20cessione%20del%20quinto.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CONSOLIDAMENTO_DEBITI_URL = "/soluzioni/consolidamento-debiti";
 const DELEGA_DI_PAGAMENTO_URL = "/prodotti/delega-di-pagamento";
 const CESSIONE_DEL_QUINTO_URL = "/prodotti/cessione-del-quinto";

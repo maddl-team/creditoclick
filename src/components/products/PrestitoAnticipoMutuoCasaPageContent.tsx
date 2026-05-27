@@ -31,7 +31,7 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20un%20prestito%20anticipo%20mutuo%20casa.";
-const CALCOLO_RATA_URL = "/strumenti/calcolo-rata";
+const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 
 export function PrestitoAnticipoMutuoCasaPageContent() {

@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function CalcoloRataLegacyPage() {
-  redirect("/strumenti/calcolo-rata-cessione-quinto");
+  permanentRedirect("/strumenti/calcolo-rata-cessione-quinto");
 }

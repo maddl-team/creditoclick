@@ -237,7 +237,7 @@ export function GrandiAziendeContactSection() {
                   <h3 className="text-2xl font-bold text-text-primary">Step 1: Profilo Aziendale</h3>
 
                   <label htmlFor="ga-nome-azienda" className="block space-y-2">
-                    <span className="text-sm font-semibold text-text-primary">Nome dell'azienda</span>
+                    <span className="text-sm font-semibold text-text-primary">Nome dell&apos;azienda</span>
                     <input
                       id="ga-nome-azienda"
                       type="text"
