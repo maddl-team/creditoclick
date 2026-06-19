@@ -82,3 +82,62 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+.wp-content {
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+
+.wp-content h2,
+.wp-content h3 {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  scroll-margin-top: 110px;
+}
+
+.wp-content h2 {
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.65rem;
+}
+
+.wp-content h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.wp-content p,
+.wp-content ul,
+.wp-content ol,
+.wp-content blockquote {
+  margin-bottom: 1rem;
+}
+
+.wp-content a {
+  color: var(--color-brand-indigo);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wp-content ul,
+.wp-content ol {
+  padding-left: 1.4rem;
+}
+
+.wp-content ul {
+  list-style: disc;
+}
+
+.wp-content ol {
+  list-style: decimal;
+}
+
+.wp-content img {
+  border-radius: 16px;
+  margin: 1.2rem 0;
+  width: 100%;
+  height: auto;
+}

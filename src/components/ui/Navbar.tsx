@@ -55,6 +55,7 @@ const NAV_ITEMS: NavItem[] = [
         href: "/strumenti/calcolo-rata-cessione-quinto",
         children: [{ label: "Calcolo Rata Cessione Quinto", href: "/strumenti/calcolo-rata-cessione-quinto", description: "Simula importo e rata in pochi passaggi." }],
     },
+    { label: "Blog", href: "/blog" },
     { label: "Chi Siamo", href: "/chi-siamo" },
     { label: "Contatti", href: "/contatti" },
 ];

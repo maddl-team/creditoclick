@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { statSync } from "node:fs";
 import { join } from "node:path";
+import { getCategories, getPosts } from "@/lib/wp/client";
 
 const FALLBACK_LAST_MODIFIED = new Date("2026-01-01T00:00:00.000Z");
 
@@ -20,7 +21,7 @@ function getRouteLastModified(route: string): Date {
   }
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it";
 
   const routes = [
@@ -47,12 +48,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/soluzioni/prestito-spese-mediche-salute",
     "/soluzioni/prestito-ristrutturazione-casa",
     "/strumenti/calcolo-rata-cessione-quinto",
+    "/blog",
   ];
 
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: getRouteLastModified(route),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
-  }));
+  const staticItems: MetadataRoute.Sitemap = routes.map((route) => {
+    const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
+      route === "" ? "weekly" : "monthly";
+
+    return {
+      url: `${siteUrl}${route}`,
+      lastModified: getRouteLastModified(route),
+      changeFrequency,
+      priority: route === "" ? 1 : 0.8,
+    };
+  });
+
+  try {
+    const [{ posts }, categories] = await Promise.all([getPosts(1, 100), getCategories()]);
+
+    const postItems: MetadataRoute.Sitemap = posts.map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+
+    const categoryItems: MetadataRoute.Sitemap = categories.map((category) => ({
+      url: `${siteUrl}/blog/categoria/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
+
+    return [...staticItems, ...postItems, ...categoryItems];
+  } catch {
+    return staticItems;
+  }
 }

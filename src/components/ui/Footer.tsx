@@ -57,6 +57,7 @@ const FOOTER_LINKS: FooterColumn[] = [
         title: "Azienda & Compliance",
         links: [
             { label: "Chi siamo", href: "/chi-siamo" },
+            { label: "Blog", href: "/blog" },
             { label: "Contatti", href: "/contatti" },
             { label: "Privacy Policy", href: FOOTER_PRIVACY_POLICY_HREF, external: true },
             { label: "Cookie Policy", href: FOOTER_COOKIE_POLICY_HREF, external: true },
@@ -143,6 +144,7 @@ export function Footer() {
                     <p>© 2026 FINNOVA S.R.L. Tutti i diritti riservati. | Iscrizione OAM: A17849</p>
                     <div className="flex items-center gap-6">
                         <Link href="/chi-siamo" className="hover:text-brand-indigo transition-colors">Chi siamo</Link>
+                        <Link href="/blog" className="hover:text-brand-indigo transition-colors">Blog</Link>
                         <Link href="/contatti" className="hover:text-brand-indigo transition-colors">Contatti</Link>
                         <Link href="/soluzioni" className="hover:text-brand-indigo transition-colors">Soluzioni</Link>
                     </div>
