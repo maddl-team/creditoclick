@@ -13,6 +13,8 @@ import { ComparisonTable } from "@/components/ui/ComparisonTable";
 import { ProductFinalCtaSection } from "@/components/products/sections/ProductFinalCtaSection";
 import { ChiSiamoTeamSection } from "@/components/about/ChiSiamoTeamSection";
 import { cn } from "@/lib/utils";
+import { TrustpilotRating } from "@/components/ui/TrustpilotRating";
+import { CREDITOCLICK_REVIEWS } from "@/content/reviews";
 import {
   CHI_SIAMO_COMPETENZE,
   CHI_SIAMO_CONFORMITA,
@@ -184,46 +186,45 @@ export function ChiSiamoPageContent() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight max-w-3xl">
               {CHI_SIAMO_RECENSIONI.sectionTitle}
             </h2>
-            <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">{CHI_SIAMO_RECENSIONI.intro}</p>
+            <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mb-6">{CHI_SIAMO_RECENSIONI.intro}</p>
+            <TrustpilotRating />
           </div>
 
           <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-slate-200/90">
-            {CHI_SIAMO_RECENSIONI.cards.map((card, i) => {
-              const [quotePart, authorPart = ""] = card.split(" — ");
-              const [author = "", role = ""] = authorPart.split(", ");
-              return (
-                <div
-                  key={card}
-                  className={cn(
-                    "flex flex-col h-full p-6 md:p-8 transition-all duration-300 group relative",
-                    i !== CHI_SIAMO_RECENSIONI.cards.length - 1 && "lg:border-r border-slate-200/90",
-                    i % 2 === 0 && "md:border-r lg:border-r-0",
-                    i < 2 && "border-b md:border-b-0"
-                  )}
-                >
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, starIdx) => (
-                      <Star key={starIdx} className="w-3 h-3 fill-brand-indigo text-brand-indigo" />
-                    ))}
-                  </div>
+            {CREDITOCLICK_REVIEWS.map((review, i) => (
+              <div
+                key={review.author}
+                className={cn(
+                  "flex flex-col h-full p-6 md:p-8 transition-all duration-300 group relative",
+                  i !== CREDITOCLICK_REVIEWS.length - 1 && "lg:border-r border-slate-200/90",
+                  i % 2 === 0 && "md:border-r lg:border-r-0",
+                  i < 2 && "border-b md:border-b-0"
+                )}
+              >
+                <div className="flex gap-1 mb-6">
+                  {Array.from({ length: review.stars }).map((_, starIdx) => (
+                    <Star key={starIdx} className="w-3 h-3 fill-brand-indigo text-brand-indigo" />
+                  ))}
+                </div>
 
-                  <div className="relative mb-8 flex-grow">
-                    <div className="absolute -left-[24px] md:-left-[32px] top-1 bottom-1 w-[2px] bg-brand-indigo opacity-80 group-hover:w-[3px] group-hover:opacity-100 transition-all rounded-r-full" />
-                    <p className="text-text-primary text-sm leading-relaxed italic pr-4">{quotePart}</p>
-                  </div>
+                <div className="relative mb-8 flex-grow">
+                  <div className="absolute -left-[24px] md:-left-[32px] top-1 bottom-1 w-[2px] bg-brand-indigo opacity-80 group-hover:w-[3px] group-hover:opacity-100 transition-all rounded-r-full" />
+                  <p className="text-text-primary text-sm leading-relaxed italic pr-4">
+                    &ldquo;{review.quote}&rdquo;
+                  </p>
+                </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-brand-indigo/10 flex items-center justify-center text-brand-indigo font-bold text-[10px]">
-                      {author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-text-primary leading-none mb-1">{author}</p>
-                      <p className="text-[10px] text-text-secondary uppercase tracking-wider font-medium">{role}</p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-brand-indigo/10 flex items-center justify-center text-brand-indigo font-bold text-[10px]">
+                    {review.author.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-text-primary leading-none mb-1">{review.author}</p>
+                    <p className="text-[10px] text-text-secondary uppercase tracking-wider font-medium">{review.role}</p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
         </div>

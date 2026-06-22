@@ -136,33 +136,6 @@ export const HOME_FAQS = [
     }
 ] as const;
 
-export const HOME_TESTIMONIALS = [
-    {
-        quote: "Avevo una segnalazione CRIF e nessuna banca mi aiutava. CreditoClick ha trovato una soluzione in meno di 48 ore. Finalmente respiro.",
-        author: "Marco T.",
-        role: "Infermiere, Napoli",
-        stars: 5,
-    },
-    {
-        quote: "Insegno alle medie e non avevo tempo per andare in banca. Ho fatto tutto dal telefono, in pausa pranzo. Pratica approvata in 3 giorni.",
-        author: "Giovanna R.",
-        role: "Docente, Torino",
-        stars: 5,
-    },
-    {
-        quote: "Avevo 5 rate diverse ogni mese. Ora ne ho una sola, più bassa. Hanno gestito tutto loro, io ho solo firmato.",
-        author: "Roberto M.",
-        role: "Dipendente pubblico, Roma",
-        stars: 5,
-    },
-    {
-        quote: "Grazie alla delega di pagamento ho ottenuto la liquidità che mi serviva per ristrutturare casa, nonostante avessi già un prestito attivo. Professionali e veloci.",
-        author: "Antonio P.",
-        role: "Vigile del Fuoco, Milano",
-        stars: 5,
-    },
-] as const;
-
 export const HOME_HERO_CONTENT = {
     badge: "Agente Monomandatario IBL Banca",
     title: "CreditoClick: la tua agenzia di prestiti online, esperta, veloce e dalla tua parte.",

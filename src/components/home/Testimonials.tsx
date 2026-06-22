@@ -5,7 +5,8 @@ import { Star } from "lucide-react";
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { cn } from "@/lib/utils";
-import { HOME_TESTIMONIALS } from "@/content/home";
+import { CREDITOCLICK_REVIEWS } from "@/content/reviews";
+import { TrustpilotRating } from "@/components/ui/TrustpilotRating";
 
 export function Testimonials() {
     return (
@@ -17,19 +18,20 @@ export function Testimonials() {
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8 leading-tight max-w-3xl">
                         Cosa dicono i nostri clienti
                     </h2>
-                    <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
+                    <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mb-6">
                         Centinaia di persone ogni mese si affidano a CreditoClick per rimettere ordine nelle proprie finanze o realizzare piccoli e grandi progetti.
                     </p>
+                    <TrustpilotRating />
                 </div>
 
                 {/* Testimonials Row: 4 Columns */}
                 <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-slate-200/90">
-                    {HOME_TESTIMONIALS.map((t, i) => (
+                    {CREDITOCLICK_REVIEWS.map((t, i) => (
                         <div
                             key={i}
                             className={cn(
                                 "flex flex-col h-full p-6 md:p-8 transition-all duration-300 group relative",
-                                i !== HOME_TESTIMONIALS.length - 1 && "lg:border-r border-slate-200/90",
+                                i !== CREDITOCLICK_REVIEWS.length - 1 && "lg:border-r border-slate-200/90",
                                 i % 2 === 0 && "md:border-r lg:border-r-0",
                                 i < 2 && "border-b md:border-b-0"
                             )}

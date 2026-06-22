@@ -104,7 +104,7 @@ export const CHI_SIAMO_NUMERI = {
     { label: "Pratiche gestite", value: "oltre 15.000" },
     { label: "Categorie professionali servite", value: "oltre 10 comparti" },
     { label: "Tempo medio di risposta", value: "entro 24 ore lavorative" },
-    { label: "Valutazioni a 5 stelle", value: "(inserire numero da Google / Trustpilot)" },
+    { label: "Valutazioni a 5 stelle", value: "21 su Trustpilot" },
   ],
 } as const;
 
@@ -159,15 +159,7 @@ export const CHI_SIAMO_RECENSIONI = {
   sectionTitle: "Cosa Dicono i Nostri Clienti",
   title: "La fiducia si costruisce pratica dopo pratica",
   intro:
-    "Lavoriamo ogni giorno per meritarci la fiducia di chi ci sceglie. La soddisfazione dei clienti è il parametro più importante con cui misuriamo il nostro lavoro — non il numero di pratiche chiuse.",
-  cards: [
-    "\"Ho provato con tre banche diverse. Mi avevano detto no ogni volta. CreditoClick ha trovato una soluzione in meno di una settimana. Il consulente mi ha spiegato tutto con calma e non mi ha mai fatto sentire giudicato.\" — Salvatore M., dipendente pubblico, Palermo",
-    "\"Insegno da 15 anni e non avevo mai saputo che potevo fare tutto senza passare per la segreteria della scuola. Ho firmato dal telefono mentre aspettavo l'autobus. In 10 giorni avevo i soldi sul conto.\" — Federica T., docente, Torino",
-    "\"Pensavo che a 74 anni non avrei potuto ottenere nulla. Invece mi hanno spiegato tutto con pazienza, mi hanno trovato una soluzione con rata che posso permettermi, e mi hanno assicurato che i miei figli non avrebbero avuto problemi se qualcosa fosse successo a me. Finalmente qualcuno che non mi trattava come un numero.\" — Giovanni R., pensionato INPS, Bologna",
-    "\"Avevo già una cessione in corso e temevo di non avere alternative. Mi hanno fatto un'analisi chiara, senza promesse inutili, e ho capito subito cosa potevo davvero ottenere. Tutto gestito online con grande professionalità.\" — Laura C., impiegata amministrativa, Bari",
-  ],
-  note:
-    "(Nota redazionale: sostituire con recensioni verificate Google Business o Trustpilot al momento del go-live. La presenza di recensioni verificate e con nome reale è una leva E-E-A-T fondamentale per un sito YMYL.)",
+    "Lavoriamo ogni giorno per meritarci la fiducia di chi ci sceglie. Le recensioni verificate su Trustpilot raccontano l'esperienza reale di chi si è affidato a noi per la cessione del quinto e le altre soluzioni di credito.",
 } as const;
 
 export const CHI_SIAMO_FAQ = {
