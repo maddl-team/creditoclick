@@ -6,6 +6,7 @@ import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 import { Section } from "../ui/Section";
 import { CalcForm } from "./CalcForm";
+import { HeroTrustBadge } from "./HeroTrustBadge";
 import { HOME_HERO_CONTENT } from "@/content/home";
 
 export function Hero() {
@@ -20,9 +21,11 @@ export function Hero() {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary mb-8 leading-[1.1] animate-fade-in-up [animation-delay:200ms]">
                         {HOME_HERO_CONTENT.title}
                     </h1>
-                    <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl animate-hero-narrative-reveal [animation-delay:400ms]">
+                    <p className="text-lg text-text-secondary mb-8 leading-relaxed max-w-2xl animate-hero-narrative-reveal [animation-delay:400ms]">
                         {HOME_HERO_CONTENT.description}
                     </p>
+
+                    <HeroTrustBadge />
 
                     <div className="flex flex-col items-start gap-4 animate-fade-in-up [animation-delay:600ms]">
                         <Button icon={ArrowRight} className="w-full sm:w-auto" href="/contatti">

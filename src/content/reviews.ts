@@ -5,6 +5,11 @@ export const TRUSTPILOT_PROFILE = {
   stars: 5,
 } as const;
 
+export const HERO_TRUST_BADGE = {
+  title: "Prestito più votato 2026",
+  subtitle: "verificato su Trustpilot",
+} as const;
+
 export const CREDITOCLICK_REVIEWS = [
   {
     quote:
