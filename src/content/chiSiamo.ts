@@ -11,7 +11,7 @@ export const CHI_SIAMO_HERO = {
   title: "Chi è CreditoClick: un'agenzia in attività finanziaria convenzionata, dalla tua parte",
   subtitle:
     "Non siamo una banca. Non siamo un comparatore automatico. Siamo un'agenzia in attività finanziaria specializzata e Agente Monomandatario di IBL Banca: questo significa accesso diretto ai prodotti IBL, tempi più rapidi e consulenza altamente focalizzata. Operiamo interamente online e via WhatsApp, con la stessa competenza e la stessa trasparenza di una consulenza in presenza, senza che tu debba mai mettere piede in una filiale.",
-  primaryCta: "Contattaci su WhatsApp",
+  primaryCta: "Contattaci",
   secondaryCta: "Scopri i nostri prodotti",
 } as const;
 
@@ -210,6 +210,6 @@ export const CHI_SIAMO_FINAL_CTA = {
   title: "Hai domande su di noi o vuoi iniziare con una consulenza gratuita?",
   subtitle:
     "Siamo a disposizione via WhatsApp per rispondere a qualsiasi domanda — sul nostro modo di lavorare, sulle soluzioni disponibili per la tua situazione specifica, o semplicemente per capire se possiamo essere utili. Non ci sono impegni, non ci sono costi, non ci sono pratiche formali finché non sei tu a volerle avviare.",
-  primary: "Contattaci su WhatsApp",
+  primary: "Contattaci",
   secondary: "Vai alla pagina Contatti",
 } as const;

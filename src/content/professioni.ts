@@ -9,7 +9,7 @@ export const PROFESSIONI_HERO = {
   title: "Cessione del Quinto su misura: la tua professione determina le tue condizioni",
   subtitle:
     "Nel credito garantito dalla busta paga, non tutti i profili sono uguali. Il comparto in cui lavori, il tuo datore di lavoro, la struttura del tuo contratto e le convenzioni attive per la tua categoria determinano direttamente il tasso che ti viene offerto, i tempi di approvazione e l'importo massimo ottenibile. CreditoClick ha costruito percorsi specifici per ogni categoria professionale — perché una soluzione generica, per definizione, non è la soluzione migliore per nessuno.",
-  primaryCta: "Trova la soluzione per la tua categoria su WhatsApp",
+  primaryCta: "Trova la soluzione per la tua categoria",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -95,7 +95,7 @@ export const PROFESSIONI_NON_LISTATE = {
     "Le sei categorie presentate in questa pagina sono quelle per cui abbiamo costruito percorsi specifici e consolidati. Non sono le uniche situazioni che valutiamo.",
     "Se lavori in un contesto non elencato — un ente pubblico non ministeriale, un'azienda a partecipazione mista pubblico-privata, una cooperativa strutturata, una fondazione — scrivici su WhatsApp. Il consulente valuta la tua situazione specifica e ti dice con chiarezza se e come possiamo aiutarti.",
   ],
-  cta: "Descrivi la tua situazione su WhatsApp",
+  cta: "Descrivi la tua situazione",
 } as const;
 
 export const PROFESSIONI_FAQ = {
@@ -124,7 +124,7 @@ export const PROFESSIONI_FAQ = {
 export const PROFESSIONI_FINAL_CTA = {
   title: "La soluzione giusta per te esiste. Dipende da chi sei professionalmente.",
   subtitle:
-    "Non esiste una cessione del quinto uguale per tutti — esistono condizioni diverse per profili diversi, e il nostro lavoro è trovare quelle giuste per il tuo. Scrivici su WhatsApp indicando la tua categoria professionale: il consulente ti orienta verso il percorso più adatto e ti fornisce una prima valutazione gratuita entro 24 ore lavorative.",
-  primary: "Scrivici su WhatsApp — Valutazione gratuita in 24h",
+    "Non esiste una cessione del quinto uguale per tutti — esistono condizioni diverse per profili diversi, e il nostro lavoro è trovare quelle giuste per il tuo. Contattaci indicando la tua categoria professionale: il consulente ti orienta verso il percorso più adatto e ti fornisce una prima valutazione gratuita entro 24 ore lavorative.",
+  primary: "Contattaci — Valutazione gratuita in 24h",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

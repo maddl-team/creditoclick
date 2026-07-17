@@ -51,7 +51,7 @@ export function ContactFormSection() {
     if (!isValidPhone(whatsapp)) {
       next.whatsapp = PHONE_VALIDATION_MESSAGE;
     }
-    if (email.trim().length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       next.email = "Inserisci un indirizzo email valido.";
     }
     if (situazione.trim().length < 10 || situazione.trim().length > 1000) {
@@ -119,8 +119,8 @@ export function ContactFormSection() {
           title="Scrivici — ti rispondiamo entro 24 ore lavorative"
           description={
             <p>
-              Compila il modulo in un unico passaggio. WhatsApp resta il canale principale: l’email è facoltativa e
-              ci aiuta solo come contatto di backup.
+              Compila il modulo in un unico passaggio. Ti risponderemo entro 24 ore lavorative all’email e al
+              contatto che indichi.
             </p>
           }
         />
@@ -173,10 +173,11 @@ export function ContactFormSection() {
               </label>
 
               <label htmlFor="contact-email" className="block space-y-2 md:col-span-2">
-                <span className="text-sm font-semibold text-text-primary">Email (facoltativa)</span>
+                <span className="text-sm font-semibold text-text-primary">Email</span>
                 <input
                   id="contact-email"
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"

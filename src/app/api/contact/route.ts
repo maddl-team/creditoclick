@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { buildCustomerConfirmationEmail } from "@/lib/contact/customerConfirmationEmail";
 import { formatContactDataAsHtml, formatContactDataAsText } from "@/lib/contact/formatContactData";
 import { notifyMakeContactWebhook, resolveSourcePage } from "@/lib/contact/makeWebhook";
 import { isValidPhone, PHONE_VALIDATION_MESSAGE } from "@/lib/contact/phone";
@@ -56,24 +57,36 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: PHONE_VALIDATION_MESSAGE }, { status: 400 });
   }
 
-  if (email && !isEmail(email)) {
-    return NextResponse.json({ ok: false, error: "Email non valida." }, { status: 400 });
+  if (!email || !isEmail(email)) {
+    return NextResponse.json(
+      { ok: false, error: "L'indirizzo email è obbligatorio e deve essere valido." },
+      { status: 400 },
+    );
   }
 
   const resend = new Resend(apiKey);
   const extraText = formatContactDataAsText(payload.data);
   const extraHtml = formatContactDataAsHtml(payload.data);
+  const confirmation = buildCustomerConfirmationEmail({
+    fullName,
+    phone,
+    email,
+    message,
+    formType,
+    data: payload.data,
+  });
 
   try {
     const sendResult = await resend.emails.send({
       from,
       to: [to],
+      replyTo: email,
       subject,
       text: [
         `Form: ${formType}`,
         `Nome: ${fullName}`,
         `Telefono: ${phone}`,
-        `Email: ${email || "Non indicata"}`,
+        `Email: ${email}`,
         `Messaggio: ${message || "Nessun messaggio libero."}`,
         "",
         "Dati aggiuntivi:",
@@ -85,13 +98,26 @@ export async function POST(request: Request) {
           <p><strong>Form:</strong> ${formType}</p>
           <p><strong>Nome:</strong> ${fullName}</p>
           <p><strong>Telefono:</strong> ${phone}</p>
-          <p><strong>Email:</strong> ${email || "Non indicata"}</p>
+          <p><strong>Email:</strong> ${email}</p>
           <p><strong>Messaggio:</strong> ${message || "Nessun messaggio libero."}</p>
           <h3 style="margin-top:18px;">Dati aggiuntivi</h3>
           ${extraHtml}
         </div>
       `,
     });
+
+    // Conferma al cliente: non blocca la richiesta se fallisce.
+    try {
+      await resend.emails.send({
+        from,
+        to: [email],
+        subject: confirmation.subject,
+        text: confirmation.text,
+        html: confirmation.html,
+      });
+    } catch {
+      // Keep internal notification successful even if confirmation fails.
+    }
 
     const { sourcePage, sourceUrl } = resolveSourcePage(request, payload.sourcePage);
     const siteHost =
@@ -120,4 +146,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

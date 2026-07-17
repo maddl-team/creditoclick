@@ -27,7 +27,7 @@ export const CONTATTI_HERO = {
   badge: "Contatti",
   title: "Contatta CreditoClick: siamo a un messaggio di distanza",
   subtitle:
-    "Hai una domanda sulla cessione del quinto, vuoi sapere se la tua situazione è finanziabile o hai già le idee chiare e vuoi iniziare subito? Scrivici su WhatsApp: un consulente reale leggerà il tuo messaggio e ti risponderà entro 24 ore lavorative con una valutazione concreta e senza impegno.",
+    "Hai una domanda sulla cessione del quinto, vuoi sapere se la tua situazione è finanziabile o hai già le idee chiare e vuoi iniziare subito? Contattaci: un consulente reale leggerà il tuo messaggio e ti risponderà entro 24 ore lavorative con una valutazione concreta e senza impegno.",
   primaryCta: "Scrivici su WhatsApp",
 } as const;
 
@@ -39,7 +39,7 @@ export const CONTATTI_CANALI = {
   contacts: [
     {
       channel: "WhatsApp (canale principale)",
-      detail: "+39 327 662 5456",
+      detail: "0836 311982",
       note: "Disponibile 7 giorni su 7 per ricevere messaggi. Le risposte vengono fornite entro 24 ore lavorative dal lunedì al venerdì. Per messaggi inviati nel weekend, la risposta viene garantita entro il lunedì mattina.",
     },
     {
@@ -165,7 +165,7 @@ export const CONTATTI_CTA = {
 } as const;
 
 export const CONTATTI_NOTE_REDAZIONALI = [
-  ["Numero WhatsApp", "+39 327 662 5456 (verificare allineamento con profilo Google Business)"],
+  ["Numero WhatsApp", "0836 311982"],
   ["Indirizzo email", "finnova@blu.it (email operativa; verificare eventuale casella dedicata ai reclami)"],
   ["Numero di telefono", "0836 311982 (centralino; orari lun–ven come riga Orari)"],
   [
@@ -178,5 +178,4 @@ export const CONTATTI_NOTE_REDAZIONALI = [
   ["Privacy Policy", "Verificare che il link alla Privacy Policy sia attivo e aggiornato — obbligatorio ai sensi del GDPR"],
   ["Schema Markup", "Implementare ContactPage + Organization + LocalBusiness (con orari e canali di contatto) in JSON-LD"],
   ["Google Business Profile", "Verificare che i dati di contatto siano allineati con quelli del profilo Google Business per coerenza NAP (Name, Address, Phone) — fondamentale per la SEO locale"],
-  ["Widget WhatsApp", "Valutare l'inserimento di un pulsante WhatsApp flottante su tutta la pagina (e sull'intero sito) per massimizzare le conversioni"],
 ] as const;

@@ -9,7 +9,7 @@ export const DDP_HERO = {
   title: "Delega di Pagamento: cos'è il Doppio Quinto e come ottenere liquidità aggiuntiva",
   subtitle:
     "Hai già una cessione del quinto in corso e hai bisogno di ulteriore liquidità? La delega di pagamento ti permette di affiancare un secondo finanziamento alla cessione esistente, portando la trattenuta complessiva fino al 40% del tuo stipendio netto. CreditoClick gestisce l'intera pratica online — senza che tu debba fare nulla con il tuo datore di lavoro.",
-  primaryCta: "Verifica la tua eligibilità su WhatsApp",
+  primaryCta: "Verifica la tua eligibilità",
   secondaryCta: "Calcola quanta liquidità puoi ottenere",
 } as const;
 
@@ -69,7 +69,7 @@ export const DDP_CALCOLO = {
   ] as const,
   note:
     "Con una delega di pagamento da 400 € mensili, su una durata di 84 mesi (7 anni), l'importo erogabile indicativo si attesta tra i 22.000 e i 28.000 euro, in funzione del tasso applicato al profilo specifico.",
-  cta: "Calcola la tua liquidità aggiuntiva — Scrivici su WhatsApp",
+  cta: "Calcola la tua liquidità aggiuntiva — Contattaci",
 } as const;
 
 export const DDP_VANTAGGI = {
@@ -134,7 +134,7 @@ export const DDP_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia la verifica di fattibilità — Scrivici su WhatsApp",
+  cta: "Inizia la verifica di fattibilità — Contattaci",
 } as const;
 
 export const DDP_CONFRONTO = {
@@ -196,6 +196,6 @@ export const DDP_FINAL_CTA = {
   title: "Hai già una cessione del quinto? Scopri quanta liquidità aggiuntiva puoi ottenere.",
   subtitle:
     "La verifica di fattibilità è gratuita, riservata e senza impegno. Il nostro consulente analizza la tua situazione contrattuale, calcola la capienza residua e ti presenta la proposta IBL Banca più adatta — tutto via WhatsApp, senza file in filiale.",
-  primary: "Verifica la tua eligibilità su WhatsApp",
+  primary: "Verifica la tua eligibilità",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

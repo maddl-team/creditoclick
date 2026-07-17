@@ -9,7 +9,7 @@ export const PAMC_HERO = {
   title: "Prestito per l'Anticipo del Mutuo Casa: come sbloccare l'acquisto quando mancano i fondi",
   subtitle:
     "Hai trovato la casa, hai firmato il compromesso, ma la banca ti chiede un anticipo che non hai ancora disponibile. O hai i fondi, ma vuoi conservarli come riserva invece di immobilizzarli nell'acquisto. La cessione del quinto ti permette di ottenere la liquidità necessaria senza intaccare i risparmi e senza che il mutuo principale ne risenta. CreditoClick analizza la tua situazione e costruisce la soluzione più adatta al tuo profilo contrattuale.",
-  primaryCta: "Richiedi una valutazione gratuita su WhatsApp",
+  primaryCta: "Richiedi una valutazione gratuita",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -109,7 +109,7 @@ export const PAMC_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PAMC_EEAT = {
@@ -155,7 +155,7 @@ export const PAMC_FAQ = {
 export const PAMC_FINAL_CTA = {
   title: "La casa che hai scelto non deve aspettare per mancanza di liquidità.",
   subtitle:
-    "Hai trovato l'immobile giusto. Hai i requisiti per il mutuo. Ti manca la liquidità per l'anticipo — o vuoi conservare i risparmi invece di immobilizzarli tutti nell'acquisto. La cessione del quinto può essere la soluzione che sblocca il progetto. Scrivici su WhatsApp: il consulente analizza la tua situazione complessiva — cessione del quinto e mutuo insieme — e ti dice con chiarezza cosa è realizzabile e come.",
-  primary: "Scrivici su WhatsApp — Valutazione gratuita in 24h",
+    "Hai trovato l'immobile giusto. Hai i requisiti per il mutuo. Ti manca la liquidità per l'anticipo — o vuoi conservare i risparmi invece di immobilizzarli tutti nell'acquisto. La cessione del quinto può essere la soluzione che sblocca il progetto. Contattaci: il consulente analizza la tua situazione complessiva — cessione del quinto e mutuo insieme — e ti dice con chiarezza cosa è realizzabile e come.",
+  primary: "Contattaci — Valutazione gratuita in 24h",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

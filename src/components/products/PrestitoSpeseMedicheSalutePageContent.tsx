@@ -26,7 +26,7 @@ import {
 } from "@/content/prestitoSpeseMedicheSalute";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20spese%20mediche%20e%20salute%20con%20cessione%20del%20quinto.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const PENSIONATI_URL = "/professioni/pensionati-inps";
 

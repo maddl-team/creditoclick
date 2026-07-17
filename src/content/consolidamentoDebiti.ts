@@ -9,7 +9,7 @@ export const CD_HERO = {
   title: "Consolidamento Debiti: come riunire tutte le rate in una sola, più bassa e automatica",
   subtitle:
     "Hai tre, quattro, cinque rate da pagare ogni mese — prestiti personali, finanziamenti al consumo, carte revolving, cessioni in corso. Ogni mese è una corsa contro il tempo per ricordarle tutte, evitare scoperti, gestire scadenze diverse. Il consolidamento debiti ti permette di chiudere tutto e ricominciare con un'unica rata mensile trattenuta automaticamente in busta paga. CreditoClick analizza la tua situazione e costruisce la soluzione più adatta al tuo profilo.",
-  primaryCta: "Richiedi una valutazione gratuita su WhatsApp",
+  primaryCta: "Richiedi una valutazione gratuita",
   secondaryCta: "Calcola la tua rata unica in 2 minuti",
 } as const;
 
@@ -100,7 +100,7 @@ export const CD_RISPARMIO = {
     "La rata mensile scende da 780 € a 360 €, con un risparmio mensile di 420 € e una liquidità netta aggiuntiva di circa 3.400 € accreditata sul conto. Il tutto con un'unica trattenuta automatica in busta paga.",
   note:
     "I valori sono indicativi e calcolati su un profilo tipo. I dati esatti dipendono dal tasso applicato al profilo specifico e dal prodotto IBL Banca applicabile.",
-  cta: "Calcola il tuo risparmio mensile — Scrivici su WhatsApp",
+  cta: "Calcola il tuo risparmio mensile — Contattaci",
 } as const;
 
 export const CD_CRIF = {
@@ -134,7 +134,7 @@ export const CD_PROCESSO = {
   title: "Il processo in 4 passaggi",
   steps: [
     {
-      title: "Passaggio 1 — Descrivi la tua situazione su WhatsApp",
+      title: "Passaggio 1 — Descrivi la tua situazione",
       desc: "Scrivici indicando: il numero approssimativo di finanziamenti in corso, il totale delle rate mensili attuali, il tuo contratto di lavoro (o pensione) e lo stipendio netto mensile. Non è necessario avere tutti i dati precisi nella fase iniziale: il consulente ti guida nella raccolta delle informazioni necessarie.",
       icon: "clipboardList",
     },
@@ -154,7 +154,7 @@ export const CD_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const CD_EEAT = {
@@ -200,7 +200,7 @@ export const CD_FAQ = {
 export const CD_FINAL_CTA = {
   title: "Non devi scegliere quale rata pagare questo mese.",
   subtitle:
-    "Il sovraindebitamento non è una colpa — è una situazione in cui si può finire anche facendo le cose bene, una alla volta. La soluzione non è arrangiarsi mese per mese: è ristrutturare la situazione con uno strumento adeguato, costruito sulla solidità del tuo contratto di lavoro. Scrivici su WhatsApp: il consulente analizza la tua situazione, calcola il risparmio ottenibile e ti presenta un piano concreto — senza impegno e senza giudizi.",
-  primary: "Richiedi la tua valutazione gratuita su WhatsApp",
+    "Il sovraindebitamento non è una colpa — è una situazione in cui si può finire anche facendo le cose bene, una alla volta. La soluzione non è arrangiarsi mese per mese: è ristrutturare la situazione con uno strumento adeguato, costruito sulla solidità del tuo contratto di lavoro. Contattaci: il consulente analizza la tua situazione, calcola il risparmio ottenibile e ti presenta un piano concreto — senza impegno e senza giudizi.",
+  primary: "Richiedi la tua valutazione gratuita",
   secondary: "Calcola la tua rata unica con il nostro strumento gratuito",
 } as const;

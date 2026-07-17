@@ -34,6 +34,10 @@ export function ProductSplitHero({
     right,
     sectionClassName,
 }: ProductSplitHeroProps) {
+    const primaryIsWhatsApp = Boolean(
+        primaryHref?.startsWith("https://wa.me/") || primaryHref?.startsWith("https://api.whatsapp.com/"),
+    );
+
     return (
         <Section className={sectionClassName ?? "min-h-[70vh] !py-0"}>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-0 items-stretch w-full min-h-[70vh]">
@@ -46,7 +50,15 @@ export function ProductSplitHero({
                     </h1>
                     <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">{subtitle}</p>
                     <div className="flex flex-col items-start gap-4">
-                        <Button icon={primaryIcon} href={primaryHref}>
+                        <Button
+                            icon={primaryIcon}
+                            href={primaryHref}
+                            className={
+                                primaryIsWhatsApp
+                                    ? "bg-whatsapp hover:bg-whatsapp-hover border-none text-white shadow-lg shadow-emerald-500/20"
+                                    : undefined
+                            }
+                        >
                             {primaryCta}
                         </Button>
                         <Button variant="secondary" icon={secondaryIcon} href={secondaryHref}>

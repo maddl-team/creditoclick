@@ -9,7 +9,7 @@ export const PMC_HERO = {
   title: "Prestito per Matrimonio e Cerimonie: realizza il giorno più importante senza compromettere il futuro",
   subtitle:
     "Organizzare un matrimonio ha un costo reale — location, catering, abito, fotografo, viaggio di nozze. Farlo senza intaccare i risparmi di una vita, senza chiedere aiuto in famiglia e senza indebitarsi in modo insostenibile è possibile. Con la cessione del quinto ottieni la liquidità necessaria con una rata fissa trattenuta automaticamente in busta paga, senza giustificativi sulla destinazione d'uso. CreditoClick gestisce tutto via WhatsApp, dal preventivo alla firma digitale.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -80,7 +80,7 @@ export const PMC_COPPIA = {
     ["Liquidità totale disponibile", "", "~ 40.500 – 48.500 €"],
   ] as const,
   note: "Valori indicativi. Gli importi esatti dipendono dal tasso applicato al profilo specifico di ciascun richiedente.",
-  cta: "Valutiamo insieme la soluzione per entrambi — Scrivici su WhatsApp",
+  cta: "Valutiamo insieme la soluzione per entrambi — Contattaci",
 } as const;
 
 export const PMC_CERIMONIE = {
@@ -106,7 +106,7 @@ export const PMC_TEMPI = {
     "Tempistiche tipiche di erogazione: dalla presentazione della pratica completa all'accredito sul conto passano generalmente tra i 7 e i 15 giorni lavorativi. Questo significa che, per avere la liquidità disponibile in una data specifica, è necessario avviare la pratica con almeno 3-4 settimane di anticipo rispetto a quella data.",
     "Il consiglio del consulente CreditoClick: avvia la valutazione preliminare con almeno 2-3 mesi di anticipo rispetto alla data del matrimonio. Questo ti dà il tempo di raccogliere i documenti necessari, ricevere il preventivo, valutarlo con calma e procedere con la firma senza pressioni legate alle scadenze dei fornitori.",
   ],
-  cta: "Inizia subito la valutazione — Scrivici su WhatsApp",
+  cta: "Inizia subito la valutazione — Contattaci",
 } as const;
 
 export const PMC_PROCESSO = {
@@ -114,7 +114,7 @@ export const PMC_PROCESSO = {
   title: "Dalla richiesta all'accredito: tutto via WhatsApp",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: il budget indicativo del matrimonio (o dell'evento), la data prevista della cerimonia, il tuo contratto di lavoro e lo stipendio netto mensile. Se siete in due a voler richiedere, indicateci entrambi i profili: valutiamo la soluzione ottimale per la coppia.",
       icon: "clipboardList",
     },
@@ -134,7 +134,7 @@ export const PMC_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PMC_EEAT = {
@@ -179,7 +179,7 @@ export const PMC_FAQ = {
 export const PMC_FINAL_CTA = {
   title: "Il giorno più bello della tua vita merita di essere organizzato senza compromessi — e senza stress finanziario.",
   subtitle:
-    "Non devi scegliere tra il matrimonio che hai immaginato e la stabilità economica che vuoi costruire. Con la cessione del quinto puoi avere entrambi: la liquidità per realizzare la cerimonia che desideri, e una rata fissa e automatica in busta paga che non interferisce con i piani della tua nuova vita insieme. Scrivici su WhatsApp: ti rispondiamo entro 24 ore lavorative con una valutazione concreta e senza impegno.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Non devi scegliere tra il matrimonio che hai immaginato e la stabilità economica che vuoi costruire. Con la cessione del quinto puoi avere entrambi: la liquidità per realizzare la cerimonia che desideri, e una rata fissa e automatica in busta paga che non interferisce con i piani della tua nuova vita insieme. Contattaci: ti rispondiamo entro 24 ore lavorative con una valutazione concreta e senza impegno.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

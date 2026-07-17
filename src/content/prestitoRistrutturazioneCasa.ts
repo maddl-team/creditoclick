@@ -9,7 +9,7 @@ export const PRC_HERO = {
   title: "Prestito per Ristrutturazione Casa: liquidità immediata senza ipoteche aggiuntive e senza aspettare",
   subtitle:
     "Vuoi ristrutturare il bagno, rinnovare la cucina, rifare l'impianto elettrico o migliorare l'efficienza energetica della tua abitazione. Hai il progetto in testa — ti manca la liquidità per partire. Con la cessione del quinto ottieni i fondi necessari direttamente sul conto corrente, senza ipoteche aggiuntive sull'immobile, senza preventivi da presentare alla banca e senza aspettare mesi per l'approvazione. CreditoClick gestisce tutto via WhatsApp, dal preventivo alla firma digitale.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -96,7 +96,7 @@ export const PRC_PROCESSO = {
   title: "Dalla richiesta all'accredito: tutto via WhatsApp",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: il tipo di intervento che intendi realizzare, il budget stimato dei lavori, il tuo contratto di lavoro e lo stipendio netto mensile. Non è necessario avere un computo metrico o un preventivo dell'impresa: la valutazione preliminare si basa sul tuo profilo contrattuale, non sul progetto di ristrutturazione.",
       icon: "clipboardList",
     },
@@ -116,7 +116,7 @@ export const PRC_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PRC_EEAT = {
@@ -161,7 +161,7 @@ export const PRC_FAQ = {
 export const PRC_FINAL_CTA = {
   title: "Il progetto di ristrutturazione che hai rimandato può partire adesso.",
   subtitle:
-    "Non devi aspettare anni per accumulare i fondi. Non devi aggiungere un'altra ipoteca sulla tua casa. Non devi presentare progetti, perizie o preventivi alla banca. Con la cessione del quinto hai la liquidità sul conto in 7-15 giorni lavorativi — e puoi iniziare i lavori quando vuoi. Scrivici su WhatsApp: ti rispondiamo entro 24 ore con una valutazione concreta e senza impegno.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Non devi aspettare anni per accumulare i fondi. Non devi aggiungere un'altra ipoteca sulla tua casa. Non devi presentare progetti, perizie o preventivi alla banca. Con la cessione del quinto hai la liquidità sul conto in 7-15 giorni lavorativi — e puoi iniziare i lavori quando vuoi. Contattaci: ti rispondiamo entro 24 ore con una valutazione concreta e senza impegno.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

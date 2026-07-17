@@ -9,7 +9,7 @@ export const RCQ_HERO = {
   title: "Rinnovo Cessione del Quinto: come funziona, quando conviene e come ottenerlo online",
   subtitle:
     "Hai una cessione del quinto in corso presso una banca o finanziaria e vorresti accedere a nuova liquidità, o semplicemente migliorare le condizioni del tuo contratto attuale? CreditoClick gestisce il rinnovo e la portabilità in modo completamente digitale — senza che tu debba contattare il vecchio istituto o mettere piede in filiale.",
-  primaryCta: "Verifica se puoi rinnovare — Scrivici su WhatsApp",
+  primaryCta: "Verifica se puoi rinnovare",
   secondaryCta: "Calcola la nuova rata",
 } as const;
 
@@ -58,7 +58,7 @@ export const RCQ_LIQUIDITA = {
   ] as const,
   note:
     "La liquidità netta dipende da tre variabili: l'importo del nuovo finanziamento (determinato dallo stipendio netto e dalla durata scelta), il debito residuo del contratto in corso, e il tasso applicato al nuovo contratto. In alcuni casi, anche a parità di rata mensile, è possibile ottenere un importo netto superiore grazie a condizioni di tasso migliorative rispetto al contratto originario.",
-  cta: "Calcola la tua liquidità netta — Scrivici su WhatsApp",
+  cta: "Calcola la tua liquidità netta — Contattaci",
 } as const;
 
 export const RCQ_CONVIENE = {
@@ -113,7 +113,7 @@ export const RCQ_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const RCQ_CONFRONTO = {
@@ -181,6 +181,6 @@ export const RCQ_FINAL_CTA = {
   title: "Scopri se puoi rinnovare la tua cessione del quinto e quanta liquidità puoi ottenere.",
   subtitle:
     "La verifica è gratuita, riservata e senza impegno. Bastano pochi dati sul tuo contratto in corso per avere un'analisi preliminare. Il nostro consulente ti risponde via WhatsApp entro 24 ore lavorative e gestisce l'intera pratica al posto tuo — dalla richiesta del conteggio estintivo alla firma digitale.",
-  primary: "Verifica subito se puoi rinnovare — Scrivici su WhatsApp",
+  primary: "Verifica subito se puoi rinnovare",
   secondary: "Calcola la nuova rata con il nostro strumento gratuito",
 } as const;

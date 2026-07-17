@@ -9,7 +9,7 @@ export const PIP_HERO = {
   title: "Cessione del Quinto della Pensione: come funziona per i pensionati INPS fino a 85 anni",
   subtitle:
     "Sei in pensione e hai bisogno di liquidità — per te, per i tuoi figli, per un progetto che non vuoi rimandare. La cessione del quinto della pensione ti permette di accedere a un finanziamento con rata trattenuta direttamente dal cedolino INPS, assicurazione inclusa e iter completamente digitale. Nessun garante, nessuna ipoteca, nessuna garanzia reale. CreditoClick gestisce tutto via WhatsApp — senza che tu debba uscire di casa.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -109,7 +109,7 @@ export const PIP_PROCESSO = {
   title: "Il processo in 4 passaggi: tutto via WhatsApp, senza uscire di casa",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: l'importo netto mensile della tua pensione, la tua età, l'ente erogatore (INPS, ex INPDAP, cassa professionale) e l'importo indicativo di cui hai bisogno. Nessun documento in questa fase, nessun impatto sulla tua posizione CRIF.",
       icon: "clipboardList",
     },
@@ -129,7 +129,7 @@ export const PIP_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PIP_EEAT = {
@@ -179,7 +179,7 @@ export const PIP_FAQ = {
 export const PIP_FINAL_CTA = {
   title: "Hai lavorato una vita. Ora hai il diritto di scegliere.",
   subtitle:
-    "La pensione che hai costruito in anni di lavoro è anche una garanzia solida per accedere alla liquidità di cui hai bisogno oggi — senza garanti, senza ipoteche, senza burocrazia. Scrivici su WhatsApp: il nostro consulente ti risponde entro 24 ore lavorative, ti spiega con chiarezza quanto puoi ottenere e gestisce tutta la pratica in modalità digitale, senza che tu debba uscire di casa.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "La pensione che hai costruito in anni di lavoro è anche una garanzia solida per accedere alla liquidità di cui hai bisogno oggi — senza garanti, senza ipoteche, senza burocrazia. Contattaci: il nostro consulente ti risponde entro 24 ore lavorative, ti spiega con chiarezza quanto puoi ottenere e gestisce tutta la pratica in modalità digitale, senza che tu debba uscire di casa.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

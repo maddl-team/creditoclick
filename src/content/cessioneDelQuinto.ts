@@ -3,7 +3,7 @@ export const CDQ_HERO = {
   title: "Cessione del Quinto: cos'è, come funziona e tassi aggiornati al 2026",
   subtitle:
     "La formula di finanziamento più sicura per dipendenti e pensionati italiani. Rata automatica in busta paga, nessuna garanzia reale richiesta, approvazione anche in caso di segnalazioni CRIF. CreditoClick ti affianca dall'analisi del profilo all'accredito — tutto online.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -69,7 +69,7 @@ export const CDQ_TASSI = {
     "Soglie d'usura: la Banca d'Italia pubblica trimestralmente i tassi soglia oltre i quali un contratto è considerato usurario. CreditoClick opera esclusivamente con offerte conformi a queste soglie. Ti comunichiamo sempre il TAEG effettivo prima di qualsiasi firma.",
     'Nota bene: i tassi pubblicati online a titolo indicativo non sono mai vincolanti. Il tasso reale applicato al tuo contratto dipende dal tuo profilo specifico e viene formalizzato solo nel preventivo personalizzato. Diffidate di chi pubblica tassi "garantiti" senza aver valutato il vostro profilo.',
   ],
-  cta: "Scopri il tuo tasso personalizzato — Scrivici su WhatsApp",
+  cta: "Scopri il tuo tasso personalizzato — Contattaci",
 } as const;
 
 export const CDQ_CALCOLO = {
@@ -140,7 +140,7 @@ export const CDQ_PASSAGGI = {
   steps: [
     {
       title: "Passaggio 1 — Contatto iniziale via WhatsApp",
-      desc: "Scrivici su WhatsApp con le informazioni base: categoria professionale (pubblico/privato/pensionato), stipendio netto mensile, importo indicativo desiderato. Nessun documento in questa fase, nessun impatto sulla tua posizione CRIF.",
+      desc: "Contattaci con le informazioni base: categoria professionale (pubblico/privato/pensionato), stipendio netto mensile, importo indicativo desiderato. Nessun documento in questa fase, nessun impatto sulla tua posizione CRIF.",
       icon: "clipboardList",
     },
     {
@@ -159,7 +159,7 @@ export const CDQ_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const CDQ_EEAT = {
@@ -220,6 +220,6 @@ export const CDQ_FINAL_CTA = {
   title: "Pronto a scoprire quanto puoi ottenere?",
   subtitle:
     "La valutazione è gratuita, riservata e senza impegno. Nessun documento richiesto nella fase iniziale, nessun impatto sulla tua posizione CRIF. Il nostro consulente ti risponde via WhatsApp entro 24 ore lavorative e ti guida passo per passo.",
-  primary: "Richiedi il tuo preventivo su WhatsApp",
+  primary: "Richiedi il tuo preventivo",
   secondary: "Calcola la rata prima di contattarci",
 } as const;

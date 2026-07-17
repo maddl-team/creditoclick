@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MessageCircle, Target } from "lucide-react";
+import { ArrowRight, Target } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CalloutSection } from "@/components/ui/CalloutSection";
@@ -24,7 +24,7 @@ import {
 } from "@/content/soluzioni";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20ti%20descrivo%20la%20mia%20situazione%20per%20capire%20la%20soluzione%20pi%C3%B9%20adatta.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function SoluzioniPageContent() {
@@ -36,7 +36,7 @@ export function SoluzioniPageContent() {
         subtitle={SOLUZIONI_HERO.subtitle}
         primaryCta={SOLUZIONI_HERO.primaryCta}
         secondaryCta={SOLUZIONI_HERO.secondaryCta}
-        primaryIcon={MessageCircle}
+        primaryIcon={ArrowRight}
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref={CALCOLO_RATA_URL}

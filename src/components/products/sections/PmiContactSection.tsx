@@ -397,7 +397,7 @@ export function PmiContactSection() {
                     <span className="text-sm font-semibold text-text-primary">Email</span>
                     <input
                       id="pmi-email"
-                      type="email"
+                      type="email" required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"

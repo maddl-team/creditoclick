@@ -134,7 +134,7 @@ export const CRCQ_EEAT = {
 export const CRCQ_FINAL_CTA = {
   title: "Hai la tua stima. Adesso puoi fare la mossa giusta.",
   subtitle:
-    "Il calcolatore ti ha dato un'idea dell'importo e della rata. Il passo successivo è scoprire le condizioni reali applicabili al tuo profilo — e questo richiede due minuti di conversazione con un consulente, non ore di pratiche burocratiche. Scrivici su WhatsApp: ti rispondiamo entro 24 ore lavorative con un preventivo personalizzato, gratuito, riservato e senza nessun impegno da parte tua.",
-  primary: "Richiedi il tuo preventivo personalizzato su WhatsApp",
+    "Il calcolatore ti ha dato un'idea dell'importo e della rata. Il passo successivo è scoprire le condizioni reali applicabili al tuo profilo — e questo richiede due minuti di conversazione con un consulente, non ore di pratiche burocratiche. Contattaci: ti rispondiamo entro 24 ore lavorative con un preventivo personalizzato, gratuito, riservato e senza nessun impegno da parte tua.",
+  primary: "Richiedi il tuo preventivo personalizzato",
   secondary: "Torna al calcolatore",
 } as const;

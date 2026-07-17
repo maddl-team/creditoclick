@@ -547,7 +547,7 @@ export function CessionePreventivoSection() {
                   <span className="text-sm font-semibold text-text-primary">Email</span>
                   <input
                     id="cprev-email"
-                    type="email"
+                    type="email" required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="nome@esempio.it"

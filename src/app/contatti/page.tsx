@@ -48,13 +48,6 @@ export default function ContattiPage() {
         availableLanguage: ["it-IT"],
         areaServed: "IT",
       },
-      {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        telephone: "+393276625456",
-        availableLanguage: ["it-IT"],
-        areaServed: "IT",
-      },
     ],
     provider: { "@id": organizationId },
   };

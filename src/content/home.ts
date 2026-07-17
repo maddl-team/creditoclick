@@ -203,7 +203,6 @@ export const HOME_PRIMARY_CTA_CONTENT = {
     title: "Pronto a trovare la soluzione giusta per te?",
     description: "Non aspettare che il problema si aggravi o che l'occasione passi. I nostri consulenti sono disponibili per una valutazione gratuita, riservata e senza impegno. Ti rispondiamo entro 24 ore lavorative.",
     primaryButton: "Richiedi consulenza gratuita",
-    whatsappButton: "Scrivici su WhatsApp",
     linkButton: "Calcola la tua rata",
 } as const;
 

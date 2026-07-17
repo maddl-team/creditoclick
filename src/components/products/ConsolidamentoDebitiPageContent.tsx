@@ -34,7 +34,7 @@ import {
 } from "@/content/consolidamentoDebiti";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20valutazione%20gratuita%20per%20il%20consolidamento%20debiti.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";

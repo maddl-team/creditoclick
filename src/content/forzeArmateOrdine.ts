@@ -9,7 +9,7 @@ export const FAO_HERO = {
   title: "Cessione del Quinto per Forze Armate e Forze dell'Ordine: convenzioni dedicate per ogni comparto",
   subtitle:
     "Esercito, Marina Militare, Aeronautica, Carabinieri, Guardia di Finanza, Polizia di Stato, Polizia Penitenziaria, Vigili del Fuoco: ogni comparto ha le sue specificità contrattuali, le sue indennità operative e le sue convenzioni. CreditoClick lavora da anni con gli istituti finanziatori specializzati nel settore sicurezza e difesa — per offrirti condizioni che tengono conto della reale struttura della tua retribuzione, non di una valutazione generica.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -121,7 +121,7 @@ export const FAO_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const FAO_EEAT = {
@@ -168,6 +168,6 @@ export const FAO_FINAL_CTA = {
   title: "Servi il Paese con un contratto tra i più solidi d'Italia. Le tue condizioni di credito devono riflettere questo.",
   subtitle:
     "Troppi militari e appartenenti alle Forze dell'Ordine ottengono condizioni peggiori di quelle a cui avrebbero diritto, semplicemente perché si rivolgono a istituti che non conoscono la struttura della loro retribuzione. CreditoClick lavora con gli istituti specializzati nel comparto sicurezza e difesa per assicurarti il preventivo più competitivo disponibile — gestito interamente via WhatsApp, in modo riservato e senza che tu debba muoverti dal tuo reparto.",
-  primary: "Richiedi il tuo preventivo su WhatsApp",
+  primary: "Richiedi il tuo preventivo",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

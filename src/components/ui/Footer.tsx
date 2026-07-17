@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   FOOTER_COOKIE_POLICY_HREF,
   FOOTER_PRIVACY_POLICY_HREF,
@@ -67,9 +67,6 @@ const FOOTER_LINKS: FooterColumn[] = [
 ];
 
 export function Footer() {
-    const whatsappUrl =
-        "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20ricevere%20una%20consulenza%20gratuita%20sulle%20soluzioni%20CreditoClick.";
-
     return (
         <footer className="border-t border-slate-100 bg-slate-50/50 py-16 md:py-24">
             <div className="container mx-auto px-6 max-w-7xl">
@@ -90,8 +87,8 @@ export function Footer() {
                         </p>
                     </div>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                        <Button className="bg-whatsapp hover:bg-whatsapp-hover border-none text-white" icon={MessageCircle} href={whatsappUrl}>
-                            Scrivici su WhatsApp
+                        <Button icon={ArrowRight} href="/contatti">
+                            Contattaci
                         </Button>
                         <Button variant="secondary" icon={ArrowRight} href="/strumenti/calcolo-rata-cessione-quinto">
                             Calcola la tua rata

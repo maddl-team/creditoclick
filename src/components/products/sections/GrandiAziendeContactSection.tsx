@@ -22,7 +22,6 @@ type DimensioneAzienda = "oltre_200" | "50_200" | "non_so";
 type TipoContratto = "indeterminato" | "determinato";
 type PrestitiAttivi = "si" | "no";
 
-const WHATSAPP_BASE = "393276625456";
 const AZIENDE_SUGGERITE = [
   "Enel",
   "Poste Italiane",
@@ -443,7 +442,7 @@ export function GrandiAziendeContactSection() {
                     <span className="text-sm font-semibold text-text-primary">Email</span>
                     <input
                       id="ga-email"
-                      type="email"
+                      type="email" required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-text-primary outline-none focus:ring-2 focus:ring-brand-indigo/40"

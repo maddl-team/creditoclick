@@ -9,7 +9,7 @@ export const DPPMI_HERO = {
   title: "Cessione del Quinto per Dipendenti di Piccole Imprese e PMI: come ottenerla anche sotto i 15 dipendenti",
   subtitle:
     "Lavori in una piccola o media impresa e la banca ti ha già detto no? Non sei solo. Migliaia di dipendenti di PMI vengono rifiutati ogni anno dagli istituti tradizionali per ragioni legate alla dimensione aziendale — non alla loro affidabilità personale. CreditoClick, grazie al canale diretto con IBL Banca, valuta il tuo TFR maturato come garanzia reale, indipendentemente dal numero di dipendenti dell'azienda.",
-  primaryCta: "Richiedi una valutazione gratuita su WhatsApp",
+  primaryCta: "Richiedi una valutazione gratuita",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -140,7 +140,7 @@ export const DPPMI_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const DPPMI_EEAT = {
@@ -186,6 +186,6 @@ export const DPPMI_FINAL_CTA = {
   title: "La tua azienda è piccola. La tua esigenza è reale. Possiamo aiutarti.",
   subtitle:
     "Molti dei nostri clienti più soddisfatti sono dipendenti di PMI che si erano rassegnati al rifiuto bancario. Il nostro lavoro è trovare la strada che altri non hanno cercato. La valutazione è gratuita, riservata e senza impegno — e ti diciamo con franchezza se e come possiamo aiutarti.",
-  primary: "Richiedi la tua valutazione gratuita su WhatsApp",
+  primary: "Richiedi la tua valutazione gratuita",
   secondary: "Calcola la rata con il nostro strumento gratuito",
 } as const;

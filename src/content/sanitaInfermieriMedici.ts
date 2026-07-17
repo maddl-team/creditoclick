@@ -9,7 +9,7 @@ export const SIM_HERO = {
   title: "Prestiti per Infermieri, OSS e Personale Sanitario: cessione del quinto senza perdere un giorno libero",
   subtitle:
     "Lavori in corsia, in pronto soccorso o sul territorio. I tuoi turni non aspettano — e nemmeno le tue esigenze finanziarie. CreditoClick gestisce l'intera pratica online, via WhatsApp, senza che tu debba mai mettere piede in una filiale o portare documenti di persona. Convenzioni attive con ASL, aziende ospedaliere e strutture sanitarie pubbliche su tutto il territorio nazionale.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -97,7 +97,7 @@ export const SIM_PASSAGGI = {
     "Il processo è stato pensato per adattarsi ai ritmi di chi lavora su turni, anche notturni. Non esistono orari di apertura, non esistono appuntamenti da fissare, non esistono code da fare.",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp quando vuoi",
+      title: "Passaggio 1 — Contattaci quando vuoi",
       desc: "Anche alle 23:00, anche tra un turno e l'altro. Indicaci: la struttura sanitaria di appartenenza (ASL, azienda ospedaliera, IRCCS), il profilo professionale, lo stipendio netto mensile e l'importo indicativo desiderato. Nessun documento in questa fase.",
       icon: "clipboardList",
     },
@@ -117,7 +117,7 @@ export const SIM_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const SIM_SOLUZIONI = {
@@ -175,7 +175,7 @@ export const SIM_FAQ = {
 export const SIM_FINAL_CTA = {
   title: "Lavori in corsia. Noi lavoriamo per te.",
   subtitle:
-    "Non hai tempo per code in filiale, appuntamenti in orari impossibili o scartoffie da consegnare di persona. Hai bisogno di una risposta concreta, veloce, gestita da qualcuno che conosce il tuo contratto e le procedure della tua struttura sanitaria. Scrivici su WhatsApp: ti rispondiamo entro 24 ore lavorative e gestiamo tutto noi — dalla prima valutazione alla firma digitale.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Non hai tempo per code in filiale, appuntamenti in orari impossibili o scartoffie da consegnare di persona. Hai bisogno di una risposta concreta, veloce, gestita da qualcuno che conosce il tuo contratto e le procedure della tua struttura sanitaria. Contattaci: ti rispondiamo entro 24 ore lavorative e gestiamo tutto noi — dalla prima valutazione alla firma digitale.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

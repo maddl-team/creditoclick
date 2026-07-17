@@ -41,7 +41,7 @@ import {
 const CATEGORY_ICONS = [Building2, Users, GraduationCap] as const;
 const EEAT_ICONS = [FileCheck, Scale] as const;
 const WHATSAPP_CESSIONE_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20richiedere%20un%20preventivo%20per%20la%20cessione%20del%20quinto.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function CessioneDelQuintoPageContent() {

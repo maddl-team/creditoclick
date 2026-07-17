@@ -10,7 +10,7 @@ export const CPC_HERO = {
     "Prestito per Cattivi Pagatori e Segnalati CRIF: come ottenere liquidità quando la banca dice no",
   subtitle:
     'Hai una segnalazione in CRIF, in Centrale Rischi o sei stato definito "cattivo pagatore"? Non significa che le porte del credito siano chiuse per sempre. Con la cessione del quinto dello stipendio o della pensione, la valutazione si basa sulla stabilità del tuo reddito attuale — non sulla tua storia creditizia passata. CreditoClick valuta ogni caso individualmente, con discrezione e senza giudizi.',
-  primaryCta: "Richiedi una valutazione riservata su WhatsApp",
+  primaryCta: "Richiedi una valutazione riservata",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -95,7 +95,7 @@ export const CPC_VALUTA = {
       desc: "Prima di presentare qualsiasi richiesta formale — che potrebbe lasciare tracce in CRIF — il consulente ti fornisce una valutazione preliminare onesta sulla fattibilità concreta. Se la pratica non è presentabile in questo momento, te lo diciamo con chiarezza, spiegandoti perché e quali condizioni potrebbero cambiare la situazione.",
     },
   ],
-  cta: "Richiedi la tua valutazione riservata — Scrivici su WhatsApp",
+  cta: "Richiedi la tua valutazione riservata — Contattaci",
 } as const;
 
 export const CPC_IMPORTI = {
@@ -149,7 +149,7 @@ export const CPC_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const CPC_EEAT = {
@@ -195,7 +195,7 @@ export const CPC_FAQ = {
 export const CPC_FINAL_CTA = {
   title: "Una segnalazione in CRIF non racconta chi sei oggi.",
   subtitle:
-    "Racconta qualcosa che è accaduto in passato — spesso in un momento difficile, spesso per ragioni indipendenti dalla tua volontà. Quello che conta oggi è il tuo reddito attuale, la stabilità del tuo contratto, la tua capacità di sostenere una rata. Scrivici su WhatsApp: valutiamo la tua situazione con discrezione, senza giudizi e senza impegno. Ti diciamo con franchezza cosa è possibile fare — e come.",
-  primary: "Richiedi la tua valutazione riservata su WhatsApp",
+    "Racconta qualcosa che è accaduto in passato — spesso in un momento difficile, spesso per ragioni indipendenti dalla tua volontà. Quello che conta oggi è il tuo reddito attuale, la stabilità del tuo contratto, la tua capacità di sostenere una rata. Contattaci: valutiamo la tua situazione con discrezione, senza giudizi e senza impegno. Ti diciamo con franchezza cosa è possibile fare — e come.",
+  primary: "Richiedi la tua valutazione riservata",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

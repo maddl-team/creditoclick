@@ -30,7 +30,7 @@ import {
 } from "@/content/prestitoMatrimonioCerimonie";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20finanziare%20matrimonio%20o%20cerimonia%20con%20cessione%20del%20quinto.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const SOLUZIONI_URL = "/soluzioni";
 

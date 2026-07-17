@@ -9,7 +9,7 @@ export const ISN_HERO = {
   title: "Cessione del Quinto per Insegnanti e Personale ATA: convenzione NoiPA, iter telematico, zero scartoffie",
   subtitle:
     "Insegni alle elementari, alle medie o alle superiori. Sei collaboratore scolastico, assistente amministrativo o tecnico. Il tuo contratto MIUR è uno dei più solidi esistenti sul mercato del credito — eppure ogni volta che ti sei rivolto a una banca, ti sei trovato a dover portare documenti in segreteria, aspettare l'ufficio del personale, fare avanti e indietro tra l'istituto di credito e la scuola. CreditoClick lavora in convenzione con il sistema NoiPA e gestisce l'intera pratica in modalità telematica — senza che tu debba coinvolgere la tua segreteria scolastica.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -93,7 +93,7 @@ export const ISN_PASSAGGI = {
   title: "Il processo telematico in 4 passaggi: nessun passaggio in segreteria",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: la tua qualifica (docente / ATA / dirigente), l'ordine scolastico di appartenenza, lo stipendio netto mensile e l'importo indicativo desiderato. Nessun documento in questa fase, nessun impatto sulla posizione CRIF.",
       icon: "clipboardList",
     },
@@ -113,7 +113,7 @@ export const ISN_PASSAGGI = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const ISN_SOLUZIONI = {
@@ -171,7 +171,7 @@ export const ISN_FAQ = {
 export const ISN_FINAL_CTA = {
   title: "Il tuo contratto vale più di quanto la banca ti ha fatto credere.",
   subtitle:
-    "Sei un dipendente statale pagato dal MEF. Il tuo profilo è tra i più solidi sul mercato del credito. Non devi portare nulla in segreteria, non devi coinvolgere il tuo dirigente, non devi aspettare settimane per una risposta che dipende dalla disponibilità di qualcun altro. Scrivici su WhatsApp: ti rispondiamo entro 24 ore lavorative e gestiamo tutto noi — in modo telematico, trasparente e senza sorprese.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Sei un dipendente statale pagato dal MEF. Il tuo profilo è tra i più solidi sul mercato del credito. Non devi portare nulla in segreteria, non devi coinvolgere il tuo dirigente, non devi aspettare settimane per una risposta che dipende dalla disponibilità di qualcun altro. Contattaci: ti rispondiamo entro 24 ore lavorative e gestiamo tutto noi — in modo telematico, trasparente e senza sorprese.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

@@ -14,6 +14,10 @@ interface ProductFinalCtaSectionProps {
   secondaryHref?: string;
 }
 
+function isWhatsAppHref(href?: string) {
+  return Boolean(href?.startsWith("https://wa.me/") || href?.startsWith("https://api.whatsapp.com/"));
+}
+
 export function ProductFinalCtaSection({
   title,
   subtitle,
@@ -22,6 +26,8 @@ export function ProductFinalCtaSection({
   primaryHref,
   secondaryHref,
 }: ProductFinalCtaSectionProps) {
+  const primaryIsWhatsApp = isWhatsAppHref(primaryHref);
+
   return (
     <IndigoCtaSection showBackgroundLines>
       <div className="max-w-3xl p-6 md:p-8">
@@ -30,8 +36,12 @@ export function ProductFinalCtaSection({
         <div className="flex flex-col sm:flex-row items-center gap-4">
           {primaryHref ? (
             <Button
-              className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover border-none text-white shadow-lg shadow-emerald-500/20"
-              icon={MessageCircle}
+              className={
+                primaryIsWhatsApp
+                  ? "w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover border-none text-white shadow-lg shadow-emerald-500/20"
+                  : "w-full sm:w-auto bg-white text-brand-indigo hover:bg-indigo-50 border-white"
+              }
+              icon={primaryIsWhatsApp ? MessageCircle : ArrowRight}
               href={primaryHref}
             >
               {primaryCta}
@@ -40,7 +50,7 @@ export function ProductFinalCtaSection({
           {secondaryHref ? (
             <Button
               variant="secondary"
-              className="w-full sm:w-auto bg-white text-brand-indigo hover:bg-indigo-50 border-white"
+              className="w-full sm:w-auto bg-white/10 text-white hover:bg-white/20 border-white/40"
               icon={ArrowRight}
               href={secondaryHref}
             >

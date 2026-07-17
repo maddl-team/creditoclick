@@ -28,7 +28,7 @@ import {
 } from "@/content/calcoloRataCessioneQuinto";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20personalizzato%20dopo%20la%20simulazione%20della%20rata.";
+  "/contatti";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
 

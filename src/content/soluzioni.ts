@@ -9,7 +9,7 @@ export const SOLUZIONI_HERO = {
   title: "Soluzioni finanziarie per ogni situazione: dal problema da risolvere al progetto da realizzare",
   subtitle:
     "Non sempre si ha bisogno di liquidità per un motivo generico. Spesso c'è una situazione specifica — un debito che pesa, una casa da comprare, una spesa urgente che non si può rimandare. CreditoClick ha costruito percorsi pensati per situazioni concrete, perché la soluzione giusta non è quella più grande o quella più veloce: è quella più adatta a quello che stai affrontando.",
-  primaryCta: "Descrivi la tua situazione su WhatsApp",
+  primaryCta: "Descrivi la tua situazione",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -127,7 +127,7 @@ export const SOLUZIONI_PRINCIPI = {
     "Consulente reale, non sistema automatico: Ogni situazione viene letta da una persona — non elaborata da un algoritmo. Questo fa la differenza soprattutto nelle situazioni più complesse, dove un filtro automatico direbbe no senza capire il profilo reale.",
     "Processo interamente digitale: Dalla prima valutazione alla firma del contratto, tutto si gestisce via WhatsApp o in modalità elettronica. Nessun passaggio in filiale, nessun documento da consegnare di persona.",
   ],
-  cta: "Descrivi la tua situazione — Scrivici su WhatsApp",
+  cta: "Descrivi la tua situazione — Contattaci",
 } as const;
 
 export const SOLUZIONI_FAQ = {
@@ -157,6 +157,6 @@ export const SOLUZIONI_FINAL_CTA = {
   title: "Qualunque sia la tua situazione, il punto di partenza è lo stesso.",
   subtitle:
     "Una conversazione su WhatsApp con un consulente reale che ascolta, valuta e ti dice con franchezza cosa è possibile fare — e come. Senza impegno, senza costi di consulenza, senza pratiche formali finché non sei tu a volerle avviare.",
-  primary: "Scrivici su WhatsApp — Valutazione gratuita in 24h",
+  primary: "Contattaci — Valutazione gratuita in 24h",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

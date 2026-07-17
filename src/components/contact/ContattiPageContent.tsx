@@ -43,7 +43,8 @@ import {
   CONTATTI_RECLAMI,
 } from "@/content/contatti";
 
-const WHATSAPP_URL = "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20una%20consulenza%20gratuita%20sulla%20cessione%20del%20quinto.";
+const WHATSAPP_URL =
+  "https://wa.me/39836311982?text=Ciao%2C%20vorrei%20una%20consulenza%20gratuita%20sulla%20cessione%20del%20quinto.";
 const CONTATTI_PRIMO_MESSAGGIO_ICONS = [BriefcaseBusiness, BadgeEuro, HandCoins, CircleAlert] as const;
 const CONTATTI_PROCESSO_ICONS = [MessagesSquare, SearchCheck, FileCheck2, FileSignature, Route] as const;
 const CONTATTI_ORARI_ICONS = [Phone, MessageCircle, Mail, Timer] as const;

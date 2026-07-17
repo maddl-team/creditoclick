@@ -9,7 +9,7 @@ export const DPGA_HERO = {
   title: "Cessione del Quinto per Dipendenti di Grandi Aziende Private: condizioni, iter e vantaggi",
   subtitle:
     "Lavori in una SPA, in una grande SRL o in un gruppo industriale strutturato? La tua posizione contrattuale ti garantisce accesso a condizioni di tasso molto competitive — spesso con iter più rapidi e una gestione completamente riservata. CreditoClick opera con canale diretto IBL Banca per offrirti una proposta solida e tempi certi.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -84,7 +84,7 @@ export const DPGA_ITER = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const DPGA_IMPORTI = {
@@ -157,6 +157,6 @@ export const DPGA_FINAL_CTA = {
   title: "Lavori in una grande azienda e vuoi sapere a quali condizioni puoi accedere?",
   subtitle:
     "La valutazione è gratuita, riservata e senza impegno. Il nostro consulente analizza il tuo profilo contrattuale, identifica l'istituto convenzionato più vantaggioso per la tua specifica azienda e ti presenta un preventivo completo via WhatsApp — senza che tu debba mettere piede in nessuna filiale.",
-  primary: "Richiedi il tuo preventivo su WhatsApp",
+  primary: "Richiedi il tuo preventivo",
   secondary: "Calcola la rata con il nostro strumento gratuito",
 } as const;

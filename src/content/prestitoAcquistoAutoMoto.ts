@@ -9,7 +9,7 @@ export const PAAM_HERO = {
   title: "Prestito per Acquisto Auto e Moto: liquidità diretta sul conto, senza vincoli sul veicolo",
   subtitle:
     "Vuoi cambiare l'auto, acquistare una moto o finanziare un veicolo usato da privato? Con la cessione del quinto ottieni la liquidità necessaria accreditata direttamente sul tuo conto corrente — senza dover vincolare il veicolo come garanzia, senza dover presentare preventivi o documenti sull'acquisto, senza restrizioni sul venditore. CreditoClick gestisce tutto via WhatsApp, dal preventivo alla firma digitale.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -104,7 +104,7 @@ export const PAAM_PROCESSO = {
   title: "Dalla richiesta all'acquisto: tutto via WhatsApp",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: il tipo di veicolo che intendi acquistare (auto nuova, auto usata, moto), l'importo indicativo, il tuo contratto di lavoro e lo stipendio netto mensile. Nessun documento in questa fase, nessun impatto sulla posizione CRIF.",
       icon: "clipboardList",
     },
@@ -124,7 +124,7 @@ export const PAAM_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PAAM_EEAT = {
@@ -169,7 +169,7 @@ export const PAAM_FAQ = {
 export const PAAM_FINAL_CTA = {
   title: "Il veicolo che vuoi, i soldi sul conto, nessun vincolo.",
   subtitle:
-    "Non devi scegliere solo tra i veicoli che finanziano in concessionaria. Non devi vincolare il tuo nuovo acquisto come garanzia di un debito. Con la cessione del quinto sei tu a scegliere — il veicolo, il venditore, il prezzo. Scrivici su WhatsApp: ti diciamo in 24 ore quanto puoi ottenere e a quali condizioni, senza impegno e senza documenti nella fase iniziale.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Non devi scegliere solo tra i veicoli che finanziano in concessionaria. Non devi vincolare il tuo nuovo acquisto come garanzia di un debito. Con la cessione del quinto sei tu a scegliere — il veicolo, il venditore, il prezzo. Contattaci: ti diciamo in 24 ore quanto puoi ottenere e a quali condizioni, senza impegno e senza documenti nella fase iniziale.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

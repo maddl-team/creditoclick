@@ -32,7 +32,7 @@ import {
 } from "@/content/chiSiamo";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20maggiori%20informazioni%20su%20CreditoClick%20e%20sulle%20vostre%20soluzioni.";
+  "/contatti";
 
 export function ChiSiamoPageContent() {
   return (
@@ -43,7 +43,7 @@ export function ChiSiamoPageContent() {
         subtitle={CHI_SIAMO_HERO.subtitle}
         primaryCta={CHI_SIAMO_HERO.primaryCta}
         secondaryCta={CHI_SIAMO_HERO.secondaryCta}
-        primaryIcon={MessageCircle}
+        primaryIcon={ArrowRight}
         secondaryIcon={ArrowRight}
         primaryHref={WHATSAPP_URL}
         secondaryHref="/prodotti"

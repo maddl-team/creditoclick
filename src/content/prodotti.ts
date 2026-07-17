@@ -9,7 +9,7 @@ export const PRODOTTI_HERO = {
   title: "I nostri prodotti: soluzioni di credito garantite dalla busta paga o dalla pensione",
   subtitle:
     "CreditoClick si occupa esclusivamente di finanziamenti garantiti dal reddito — stipendio o pensione. Tre prodotti distinti, ciascuno pensato per una situazione specifica. Se non sai ancora quale fa per te, questa pagina è il punto di partenza giusto.",
-  primaryCta: "Parla con un consulente su WhatsApp",
+  primaryCta: "Parla con un consulente",
   secondaryCta: "Calcola la tua rata",
 } as const;
 
@@ -115,7 +115,7 @@ export const PRODOTTI_PROCESSO = {
     "Nessun passaggio in filiale. Nessuna documentazione da portare di persona. Nessun costo di consulenza nella fase pre-contrattuale.",
   ],
   linkLabel: "Scopri come lavoriamo nella pagina Chi Siamo",
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PRODOTTI_FAQ = {
@@ -148,7 +148,7 @@ export const PRODOTTI_FAQ = {
 export const PRODOTTI_FINAL_CTA = {
   title: "Non sei ancora sicuro di quale prodotto fa per te?",
   subtitle:
-    "Non devi saperlo prima di contattarci. Scrivici su WhatsApp descrivendo la tua situazione — anche in modo approssimativo — e il consulente ti orienta verso il prodotto più adatto, spiega le differenze e ti fornisce una prima stima senza impegno. È il modo più rapido per trasformare un dubbio in una soluzione concreta.",
-  primary: "Scrivici su WhatsApp — Orientamento gratuito in 24h",
+    "Non devi saperlo prima di contattarci. Contattaci descrivendo la tua situazione — anche in modo approssimativo — e il consulente ti orienta verso il prodotto più adatto, spiega le differenze e ti fornisce una prima stima senza impegno. È il modo più rapido per trasformare un dubbio in una soluzione concreta.",
+  primary: "Richiedi un orientamento gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

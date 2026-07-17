@@ -9,7 +9,7 @@ export const PSMS_HERO = {
   title: "Prestito per Spese Mediche e Salute: liquidità immediata quando la salute non può aspettare",
   subtitle:
     "Un intervento chirurgico privato, una protesi dentaria, una visita specialistica urgente, un percorso riabilitativo. Le spese mediche non chiedono il permesso — arrivano quando arrivano, spesso fuori budget e fuori tempo. Con la cessione del quinto ottieni la liquidità necessaria direttamente sul conto corrente, senza giustificativi medici da presentare alla banca, senza ipoteche e senza garanti. CreditoClick gestisce tutto via WhatsApp, con una risposta entro 24 ore lavorative.",
-  primaryCta: "Richiedi un preventivo su WhatsApp",
+  primaryCta: "Richiedi un preventivo",
   secondaryCta: "Calcola la tua rata in 2 minuti",
 } as const;
 
@@ -90,7 +90,7 @@ export const PSMS_PROCESSO = {
   title: "Dalla richiesta all'accredito: tutto via WhatsApp, con la massima riservatezza",
   steps: [
     {
-      title: "Passaggio 1 — Scrivici su WhatsApp",
+      title: "Passaggio 1 — Contattaci",
       desc: "Indicaci: l'importo indicativo di cui hai bisogno, il tuo contratto di lavoro e lo stipendio netto mensile. Non è necessario specificare la natura della spesa medica: la valutazione si basa esclusivamente sul tuo profilo contrattuale. La massima riservatezza è garantita in ogni fase.",
       icon: "clipboardList",
     },
@@ -110,7 +110,7 @@ export const PSMS_PROCESSO = {
       icon: "send",
     },
   ],
-  cta: "Inizia ora — Scrivici su WhatsApp",
+  cta: "Inizia ora — Contattaci",
 } as const;
 
 export const PSMS_EEAT = {
@@ -156,7 +156,7 @@ export const PSMS_FAQ = {
 export const PSMS_FINAL_CTA = {
   title: "La tua salute — e quella di chi ami — non può aspettare i tempi di una banca.",
   subtitle:
-    "Non devi scegliere tra curarsi bene e mantenere la propria stabilità finanziaria. Con la cessione del quinto hai la liquidità sul conto in tempi rapidi, senza dover spiegare a nessuno per quale motivo ne hai bisogno, senza aggiungere garanzie sulla tua casa e senza che la tua storia creditizia passata determini il tuo accesso alle cure oggi. Scrivici su WhatsApp: ti rispondiamo entro 24 ore lavorative con una valutazione concreta, riservata e senza impegno.",
-  primary: "Scrivici su WhatsApp — Preventivo gratuito in 24h",
+    "Non devi scegliere tra curarsi bene e mantenere la propria stabilità finanziaria. Con la cessione del quinto hai la liquidità sul conto in tempi rapidi, senza dover spiegare a nessuno per quale motivo ne hai bisogno, senza aggiungere garanzie sulla tua casa e senza che la tua storia creditizia passata determini il tuo accesso alle cure oggi. Contattaci: ti rispondiamo entro 24 ore lavorative con una valutazione concreta, riservata e senza impegno.",
+  primary: "Richiedi un preventivo gratuito",
   secondary: "Calcola la tua rata con il nostro strumento gratuito",
 } as const;

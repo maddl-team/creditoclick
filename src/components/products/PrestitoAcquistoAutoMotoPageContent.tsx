@@ -32,7 +32,7 @@ import {
 } from "@/content/prestitoAcquistoAutoMoto";
 
 const WHATSAPP_URL =
-  "https://wa.me/393276625456?text=Ciao%2C%20vorrei%20un%20preventivo%20per%20acquisto%20auto%20o%20moto%20con%20cessione%20del%20quinto.";
+  "/contatti";
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 
