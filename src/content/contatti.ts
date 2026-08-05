@@ -140,7 +140,7 @@ export const CONTATTI_ISTITUZIONALI = {
     ["Email istituzionale", "finnova@blu.it"],
     ["Telefono", "0836 311982"],
     ["Orari di apertura (lun–ven)", CONTATTI_ORARI_APERTURA],
-    ["PEC", "Canale PEC aziendale"],
+    ["PEC", "finnova@pec.it"],
   ] as const,
   note:
     "CreditoClick è di proprietà di Finnova che è iscritta all'OAM (Organismo Agenti e Mediatori) in qualità di Agente in Attività Finanziaria ai sensi del D.Lgs. 141/2010. L'iscrizione è verificabile pubblicamente sul sito ufficiale dell'OAM all'indirizzo organismo-am.it.",
@@ -151,7 +151,7 @@ export const CONTATTI_RECLAMI = {
   title: "Come presentare un reclamo o una segnalazione",
   paragraphs: [
     "CreditoClick si impegna a gestire ogni richiesta con correttezza, trasparenza e professionalità. Nel caso in cui un cliente ritenga che il servizio ricevuto non sia stato conforme agli standard attesi o alle disposizioni normative applicabili, ha il diritto di presentare un reclamo formale.",
-    "Come presentare un reclamo: Il reclamo può essere inviato per iscritto all'indirizzo email ufficiale oppure via PEC aziendale. Il reclamo deve indicare il nome del reclamante, una descrizione chiara del motivo della contestazione e i riferimenti alla pratica interessata. CreditoClick si impegna a rispondere per iscritto entro 30 giorni dal ricevimento del reclamo.",
+    "Come presentare un reclamo: Il reclamo può essere inviato per iscritto all'indirizzo email ufficiale oppure via PEC a finnova@pec.it. Il reclamo deve indicare il nome del reclamante, una descrizione chiara del motivo della contestazione e i riferimenti alla pratica interessata. CreditoClick si impegna a rispondere per iscritto entro 30 giorni dal ricevimento del reclamo.",
     "Ricorso all'Arbitro Bancario Finanziario (ABF): Nel caso in cui la risposta al reclamo non risulti soddisfacente, o in assenza di risposta entro i termini previsti, il cliente ha la facoltà di ricorrere all'Arbitro Bancario Finanziario (ABF), un sistema di risoluzione alternativa delle controversie in materia bancaria e finanziaria istituito da Banca d'Italia. Informazioni sulle modalità di accesso all'ABF sono disponibili sul sito arbitrobancariofinanziario.it.",
   ],
 } as const;
@@ -174,7 +174,7 @@ export const CONTATTI_NOTE_REDAZIONALI = [
   ],
   ["Sede operativa", "Confermare se inserire l'indirizzo fisico o optare per la dicitura \"operatività interamente da remoto\""],
   ["Dati societari", "Completare la tabella con tutti i riferimenti ufficiali"],
-  ["PEC reclami", "Inserire l'indirizzo PEC dedicato alla gestione dei reclami formali"],
+  ["PEC reclami", "finnova@pec.it"],
   ["Privacy Policy", "Verificare che il link alla Privacy Policy sia attivo e aggiornato — obbligatorio ai sensi del GDPR"],
   ["Schema Markup", "Implementare ContactPage + Organization + LocalBusiness (con orari e canali di contatto) in JSON-LD"],
   ["Google Business Profile", "Verificare che i dati di contatto siano allineati con quelli del profilo Google Business per coerenza NAP (Name, Address, Phone) — fondamentale per la SEO locale"],

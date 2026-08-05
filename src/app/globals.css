@@ -52,6 +52,8 @@
 :root {
   --background: #ffffff;
   --foreground: #111827;
+  /* Fallback finché Navbar non misura l'altezza reale (topbar + nav). */
+  --site-header-height: 7.5rem;
 }
 
 body {

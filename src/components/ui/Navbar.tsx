@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { AnnouncementTopbar } from "./AnnouncementTopbar";
 import { BackgroundLines } from "./BackgroundLines";
 import { cn } from "@/lib/utils";
 
@@ -61,6 +62,7 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export function Navbar() {
+    const headerRef = React.useRef<HTMLElement>(null);
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const [openMobileSections, setOpenMobileSections] = React.useState<Record<string, boolean>>({});
@@ -75,6 +77,24 @@ export function Navbar() {
     }, []);
 
     React.useEffect(() => {
+        const el = headerRef.current;
+        if (!el) return;
+
+        const syncHeaderHeight = () => {
+            document.documentElement.style.setProperty("--site-header-height", `${el.offsetHeight}px`);
+        };
+
+        syncHeaderHeight();
+        const observer = new ResizeObserver(syncHeaderHeight);
+        observer.observe(el);
+        window.addEventListener("resize", syncHeaderHeight);
+        return () => {
+            observer.disconnect();
+            window.removeEventListener("resize", syncHeaderHeight);
+        };
+    }, [isScrolled, isMobileMenuOpen]);
+
+    React.useEffect(() => {
         setIsMobileMenuOpen(false);
     }, [pathname]);
 
@@ -83,12 +103,14 @@ export function Navbar() {
     };
 
     return (
-        <nav
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-200/90",
-                isScrolled ? "bg-white py-3 shadow-sm" : "bg-white py-5"
-            )}
-        >
+        <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50">
+            <AnnouncementTopbar />
+            <nav
+                className={cn(
+                    "relative transition-all duration-300 border-b border-slate-200/90",
+                    isScrolled ? "bg-white py-3 shadow-sm" : "bg-white py-5"
+                )}
+            >
             {/* Header Background Lines: Only first and last */}
             <BackgroundLines showIndices={[0, 4]} />
 
@@ -214,6 +236,7 @@ export function Navbar() {
                     </div>
                 ) : null}
             </div>
-        </nav>
+            </nav>
+        </header>
     );
 }

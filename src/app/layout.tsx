@@ -90,7 +90,7 @@ export default function RootLayout({
         ) : null}
         <div className="flex flex-col min-h-screen relative w-full">
           <Navbar />
-          <main className="flex-1 pt-[79px]">
+          <main className="flex-1 pt-[var(--site-header-height,7.5rem)]">
             {children}
           </main>
           <LegalPreFooter />

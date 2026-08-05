@@ -125,7 +125,7 @@ export const CHI_SIAMO_CONFORMITA = {
     ["Email", "finnova@blu.it"],
     ["Telefono", "0836 311982"],
     ["Orari di apertura (lun–ven)", CONTATTI_ORARI_APERTURA],
-    ["PEC", "Canale PEC aziendale"],
+    ["PEC", "finnova@pec.it"],
   ] as const,
   afterTitle: "Cosa garantisce l'iscrizione OAM ai clienti:",
   after:
