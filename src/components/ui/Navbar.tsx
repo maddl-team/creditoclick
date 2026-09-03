@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { AnnouncementTopbar } from "./AnnouncementTopbar";
 import { BackgroundLines } from "./BackgroundLines";
 import { cn } from "@/lib/utils";
 
@@ -104,7 +103,6 @@ export function Navbar() {
 
     return (
         <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50">
-            <AnnouncementTopbar />
             <nav
                 className={cn(
                     "relative transition-all duration-300 border-b border-slate-200/90",

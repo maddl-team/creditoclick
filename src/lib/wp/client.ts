@@ -13,6 +13,76 @@ function buildWpUrl(endpoint: string): string {
   return `${base}${path}`;
 }
 
+/**
+ * WordPress REST deve restituire JSON puro. Dopo l'attacco al CMS alcune
+ * risposte arrivano ancora con markup extra in coda, che fa fallire JSON.parse().
+ */
+function extractFirstJsonValue(text: string): string | null {
+  const start = text.search(/[\[{]/);
+  if (start === -1) return null;
+
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = start; i < text.length; i += 1) {
+    const char = text[i];
+
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+      if (char === "\\") {
+        escaped = true;
+        continue;
+      }
+      if (char === '"') inString = false;
+      continue;
+    }
+
+    if (char === '"') {
+      inString = true;
+      continue;
+    }
+
+    if (char === "{" || char === "[") {
+      depth += 1;
+      continue;
+    }
+
+    if (char === "}" || char === "]") {
+      depth -= 1;
+      if (depth === 0) return text.slice(start, i + 1);
+    }
+  }
+
+  return null;
+}
+
+function parseWpJson<T>(body: string, endpoint: string): T {
+  const trimmed = body.trim();
+  try {
+    return JSON.parse(trimmed) as T;
+  } catch (error) {
+    const json = extractFirstJsonValue(trimmed);
+    if (!json) throw error;
+
+    try {
+      const parsed = JSON.parse(json) as T;
+      console.error(`[wp] JSON valido seguito da contenuto extra su ${endpoint}. Il CMS va ripulito.`);
+      return parsed;
+    } catch {
+      throw error;
+    }
+  }
+}
+
+async function readWpResponse<T>(response: Response, endpoint: string): Promise<T> {
+  const body = await response.text();
+  return parseWpJson<T>(body, endpoint);
+}
+
 export async function wpFetch<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
   const response = await fetch(buildWpUrl(endpoint), {
     ...options,
@@ -26,7 +96,7 @@ export async function wpFetch<T>(endpoint: string, options: FetchOptions = {}): 
     throw new Error(`WordPress API error ${response.status} on ${endpoint}`);
   }
 
-  return (await response.json()) as T;
+  return readWpResponse<T>(response, endpoint);
 }
 
 export async function wpFetchWithMeta<T>(
@@ -49,7 +119,7 @@ export async function wpFetchWithMeta<T>(
   const totalPages = Number.parseInt(response.headers.get("X-WP-TotalPages") ?? "0", 10);
 
   return {
-    data: (await response.json()) as T,
+    data: await readWpResponse<T>(response, endpoint),
     totalPages,
     totalItems,
   };
