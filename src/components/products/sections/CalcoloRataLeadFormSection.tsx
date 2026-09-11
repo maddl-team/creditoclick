@@ -15,6 +15,12 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+  formatRedditoDimostrabileForSubmit,
+  RedditoDimostrabileField,
+  REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+  type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 
 type Step = 1 | 2 | 3;
 type Mensilita = "13" | "14";
@@ -23,7 +29,8 @@ type CategoriaProfessionale =
   | "dipendente_pubblico"
   | "dipendente_privato_grandi_aziende"
   | "dipendente_privato_pmi"
-  | "pensionato";
+  | "pensionato"
+  | "altro";
 type DurataMesi = "24" | "36" | "48" | "60" | "72" | "84" | "96" | "108" | "120";
 type AnzianitaLavorativa = "meno_2" | "2_5" | "oltre_5";
 type Trattenute = "si" | "no";
@@ -41,6 +48,8 @@ function categoriaLabel(value: CategoriaProfessionale) {
       return "Dipendente Privato PMI";
     case "pensionato":
       return "Pensionato";
+    case "altro":
+      return "Altro";
   }
 }
 
@@ -94,6 +103,7 @@ export function CalcoloRataLeadFormSection() {
   const [cellulare, setCellulare] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [orarioContatto, setOrarioContatto] = React.useState<OrarioContatto>("");
+  const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
   const [consensoPrivacy, setConsensoPrivacy] = React.useState(false);
   const [consensoMarketing, setConsensoMarketing] = React.useState(false);
 
@@ -126,6 +136,9 @@ export function CalcoloRataLeadFormSection() {
       if (!isValidPhone(cellulare)) {
         next.cellulare = PHONE_VALIDATION_MESSAGE;
       }
+      if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+        next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+      }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
 
@@ -155,6 +168,7 @@ export function CalcoloRataLeadFormSection() {
     const nextErrors = validateCurrentStep();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
 
     setIsSubmitting(true);
     setSubmitError(null);
@@ -181,6 +195,7 @@ export function CalcoloRataLeadFormSection() {
             anzianitaLavorativa: anzianitaLabel(anzianitaLavorativa),
             presenzaAltreTrattenute: presenzaTrattenute === "si" ? "Si" : "No",
             orarioPreferitoContatto: orarioLabel(orarioContatto),
+            redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
             consensoPrivacy: consensoPrivacy ? "Si" : "No",
             consensoMarketing: consensoMarketing ? "Si" : "No",
           },
@@ -309,6 +324,7 @@ export function CalcoloRataLeadFormSection() {
                       <option value="dipendente_privato_grandi_aziende">Dipendente Privato Grandi Aziende</option>
                       <option value="dipendente_privato_pmi">Dipendente Privato PMI</option>
                       <option value="pensionato">Pensionato</option>
+                      <option value="altro">Altro</option>
                     </select>
                     {errors.categoriaProfessionale ? <p className="text-xs text-red-600">{errors.categoriaProfessionale}</p> : null}
                   </label>
@@ -456,6 +472,12 @@ export function CalcoloRataLeadFormSection() {
                       <option value="sera">Sera</option>
                     </select>
                   </label>
+
+                  <RedditoDimostrabileField
+                    value={redditoDimostrabile}
+                    onChange={setRedditoDimostrabile}
+                    error={step3SubmitAttempted ? errors.redditoDimostrabile : undefined}
+                  />
 
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input

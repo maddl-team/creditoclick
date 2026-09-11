@@ -126,3 +126,8 @@ export const OG_CONTATTI: SiteOgImage = {
   src: "/images/creditoclick_contatti.jpeg",
   alt: "Contatta CreditoClick su WhatsApp",
 };
+
+export const OG_LAVORA_CON_NOI: SiteOgImage = {
+  src: "/images/creditoclick_chi-siamo.jpeg",
+  alt: "Lavora con noi in CreditoClick — filiale di Maglie",
+};

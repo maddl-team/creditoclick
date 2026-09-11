@@ -15,6 +15,12 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+  formatRedditoDimostrabileForSubmit,
+  RedditoDimostrabileField,
+  REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+  type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 
 type Step = 1 | 2 | 3 | 4;
 type FormaGiuridica = "srl" | "spa" | "sas" | "snc";
@@ -54,6 +60,7 @@ export function PmiContactSection() {
   const [cognome, setCognome] = React.useState("");
   const [cellulare, setCellulare] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
   const [consensoPrivacy, setConsensoPrivacy] = React.useState(false);
   const [consensoMarketing, setConsensoMarketing] = React.useState(false);
 
@@ -90,6 +97,9 @@ export function PmiContactSection() {
       if (!isValidPhone(cellulare)) {
         next.cellulare = PHONE_VALIDATION_MESSAGE;
       }
+      if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+        next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+      }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
 
@@ -119,6 +129,7 @@ export function PmiContactSection() {
     const nextErrors = validateCurrentStep();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
     setIsSubmitting(true);
     setSubmitError(null);
     setSubmitted(false);
@@ -142,6 +153,7 @@ export function PmiContactSection() {
             destinazioneTfr,
             motivazione,
             importoRichiesto: formatEUR(importoRichiesto),
+            redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
             consensoPrivacy: consensoPrivacy ? "Si" : "No",
             consensoMarketing: consensoMarketing ? "Si" : "No",
           },
@@ -404,6 +416,12 @@ export function PmiContactSection() {
                     />
                     {step4SubmitAttempted && errors.email ? <p className="text-xs text-red-600">{errors.email}</p> : null}
                   </label>
+
+                  <RedditoDimostrabileField
+                    value={redditoDimostrabile}
+                    onChange={setRedditoDimostrabile}
+                    error={step4SubmitAttempted ? errors.redditoDimostrabile : undefined}
+                  />
 
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input

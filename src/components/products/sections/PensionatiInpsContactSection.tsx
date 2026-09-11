@@ -15,6 +15,12 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+  formatRedditoDimostrabileForSubmit,
+  RedditoDimostrabileField,
+  REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+  type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 
 type Step = 1 | 2 | 3 | 4;
 type Pensione = "vecchiaia_anzianita" | "reversibilita" | "invalidita";
@@ -48,6 +54,7 @@ export function PensionatiInpsContactSection() {
   const [cellulare, setCellulare] = React.useState("");
   const [telefonoFisso, setTelefonoFisso] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
   const [consensoPrivacy, setConsensoPrivacy] = React.useState(false);
   const [consensoMarketing, setConsensoMarketing] = React.useState(false);
 
@@ -61,6 +68,9 @@ export function PensionatiInpsContactSection() {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
       if (!isValidPhone(cellulare)) next.cellulare = PHONE_VALIDATION_MESSAGE;
       if (telefonoFisso.trim().length > 0 && !isValidPhone(telefonoFisso)) next.fisso = PHONE_VALIDATION_MESSAGE;
+      if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+        next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+      }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
     return next;
@@ -89,6 +99,7 @@ export function PensionatiInpsContactSection() {
     const next = validateStep();
     setErrors(next);
     if (Object.keys(next).length) return;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
     setIsSubmitting(true);
     setSubmitError(null);
     setSubmitted(false);
@@ -109,6 +120,7 @@ export function PensionatiInpsContactSection() {
             tipologiaPensione,
             comunicazioneCedibilita,
             telefonoFisso: telefonoFisso.trim() ? formatPhoneForSubmit(telefonoFisso) : "Non indicato",
+            redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
             consensoPrivacy: consensoPrivacy ? "Si" : "No",
             consensoMarketing: consensoMarketing ? "Si" : "No",
           },
@@ -186,6 +198,11 @@ export function PensionatiInpsContactSection() {
                   <label htmlFor="pip-cellulare" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input id="pip-cellulare" type="tel" placeholder="Es. +39 327 1234567" value={cellulare} onChange={(e) => setCellulare(sanitizePhoneInput(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
                   <label htmlFor="pip-telefono-fisso" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Telefono fisso</span><input id="pip-telefono-fisso" type="tel" placeholder="Es. +39 0836 311982" value={telefonoFisso} onChange={(e) => setTelefonoFisso(sanitizePhoneInput(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.fisso && <p className="text-xs text-red-600">{errors.fisso}</p>}</label>
                   <label htmlFor="pip-email" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input id="pip-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
+                  <RedditoDimostrabileField
+                    value={redditoDimostrabile}
+                    onChange={setRedditoDimostrabile}
+                    error={step4SubmitAttempted ? errors.redditoDimostrabile : undefined}
+                  />
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
                     <span className="text-sm text-text-secondary">

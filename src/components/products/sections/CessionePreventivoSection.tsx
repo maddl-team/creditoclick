@@ -15,6 +15,12 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+  formatRedditoDimostrabileForSubmit,
+  RedditoDimostrabileField,
+  REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+  type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 
 type Step = 1 | 2 | 3;
 type Categoria = "pubblico" | "privato_grande" | "pmi" | "pensionato_inps";
@@ -82,6 +88,7 @@ export function CessionePreventivoSection() {
   const [cognome, setCognome] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [whatsapp, setWhatsapp] = React.useState("");
+  const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
   const [privacyOk, setPrivacyOk] = React.useState(false);
   const [marketingOk, setMarketingOk] = React.useState(false);
 
@@ -131,6 +138,9 @@ export function CessionePreventivoSection() {
     if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome (minimo 2 caratteri).";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci un indirizzo email valido.";
     if (!isValidPhone(whatsapp)) next.whatsapp = PHONE_VALIDATION_MESSAGE;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+      next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+    }
     if (!privacyOk) next.privacyOk = "Per procedere devi accettare la Privacy Policy.";
     return next;
   }
@@ -184,6 +194,7 @@ export function CessionePreventivoSection() {
     const next = validateStep3();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
     const payload = buildPayload();
     setIsSubmitting(true);
     setSubmitError(null);
@@ -200,7 +211,10 @@ export function CessionePreventivoSection() {
           phone: payload.contatti.whatsapp,
           email: payload.contatti.email,
           message: payload.richiesta.note ?? undefined,
-          data: payload,
+          data: {
+            ...payload,
+            redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
+          },
         }),
       });
       const result = (await response.json()) as { ok?: boolean; error?: string };
@@ -568,6 +582,12 @@ export function CessionePreventivoSection() {
                   />
                   {step3SubmitAttempted && errors.whatsapp ? <p className="text-xs text-red-600">{errors.whatsapp}</p> : null}
                 </label>
+
+                <RedditoDimostrabileField
+                  value={redditoDimostrabile}
+                  onChange={setRedditoDimostrabile}
+                  error={step3SubmitAttempted ? errors.redditoDimostrabile : undefined}
+                />
 
                 <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                   <input

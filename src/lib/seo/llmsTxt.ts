@@ -41,6 +41,7 @@ CreditoClick non è una banca né un comparatore automatico: promuove e colloca 
 
 - [Homepage](${base}/): Panoramica su prodotti, professioni, soluzioni e calcolatore rata in hero.
 - [Chi siamo](${base}/chi-siamo): Identità, metodo, conformità OAM, team e valori di CreditoClick.
+- [Lavora con noi](${base}/lavora-con-noi): Posizione aperta di Consulente Finanziario presso la filiale di Maglie (LE).
 - [Contatti](${base}/contatti): Canali WhatsApp, email, telefono, sede e processo dal primo messaggio all'accredito.
 - [Prodotti](${base}/prodotti): Confronto tra cessione del quinto, delega di pagamento e rinnovo.
 - [Professioni](${base}/professioni): Hub per categoria lavorativa e convenzioni dedicate.

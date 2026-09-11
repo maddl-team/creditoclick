@@ -11,13 +11,19 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+    formatRedditoDimostrabileForSubmit,
+    RedditoDimostrabileField,
+    REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+    type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 import { Button } from "../ui/Button";
 import { ContactFormSuccessPanel } from "../ui/ContactFormSuccessPanel";
 
 export function CalcForm() {
     const pathname = usePathname();
     type Step = 1 | 2;
-    type ProfessionCategory = "pubblico" | "privato" | "pensionato";
+    type ProfessionCategory = "pubblico" | "privato" | "pensionato" | "altro";
     type DurationMonths = 24 | 36 | 48 | 60 | 72 | 84 | 96 | 108 | 120;
 
     const CATEGORY_CONFIG: Record<ProfessionCategory, { taeg: number; tan: number; costFactor: number }> = {
@@ -25,6 +31,8 @@ export function CalcForm() {
         pensionato: { taeg: 7.4, tan: 6.3, costFactor: 0.08 },
         // Dipendente Privato non distingue PMI/grandi aziende: usiamo la stima "grandi aziende".
         privato: { taeg: 7.2, tan: 6.2, costFactor: 0.07 },
+        // Stima conservativa per profili non standard.
+        altro: { taeg: 7.4, tan: 6.4, costFactor: 0.09 },
     };
 
     const DURATIONS: readonly DurationMonths[] = [24, 36, 48, 60, 72, 84, 96, 108, 120];
@@ -64,6 +72,7 @@ export function CalcForm() {
     const [cognome, setCognome] = React.useState<string>("");
     const [email, setEmail] = React.useState<string>("");
     const [whatsApp, setWhatsApp] = React.useState<string>("");
+    const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
     const [privacyOk, setPrivacyOk] = React.useState<boolean>(false);
     const [marketingOk, setMarketingOk] = React.useState<boolean>(false);
 
@@ -78,6 +87,7 @@ export function CalcForm() {
         pubblico: "Dipendente Pubblico",
         privato: "Dipendente Privato",
         pensionato: "Pensionato",
+        altro: "Altro",
     };
 
     function validateStep1() {
@@ -111,6 +121,10 @@ export function CalcForm() {
 
         if (!isValidPhone(whatsApp)) next.whatsApp = PHONE_VALIDATION_MESSAGE;
 
+        if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+            next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+        }
+
         if (!privacyOk) next.privacyOk = "Per procedere devi accettare la Privacy Policy.";
 
         return next;
@@ -138,6 +152,7 @@ export function CalcForm() {
         }
 
         if (!stima) return;
+        if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
 
         const normalizedPhone = formatPhoneForSubmit(whatsApp);
         const maxAmount = Math.round(stima.netAmount);
@@ -163,6 +178,7 @@ export function CalcForm() {
                         stipendioNetto: formatEURCompact(stipendioNetto),
                         importoStimato: formatEURCompact(maxAmount),
                         rataStimata: `${formatEURCompact(approxMonthlyRate)}/mese`,
+                        redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
                         consensoPrivacy: privacyOk ? "Si" : "No",
                         consensoMarketing: marketingOk ? "Si" : "No",
                     },
@@ -289,6 +305,7 @@ export function CalcForm() {
                                 <option value="pubblico">Dipendente Pubblico</option>
                                 <option value="privato">Dipendente Privato</option>
                                 <option value="pensionato">Pensionato</option>
+                                <option value="altro">Altro</option>
                             </select>
                             {errors.categoria ? <p className="text-sm text-red-200">{errors.categoria}</p> : null}
                         </div>
@@ -388,6 +405,14 @@ export function CalcForm() {
                             />
                             {errors.whatsApp ? <p className="text-sm text-red-200">{errors.whatsApp}</p> : null}
                         </label>
+
+                        <RedditoDimostrabileField
+                            value={redditoDimostrabile}
+                            onChange={setRedditoDimostrabile}
+                            error={errors.redditoDimostrabile}
+                            legendClassName="text-base font-medium"
+                            errorClassName="text-sm text-red-200"
+                        />
 
                         <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 cursor-pointer">
                             <input

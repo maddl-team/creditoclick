@@ -15,6 +15,12 @@ import {
   PHONE_VALIDATION_MESSAGE,
   sanitizePhoneInput,
 } from "@/lib/contact/phone";
+import {
+  formatRedditoDimostrabileForSubmit,
+  RedditoDimostrabileField,
+  REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE,
+  type RedditoDimostrabile,
+} from "@/components/contact/RedditoDimostrabileField";
 
 type Step = 1 | 2 | 3 | 4;
 type Corpo = "carabinieri" | "polizia" | "gdf" | "esercito" | "marina" | "aeronautica" | "penitenziaria";
@@ -37,6 +43,7 @@ export function ForzeArmateContactSection() {
   const [cognome, setCognome] = React.useState("");
   const [cellulare, setCellulare] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
   const [consensoPrivacy, setConsensoPrivacy] = React.useState(false);
   const [consensoMarketing, setConsensoMarketing] = React.useState(false);
 
@@ -51,6 +58,9 @@ export function ForzeArmateContactSection() {
       if (cognome.trim().length < 2) next.cognome = "Inserisci il cognome.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = "Inserisci una email valida.";
       if (!isValidPhone(cellulare)) next.cellulare = PHONE_VALIDATION_MESSAGE;
+      if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") {
+        next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
+      }
       if (!consensoPrivacy) next.consensoPrivacy = "Per proseguire devi accettare la Privacy Policy.";
     }
     return next;
@@ -79,6 +89,7 @@ export function ForzeArmateContactSection() {
     const next = validateStep();
     setErrors(next);
     if (Object.keys(next).length) return;
+    if (redditoDimostrabile !== "si" && redditoDimostrabile !== "no") return;
     setIsSubmitting(true);
     setSubmitError(null);
     setSubmitted(false);
@@ -99,6 +110,7 @@ export function ForzeArmateContactSection() {
             anniServizio,
             stipendioNetto: `${stipendioNetto} EUR`,
             orarioContatto,
+            redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
             consensoPrivacy: consensoPrivacy ? "Si" : "No",
             consensoMarketing: consensoMarketing ? "Si" : "No",
           },
@@ -176,6 +188,11 @@ export function ForzeArmateContactSection() {
                   <label htmlFor="fam-cognome" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cognome</span><input id="fam-cognome" type="text" value={cognome} onChange={(e) => setCognome(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cognome && <p className="text-xs text-red-600">{errors.cognome}</p>}</label>
                   <label htmlFor="fam-cellulare" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Cellulare</span><input id="fam-cellulare" type="tel" placeholder="Es. +39 327 1234567" value={cellulare} onChange={(e) => setCellulare(sanitizePhoneInput(e.target.value))} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.cellulare && <p className="text-xs text-red-600">{errors.cellulare}</p>}</label>
                   <label htmlFor="fam-email" className="block space-y-2"><span className="text-sm font-semibold text-text-primary">Email</span><input id="fam-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3" />{step4SubmitAttempted && errors.email && <p className="text-xs text-red-600">{errors.email}</p>}</label>
+                  <RedditoDimostrabileField
+                    value={redditoDimostrabile}
+                    onChange={setRedditoDimostrabile}
+                    error={step4SubmitAttempted ? errors.redditoDimostrabile : undefined}
+                  />
                   <label className="flex items-start gap-3 rounded-xl border border-slate-300 bg-white p-4">
                     <input type="checkbox" checked={consensoPrivacy} onChange={(e) => setConsensoPrivacy(e.target.checked)} className="mt-1 accent-brand-indigo" />
                     <span className="text-sm text-text-secondary">
