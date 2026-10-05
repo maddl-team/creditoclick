@@ -1,6 +1,6 @@
 export const TRUSTPILOT_PROFILE = {
   url: "https://it.trustpilot.com/review/creditoclick.it",
-  reviewCount: 21,
+  reviewCount: "+30",
   displayRating: 5,
   stars: 5,
 } as const;

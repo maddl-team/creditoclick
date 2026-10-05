@@ -30,7 +30,7 @@ CreditoClick non è una banca né un comparatore automatico: promuove e colloca 
 - **Lingua**: italiano (Italia)
 - **Settore**: credito al consumo, cessione del quinto, mediazione creditizia
 - **Partner bancario**: IBL Istituto Bancario del Lavoro S.p.A. (monomandato)
-- **Recensioni verificate**: [Trustpilot](https://it.trustpilot.com/review/creditoclick.it) (21 recensioni, valutazione 5/5)
+- **Recensioni verificate**: [Trustpilot](https://it.trustpilot.com/review/creditoclick.it) (+30 recensioni, valutazione 5/5)
 - **Sitemap**: ${base}/sitemap.xml
 - **Contatto principale**: WhatsApp 0836 311982
 - **Email**: finnova@blu.it

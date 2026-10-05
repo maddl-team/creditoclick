@@ -5,6 +5,8 @@ import { formatContactDataAsHtml, formatContactDataAsText } from "@/lib/contact/
 import { notifyMakeContactWebhook, resolveSourcePage } from "@/lib/contact/makeWebhook";
 import { isValidPhone, PHONE_VALIDATION_MESSAGE } from "@/lib/contact/phone";
 
+export const runtime = "nodejs";
+
 type ContactPayload = {
   formType?: string;
   subject?: string;
@@ -16,8 +18,89 @@ type ContactPayload = {
   data?: Record<string, unknown>;
 };
 
+type AttachmentPayload = {
+  filename: string;
+  content: Buffer;
+  contentType?: string;
+};
+
+const MAX_DOCUMENT_BYTES = 5 * 1024 * 1024;
+const ALLOWED_DOCUMENT_EXTENSIONS = [".pdf", ".jpg", ".jpeg", ".png", ".doc", ".docx"] as const;
+const ALLOWED_DOCUMENT_MIME = new Set([
+  "application/pdf",
+  "image/jpeg",
+  "image/png",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
+
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+}
+
+function hasAllowedDocumentExtension(filename: string) {
+  const lower = filename.toLowerCase();
+  return ALLOWED_DOCUMENT_EXTENSIONS.some((ext) => lower.endsWith(ext));
+}
+
+function parseDataField(raw: FormDataEntryValue | null): Record<string, unknown> {
+  if (typeof raw !== "string" || !raw.trim()) return {};
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      return parsed as Record<string, unknown>;
+    }
+  } catch {
+    // Ignore invalid JSON and keep empty object.
+  }
+  return {};
+}
+
+async function parseContactRequest(request: Request): Promise<{
+  payload: ContactPayload;
+  attachment: AttachmentPayload | null;
+  attachmentError: string | null;
+}> {
+  const contentType = request.headers.get("content-type") ?? "";
+
+  if (contentType.includes("multipart/form-data")) {
+    const formData = await request.formData();
+    const document = formData.get("documentoReddito");
+    let attachment: AttachmentPayload | null = null;
+    let attachmentError: string | null = null;
+
+    if (document instanceof File && document.size > 0) {
+      if (!hasAllowedDocumentExtension(document.name) || (document.type && !ALLOWED_DOCUMENT_MIME.has(document.type))) {
+        attachmentError = "Formato documento non valido. Usa PDF, JPG, PNG, DOC o DOCX.";
+      } else if (document.size > MAX_DOCUMENT_BYTES) {
+        attachmentError = "Il documento supera i 5MB.";
+      } else {
+        attachment = {
+          filename: document.name,
+          content: Buffer.from(await document.arrayBuffer()),
+          contentType: document.type || undefined,
+        };
+      }
+    }
+
+    return {
+      payload: {
+        formType: String(formData.get("formType") ?? ""),
+        subject: String(formData.get("subject") ?? ""),
+        fullName: String(formData.get("fullName") ?? ""),
+        phone: String(formData.get("phone") ?? ""),
+        email: String(formData.get("email") ?? ""),
+        message: String(formData.get("message") ?? ""),
+        sourcePage: String(formData.get("sourcePage") ?? ""),
+        data: parseDataField(formData.get("data")),
+      },
+      attachment,
+      attachmentError,
+    };
+  }
+
+  const payload = (await request.json()) as ContactPayload;
+  return { payload, attachment: null, attachmentError: null };
 }
 
 export async function POST(request: Request) {
@@ -33,10 +116,16 @@ export async function POST(request: Request) {
   }
 
   let payload: ContactPayload;
+  let attachment: AttachmentPayload | null = null;
   try {
-    payload = (await request.json()) as ContactPayload;
+    const parsed = await parseContactRequest(request);
+    payload = parsed.payload;
+    attachment = parsed.attachment;
+    if (parsed.attachmentError) {
+      return NextResponse.json({ ok: false, error: parsed.attachmentError }, { status: 400 });
+    }
   } catch {
-    return NextResponse.json({ ok: false, error: "Payload JSON non valido." }, { status: 400 });
+    return NextResponse.json({ ok: false, error: "Payload non valido." }, { status: 400 });
   }
 
   const fullName = (payload.fullName ?? "").trim();
@@ -45,6 +134,11 @@ export async function POST(request: Request) {
   const formType = (payload.formType ?? "Form contatto").trim();
   const subject = (payload.subject ?? "").trim() || `Nuova richiesta dal sito - ${formType}`;
   const message = (payload.message ?? "").trim();
+  const data: Record<string, unknown> = { ...(payload.data ?? {}) };
+
+  if (attachment) {
+    data.documentoReddito = `Allegato: ${attachment.filename}`;
+  }
 
   if (!fullName || !phone) {
     return NextResponse.json(
@@ -65,15 +159,15 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const extraText = formatContactDataAsText(payload.data);
-  const extraHtml = formatContactDataAsHtml(payload.data);
+  const extraText = formatContactDataAsText(data);
+  const extraHtml = formatContactDataAsHtml(data);
   const confirmation = buildCustomerConfirmationEmail({
     fullName,
     phone,
     email,
     message,
     formType,
-    data: payload.data,
+    data,
   });
 
   try {
@@ -104,6 +198,17 @@ export async function POST(request: Request) {
           ${extraHtml}
         </div>
       `,
+      ...(attachment
+        ? {
+            attachments: [
+              {
+                filename: attachment.filename,
+                content: attachment.content,
+                contentType: attachment.contentType,
+              },
+            ],
+          }
+        : {}),
     });
 
     // Conferma al cliente: non blocca la richiesta se fallisce.
@@ -131,7 +236,7 @@ export async function POST(request: Request) {
       phone,
       email,
       message,
-      data: payload.data ?? {},
+      data,
       submittedAt: new Date().toISOString(),
       sourcePage,
       sourceUrl,

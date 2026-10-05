@@ -104,7 +104,7 @@ export const CHI_SIAMO_NUMERI = {
     { label: "Pratiche gestite", value: "oltre 15.000" },
     { label: "Categorie professionali servite", value: "oltre 10 comparti" },
     { label: "Tempo medio di risposta", value: "entro 24 ore lavorative" },
-    { label: "Valutazioni a 5 stelle", value: "21 su Trustpilot" },
+    { label: "Valutazioni a 5 stelle", value: "+30 su Trustpilot" },
   ],
 } as const;
 

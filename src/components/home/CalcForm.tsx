@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Upload } from "lucide-react";
 import { getLastAdUserDataConsent, pushContactLeadEvent } from "@/lib/analytics/dataLayer";
 import { IUBENDA_PRIVACY_POLICY_URL } from "@/config/iubenda";
 import {
@@ -19,6 +19,27 @@ import {
 } from "@/components/contact/RedditoDimostrabileField";
 import { Button } from "../ui/Button";
 import { ContactFormSuccessPanel } from "../ui/ContactFormSuccessPanel";
+
+const MAX_DOCUMENTO_BYTES = 5 * 1024 * 1024;
+const ALLOWED_DOCUMENTO_EXTENSIONS = [".pdf", ".jpg", ".jpeg", ".png", ".doc", ".docx"] as const;
+const ALLOWED_DOCUMENTO_MIME = new Set([
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
+
+function hasAllowedDocumentoExtension(filename: string) {
+    const lower = filename.toLowerCase();
+    return ALLOWED_DOCUMENTO_EXTENSIONS.some((ext) => lower.endsWith(ext));
+}
+
+function isAllowedDocumentoFile(file: File) {
+    if (!hasAllowedDocumentoExtension(file.name)) return false;
+    if (file.type && !ALLOWED_DOCUMENTO_MIME.has(file.type)) return false;
+    return true;
+}
 
 export function CalcForm() {
     const pathname = usePathname();
@@ -73,6 +94,7 @@ export function CalcForm() {
     const [email, setEmail] = React.useState<string>("");
     const [whatsApp, setWhatsApp] = React.useState<string>("");
     const [redditoDimostrabile, setRedditoDimostrabile] = React.useState<RedditoDimostrabile>("");
+    const [documentoReddito, setDocumentoReddito] = React.useState<File | null>(null);
     const [privacyOk, setPrivacyOk] = React.useState<boolean>(false);
     const [marketingOk, setMarketingOk] = React.useState<boolean>(false);
 
@@ -80,6 +102,7 @@ export function CalcForm() {
     const [isSubmitted, setIsSubmitted] = React.useState<boolean>(false);
     const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
     const [submitError, setSubmitError] = React.useState<string | null>(null);
+    const documentoInputRef = React.useRef<HTMLInputElement>(null);
 
     const stima = stipendioNetto >= 600 ? computeStima(stipendioNetto, categoria, numRate) : null;
 
@@ -125,6 +148,14 @@ export function CalcForm() {
             next.redditoDimostrabile = REDDITO_DIMOSTRABILE_VALIDATION_MESSAGE;
         }
 
+        if (documentoReddito) {
+            if (!isAllowedDocumentoFile(documentoReddito)) {
+                next.documentoReddito = "Formato non valido. Usa PDF, JPG, PNG, DOC o DOCX.";
+            } else if (documentoReddito.size > MAX_DOCUMENTO_BYTES) {
+                next.documentoReddito = "Il file supera i 5MB. Riduci le dimensioni e riprova.";
+            }
+        }
+
         if (!privacyOk) next.privacyOk = "Per procedere devi accettare la Privacy Policy.";
 
         return next;
@@ -161,29 +192,48 @@ export function CalcForm() {
         setSubmitError(null);
         setIsSubmitted(false);
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    formType: "Calcolo rata homepage",
-                    sourcePage: pathname,
-                    subject: "Nuova richiesta da calcolatore homepage",
-                    fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
-                    phone: normalizedPhone,
-                    email: email.trim(),
-                    data: {
-                        categoria: professionLabel[categoria],
-                        importoDesiderato: formatEURCompact(importoDesiderato),
-                        numeroRate: `${numRate} mesi`,
-                        stipendioNetto: formatEURCompact(stipendioNetto),
-                        importoStimato: formatEURCompact(maxAmount),
-                        rataStimata: `${formatEURCompact(approxMonthlyRate)}/mese`,
-                        redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
-                        consensoPrivacy: privacyOk ? "Si" : "No",
-                        consensoMarketing: marketingOk ? "Si" : "No",
-                    },
-                }),
-            });
+            const data = {
+                categoria: professionLabel[categoria],
+                importoDesiderato: formatEURCompact(importoDesiderato),
+                numeroRate: `${numRate} mesi`,
+                stipendioNetto: formatEURCompact(stipendioNetto),
+                importoStimato: formatEURCompact(maxAmount),
+                rataStimata: `${formatEURCompact(approxMonthlyRate)}/mese`,
+                redditoDimostrabile: formatRedditoDimostrabileForSubmit(redditoDimostrabile),
+                consensoPrivacy: privacyOk ? "Si" : "No",
+                consensoMarketing: marketingOk ? "Si" : "No",
+            };
+
+            let response: Response;
+            if (documentoReddito) {
+                const body = new FormData();
+                body.append("formType", "Calcolo rata homepage");
+                body.append("sourcePage", pathname);
+                body.append("subject", "Nuova richiesta da calcolatore homepage");
+                body.append("fullName", `${nome.trim()} ${cognome.trim()}`.trim());
+                body.append("phone", normalizedPhone);
+                body.append("email", email.trim());
+                body.append("data", JSON.stringify(data));
+                body.append("documentoReddito", documentoReddito, documentoReddito.name);
+                response = await fetch("/api/contact", {
+                    method: "POST",
+                    body,
+                });
+            } else {
+                response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        formType: "Calcolo rata homepage",
+                        sourcePage: pathname,
+                        subject: "Nuova richiesta da calcolatore homepage",
+                        fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
+                        phone: normalizedPhone,
+                        email: email.trim(),
+                        data,
+                    }),
+                });
+            }
             const result = (await response.json()) as { ok?: boolean; error?: string };
             if (!response.ok || !result.ok) {
                 setSubmitError(result.error ?? "Invio non riuscito. Riprova tra poco.");
@@ -413,6 +463,62 @@ export function CalcForm() {
                             legendClassName="text-base font-medium"
                             errorClassName="text-sm text-red-200"
                         />
+
+                        <div className="space-y-2">
+                            <span className="text-base text-text-primary font-medium">
+                                Carica la tua busta paga o cedolino della pensione{" "}
+                                <span className="font-normal text-text-secondary">(facoltativo)</span>
+                            </span>
+                            <input
+                                ref={documentoInputRef}
+                                id="home-calc-documento"
+                                type="file"
+                                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,application/pdf,image/jpeg,image/png,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                className="sr-only"
+                                onChange={(e) => {
+                                    const file = e.target.files?.[0] ?? null;
+                                    setDocumentoReddito(file);
+                                }}
+                            />
+                            <button
+                                type="button"
+                                onClick={() => documentoInputRef.current?.click()}
+                                className="flex w-full items-center justify-between gap-3 rounded-xl border border-dashed border-slate-300 bg-white px-4 py-4 text-left transition-colors hover:border-brand-indigo/40 hover:bg-brand-indigo/[0.02]"
+                            >
+                                <span className="min-w-0">
+                                    <span className="block text-sm font-medium text-text-primary truncate">
+                                        {documentoReddito
+                                            ? documentoReddito.name
+                                            : "Carica PDF, JPG, PNG o DOCX (max 5MB)"}
+                                    </span>
+                                    {documentoReddito ? (
+                                        <span className="mt-1 block text-xs text-text-secondary">
+                                            {(documentoReddito.size / (1024 * 1024)).toFixed(2)} MB
+                                        </span>
+                                    ) : (
+                                        <span className="mt-1 block text-xs text-text-secondary">
+                                            Campo facoltativo: puoi inviare la richiesta anche senza allegato
+                                        </span>
+                                    )}
+                                </span>
+                                <Upload className="h-5 w-5 shrink-0 text-brand-indigo" aria-hidden />
+                            </button>
+                            {documentoReddito ? (
+                                <button
+                                    type="button"
+                                    className="text-xs text-brand-indigo hover:underline"
+                                    onClick={() => {
+                                        setDocumentoReddito(null);
+                                        if (documentoInputRef.current) documentoInputRef.current.value = "";
+                                    }}
+                                >
+                                    Rimuovi file
+                                </button>
+                            ) : null}
+                            {errors.documentoReddito ? (
+                                <p className="text-sm text-red-200">{errors.documentoReddito}</p>
+                            ) : null}
+                        </div>
 
                         <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 cursor-pointer">
                             <input
