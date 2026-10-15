@@ -42,9 +42,9 @@ import {
   CONTATTI_PROCESSO,
   CONTATTI_RECLAMI,
 } from "@/content/contatti";
+import { GOOGLE_MAPS_EMBED_SRC, GOOGLE_MAPS_PLACE_URL, OFFICE_ADDRESS } from "@/config/maps";
+import { WHATSAPP_URL } from "@/config/whatsapp";
 
-const WHATSAPP_URL =
-  "https://wa.me/39836311982?text=Ciao%2C%20vorrei%20una%20consulenza%20gratuita%20sulla%20cessione%20del%20quinto.";
 const CONTATTI_PRIMO_MESSAGGIO_ICONS = [BriefcaseBusiness, BadgeEuro, HandCoins, CircleAlert] as const;
 const CONTATTI_PROCESSO_ICONS = [MessagesSquare, SearchCheck, FileCheck2, FileSignature, Route] as const;
 const CONTATTI_ORARI_ICONS = [Phone, MessageCircle, Mail, Timer] as const;
@@ -85,13 +85,51 @@ export function ContattiPageContent() {
                 key={item.channel}
                 icon={getContactIcon(item.channel)}
                 title={item.channel}
-                subtitle={<p className="text-text-primary font-medium text-sm">{item.detail}</p>}
+                subtitle={
+                  <div className="text-text-primary font-medium text-sm space-y-0.5">
+                    {"details" in item && Array.isArray(item.details) ? (
+                      item.details.map((line) => <p key={line}>{line}</p>)
+                    ) : (
+                      <p>{item.detail}</p>
+                    )}
+                  </div>
+                }
                 theme="indigo"
               >
                 {item.note}
               </FeatureItem>
             ))}
           </div>
+        </div>
+      </Section>
+
+      <Section className="bg-surface-subtle border-t border-slate-200/60">
+        <div className="space-y-8">
+          <SectionIntro
+            badge="Sede"
+            title="Dove trovarci"
+            description={`Sede operativa in ${OFFICE_ADDRESS.display}. Prenota un appuntamento via WhatsApp se preferisci un incontro in presenza.`}
+          />
+          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/40">
+            <iframe
+              title="Mappa Google — CreditoClick Maglie"
+              src={GOOGLE_MAPS_EMBED_SRC}
+              className="h-[320px] w-full border-0 md:h-[420px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <p className="text-sm text-text-secondary">
+            <a
+              href={GOOGLE_MAPS_PLACE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-brand-indigo hover:text-brand-indigo/80"
+            >
+              Apri la scheda su Google Maps
+            </a>
+          </p>
         </div>
       </Section>
 

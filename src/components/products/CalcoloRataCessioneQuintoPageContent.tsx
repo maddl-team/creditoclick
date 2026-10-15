@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Calculator } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -27,8 +29,7 @@ import {
   CRCQ_METODO,
 } from "@/content/calcoloRataCessioneQuinto";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
 

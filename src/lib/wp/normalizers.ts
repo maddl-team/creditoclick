@@ -14,12 +14,13 @@ const BLACKLIST_PATHS = [
 
 export function stripHtml(html = "", limit = 200): string {
   if (!html) return "";
-  return html
-    .replace(/<[^>]*>?/gm, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, limit);
+  return decodeHtmlEntities(
+    html
+      .replace(/<[^>]*>?/gm, " ")
+      .replace(/&nbsp;/g, " ")
+      .replace(/\s+/g, " ")
+      .trim(),
+  ).slice(0, limit);
 }
 
 function slugify(text: string): string {
@@ -33,19 +34,51 @@ function slugify(text: string): string {
     .replace(/-+$/, "");
 }
 
-function decodeHtmlEntities(text: string): string {
-  return text
-    .replace(/&#8217;/g, "'")
-    .replace(/&#8211;/g, "–")
-    .replace(/&#8220;/g, "“")
-    .replace(/&#8221;/g, "”")
-    .replace(/&#038;/g, "&")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&hellip;/g, "…");
+/**
+ * Decodes common WP HTML entities (also without trailing `;`, and double-encoded).
+ * Safe for plain text and for HTML bodies that only use typographic entities.
+ */
+export function decodeHtmlEntities(text: string): string {
+  if (!text) return "";
+
+  let decoded = text;
+  for (let pass = 0; pass < 3; pass += 1) {
+    const next = decoded
+      .replace(/&#8217;?/g, "'")
+      .replace(/&#8216;?/g, "'")
+      .replace(/&#8211;?/g, "–")
+      .replace(/&#8212;?/g, "—")
+      .replace(/&#8220;?/g, "“")
+      .replace(/&#8221;?/g, "”")
+      .replace(/&#038;?/g, "&")
+      .replace(/&#160;?/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&rsquo;/gi, "'")
+      .replace(/&lsquo;/gi, "'")
+      .replace(/&rdquo;/gi, "”")
+      .replace(/&ldquo;/gi, "“")
+      .replace(/&mdash;/gi, "—")
+      .replace(/&ndash;/gi, "–")
+      .replace(/&hellip;/gi, "…")
+      .replace(/&amp;/gi, "&")
+      .replace(/&quot;/gi, '"')
+      .replace(/&apos;/gi, "'")
+      .replace(/&#x27;?/gi, "'")
+      .replace(/&#39;?/g, "'")
+      .replace(/&#x([0-9a-f]+);?/gi, (_, hex: string) => {
+        const code = Number.parseInt(hex, 16);
+        return Number.isFinite(code) ? String.fromCodePoint(code) : _;
+      })
+      .replace(/&#(\d+);?/g, (_, dec: string) => {
+        const code = Number.parseInt(dec, 10);
+        return Number.isFinite(code) ? String.fromCodePoint(code) : _;
+      });
+
+    if (next === decoded) break;
+    decoded = next;
+  }
+
+  return decoded;
 }
 
 export function normalizeHtmlContent(html: string): string {
@@ -76,12 +109,15 @@ export function normalizeHtmlContent(html: string): string {
     }
   });
 
-  return linksRewritten.replace(/<img([^>]*)>/g, (match, attrs) => {
+  const withLazyImages = linksRewritten.replace(/<img([^>]*)>/g, (match, attrs) => {
     let nextAttrs = attrs;
     if (!attrs.includes("loading=")) nextAttrs += ' loading="lazy"';
     if (!attrs.includes("decoding=")) nextAttrs += ' decoding="async"';
     return `<img${nextAttrs}>`;
   });
+
+  // Decode typographic entities in HTML so titles/body never show &#8217; literally.
+  return decodeHtmlEntities(withLazyImages);
 }
 
 function injectHeadingIds(html: string): { content: string; headings: BlogHeading[] } {
@@ -109,10 +145,12 @@ export function normalizePost(post: WPPost): BlogPost {
   const baseContent = normalizeHtmlContent(post.content.rendered);
   const { content, headings } = injectHeadingIds(baseContent);
 
+  const title = decodeHtmlEntities(post.title.rendered);
+
   return {
     id: post.id,
     slug: post.slug,
-    title: post.title.rendered,
+    title,
     content,
     excerptHtml: normalizeHtmlContent(post.excerpt.rendered),
     excerptText: stripHtml(post.excerpt.rendered, 180),
@@ -120,21 +158,21 @@ export function normalizePost(post: WPPost): BlogPost {
     featuredImage: featured
       ? {
           url: featured.source_url,
-          alt: featured.alt_text || post.title.rendered,
+          alt: decodeHtmlEntities(featured.alt_text || title),
           width: featured.media_details?.width ?? 1200,
           height: featured.media_details?.height ?? 630,
         }
       : undefined,
     categories: categories.map((category) => ({
       id: category.id,
-      name: category.name,
+      name: decodeHtmlEntities(category.name),
       slug: category.slug,
     })),
     headings,
     author: author
       ? {
-          name: author.name,
-          description: author.description || "",
+          name: decodeHtmlEntities(author.name),
+          description: decodeHtmlEntities(author.description || ""),
           avatarUrl: author.avatar_urls?.["96"] || author.avatar_urls?.["48"] || author.avatar_urls?.["24"],
         }
       : undefined,
@@ -145,9 +183,9 @@ export function normalizePost(post: WPPost): BlogPost {
 export function normalizeCategory(category: WPCategory): BlogCategory {
   return {
     id: category.id,
-    name: category.name,
+    name: decodeHtmlEntities(category.name),
     slug: category.slug,
-    description: category.description,
+    description: decodeHtmlEntities(category.description),
     count: category.count,
     yoast: category.yoast_head_json,
   };

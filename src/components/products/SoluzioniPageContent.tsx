@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Target } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -23,8 +25,7 @@ import {
   SOLUZIONI_PROGETTI,
 } from "@/content/soluzioni";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function SoluzioniPageContent() {

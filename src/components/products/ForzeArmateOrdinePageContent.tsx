@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, ShieldCheck, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -30,7 +32,7 @@ import {
   FAO_TRATTAMENTO,
 } from "@/content/forzeArmateOrdine";
 
-const WHATSAPP_URL = "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const DELEGA_URL = "/prodotti/delega-di-pagamento";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";

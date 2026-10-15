@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Calculator, Heart } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -34,8 +36,7 @@ import {
   PIP_VANTAGGI,
 } from "@/content/pensionatiInps";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";

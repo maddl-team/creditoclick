@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Calculator, Home } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -29,8 +31,7 @@ import {
   PAMC_SPESE,
 } from "@/content/prestitoAnticipoMutuoCasa";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CESSIONE_URL = "/prodotti/cessione-del-quinto";
 

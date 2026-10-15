@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, MessageCircle, Star } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { CalloutSection } from "@/components/ui/CalloutSection";
@@ -31,8 +33,7 @@ import {
   CHI_SIAMO_VALORI,
 } from "@/content/chiSiamo";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 
 export function ChiSiamoPageContent() {
   return (

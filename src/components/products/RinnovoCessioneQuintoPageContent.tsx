@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Calculator, CheckCircle2, RefreshCcw } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
@@ -28,8 +30,7 @@ import {
   RCQ_REQUISITI,
 } from "@/content/rinnovoCessioneQuinto";
 
-const WHATSAPP_RENEWAL_URL =
-  "/contatti";
+const WHATSAPP_RENEWAL_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CONSOLIDAMENTO_DEBITI_URL = "/soluzioni/consolidamento-debiti";
 const DELEGA_DI_PAGAMENTO_URL = "/prodotti/delega-di-pagamento";

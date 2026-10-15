@@ -32,8 +32,8 @@ CreditoClick non è una banca né un comparatore automatico: promuove e colloca 
 - **Partner bancario**: IBL Istituto Bancario del Lavoro S.p.A. (monomandato)
 - **Recensioni verificate**: [Trustpilot](https://it.trustpilot.com/review/creditoclick.it) (+30 recensioni, valutazione 5/5)
 - **Sitemap**: ${base}/sitemap.xml
-- **Contatto principale**: WhatsApp 0836 311982
-- **Email**: finnova@blu.it
+- **Contatto principale**: WhatsApp 327 662 5456
+- **Email**: finnova@blu.it · info@creditoclick.it
 - **Telefono**: 0836 311982 (lun–ven 9-13 | 15.30-18)
 - **Sede**: Piazza Oronzo de Donno, 10 — Maglie (LE)
 

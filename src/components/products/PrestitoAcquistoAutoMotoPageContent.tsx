@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, Bike, Calculator } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -31,8 +33,7 @@ import {
   PAAM_USATO,
 } from "@/content/prestitoAcquistoAutoMoto";
 
-const WHATSAPP_URL =
-  "/contatti";
+const WHATSAPP_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const CRIF_URL = "/soluzioni/cattivi-pagatori-segnalati-crif";
 

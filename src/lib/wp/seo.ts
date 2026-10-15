@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BLOG_CATEGORY_PATH, BLOG_PATH, FRONTEND_URL, WORDPRESS_URL } from "@/lib/wp/config";
 import { BlogCategory, BlogPost, YoastHeadJson } from "@/lib/wp/types";
-import { stripHtml } from "@/lib/wp/normalizers";
+import { decodeHtmlEntities, stripHtml } from "@/lib/wp/normalizers";
 
 function toAbsolute(path: string): string {
   return `${FRONTEND_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -77,8 +77,10 @@ export function getPostMetadata(post: BlogPost): Metadata {
   const canonical = normalizePostUrl(yoast.canonical, post.slug);
   const ogUrl = normalizePostUrl(yoast.og_url || yoast.canonical, post.slug);
 
-  const title = yoast.title || `${post.title} | CreditoClick`;
-  const description = yoast.description || stripHtml(post.excerptText || post.content, 160);
+  const title = decodeHtmlEntities(yoast.title || `${post.title} | CreditoClick`);
+  const description = decodeHtmlEntities(
+    yoast.description || stripHtml(post.excerptText || post.content, 160),
+  );
 
   const images =
     yoast.og_image && yoast.og_image.length > 0
@@ -108,8 +110,8 @@ export function getPostMetadata(post: BlogPost): Metadata {
       follow: yoast.robots?.follow !== "nofollow",
     },
     openGraph: {
-      title: yoast.og_title || title,
-      description: yoast.og_description || description,
+      title: decodeHtmlEntities(yoast.og_title || title),
+      description: decodeHtmlEntities(yoast.og_description || description),
       url: ogUrl,
       siteName: "CreditoClick",
       locale: yoast.og_locale || "it_IT",
@@ -118,8 +120,8 @@ export function getPostMetadata(post: BlogPost): Metadata {
     },
     twitter: {
       card: (yoast.twitter_card as "summary" | "summary_large_image") || "summary_large_image",
-      title: yoast.og_title || title,
-      description: yoast.og_description || description,
+      title: decodeHtmlEntities(yoast.og_title || title),
+      description: decodeHtmlEntities(yoast.og_description || description),
       images: images.length > 0 ? [images[0].url] : undefined,
     },
   };

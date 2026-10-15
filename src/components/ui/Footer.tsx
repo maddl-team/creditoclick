@@ -8,6 +8,7 @@ import {
   FOOTER_COOKIE_POLICY_HREF,
   FOOTER_PRIVACY_POLICY_HREF,
 } from "@/config/iubenda";
+import { AgencyCredit } from "./AgencyCredit";
 import { Button } from "./Button";
 
 type FooterLinkItem = { label: string; href: string; external?: boolean };
@@ -62,7 +63,6 @@ const FOOTER_LINKS: FooterColumn[] = [
             { label: "Contatti", href: "/contatti" },
             { label: "Privacy Policy", href: FOOTER_PRIVACY_POLICY_HREF, external: true },
             { label: "Cookie Policy", href: FOOTER_COOKIE_POLICY_HREF, external: true },
-            { label: "Termini e Condizioni", href: "/contatti" },
         ],
     },
 ];
@@ -138,15 +138,34 @@ export function Footer() {
                         </div>
                     ))}
                 </div>
-                <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-200/50 text-xs text-text-secondary gap-4">
-                    <p>© 2026 FINNOVA S.R.L. Tutti i diritti riservati. | Iscrizione OAM: A17849</p>
-                    <div className="flex items-center gap-6">
-                        <Link href="/chi-siamo" className="hover:text-brand-indigo transition-colors">Chi siamo</Link>
-                        <Link href="/lavora-con-noi" className="hover:text-brand-indigo transition-colors">Lavora con noi</Link>
-                        <Link href="/blog" className="hover:text-brand-indigo transition-colors">Blog</Link>
-                        <Link href="/contatti" className="hover:text-brand-indigo transition-colors">Contatti</Link>
-                        <Link href="/soluzioni" className="hover:text-brand-indigo transition-colors">Soluzioni</Link>
+                <div className="flex flex-col gap-6 pt-8 border-t border-slate-200/50 text-xs text-text-secondary">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <p>© 2026 FINNOVA S.R.L. Tutti i diritti riservati. | Iscrizione OAM: A17849</p>
+                        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                            <Link href="/chi-siamo" className="hover:text-brand-indigo transition-colors">Chi siamo</Link>
+                            <Link href="/lavora-con-noi" className="hover:text-brand-indigo transition-colors">Lavora con noi</Link>
+                            <Link href="/blog" className="hover:text-brand-indigo transition-colors">Blog</Link>
+                            <Link href="/contatti" className="hover:text-brand-indigo transition-colors">Contatti</Link>
+                            <Link href="/soluzioni" className="hover:text-brand-indigo transition-colors">Soluzioni</Link>
+                            <a
+                                href={FOOTER_PRIVACY_POLICY_HREF}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-brand-indigo transition-colors"
+                            >
+                                Privacy
+                            </a>
+                            <a
+                                href={FOOTER_COOKIE_POLICY_HREF}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-brand-indigo transition-colors"
+                            >
+                                Cookie
+                            </a>
+                        </div>
                     </div>
+                    <AgencyCredit />
                 </div>
             </div>
         </footer>

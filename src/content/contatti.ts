@@ -39,12 +39,13 @@ export const CONTATTI_CANALI = {
   contacts: [
     {
       channel: "WhatsApp (canale principale)",
-      detail: "0836 311982",
+      detail: "327 662 5456",
       note: "Disponibile 7 giorni su 7 per ricevere messaggi. Le risposte vengono fornite entro 24 ore lavorative dal lunedì al venerdì. Per messaggi inviati nel weekend, la risposta viene garantita entro il lunedì mattina.",
     },
     {
       channel: "Email",
       detail: "finnova@blu.it",
+      details: ["finnova@blu.it", "info@creditoclick.it"],
       note: "Per comunicazioni formali, invio di documentazione o richieste che preferisci gestire via posta elettronica. Tempo di risposta: entro 48 ore lavorative.",
     },
     {
@@ -138,7 +139,9 @@ export const CONTATTI_ISTITUZIONALI = {
     ["Sede legale", "Piazza Oronzo de Donno, 10 - Maglie (LE)"],
     ["Iscrizione OAM", "A17849"],
     ["Email istituzionale", "finnova@blu.it"],
+    ["Email", "info@creditoclick.it"],
     ["Telefono", "0836 311982"],
+    ["WhatsApp", "327 662 5456"],
     ["Orari di apertura (lun–ven)", CONTATTI_ORARI_APERTURA],
     ["PEC", "finnova@pec.it"],
   ] as const,
@@ -165,8 +168,8 @@ export const CONTATTI_CTA = {
 } as const;
 
 export const CONTATTI_NOTE_REDAZIONALI = [
-  ["Numero WhatsApp", "0836 311982"],
-  ["Indirizzo email", "finnova@blu.it (email operativa; verificare eventuale casella dedicata ai reclami)"],
+  ["Numero WhatsApp", "327 662 5456"],
+  ["Indirizzo email", "finnova@blu.it · info@creditoclick.it"],
   ["Numero di telefono", "0836 311982 (centralino; orari lun–ven come riga Orari)"],
   [
     "Orari di apertura",

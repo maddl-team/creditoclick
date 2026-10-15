@@ -24,8 +24,8 @@ export default function ContattiPage() {
     "@id": organizationId,
     name: "CreditoClick",
     url: siteUrl,
-    email: "finnova@blu.it",
-    telephone: "+390836311982",
+    email: ["finnova@blu.it", "info@creditoclick.it"],
+    telephone: ["+393276625456", "+390836311982"],
     openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
   };
 
@@ -38,8 +38,24 @@ export default function ContattiPage() {
     description: CONTATTI_META.description,
     areaServed: "IT",
     inLanguage: "it-IT",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Piazza Oronzo de Donno, 10",
+      addressLocality: "Maglie",
+      addressRegion: "LE",
+      postalCode: "73024",
+      addressCountry: "IT",
+    },
     openingHoursSpecification: [...SCHEMA_ORARI_APERTURA_LD],
     contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        telephone: "+393276625456",
+        email: "info@creditoclick.it",
+        availableLanguage: ["it-IT"],
+        areaServed: "IT",
+      },
       {
         "@type": "ContactPoint",
         contactType: "customer support",

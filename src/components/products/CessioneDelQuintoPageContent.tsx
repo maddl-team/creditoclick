@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import {
   ArrowRight,
   BarChart3,
@@ -40,8 +42,7 @@ import {
 
 const CATEGORY_ICONS = [Building2, Users, GraduationCap] as const;
 const EEAT_ICONS = [FileCheck, Scale] as const;
-const WHATSAPP_CESSIONE_URL =
-  "/contatti";
+const WHATSAPP_CESSIONE_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 
 export function CessioneDelQuintoPageContent() {

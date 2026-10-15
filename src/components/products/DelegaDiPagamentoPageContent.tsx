@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_URL as SHARED_WHATSAPP_URL } from "@/config/whatsapp";
+
 import { ArrowRight, BarChart3, Building2, CheckCircle2, GraduationCap, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FaqSection } from "@/components/ui/FaqSection";
@@ -28,8 +30,7 @@ import {
 
 const REQUIREMENT_ICONS = [ShieldCheck, Building2, BarChart3] as const;
 const CATEGORY_ICONS = [Users, GraduationCap] as const;
-const WHATSAPP_DELEGA_URL =
-  "/contatti";
+const WHATSAPP_DELEGA_URL = SHARED_WHATSAPP_URL;
 const CALCOLO_RATA_URL = "/strumenti/calcolo-rata-cessione-quinto";
 const RINNOVO_URL = "/prodotti/rinnovo-cessione-quinto";
 
