@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/ui/Navbar";
-import { Footer } from "@/components/ui/Footer";
-import { LegalPreFooter } from "@/components/ui/LegalPreFooter";
 import { ConsentModeBootstrap } from "@/components/analytics/ConsentModeBootstrap";
 import { IubendaCookieSolution } from "@/components/analytics/IubendaCookieSolution";
 import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
@@ -21,7 +18,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.creditoclick.it
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "CreditoClick | Prestiti Online Veloci e Sicuri",
-  description: "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
+  description:
+    "Cessione del quinto, rinnovi e consolidamento debiti: CreditoClick ti trova la soluzione giusta in 24h. Richiedi una consulenza gratuita ora.",
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -75,9 +73,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://cs.iubenda.com" />
       </head>
-      <body
-        className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}
-      >
+      <body className={`${inter.variable} font-sans antialiased bg-white text-text-primary h-full`}>
         <ConsentModeBootstrap />
         <IubendaCookieSolution />
         {!marketingScriptsDisabled ? (
@@ -88,14 +84,7 @@ export default function RootLayout({
             </Suspense>
           </>
         ) : null}
-        <div className="flex flex-col min-h-screen relative w-full">
-          <Navbar />
-          <main className="flex-1 pt-[var(--site-header-height,7.5rem)]">
-            {children}
-          </main>
-          <LegalPreFooter />
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );
