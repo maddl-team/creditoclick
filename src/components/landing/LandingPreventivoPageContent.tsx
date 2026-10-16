@@ -26,7 +26,7 @@ import {
   LANDING_STEPS,
   LANDING_FAQ,
 } from "@/content/landingPreventivo";
-import { LandingPreventivoForm } from "./LandingPreventivoForm";
+import { CalcForm } from "@/components/home/CalcForm";
 import { LandingSocialProofToast } from "./LandingSocialProofToast";
 
 const ADVANTAGE_ICONS = [Wallet, FileCheck2, UserRound, Laptop] as const;
@@ -101,8 +101,14 @@ export function LandingPreventivoPageContent() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 xl:col-span-5 lg:sticky lg:top-24">
-            <LandingPreventivoForm />
+          <div
+            id="form-preventivo"
+            className="lg:col-span-6 xl:col-span-5 lg:sticky lg:top-24 overflow-hidden rounded-2xl bg-brand-indigo shadow-xl"
+          >
+            <CalcForm
+              formType="Landing preventivo dipendenti Ads"
+              subject="Nuova richiesta landing preventivo dipendenti"
+            />
           </div>
         </div>
       </Section>

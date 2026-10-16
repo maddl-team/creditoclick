@@ -41,7 +41,15 @@ function isAllowedDocumentoFile(file: File) {
     return true;
 }
 
-export function CalcForm() {
+type CalcFormProps = {
+    formType?: string;
+    subject?: string;
+};
+
+export function CalcForm({
+    formType = "Calcolo rata homepage",
+    subject = "Nuova richiesta da calcolatore homepage",
+}: CalcFormProps = {}) {
     const pathname = usePathname();
     type Step = 1 | 2;
     type ProfessionCategory = "pubblico" | "privato" | "pensionato" | "altro";
@@ -207,9 +215,9 @@ export function CalcForm() {
             let response: Response;
             if (documentoReddito) {
                 const body = new FormData();
-                body.append("formType", "Calcolo rata homepage");
+                body.append("formType", formType);
                 body.append("sourcePage", pathname);
-                body.append("subject", "Nuova richiesta da calcolatore homepage");
+                body.append("subject", subject);
                 body.append("fullName", `${nome.trim()} ${cognome.trim()}`.trim());
                 body.append("phone", normalizedPhone);
                 body.append("email", email.trim());
@@ -224,9 +232,9 @@ export function CalcForm() {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        formType: "Calcolo rata homepage",
+                        formType,
                         sourcePage: pathname,
-                        subject: "Nuova richiesta da calcolatore homepage",
+                        subject,
                         fullName: `${nome.trim()} ${cognome.trim()}`.trim(),
                         phone: normalizedPhone,
                         email: email.trim(),
@@ -241,7 +249,7 @@ export function CalcForm() {
             }
             pushContactLeadEvent(
                 {
-                    formSource: "Calcolo rata homepage",
+                    formSource: formType,
                     email: email.trim(),
                     phone: normalizedPhone,
                 },
