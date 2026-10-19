@@ -24,7 +24,9 @@ import {
   LANDING_STEPS,
   LANDING_FAQ,
 } from "@/content/landingPreventivo";
+import { ChiSiamoTeamMembersGrid } from "@/components/about/ChiSiamoTeamSection";
 import { CalcForm } from "@/components/home/CalcForm";
+import { CHI_SIAMO_TEAM } from "@/content/chiSiamo";
 import { LandingHeroReviewBadge } from "./LandingHeroReviewBadge";
 import { LandingSocialProofToast } from "./LandingSocialProofToast";
 import { LandingTestimonialsSection } from "./LandingTestimonialsSection";
@@ -168,6 +170,13 @@ export function LandingPreventivoPageContent() {
               </FeatureItem>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 space-y-8 md:mt-16 md:space-y-10">
+          <p className="max-w-3xl text-lg leading-relaxed text-text-secondary">
+            {CHI_SIAMO_TEAM.intro[1]}
+          </p>
+          <ChiSiamoTeamMembersGrid members={CHI_SIAMO_TEAM.members} />
         </div>
       </Section>
 

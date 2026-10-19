@@ -75,6 +75,18 @@ const ACCENT_ROTATION = [
   "ring-violet-400/30",
 ] as const;
 
+export function ChiSiamoTeamMembersGrid({ members }: { members: readonly TeamMember[] }) {
+  return (
+    <ul className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
+      {members.map((member, i) => (
+        <li key={member.id}>
+          <TeamMemberCard member={member} accentClass={ACCENT_ROTATION[i % ACCENT_ROTATION.length]} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function ChiSiamoTeamSection({
   badge,
   title,
@@ -104,13 +116,7 @@ export function ChiSiamoTeamSection({
           descriptionClassName="space-y-5 max-w-3xl"
         />
 
-        <ul className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
-          {members.map((member, i) => (
-            <li key={member.id}>
-              <TeamMemberCard member={member} accentClass={ACCENT_ROTATION[i % ACCENT_ROTATION.length]} />
-            </li>
-          ))}
-        </ul>
+        <ChiSiamoTeamMembersGrid members={members} />
       </div>
     </Section>
   );
