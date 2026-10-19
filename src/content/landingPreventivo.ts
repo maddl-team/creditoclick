@@ -52,7 +52,7 @@ export const LANDING_SOLUTIONS = [
   {
     title: "Dipendenti Aziende Private",
     points: [
-      "Valutazione anche per PMI e strutture strutturate",
+      "Aziende private con più di 15 dipendenti",
       "Valorizzazione del TFR aziendale come garanzia",
       "Nessun garante richiesto: basta il contratto indeterminato",
       "Liquidità per ogni progetto personale o familiare",
@@ -91,27 +91,6 @@ export const LANDING_STEPS = [
   {
     title: "Firma digitale e accredito",
     desc: "Firma elettronica e accredito della liquidità direttamente sul tuo conto corrente.",
-  },
-] as const;
-
-export const LANDING_REVIEWS = [
-  {
-    quote: "Persona chiara e schietta senza sorprese. Mi riaffiderei nuovamente senza problemi.",
-    author: "Antonio G. P.",
-    role: "Dipendente",
-    source: "Trustpilot",
-  },
-  {
-    quote: "Ho trovato accoglienza e grande professionalità. Un ringraziamento di cuore.",
-    author: "Gabriella R.",
-    role: "Dipendente",
-    source: "Trustpilot",
-  },
-  {
-    quote: "Pratica svolta in tempi brevissimi e massima serietà. Consiglio sicuramente.",
-    author: "Andrea D. G.",
-    role: "Dipendente",
-    source: "Google",
   },
 ] as const;
 
