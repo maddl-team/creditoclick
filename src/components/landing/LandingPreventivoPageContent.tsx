@@ -234,15 +234,9 @@ export function LandingPreventivoPageContent() {
         </div>
       </Section>
 
-      {/* 9. Footer istituzionale + disclaimer legale */}
+      {/* 9. Footer: disclaimer legale → blocco FINNOVA → sottofooter */}
       <footer className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl space-y-8 px-6 py-10 text-xs leading-relaxed text-text-secondary md:py-12">
-          <div className="space-y-4">
-            <p className="font-semibold text-text-primary">{LANDING_FOOTER.company}</p>
-            <p>{LANDING_FOOTER.legal}</p>
-            <p>{LANDING_FOOTER.disclaimer}</p>
-          </div>
-
           <div className="rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8">
             <h3 className="text-base md:text-lg font-semibold text-text-primary">Disclaimer legale</h3>
             <div className="mt-5 space-y-3 text-sm leading-relaxed text-text-secondary">
@@ -319,6 +313,12 @@ export function LandingPreventivoPageContent() {
                 />
               </a>
             </div>
+          </div>
+
+          <div className="space-y-4">
+            <p className="font-semibold text-text-primary">{LANDING_FOOTER.company}</p>
+            <p>{LANDING_FOOTER.legal}</p>
+            <p>{LANDING_FOOTER.disclaimer}</p>
           </div>
 
           <div className="flex flex-col items-center gap-3 border-t border-slate-200/70 pt-6 text-center">
