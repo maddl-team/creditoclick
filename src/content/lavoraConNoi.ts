@@ -1,7 +1,7 @@
 export const LAVORA_CON_NOI_META = {
-  title: "Lavora con noi | Consulente Finanziario Maglie – CreditoClick",
+  title: "Lavora con noi | Consulente del Credito Maglie – CreditoClick",
   description:
-    "Posizione aperta a Maglie (LE): Consulente Finanziario Junior/Senior per cessione del quinto e prestiti personali. Contratto dipendente, formazione OAM e crescita in un'agenzia strutturata.",
+    "Posizione aperta a Maglie (LE): Consulente del Credito Junior/Senior per cessione del quinto e prestiti personali. Contratto dipendente, formazione OAM e crescita in un'agenzia strutturata.",
 } as const;
 
 export const LAVORA_CON_NOI_HERO = {
@@ -10,7 +10,7 @@ export const LAVORA_CON_NOI_HERO = {
     "Contratto: Dipendente a tempo indeterminato/determinato",
     "Presenza in sede",
   ],
-  title: "Consulente Finanziario Junior/Senior – Cessione del Quinto e Prestiti Personali",
+  title: "Consulente del Credito Junior/Senior – Cessione del Quinto e Prestiti Personali",
   subtitle:
     "Entra in un'agenzia finanziaria strutturata, con processi chiari, strumenti digitali e un percorso di crescita reale nel credito al consumo. Lavori in filiale a Maglie, a contatto con clienti e team, con responsabilità concrete fin dal primo giorno.",
   primaryCta: "Candidati ora",
@@ -134,7 +134,7 @@ export function buildJobPostingSchema(siteUrl: string, pageUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    title: "Consulente Finanziario - Cessione del Quinto e Prestiti Personali",
+    title: "Consulente del Credito - Cessione del Quinto e Prestiti Personali",
     description: [
       LAVORA_CON_NOI_CHI_SIAMO.body,
       "",

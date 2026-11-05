@@ -144,7 +144,7 @@ export async function POST(request: Request) {
         text: [
           `Gentile ${fullName},`,
           "",
-          "grazie per aver inviato la tua candidatura per la posizione di Consulente Finanziario presso la filiale di Maglie.",
+          "grazie per aver inviato la tua candidatura per la posizione di Consulente del Credito presso la filiale di Maglie.",
           "Abbiamo ricevuto correttamente i tuoi dati e il curriculum.",
           "Ti ricontatteremo a breve.",
           "",
@@ -154,7 +154,7 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family:Arial,sans-serif;line-height:1.5;color:#0f172a;">
             <p>Gentile ${escapeHtml(fullName)},</p>
-            <p>grazie per aver inviato la tua candidatura per la posizione di <strong>Consulente Finanziario</strong> presso la filiale di Maglie.</p>
+            <p>grazie per aver inviato la tua candidatura per la posizione di <strong>Consulente del Credito</strong> presso la filiale di Maglie.</p>
             <p>Abbiamo ricevuto correttamente i tuoi dati e il curriculum. Ti ricontatteremo a breve.</p>
             <p>Cordiali saluti,<br/>Il team CreditoClick</p>
           </div>
